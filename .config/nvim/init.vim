@@ -1,4 +1,7 @@
 " Indentation
+let mapleader=","
+let localleader="\\"
+
 set tabstop=2
 set shiftwidth=2
 set expandtab
@@ -66,9 +69,6 @@ set listchars=tab:»\ ,nbsp:෴,trail:※
 
 " show commands while they are being typed
 set showcmd
-
-let mapleader=","
-let localleader="\\"
 
 if has("autocmd")
   " Restore cursor position
