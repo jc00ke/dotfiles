@@ -1,3 +1,4 @@
+let g:coc_global_extensions = ['coc_prettier', 'coc_json', 'coc_elixir', 'coc_solargraph', 'coc_tabnine']
 " if hidden is not set, TextEdit might fail.
 set hidden
 " Better display for messages
