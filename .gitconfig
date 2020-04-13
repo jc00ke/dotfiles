@@ -1,0 +1,68 @@
+[user]
+	name = Jesse Cooke
+  email = jesse@relativepath.io
+  signingkey = 7EBD3956
+[format]
+  pretty="format:%C(yellow)%h%Creset %C(magenta bold)%aN%Creset%C(blue) %ad%Creset %s"
+[push]
+  default = current
+[branch]
+  autosetuprebase = always
+[alias]
+  # amend to the last commit
+  amend = commit --amend -C HEAD
+  # interactive rebase
+  ri = rebase --interactive --autosquash
+  # diff the index against the previous commit
+  staged = diff --cached
+  # update all remotes, pruning removed tracking branches
+  update-remotes = remote update --prune
+  # rewrite last commit msg
+  rewrite-last = rebase -i HEAD^
+  # shorten up pull-request
+  pr = pull-request
+
+  d = vimdiff
+  serve = daemon --verbose --export-all --base-path=.git --reuseaddr --strict-paths .git/
+[merge]
+  tool = vimdiff
+[mergetool]
+  prompt = true
+[mergetool "vimdiff"]
+  cmd = nvim -d $LOCAL $REMOTE $MERGED -c '$wincmd w' -c 'wincmd J'
+[difftool]
+  prompt = false
+[diff]
+  tool = vimdiff
+  compactionHeuristic = true
+[core]
+  excludesfile = ~/.gitignore
+  autocrlf = input
+	pager = diff-so-fancy | less --tabs=4 -RFX
+[github]
+    user = jc00ke
+    token = !sh -c 'echo $GITHUB_TOKEN'
+[color]
+	ui = true
+[color "branch"]
+  current = yellow reverse
+  local = yellow
+  remote = green
+[color "diff"]
+	meta = yellow
+	frag = magenta bold
+	whitespace = red reverse
+	commit = yellow bold
+	old = red bold
+	new = green bold
+[color "status"]
+  added = yellow
+  changed = green
+  untracked = cyan
+[commit]
+  gpgsign = true
+[color "diff-highlight"]
+	oldNormal = red bold
+	oldHighlight = red bold 52
+	newNormal = green bold
+	newHighlight = green bold 22

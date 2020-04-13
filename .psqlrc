@@ -1,0 +1,13 @@
+\pset null 'NULL'
+\set HISTFILE ~/.psql_history- :DBNAME
+\set HISTSIZE 2000
+\timing
+\set PROMPT1 '(%n@%M:%>) [%/] > '
+\set PROMPT2 ''
+\encoding unicode
+\pset linestyle unicode
+\pset border 2
+-- Switch pagers with :x and :xx commands
+\set x '\\setenv PAGER less'
+\set xx '\\setenv PAGER \'pspg -bX --no-mouse\''
+:xx

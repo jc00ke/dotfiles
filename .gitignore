@@ -1,0 +1,62 @@
+# Compiled source #
+###################
+*.rbc
+*.com
+*.class
+*.dll
+*.exe
+*.o
+*.so
+tags
+
+# Packages #
+############
+# it's better to unpack these files and commit the raw source
+# git has its own built in compression methods
+*.7z
+*.dmg
+*.gz
+*.iso
+*.jar
+*.rar
+*.tar
+*.zip
+
+# Logs and databases #
+######################
+*.log
+*.sql
+*.sqlite
+*.rdb
+
+# OS generated files #
+######################
+.DS_Store?
+ehthumbs.db
+Icon?
+Thumbs.db
+
+# Directories #
+###############
+.rbx/
+.sass-cache/
+
+# Ruby #
+########
+custom_plan.rb
+zeus.json
+.bundle/
+
+# Vim artifacts #
+#################
+Session.vim
+
+# scratch files
+scratch.md
+scratch.sql
+
+.envrc
+
+# Elixir #
+##########
+.elixir_ls/
