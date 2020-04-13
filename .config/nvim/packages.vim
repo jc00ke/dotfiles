@@ -7,6 +7,11 @@ endif
 call plug#begin('~/.local/share/nvim/plugged')
   Plug 'tpope/vim-sensible'
   Plug 'neoclide/coc.nvim', {'branch': 'release'}
+  "Plug 'amiralies/coc-elixir'
+  Plug 'neoclide/coc-html', {'do': 'yarn install --frozen-lockfile'}
+  Plug 'neoclide/coc-json', {'do': 'yarn install --frozen-lockfile'}
+  Plug 'neoclide/coc-prettier', {'do': 'yarn install --frozen-lockfile'}
+  Plug 'neoclide/coc-solargraph', {'do': 'yarn install --frozen-lockfile'}
 
   " Colors
   Plug 'ap/vim-css-color'
