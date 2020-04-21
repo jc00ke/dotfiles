@@ -87,3 +87,12 @@ sudo mv ngrok /usr/local/bin/
 log "Installing fzf"
 git clone --depth 1 https://github.com/junegunn/fzf.git ~/.fzf
 ~/.fzf/install
+
+log "Installing JetBrains Mono"
+jbm="JetBrainsMono-1.0.3"
+wget "https://download.jetbrains.com/fonts/$jbm.zip"
+unzip "$jbm.zip"
+fonts_path="$HOME/.local/share/fonts/JetBrainsMono"
+mkdir -p "$fonts_path"
+cp "$jbm/ttf/*" "$fonts_path/"
+fc-cache -f -v | rg JetBrainsMono
