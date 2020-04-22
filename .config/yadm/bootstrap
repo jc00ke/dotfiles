@@ -42,11 +42,9 @@ sudo apt install -y \
   cmake \
   peek \
   jq \
-  ripgrep \
   direnv \
   ubuntu-restricted-extras \
   neovim \
-  fzf \
   inotify-tools
 
 log "Updating the yadm repo origin URL"
@@ -96,3 +94,7 @@ fonts_path="$HOME/.local/share/fonts/JetBrainsMono"
 mkdir -p "$fonts_path"
 cp "$jbm/ttf/*" "$fonts_path/"
 fc-cache -f -v | rg JetBrainsMono
+
+log "Installing Rust"
+asdf install rust stable
+cargo install ripgrep xsv
