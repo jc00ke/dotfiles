@@ -45,7 +45,14 @@ sudo apt install -y \
   direnv \
   ubuntu-restricted-extras \
   neovim \
-  inotify-tools
+  inotify-tools \
+  i3xrocks-cpu-usage \
+  i3xrocks-memory \
+  i3xrocks-net-traffic \
+  i3xrocks-time \
+  i3xrocks-battery \
+  i3xrocks-key-indicator \
+  i3xrocks-weather
 
 log "Updating the yadm repo origin URL"
 yadm remote set-url origin "git@github.com:jc00ke/dotfiles.git"
