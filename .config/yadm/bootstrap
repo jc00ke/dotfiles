@@ -97,4 +97,4 @@ fc-cache -f -v | rg JetBrainsMono
 
 log "Installing Rust"
 asdf install rust stable
-cargo install ripgrep xsv
+cargo install ripgrep xsv bat
