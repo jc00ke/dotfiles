@@ -54,6 +54,9 @@ sudo apt install -y \
   i3xrocks-key-indicator \
   i3xrocks-weather
 
+log "Install kitty"
+curl -L https://sw.kovidgoyal.net/kitty/installer.sh | sh /dev/stdin launch=n
+
 log "Updating the yadm repo origin URL"
 yadm remote set-url origin "git@github.com:jc00ke/dotfiles.git"
 
