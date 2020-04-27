@@ -106,4 +106,3 @@ abbr -a yolo "oops"
 
 eval (direnv hook fish)
 source ~/.asdf/asdf.fish
-source "$HOME/.asdf/installs/rust/stable/env"
