@@ -40,7 +40,7 @@
 [core]
   excludesfile = ~/.gitignore
   autocrlf = input
-  pager = delta --plus-color="#012800" --minus-color="#340001" --theme='Solarized (light)'
+  pager = delta --theme='Solarized (light)'
 [github]
     user = jc00ke
     token = !sh -c 'echo $GITHUB_TOKEN'
