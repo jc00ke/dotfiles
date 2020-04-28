@@ -275,7 +275,7 @@ bindsym $mod+Shift+b exec $i3-wm.program.reboot
 
 ## Session // Power Down // <><Shift> p ##
 set_from_resource $i3-wm.program.shutdown i3-wm.program.shutdown /usr/bin/gnome-session-quit --power-off
-bindsym $mod+Shift+p exec $i3-wm.program.shutdown
+#bindsym $mod+Shift+p exec $i3-wm.program.shutdown
 
 ## Session // Lock Screen // <> Escape ##
 set_from_resource $i3-wm.program.lock i3-wm.program.lock dbus-send --type=method_call --dest=org.gnome.ScreenSaver /org/gnome/ScreenSaver org.gnome.ScreenSaver.Lock
@@ -533,6 +533,7 @@ exec --no-startup-id $i3-wm.program.3
 # CUSTOM CONFIG
 ###############################################################################
 bindsym $mod+Ctrl+Shift+Return exec "firefox -P Music -no-remote"
+bindsym $mod+Shift+p exec flameshot gui
 
 bindsym $mod+Shift+minus move scratchpad
 bindsym $mod+Shift+plus scratchpad show
