@@ -22,6 +22,8 @@
   # shorten up pull-request
   pr = pull-request
 
+  diffFilter = delta --color-only
+
   d = vimdiff
   serve = daemon --verbose --export-all --base-path=.git --reuseaddr --strict-paths .git/
 [merge]
@@ -38,7 +40,7 @@
 [core]
   excludesfile = ~/.gitignore
   autocrlf = input
-	pager = diff-so-fancy | less --tabs=4 -RFX
+  pager = delta --plus-color="#012800" --minus-color="#340001" --theme='Solarized (light)'
 [github]
     user = jc00ke
     token = !sh -c 'echo $GITHUB_TOKEN'
@@ -48,21 +50,9 @@
   current = yellow reverse
   local = yellow
   remote = green
-[color "diff"]
-	meta = yellow
-	frag = magenta bold
-	whitespace = red reverse
-	commit = yellow bold
-	old = red bold
-	new = green bold
 [color "status"]
   added = yellow
   changed = green
   untracked = cyan
 [commit]
   gpgsign = true
-[color "diff-highlight"]
-	oldNormal = red bold
-	oldHighlight = red bold 52
-	newNormal = green bold
-	newHighlight = green bold 22
