@@ -545,6 +545,10 @@ for_window [class="Cawbird"] floating enable
 for_window [class="Gnome-calculator"] floating enable
 for_window [class="Evolution-alarm-notify"] floating enable
 for_window [class="Insync"] floating enable
+for_window [class="Bashtop"] floating enable
 
 # Open Keybase
 bindsym $mod+Ctrl+k exec "run_keybase %u"
+
+# Open bashtop
+bindsym $mod+Ctrl+b exec $terminal_path --class Bashtop --start-as normal bashtop
