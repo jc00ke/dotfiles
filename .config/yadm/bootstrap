@@ -8,6 +8,26 @@ function log {
   echo ""
 }
 
+log "Configure install of Chromium via Debian instead of snap"
+sudo tee -a /etc/apt/preferences.d/chromium.pref <<EOF
+Package: *
+Pin: origin "deb.debian.org"
+Pin-Priority: -10
+
+Package: chromium* libvpx5 libjpeg62-turbo
+Pin: origin "deb.debian.org"
+Pin-Priority: 999
+EOF
+
+sudo tee -a /etc/apt/sources.list.d/debian.list <<EOF
+deb http://deb.debian.org/debian/ stable main #Debian stable
+deb http://deb.debian.org/debian/ stable-updates main #Debian updates
+deb http://deb.debian.org/debian-security stable/updates main #Debian security updates
+EOF
+
+sudo apt install debian-archive-keyring && \
+sudo apt-key add /usr/share/keyrings/debian-archive-keyring.gpg
+
 sudo apt install -y \
   build-essential \
   bison \
@@ -52,7 +72,8 @@ sudo apt install -y \
   i3xrocks-time \
   i3xrocks-battery \
   i3xrocks-key-indicator \
-  i3xrocks-weather
+  i3xrocks-weather \
+  chromium
 
 log "Install kitty"
 curl -L https://sw.kovidgoyal.net/kitty/installer.sh | sh /dev/stdin launch=n
