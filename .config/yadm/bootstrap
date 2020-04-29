@@ -29,51 +29,51 @@ sudo apt install debian-archive-keyring && \
 sudo apt-key add /usr/share/keyrings/debian-archive-keyring.gpg
 
 sudo apt install -y \
-  build-essential \
-  bison \
-  htop \
-  curl \
-  git \
-  git-doc \
-  git-svn \
-  git-gui \
-  gitg \
-  libffi-dev \
-  libreadline-dev \
-  libssl-dev \
-  zlib1g-dev \
-  libncurses5-dev \
-  libxml2-dev \
-  libxslt1-dev \
-  libyaml-dev \
-  libgdbm-dev \
-  parallel \
-  fish \
   autoconf \
   autopoint \
-  libtool \
-  exuberant-ctags \
-  openconnect \
-  openvpn \
-  software-properties-common \
-  imagemagick \
-  python3-pip \
-  hub \
+  bison \
+  build-essential \
+  chromium \
   cmake \
-  peek \
-  jq \
+  curl \
   direnv \
-  ubuntu-restricted-extras \
-  neovim \
-  inotify-tools \
+  exuberant-ctags \
+  fish \
+  git \
+  git-doc \
+  git-gui \
+  git-svn \
+  gitg \
+  htop \
+  hub \
+  i3xrocks-battery \
   i3xrocks-cpu-usage \
+  i3xrocks-key-indicator \
   i3xrocks-memory \
   i3xrocks-net-traffic \
   i3xrocks-time \
-  i3xrocks-battery \
-  i3xrocks-key-indicator \
   i3xrocks-weather \
-  chromium
+  imagemagick \
+  inotify-tools \
+  jq \
+  libffi-dev \
+  libgdbm-dev \
+  libncurses5-dev \
+  libreadline-dev \
+  libssl-dev \
+  libtool \
+  libxml2-dev \
+  libxslt1-dev \
+  libyaml-dev \
+  neovim \
+  openconnect \
+  openvpn \
+  parallel \
+  peek \
+  python3-pip \
+  software-properties-common \
+  ubuntu-restricted-extras \
+  zlib1g-dev
 
 log "Install kitty"
 curl -L https://sw.kovidgoyal.net/kitty/installer.sh | sh /dev/stdin launch=n
