@@ -12,7 +12,7 @@ set signcolumn=yes
 set shortmess+=c
 
 call coc#config('elixir', {
-      \ "pathToElixirLS": "~/src/elixir-lsp/release/language_server.sh"
+      \ "pathToElixirLS": "~/src/elixir-ls/release/language_server.sh"
       \})
 
 call coc#config('suggest', {
