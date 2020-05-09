@@ -8,32 +8,11 @@ function log {
   echo ""
 }
 
-log "Configure install of Chromium via Debian instead of snap"
-sudo tee -a /etc/apt/preferences.d/chromium.pref <<EOF
-Package: *
-Pin: origin "deb.debian.org"
-Pin-Priority: -10
-
-Package: chromium* libvpx5 libjpeg62-turbo
-Pin: origin "deb.debian.org"
-Pin-Priority: 999
-EOF
-
-sudo tee -a /etc/apt/sources.list.d/debian.list <<EOF
-deb http://deb.debian.org/debian/ stable main #Debian stable
-deb http://deb.debian.org/debian/ stable-updates main #Debian updates
-deb http://deb.debian.org/debian-security stable/updates main #Debian security updates
-EOF
-
-sudo apt install debian-archive-keyring && \
-sudo apt-key add /usr/share/keyrings/debian-archive-keyring.gpg
-
 sudo apt install -y \
   autoconf \
   autopoint \
   bison \
   build-essential \
-  chromium \
   cmake \
   curl \
   direnv \
@@ -56,6 +35,7 @@ sudo apt install -y \
   imagemagick \
   inotify-tools \
   jq \
+  libclang-dev\
   libffi-dev \
   libgdbm-dev \
   libncurses5-dev \
@@ -99,11 +79,6 @@ if [ ! -d $HOME/.asdf ]; then
   git clone https://github.com/asdf-vm/asdf.git ~/.asdf --branch v0.7.8
 fi
 
-if command -v nvim >/dev/null 2>&1; then
-  log "Bootstraping Neovim"
-  nvim '+PlugUpdate' '+PlugClean!' '+PlugUpdate' '+qall'
-fi
-
 cd $HOME/src
 log "Installing ngrok"
 ngrok_package="ngrok-stable-linux-amd64"
@@ -117,15 +92,55 @@ log "Installing fzf"
 git clone --depth 1 https://github.com/junegunn/fzf.git ~/.fzf
 ~/.fzf/install
 
-log "Installing JetBrains Mono"
-jbm="JetBrainsMono-1.0.3"
-wget "https://download.jetbrains.com/fonts/$jbm.zip"
-unzip "$jbm.zip"
-fonts_path="$HOME/.local/share/fonts/JetBrainsMono"
-mkdir -p "$fonts_path"
-cp "$jbm/ttf/*" "$fonts_path/"
-fc-cache -f -v | rg JetBrainsMono
+#log "Installing JetBrains Mono"
+#jbm="JetBrainsMono-1.0.3"
+#wget "https://download.jetbrains.com/fonts/$jbm.zip"
+#unzip "$jbm.zip"
+#fonts_path="$HOME/.local/share/fonts/JetBrainsMono"
+#mkdir -p "$fonts_path"
+#cp "$jbm/ttf/*" "$fonts_path/"
+#fc-cache -f -v | rg JetBrainsMono
 
 log "Installing Rust"
-asdf install rust stable
+asdf plugin-add rust https://github.com/code-lever/asdf-rust.git
+asdf install rust 1.43.1
+asdf global rust 1.43.1
+log "Install ripgrep, xsv and bat"
 cargo install ripgrep xsv bat
+
+log "Installing node"
+asdf plugin-add nodejs https://github.com/asdf-vm/asdf-nodejs.git
+bash ~/.asdf/plugins/nodejs/bin/import-release-team-keyring
+asdf install nodejs 12.16.3
+asdf global nodejs 12.16.3
+log "Installing yarn"
+curl -o- -L https://yarnpkg.com/install.sh | bash
+
+asdf reshim
+
+if command -v nvim >/dev/null 2>&1; then
+  log "Bootstraping Neovim"
+  nvim '+PlugUpdate' '+PlugClean!' '+PlugUpdate' '+qall'
+fi
+
+log "Configure install of Chromium via Debian instead of snap"
+sudo tee -a /etc/apt/preferences.d/chromium.pref <<EOF
+Package: *
+Pin: origin "deb.debian.org"
+Pin-Priority: -10
+
+Package: chromium* libvpx5 libjpeg62-turbo
+Pin: origin "deb.debian.org"
+Pin-Priority: 999
+EOF
+
+sudo tee -a /etc/apt/sources.list.d/debian.list <<EOF
+deb http://deb.debian.org/debian/ stable main #Debian stable
+deb http://deb.debian.org/debian/ stable-updates main #Debian updates
+deb http://deb.debian.org/debian-security stable/updates main #Debian security updates
+EOF
+
+sudo apt install debian-archive-keyring && \
+sudo apt-key add /usr/share/keyrings/debian-archive-keyring.gpg
+sudo apt update
+sudo apt install chromium
