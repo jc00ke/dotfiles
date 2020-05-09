@@ -71,6 +71,7 @@ if [ ! -d "$HOME/.config/omf" ]; then
   cd $HOME/src
   log "Installing oh-my-fish"
   curl -L http://get.oh-my.fish | fish
+  echo "omf install cbjohnson" | fish
 fi
 
 cd $HOME
