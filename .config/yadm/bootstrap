@@ -18,6 +18,7 @@ sudo apt install -y \
   direnv \
   exuberant-ctags \
   fish \
+  flameshot \
   git \
   git-doc \
   git-gui \
