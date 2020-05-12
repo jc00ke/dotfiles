@@ -124,3 +124,26 @@ if command -v nvim >/dev/null 2>&1; then
   log "Bootstraping Neovim"
   nvim '+PlugUpdate' '+PlugClean!' '+PlugUpdate' '+qall'
 fi
+
+log "Consider installing resume service for network adapter."
+echo "https://askubuntu.com/a/1058760/128339"
+echo "In /etc/systemd/system/resume-r8152.service add the following:"
+
+echo "[Unit]
+Description=Fix RTL-8152 Driver on resume from suspend
+After=suspend.target
+
+[Service]
+User=root
+Type=oneshot
+ExecStartPre=/sbin/modprobe -r r8152
+ExecStart=/sbin/modprobe r8152
+TimeoutSec=0
+StandardOutput=syslog
+
+[Install]
+WantedBy=suspend.target"
+
+echo ""
+echo "then run:"
+echo "sudo systemctl enable resume-r8152.service"
