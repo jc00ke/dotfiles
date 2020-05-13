@@ -1,3 +1,4 @@
 gnome.terminal.font: JetBrains Mono 14
-gnome.wallpaper: /home/jesse/Drive/personal/Desktops/Solarized-Mountains.png
-i3-wm.bar.trayoutput:primary
+gnome.wallpaper: /home/jesse/Drive/personal/Desktops/solarized-mountains.png
+i3-wm.bar.trayoutput: primary
+i3-wm.program.set_background: feh --bg-fill --randomize ~/.config/regolith/desktops/*

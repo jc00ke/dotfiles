@@ -526,8 +526,8 @@ set_from_resource $i3-wm.program.1 i3-wm.program.1 :
 exec --no-startup-id $i3-wm.program.1
 set_from_resource $i3-wm.program.2 i3-wm.program.2 :
 exec --no-startup-id $i3-wm.program.2
-set_from_resource $i3-wm.program.3 i3-wm.program.3 :
-exec --no-startup-id $i3-wm.program.3
+set_from_resource $i3-wm.program.set_background i3-wm.program.set_background :
+exec --no-startup-id $i3-wm.program.set_background
 
 ###############################################################################
 # CUSTOM CONFIG
