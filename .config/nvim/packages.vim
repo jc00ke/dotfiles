@@ -17,9 +17,6 @@ call plug#begin('~/.local/share/nvim/plugged')
   " Colors
   Plug 'ap/vim-css-color'
 
-  " Fonts and icons
-  Plug 'ryanoasis/vim-devicons'
-
   " Elm
   Plug 'andys8/vim-elm-syntax', { 'for': 'elm' }
 
