@@ -63,6 +63,8 @@ set -e fish_user_abbreviations
 
 abbr -a .. "cd .."
 abbr -a ... "cd ../.."
+abbr -a u^ "sudo apt update"
+abbr -a u! "sudo apt upgrade -y"
 abbr -a b "bundle exec"
 abbr -a cat "bat"
 abbr -a cdr "cd .. and cd -"
@@ -96,6 +98,8 @@ abbr -a l "ls -lah"
 abbr -a lv "nvim -R"
 abbr -a xclipx "xclip -selection clipboard"
 abbr -a xx "exit"
+abbr -a e! "nvim +PlugInstall"
+abbr -a e^ "nvim +PlugUpdate"
 
 function oops
   eval command sudo $history[1]
