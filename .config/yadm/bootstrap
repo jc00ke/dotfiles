@@ -51,6 +51,7 @@ sudo apt install -y \
   openvpn \
   parallel \
   peek \
+  pspg \
   python3-pip \
   software-properties-common \
   ubuntu-restricted-extras \
