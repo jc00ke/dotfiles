@@ -9,5 +9,5 @@
 \pset border 2
 -- Switch pagers with :x and :xx commands
 \set x '\\setenv PAGER less'
-\set xx '\\setenv PAGER \'pspg -bX --no-mouse\''
+\set xx '\\setenv PAGER \'pspg -X --no-mouse -s 17\''
 :xx
