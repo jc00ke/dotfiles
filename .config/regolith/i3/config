@@ -545,6 +545,7 @@ for_window [class="Gnome-calculator"] floating enable
 for_window [class="Evolution-alarm-notify"] floating enable
 for_window [class="Insync"] floating enable
 for_window [class="Bashtop"] floating enable
+for_window [class="Tandem"] floating enable
 
 # Open Keybase
 bindsym $mod+Ctrl+k exec "run_keybase %u"
