@@ -12,6 +12,7 @@ call plug#begin('~/.local/share/nvim/plugged')
   Plug 'neoclide/coc-json', {'do': 'yarn install --frozen-lockfile'}
   Plug 'neoclide/coc-prettier', {'do': 'yarn install --frozen-lockfile'}
   Plug 'neoclide/coc-solargraph', {'do': 'yarn install --frozen-lockfile'}
+  Plug 'neoclide/coc-yaml', {'do': 'yarn install --frozen-lockfile'}
   Plug 'iamcco/coc-tailwindcss',  {'do': 'yarn install --frozen-lockfile && yarn run build'}
 
   " Colors
