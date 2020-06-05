@@ -531,6 +531,7 @@ exec --no-startup-id $i3-wm.program.2
 # CUSTOM CONFIG
 ###############################################################################
 bindsym $mod+Ctrl+Shift+Return exec "firefox -P Music -no-remote"
+bindsym $mod+Ctrl+Shift+g exec "firefox -P Geometer -no-remote"
 bindsym $mod+Shift+p exec flameshot gui
 
 bindsym $mod+Shift+minus move scratchpad
