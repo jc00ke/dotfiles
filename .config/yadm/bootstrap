@@ -108,8 +108,9 @@ log "Installing Rust"
 asdf plugin-add rust https://github.com/code-lever/asdf-rust.git
 asdf install rust 1.43.1
 asdf global rust 1.43.1
-log "Install ripgrep, xsv and bat"
-cargo install ripgrep xsv bat
+cargo_packages="ripgrep xsv bat jql"
+log "Install $cargo_packages"
+echo "$cargo_packages" | xargs cargo install
 
 log "Installing node"
 asdf plugin-add nodejs https://github.com/asdf-vm/asdf-nodejs.git
