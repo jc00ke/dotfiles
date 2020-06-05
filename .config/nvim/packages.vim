@@ -55,8 +55,8 @@ call plug#begin('~/.local/share/nvim/plugged')
   Plug 'tpope/vim-rake', { 'for': 'ruby' }
 
   " Testing
-  Plug 'janko-m/vim-test'
-  " https://github.com/janko/vim-test#cli-options
+  Plug 'vim-test/vim-test'
+  " https://github.com/vim-test/vim-test#cli-options
   let g:test#runner_commands = ['ExUnit', 'ElmTest']
 
   " search
