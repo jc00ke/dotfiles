@@ -45,6 +45,7 @@ add_to_path "$HOME/src/node/bin"
 add_to_path "$HOME/src/DataGrip/bin"
 add_to_path "$HOME/.config/yarn/global/node_modules/.bin"
 add_to_path "$HOME/.yarn/bin"
+add_to_path "$HOME/.git-fuzzy/bin"
 set PATH $PATH ".git/safe/../../bin"
 
 # this function may be required
