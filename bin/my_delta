@@ -1,0 +1,12 @@
+#!/bin/bash
+
+exec delta \
+  --theme='Solarized (light)' \
+  --minus-style 'syntax auto' \
+  --minus-emph-style='syntax auto' \
+  --zero-style 'syntax white' \
+  --plus-style 'syntax auto' \
+  --plus-emph-style 'syntax auto' \
+  --hunk-header-style='syntax white' \
+  --hunk-header-decoration-style='white box' \
+  "$@"

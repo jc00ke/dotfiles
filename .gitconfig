@@ -22,7 +22,7 @@
   # shorten up pull-request
   pr = pull-request
 
-  diffFilter = delta --color-only
+  diffFilter = my_delta
 
   d = vimdiff
   serve = daemon --verbose --export-all --base-path=.git --reuseaddr --strict-paths .git/
@@ -40,12 +40,9 @@
 [core]
   excludesfile = ~/.gitignore
   autocrlf = input
-  pager = delta --theme='Solarized (light)'
-[github]
-    user = jc00ke
-    token = !sh -c 'echo $GITHUB_TOKEN'
+  pager = my_delta
 [color]
-	ui = true
+  ui = true
 [color "branch"]
   current = yellow reverse
   local = yellow
