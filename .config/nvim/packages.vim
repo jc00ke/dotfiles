@@ -10,6 +10,7 @@ call plug#begin('~/.local/share/nvim/plugged')
   Plug 'amiralies/coc-elixir', {'do': 'yarn install --frozen-lockfile && yarn run build'}
   Plug 'fannheyward/coc-markdownlint',  {'do': 'yarn install --frozen-lockfile'}
   Plug 'fannheyward/coc-sql', {'do': 'yarn install --frozen-lockfile'}
+  Plug 'iamcco/coc-diagnostic',  {'do': 'yarn install --frozen-lockfile && yarn run build'}
   Plug 'iamcco/coc-tailwindcss',  {'do': 'yarn install --frozen-lockfile && yarn run build'}
   Plug 'neoclide/coc-html', {'do': 'yarn install --frozen-lockfile'}
   Plug 'neoclide/coc-json', {'do': 'yarn install --frozen-lockfile'}

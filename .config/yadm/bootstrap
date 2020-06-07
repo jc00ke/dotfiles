@@ -53,6 +53,7 @@ sudo apt install -y \
   peek \
   pspg \
   python3-pip \
+  shellcheck \
   software-properties-common \
   ubuntu-restricted-extras \
   zlib1g-dev

@@ -50,6 +50,12 @@ call coc#config('languageserver', {
   \  }
   \})
 
+call coc#config('diagnostic-languageserver.filetypes', {
+  \  "markdown": [ "write-good", "markdownlint" ],
+  \  "sh": "shellcheck",
+  \  "elixir": ["mix_credo", "mix_credo_compile"],
+  \  "eelixir": ["mix_credo", "mix_credo_compile"]
+  \})
 " Use tab for trigger completion with characters ahead and navigate.
 " Use command ':verbose imap <tab>' to make sure tab is not mapped by other plugin.
 inoremap <silent><expr> <TAB>
