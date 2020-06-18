@@ -47,6 +47,13 @@ call coc#config('languageserver', {
   \      "elmTestPath": "elm-test",
   \      "elmAnalyseTrigger": "change"
   \    }
+  \  },
+  \  "terraform": {
+  \    "command": "terraform-ls",
+  \    "args": ["serve"],
+  \    "filetypes": ["terraform", "tf"],
+  \    "initializationOptions": {},
+  \    "settings": {}
   \  }
   \})
 
