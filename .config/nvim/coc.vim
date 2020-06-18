@@ -59,7 +59,7 @@ call coc#config('languageserver', {
 
 call coc#config('diagnostic-languageserver.filetypes', {
   \  "markdown": [ "write-good", "markdownlint" ],
-  \  "sh": "shellcheck",
+  \  "sh": "shellcheck -x",
   \  "elixir": ["mix_credo", "mix_credo_compile"],
   \  "eelixir": ["mix_credo", "mix_credo_compile"]
   \})
