@@ -17,6 +17,7 @@ sudo apt install -y \
   curl \
   direnv \
   exuberant-ctags \
+  fd-find \
   fish \
   flameshot \
   git \
