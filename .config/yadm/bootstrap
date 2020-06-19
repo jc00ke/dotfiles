@@ -104,7 +104,7 @@ log "Installing Rust"
 asdf plugin-add rust https://github.com/code-lever/asdf-rust.git
 asdf install rust 1.43.1
 asdf global rust 1.43.1
-cargo_packages="ripgrep xsv bat jql exa choose tokei"
+cargo_packages="ripgrep xsv bat jql exa choose tokei procs starship"
 log "Install $cargo_packages"
 echo "$cargo_packages" | xargs cargo install
 
