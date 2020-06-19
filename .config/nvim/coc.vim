@@ -96,6 +96,8 @@ nmap <silent> gR <Plug>(coc-rename)
 nmap <silent> gx <Plug>(coc-fix-current)
 " Remap for do codeAction of current line
 nmap <silent> ga <Plug>(coc-codeaction)
+" Remap for do codeLensAction of current line
+nmap <silent> gl <Plug>(coc-codelens-action)
 " Use <c-space> to trigger completion.
 inoremap <silent><expr> <c-space> coc#refresh()
 
