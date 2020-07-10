@@ -6,12 +6,15 @@ endif
 
 call plug#begin('~/.local/share/nvim/plugged')
   Plug 'tpope/vim-sensible'
+
+  " CoC
   Plug 'neoclide/coc.nvim', {'branch': 'release'}
-  Plug 'amiralies/coc-elixir', {'do': 'yarn install --frozen-lockfile && yarn run build'}
+  Plug 'amiralies/coc-elixir', {'do': 'yarn install && yarn clean && yarn build'}
   Plug 'fannheyward/coc-markdownlint',  {'do': 'yarn install --frozen-lockfile'}
   Plug 'fannheyward/coc-sql', {'do': 'yarn install --frozen-lockfile'}
   Plug 'iamcco/coc-diagnostic',  {'do': 'yarn install --frozen-lockfile && yarn run build'}
   Plug 'iamcco/coc-tailwindcss',  {'do': 'yarn install --frozen-lockfile && yarn run build'}
+  Plug 'kristijanhusak/vim-dadbod-completion', {'do': 'yarn install --frozen-lockfile'}
   Plug 'joenye/coc-cfn-lint', {'do': 'yarn install --frozen-lockfile'}
   Plug 'neoclide/coc-css', {'do': 'yarn install --frozen-lockfile'}
   Plug 'neoclide/coc-html', {'do': 'yarn install --frozen-lockfile'}
@@ -50,6 +53,9 @@ call plug#begin('~/.local/share/nvim/plugged')
   let NERDTreeIgnore=['\~$', 'tfstate$', 'tfstate\.backup$']
   Plug 'junegunn/vim-easy-align'
 
+  " Markdown
+  Plug 'iamcco/markdown-preview.nvim', { 'do': 'cd app & yarn install'  }
+
   " Unix
   Plug 'tpope/vim-eunuch'
   Plug 'tpope/vim-dotenv'
@@ -82,6 +88,7 @@ call plug#begin('~/.local/share/nvim/plugged')
   " database
   Plug 'tpope/vim-dadbod'
   Plug 'kristijanhusak/vim-dadbod-ui'
+  autocmd User DBUIOpened let b:dotenv = DotenvRead('.envrc') | norm R
 
   " Heroku
   Plug 'tpope/vim-heroku'
@@ -100,4 +107,8 @@ call plug#begin('~/.local/share/nvim/plugged')
   Plug 'https://gitlab.com/inko-lang/inko.vim.git', { 'for': 'inko' }
 
   Plug 'vimlab/split-term.vim'
+
+  Plug 'kburdett/vim-nuuid'
+
+  Plug 'direnv/direnv.vim'
 call plug#end()
