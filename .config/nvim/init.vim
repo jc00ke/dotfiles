@@ -79,7 +79,7 @@ if has("autocmd")
 endif
 
 map f80 gggqG<CR>
-map <F2> :NERDTreeToggle<CR>
+map <Leader>n :NERDTreeToggle<CR>
 map <F3> :set go-=m go-=T <CR>
 map <F4> :set go+=m go+=T <CR>
 nmap <F8> :TagbarToggle<CR>
