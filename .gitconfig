@@ -22,10 +22,14 @@
   # shorten up pull-request
   pr = pull-request
 
-  diffFilter = my_delta
-
   d = vimdiff
   serve = daemon --verbose --export-all --base-path=.git --reuseaddr --strict-paths .git/
+[delta]
+    line-numbers = true
+    plus-color = "#012800"
+    minus-color = "#340001"
+    side-by-side = true
+    syntax-theme = "Solarized (dark)"
 [merge]
   tool = vimdiff
 [mergetool]
@@ -40,7 +44,7 @@
 [core]
   excludesfile = ~/.gitignore
   autocrlf = input
-  pager = my_delta
+  pager = delta
 [color]
   ui = true
 [color "branch"]
