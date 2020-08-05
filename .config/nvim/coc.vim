@@ -104,6 +104,8 @@ nmap <silent> ga <Plug>(coc-codeaction)
 nmap <silent> gl <Plug>(coc-codelens-action)
 " Use <c-space> to trigger completion.
 inoremap <silent><expr> <c-space> coc#refresh()
+" View outline of current file
+nnoremap <silent> <leader>co  :<C-u>CocList outline<CR>
 
 autocmd CursorHold * silent call CocActionAsync('highlight')
 
