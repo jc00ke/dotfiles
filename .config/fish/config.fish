@@ -30,14 +30,13 @@ set -g theme_display_ruby no
 set -g theme_color_scheme base16
 
 set -x TERM "xterm-256color"
-set -x TERMINAL "kitty"
+set -x TERMINAL "alacritty"
 set -x fish_greeting ''
 set -x EDITOR "nvim"
 set -x MANPAGER "sh -c 'col -bx | bat -l man -p'"
 set -x ERL_AFLAGS "-kernel shell_history enabled"
 set -gx FZF_DEFAULT_COMMAND  'rg --files --color=never'
 
-add_to_path "$HOME/.local/kitty.app/bin"
 add_to_path "$HOME/src/bin"
 add_to_path "$HOME/bin"
 add_to_path "$HOME/.local/bin"
@@ -70,7 +69,6 @@ abbr -a b "bundle exec"
 abbr -a cat "bat"
 abbr -a cdr "cd .. and cd -"
 abbr -a conflicts "git ls-files --unmerged | cut -f2 | uniq"
-abbr -a d "kitty +kitten diff"
 abbr -a dc "docker-compose"
 abbr -a e nvim
 abbr -a es "nvim -S"
@@ -95,7 +93,6 @@ abbr -a gsd "git svn dcommit"
 abbr -a gsr "git svn rebase"
 abbr -a gst "git status --ignore-submodules=dirty"
 abbr -a hh "heroku"
-abbr -a icat "kitty +kitten icat"
 abbr -a l "ls -lah"
 abbr -a lv "nvim -R"
 abbr -a xclipx "xclip -selection clipboard"
