@@ -72,7 +72,7 @@ set_from_resource $ws19 i3-wm.workspace.19.name "19"
 ###############################################################################
 
 # path to terminal. Override this to specify a custom terminal.
-set $terminal_path ~/.local/kitty.app/bin/kitty
+set $terminal_path /usr/local/bin/alacritty
 
 ## Launch // Terminal // <> Enter ##
 bindsym $mod+Return exec $terminal_path
@@ -553,3 +553,6 @@ bindsym $mod+Ctrl+k exec "run_keybase %u"
 
 # Open bashtop
 bindsym $mod+Ctrl+b exec $terminal_path --class Bashtop --start-as normal bashtop
+
+## Modify // Sound Settings // <> s ##
+bindsym $mod+s exec gnome-control-center sound
