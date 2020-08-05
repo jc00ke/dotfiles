@@ -90,6 +90,7 @@ call plug#begin('~/.local/share/nvim/plugged')
   Plug 'kristijanhusak/vim-dadbod-ui'
   autocmd User DBUIOpened let b:dotenv = DotenvRead('.envrc') | norm R
   let g:db_ui_save_location = './exploration'
+  let g:completion_matching_strategy_list = ['exact', 'substring']
 
   " Heroku
   Plug 'tpope/vim-heroku'
