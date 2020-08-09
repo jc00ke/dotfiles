@@ -1,0 +1,4 @@
+{
+  "$schema": "https://onepassword.s3.amazonaws.com/schema/settings.json",
+  "app.theme": "light"
+}
