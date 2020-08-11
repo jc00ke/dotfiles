@@ -11,62 +11,6 @@ set signcolumn=yes
 " Don't pass messages to |ins-completion-menu|.
 set shortmess+=c
 
-call coc#config('elixir', {
-      \ "pathToElixirLS": "~/src/elixir-ls/release/language_server.sh"
-      \})
-
-call coc#config('suggest', {
-      \ "timeout": 1000
-      \})
-
-call coc#config('codeLens', {
-      \ "enable": 'true'
-      \})
-
-call coc#config('coc.preferences', {
-  \ "timeout": 1000,
-  \ "formatOnSaveFiletypes": [
-    \ "css",
-    \ "Markdown",
-    \ "JavaScript",
-    \ "json",
-    \ "elm"
-  \],
-  \ 'colorSupport': 'true'
-  \})
-call coc#config('languageserver', {
-  \  "elmLS": {
-  \    "trace.server": "verbose",
-  \    "command": "elm-language-server",
-  \    "args": ["--stdio"],
-  \    "filetypes": ["elm"],
-  \    "rootPatterns": ["elm.json"],
-  \    "initializationOptions": {
-  \      "elmPath": "elm",
-  \      "elmFormatPath": "elm-format",
-  \      "elmTestPath": "elm-test",
-  \      "elmAnalyseTrigger": "change"
-  \    }
-  \  },
-  \  "terraform": {
-  \    "command": "terraform-ls",
-  \    "args": ["serve"],
-  \    "filetypes": ["terraform", "tf"],
-  \    "initializationOptions": {},
-  \    "settings": {}
-  \  }
-  \})
-
-call coc#config('diagnostic-languageserver.filetypes', {
-  \  "markdown": [ "write-good", "markdownlint" ],
-  \  "sh": "shellcheck -x",
-  \  "elixir": ["mix_credo", "mix_credo_compile"],
-  \  "eelixir": ["mix_credo", "mix_credo_compile"]
-  \})
-
-call coc#config('diagnostic-languageserver.formatFiletypes', {
-  \  "sh": "shfmt"
-  \})
 " Use tab for trigger completion with characters ahead and navigate.
 " Use command ':verbose imap <tab>' to make sure tab is not mapped by other plugin.
 inoremap <silent><expr> <TAB>
