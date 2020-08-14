@@ -11,6 +11,7 @@ call plug#begin('~/.local/share/nvim/plugged')
   Plug 'neoclide/coc.nvim', {'branch': 'release'}
   Plug 'amiralies/coc-elixir', {'do': 'yarn install && yarn clean && yarn build'}
   Plug 'fannheyward/coc-markdownlint',  {'do': 'yarn install --frozen-lockfile'}
+  Plug 'fannheyward/coc-marketplace', {'do': 'yarn install --frozen-lockfile'}
   Plug 'fannheyward/coc-sql', {'do': 'yarn install --frozen-lockfile'}
   Plug 'iamcco/coc-diagnostic',  {'do': 'yarn install --frozen-lockfile && yarn run build'}
   Plug 'iamcco/coc-tailwindcss',  {'do': 'yarn install --frozen-lockfile && yarn run build'}
@@ -19,6 +20,7 @@ call plug#begin('~/.local/share/nvim/plugged')
   Plug 'neoclide/coc-css', {'do': 'yarn install --frozen-lockfile'}
   Plug 'neoclide/coc-html', {'do': 'yarn install --frozen-lockfile'}
   Plug 'neoclide/coc-json', {'do': 'yarn install --frozen-lockfile'}
+  Plug 'neoclide/coc-lists', {'do': 'yarn install --frozen-lockfile'}
   Plug 'neoclide/coc-prettier', {'do': 'yarn install --frozen-lockfile'}
   Plug 'neoclide/coc-solargraph', {'do': 'yarn install --frozen-lockfile'}
   "Plug 'neoclide/coc-yaml', {'do': 'yarn install --frozen-lockfile'}
