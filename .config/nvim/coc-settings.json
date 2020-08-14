@@ -6,7 +6,8 @@
     "Markdown",
     "JavaScript",
     "json",
-    "elm"
+    "elm",
+    "sh"
   ],
   "codeLens.enable": true,
   "diagnostic-languageserver.filetypes": {
