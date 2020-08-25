@@ -135,6 +135,10 @@ ripgrep_deb="$ripgrep.deb"
 wget "https://github.com/BurntSushi/ripgrep/releases/download/$ripgrep_version/$ripgrep_deb"
 sudo dpkg -i "$ripgrep_deb"
 
+log "Installing starship"
+cd $HOME
+curl -fsSL "https://starship.rs/install.sh" | bash
+
 log "Installing node"
 asdf plugin-add nodejs https://github.com/asdf-vm/asdf-nodejs.git
 bash ~/.asdf/plugins/nodejs/bin/import-release-team-keyring
