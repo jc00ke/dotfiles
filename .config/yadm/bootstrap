@@ -110,7 +110,7 @@ asdf plugin-add rust https://github.com/code-lever/asdf-rust.git
 rust_version="1.45.2"
 asdf install rust $rust_version
 asdf global rust $rust_version
-cargo_packages="xsv jql choose tokei procs starship zoxide"
+cargo_packages="xsv jql choose tokei procs zoxide"
 log "Install $cargo_packages"
 echo "$cargo_packages" | xargs cargo install
 
