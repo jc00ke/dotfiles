@@ -1,6 +1,6 @@
 #!/bin/bash
 
-function log {
+function log() {
   msg="$1"
   echo "********************************************"
   echo "$msg"
@@ -38,8 +38,7 @@ sudo apt install -y \
   imagemagick \
   inotify-tools \
   jq \
-  libclang-dev\
-  libffi-dev \
+  libclang-dev libffi-dev \
   libfreetype6-dev \
   libfontconfig1-dev \
   libgdbm-dev \
@@ -111,7 +110,7 @@ asdf plugin-add rust https://github.com/code-lever/asdf-rust.git
 rust_version="1.45.2"
 asdf install rust $rust_version
 asdf global rust $rust_version
-cargo_packages="ripgrep xsv bat jql exa choose tokei procs starship"
+cargo_packages="xsv bat jql exa choose tokei procs starship zoxide"
 log "Install $cargo_packages"
 echo "$cargo_packages" | xargs cargo install
 
@@ -128,6 +127,14 @@ sudo update-desktop-database
 mkdir -p $fish_complete_path[1]
 cp extra/completions/alacritty.fish $fish_complete_path[1]/alacritty.fish
 
+log "Installing ripgrep"
+cd $HOME/src
+ripgrep_version="12.1.1"
+ripgrep="ripgrep_${ripgrep_version}_amd64"
+ripgrep_deb="$ripgrep.deb"
+wget "https://github.com/BurntSushi/ripgrep/releases/download/$ripgrep_version/$ripgrep_deb"
+sudo dpkg -i "$ripgrep_deb"
+
 log "Installing node"
 asdf plugin-add nodejs https://github.com/asdf-vm/asdf-nodejs.git
 bash ~/.asdf/plugins/nodejs/bin/import-release-team-keyring
@@ -138,7 +145,7 @@ curl -o- -L https://yarnpkg.com/install.sh | bash
 
 asdf reshim
 
-if command -v nvim >/dev/null 2>&1; then
+if command -v nvim > /dev/null 2>&1; then
   log "Bootstraping Neovim"
   nvim '+PlugUpdate' '+PlugClean!' '+PlugUpdate' '+qall'
 fi
