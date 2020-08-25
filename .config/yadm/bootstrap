@@ -110,7 +110,7 @@ asdf plugin-add rust https://github.com/code-lever/asdf-rust.git
 rust_version="1.45.2"
 asdf install rust $rust_version
 asdf global rust $rust_version
-cargo_packages="xsv bat jql choose tokei procs starship zoxide"
+cargo_packages="xsv jql choose tokei procs starship zoxide"
 log "Install $cargo_packages"
 echo "$cargo_packages" | xargs cargo install
 
@@ -155,6 +155,14 @@ delta="git-delta-musl_${delta_version}_amd64"
 delta_deb="$delta.deb"
 wget "https://github.com/dandavison/delta/releases/download/$delta_version/$delta_deb"
 sudo dpkg -i "$delta_deb"
+
+log "Installing bat"
+cd $HOME/src
+bat_version="0.15.4"
+bat="bat_${bat_version}_amd64"
+bat_deb="$delta.deb"
+wget "https://github.com/sharkdp/bat/releases/download/v$bat_version/$bat_deb"
+sudo dpkg -i "$bat_deb"
 
 log "Installing node"
 asdf plugin-add nodejs https://github.com/asdf-vm/asdf-nodejs.git
