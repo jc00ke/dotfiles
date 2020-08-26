@@ -35,7 +35,6 @@ call plug#begin('~/.local/share/nvim/plugged')
   Plug 'sheerun/vim-polyglot'
   let g:polyglot_disabled = ['elm']
   let g:rustfmt_autosave = 1
-  Plug 'vito-c/jq.vim'
 
   " sessions
   Plug 'tpope/vim-obsession'
