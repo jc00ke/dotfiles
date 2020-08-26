@@ -23,6 +23,7 @@ call plug#begin('~/.local/share/nvim/plugged')
   Plug 'neoclide/coc-lists', {'do': 'yarn install --frozen-lockfile'}
   Plug 'neoclide/coc-prettier', {'do': 'yarn install --frozen-lockfile'}
   Plug 'neoclide/coc-solargraph', {'do': 'yarn install --frozen-lockfile'}
+  "Plug 'neoclide/coc-tabnine', {'do': 'yarn install --frozen-lockfile'}
   "Plug 'neoclide/coc-yaml', {'do': 'yarn install --frozen-lockfile'}
 
   " Colors
@@ -96,9 +97,6 @@ call plug#begin('~/.local/share/nvim/plugged')
 
   " Heroku
   Plug 'tpope/vim-heroku'
-
-  " the tab complete thing
-  "Plug 'codota/tabnine-vim'
 
   " Elixir
   Plug 'c-brenn/phoenix.vim', { 'for': 'elixir' }
