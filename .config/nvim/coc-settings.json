@@ -1,5 +1,5 @@
 {
-  "elixir.pathToElixirLS": "~/src/elixir-ls/language_server.sh",
+  "elixir.pathToElixirLS": "~/src/elixir-ls/release/language_server.sh",
   "coc.preferences.colorSupport": true,
   "coc.preferences.formatOnSaveFiletypes": [
     "css",
