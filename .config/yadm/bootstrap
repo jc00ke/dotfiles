@@ -17,7 +17,6 @@ sudo apt install -y \
   curl \
   direnv \
   exuberant-ctags \
-  fd-find \
   fish \
   flameshot \
   git \
@@ -157,7 +156,7 @@ log "Installing bat"
 cd $HOME/src
 bat_version="0.15.4"
 bat="bat_${bat_version}_amd64"
-bat_deb="$delta.deb"
+bat_deb="$bat.deb"
 wget "https://github.com/sharkdp/bat/releases/download/v$bat_version/$bat_deb"
 sudo dpkg -i "$bat_deb"
 
@@ -167,6 +166,14 @@ zoxide_version="0.4.3"
 zoxide="zoxide-x86_64-unknown-linux-musl"
 wget "https://github.com/ajeetdsouza/zoxide/releases/download/v$zoxide_version/$zoxide"
 sudo mv "$zoxide" "/usr/local/bin/zoxide"
+
+log "Installing fd"
+cd $HOME/src
+fd_version="8.1.1"
+fd="fd-musl_${fd_version}_amd64"
+fd_deb="$fd.deb"
+wget "https://github.com/sharkdp/fd/releases/download/v$fd_version/$fd_deb"
+sudo dpkg -i "$fd_deb"
 
 log "Installing node"
 asdf plugin-add nodejs https://github.com/asdf-vm/asdf-nodejs.git
