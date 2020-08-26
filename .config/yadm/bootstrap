@@ -175,6 +175,13 @@ fd_deb="$fd.deb"
 wget "https://github.com/sharkdp/fd/releases/download/v$fd_version/$fd_deb"
 sudo dpkg -i "$fd_deb"
 
+log "Installing tealdeer"
+cd $HOME/src
+tealdeer_version="1.3.0"
+tealdeer="tldr-linux-x86_64-musl"
+wget "https://github.com/dbrgn/tealdeer/releases/download/v$tealdeer_version/tldr-linux-x86_64-musl"
+sudo mv "$tealdeer" "/usr/local/bin/tldr"
+
 log "Installing node"
 asdf plugin-add nodejs https://github.com/asdf-vm/asdf-nodejs.git
 bash ~/.asdf/plugins/nodejs/bin/import-release-team-keyring
