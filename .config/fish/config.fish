@@ -110,3 +110,4 @@ abbr -a yolo "oops"
 eval (direnv hook fish)
 source ~/.asdf/asdf.fish
 starship init fish | source
+zoxide init fish | source
