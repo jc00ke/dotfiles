@@ -24,6 +24,8 @@
 
   d = vimdiff
   serve = daemon --verbose --export-all --base-path=.git --reuseaddr --strict-paths .git/
+
+  pair = duet
 [delta]
     line-numbers = true
     plus-color = "#012800"
