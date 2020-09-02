@@ -58,6 +58,7 @@ sudo apt install -y \
   pspg \
   python3 \
   python3-pip \
+  regolith-look-solarized-dark \
   shellcheck \
   software-properties-common \
   ubuntu-restricted-extras \
