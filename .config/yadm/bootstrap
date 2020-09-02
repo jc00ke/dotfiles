@@ -166,6 +166,7 @@ zoxide_version="0.4.3"
 zoxide="zoxide-x86_64-unknown-linux-musl"
 wget "https://github.com/ajeetdsouza/zoxide/releases/download/v$zoxide_version/$zoxide"
 sudo mv "$zoxide" "/usr/local/bin/zoxide"
+sudo chmod +x "/usr/local/bin/zoxide"
 
 log "Installing fd"
 cd $HOME/src
