@@ -101,8 +101,6 @@ call plug#begin('~/.local/share/nvim/plugged')
   Plug 'c-brenn/phoenix.vim', { 'for': 'elixir' }
   Plug 'tpope/vim-projectionist'
   Plug 'powerman/vim-plugin-AnsiEsc'
-  Plug 'mhinz/vim-mix-format', { 'for': 'elixir' }
-  let g:mix_format_on_save = 1
 
   " Inko
   Plug 'https://gitlab.com/inko-lang/inko.vim.git', { 'for': 'inko' }
