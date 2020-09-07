@@ -7,7 +7,9 @@
     "JavaScript",
     "json",
     "elm",
-    "sh"
+    "sh",
+    "elixir",
+    "sql"
   ],
   "codeLens.enable": true,
   "diagnostic-languageserver.filetypes": {
