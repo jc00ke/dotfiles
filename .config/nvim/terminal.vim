@@ -13,4 +13,5 @@ tnoremap <Esc><Esc> <C-\><C-n>
 nmap <Leader>fs :Term<CR>
 nmap <Leader>fv :VTerm<CR>
 nmap <Leader>ff :TTerm<CR>
+nmap <Leader>fp :TTerm<CR> postgres<CR>
 let g:split_term_default_shell = "fish"
