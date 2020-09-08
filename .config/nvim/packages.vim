@@ -29,11 +29,7 @@ call plug#begin('~/.local/share/nvim/plugged')
   " Colors
   Plug 'ap/vim-css-color'
 
-  " Elm
-  Plug 'andys8/vim-elm-syntax', { 'for': 'elm' }
-
   Plug 'sheerun/vim-polyglot'
-  let g:polyglot_disabled = ['elm']
   let g:rustfmt_autosave = 1
 
   " sessions

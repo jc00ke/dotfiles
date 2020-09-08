@@ -39,7 +39,7 @@
       "command": "elm-language-server",
       "args": ["--stdio"],
       "filetypes": ["elm"],
-      "rootPatterns": ["elm.json"],
+      "rootPatterns": ["elm.json", "assets/elm/elm.json"],
       "initializationOptions": {
         "elmPath": "elm",
         "elmFormatPath": "elm-format",
