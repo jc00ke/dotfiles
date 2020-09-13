@@ -12,6 +12,7 @@ call plug#begin('~/.local/share/nvim/plugged')
   Plug 'amiralies/coc-elixir', {'do': 'yarn install && yarn clean && yarn build'}
   Plug 'fannheyward/coc-markdownlint',  {'do': 'yarn install --frozen-lockfile'}
   Plug 'fannheyward/coc-marketplace', {'do': 'yarn install --frozen-lockfile'}
+  Plug 'fannheyward/coc-rust-analyzer', {'do': 'yarn install --frozen-lockfile'}
   Plug 'fannheyward/coc-sql', {'do': 'yarn install --frozen-lockfile'}
   Plug 'iamcco/coc-diagnostic',  {'do': 'yarn install --frozen-lockfile && yarn run build'}
   Plug 'iamcco/coc-tailwindcss',  {'do': 'yarn install --frozen-lockfile && yarn run build'}
