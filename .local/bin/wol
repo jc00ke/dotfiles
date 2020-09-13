@@ -1,0 +1,38 @@
+#!/bin/bash
+
+jimmie="18-C0-4D-42-2D-EA"
+
+Help=$(
+  cat <<- "HELP"
+
+ wol — wakes up jimmie
+
+ Usage:
+   wol <PC>
+
+ Options:
+   <PC>      j - for jimmie
+   -h        Show this message.
+
+HELP
+)
+
+help() {
+  echo "$Help"
+}
+
+if [[ $# == 0 ]] || [[ "$1" == "-h" ]]; then
+  help
+  exit 1
+fi
+
+case $1 in
+  j)
+    pc="$jimmie"
+    ;;
+  Q | q)
+    break
+    ;;
+esac
+
+hatty --mac $pc
