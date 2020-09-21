@@ -94,7 +94,7 @@ set t_8b=^[[48;2;%lu;%lu;%lum
 set termguicolors
 set t_Co=256
 "set background=light
-colorscheme solarized8_light_low
+colorscheme solarized8_light
 
 " easy vimrc editing
 autocmd bufwritepost init.vim source $MYVIMRC
