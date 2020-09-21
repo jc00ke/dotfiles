@@ -54,6 +54,7 @@ Session.vim
 # scratch files
 scratch.md
 scratch.sql
+scratch.txt
 
 .envrc
 
