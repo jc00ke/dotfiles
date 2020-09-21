@@ -16,7 +16,8 @@
     "markdown": ["write-good", "markdownlint"],
     "sh": "shellcheck -x",
     "elixir": ["mix_credo", "mix_credo_compile"],
-    "eelixir": ["mix_credo", "mix_credo_compile"]
+    "eelixir": ["mix_credo", "mix_credo_compile"],
+    "Dockerfile": "hadolint"
   },
   "diagnostic-languageserver.formatFiletypes": {
     "sh": "shfmt"
