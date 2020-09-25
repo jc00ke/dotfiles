@@ -557,3 +557,11 @@ bindsym $mod+Ctrl+b exec $terminal_path --class Bashtop --start-as normal bashto
 
 ## Modify // Sound Settings // <> s ##
 bindsym $mod+s exec gnome-control-center sound
+
+## Toggle alacritty color scheme
+set $color_dir $HOME/.config/alacritty/themes
+set $light_color solarized_light.yaml
+set $dark_color solarized_dark.yaml
+
+# Toggle between light and dark colorscheme
+bindsym $mod+Shift+m exec alacritty-colorscheme -C $color_dir -t $light_color $dark_color

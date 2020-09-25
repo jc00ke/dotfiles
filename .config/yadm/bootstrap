@@ -123,6 +123,8 @@ sudo update-desktop-database
 mkdir -p $fish_complete_path[1]
 cp extra/completions/alacritty.fish $fish_complete_path[1]/alacritty.fish
 
+pip3 install alacritty-colorscheme
+
 log "Installing ripgrep"
 cd $HOME/src
 ripgrep_version="12.1.1"
