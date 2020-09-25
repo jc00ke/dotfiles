@@ -182,7 +182,7 @@ log "Installing tealdeer"
 cd $HOME/src
 tealdeer_version="1.3.0"
 tealdeer="tldr-linux-x86_64-musl"
-wget "https://github.com/dbrgn/tealdeer/releases/download/v$tealdeer_version/tldr-linux-x86_64-musl"
+wget "https://github.com/dbrgn/tealdeer/releases/download/v$tealdeer_version/$tealdeer"
 sudo mv "$tealdeer" "/usr/local/bin/tldr"
 
 log "Installing node"
