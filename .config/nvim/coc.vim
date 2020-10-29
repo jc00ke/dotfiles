@@ -61,4 +61,11 @@ function! s:show_documentation()
   endif
 endfunction
 
+"let g:coc_snippet_next = '<c-l>'
+"let g:coc_snippet_prev = '<c-h>'
+"inoremap <silent><expr> <c-j> coc#util#has_float() ? coc#util#float_scroll_i( 1) : "\<c-j>"
+"inoremap <silent><expr> <c-k> coc#util#has_float() ? coc#util#float_scroll_i(-1) : "\<c-k>"
+"vnoremap <silent><expr> <c-j> coc#util#has_float() ? coc#util#float_scroll_i( 1) : "\<c-j>"
+"vnoremap <silent><expr> <c-k> coc#util#has_float() ? coc#util#float_scroll_i(-1) : "\<c-k>"
+
 command! -nargs=0 Prettier :CocCommand prettier.formatFile

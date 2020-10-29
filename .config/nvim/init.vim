@@ -42,6 +42,9 @@ set visualbell
 " omnicompletion
 set completeopt-=preview
 
+" preview replace
+set inccommand=nosplit
+
 source $HOME/.config/nvim/packages.vim
 source $HOME/.config/nvim/coc.vim
 source $HOME/.config/nvim/elixir.vim

@@ -12,6 +12,7 @@
     "sql"
   ],
   "codeLens.enable": true,
+  "cfnlint.detectCfnRegExps": [".*cfn.y(a|)ml"],
   "diagnostic-languageserver.filetypes": {
     "markdown": ["write-good", "markdownlint"],
     "sh": "shellcheck -x",
