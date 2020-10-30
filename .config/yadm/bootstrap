@@ -203,8 +203,8 @@ sudo mv "$miniserve" "/usr/local/bin/miniserve"
 log "Installing node"
 asdf plugin-add nodejs https://github.com/asdf-vm/asdf-nodejs.git
 bash ~/.asdf/plugins/nodejs/bin/import-release-team-keyring
-asdf install nodejs 12.16.3
-asdf global nodejs 12.16.3
+asdf install nodejs 15.0.1
+asdf global nodejs 15.0.1
 log "Installing yarn"
 curl -o- -L https://yarnpkg.com/install.sh | bash
 
