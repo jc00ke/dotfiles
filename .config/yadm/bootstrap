@@ -192,6 +192,14 @@ sd="sd-v$sd_version-x86_64-unknown-linux-musl"
 wget "https://github.com/chmln/sd/releases/download/v$sd_version/$sd"
 sudo mv "$sd" "/usr/local/bin/sd"
 
+log "Installing miniserve"
+cd $HOME/src
+miniserve_version="0.10.0"
+miniserve="miniserve-v$miniserve_version-linux-x86_64"
+wget "https://github.com/svenstaro/miniserve/releases/download/v$miniserve_version/$miniserve"
+chmod +x "$miniserve"
+sudo mv "$miniserve" "/usr/local/bin/miniserve"
+
 log "Installing node"
 asdf plugin-add nodejs https://github.com/asdf-vm/asdf-nodejs.git
 bash ~/.asdf/plugins/nodejs/bin/import-release-team-keyring
