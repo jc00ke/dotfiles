@@ -159,11 +159,11 @@ font:
 # If `true`, bold text is drawn using the bright color variants.
 #draw_bold_text_with_bright_colors: false
 colors:
-  # COLORSCHEME: solarized_light.yaml
+  # COLORSCHEME: solarized_dark.yaml
   # Default colors
   primary:
-    background: '0xfdf6e3'
-    foreground: '0x586e75'
+    background: '0x002b36'
+    foreground: '0x839496'
 
   # Normal colors
   cursor:
