@@ -157,7 +157,7 @@ sudo dpkg -i "$delta_deb"
 
 log "Installing bat"
 cd $HOME/src
-bat_version="0.15.4"
+bat_version="0.17.1"
 bat="bat_${bat_version}_amd64"
 bat_deb="$bat.deb"
 wget "https://github.com/sharkdp/bat/releases/download/v$bat_version/$bat_deb"
