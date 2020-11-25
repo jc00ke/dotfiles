@@ -195,7 +195,7 @@ sudo mv "$sd" "/usr/local/bin/sd"
 
 log "Installing miniserve"
 cd $HOME/src
-miniserve_version="0.10.0"
+miniserve_version="0.10.3"
 miniserve="miniserve-v$miniserve_version-linux-x86_64"
 wget "https://github.com/svenstaro/miniserve/releases/download/v$miniserve_version/$miniserve"
 chmod +x "$miniserve"
