@@ -104,7 +104,7 @@ git clone --depth 1 https://github.com/bigH/git-fuzzy.git ~/.git-fuzzy
 
 log "Installing Rust"
 asdf plugin-add rust https://github.com/code-lever/asdf-rust.git
-rust_version="1.46.0"
+rust_version="1.48.0"
 asdf install rust $rust_version
 asdf global rust $rust_version
 
