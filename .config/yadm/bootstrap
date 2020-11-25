@@ -149,7 +149,7 @@ sudo mv "$exa" "/usr/local/bin/exa"
 
 log "Installing delta"
 cd $HOME/src
-delta_version="0.4.1"
+delta_version="0.4.4"
 delta="git-delta-musl_${delta_version}_amd64"
 delta_deb="$delta.deb"
 wget "https://github.com/dandavison/delta/releases/download/$delta_version/$delta_deb"
