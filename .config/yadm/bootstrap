@@ -24,6 +24,7 @@ sudo apt install -y \
   git-gui \
   git-svn \
   gitg \
+  gnome-calculator \
   gnome-clocks \
   htop \
   hub \
