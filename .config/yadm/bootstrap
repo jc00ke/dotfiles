@@ -110,9 +110,10 @@ asdf global rust $rust_version
 
 log "Installing alacritty"
 cd $HOME/src
-wget https://github.com/alacritty/alacritty/archive/v0.5.0.tar.gz
-tar xf v0.5.0.tar.gz
-cd alacritty-0.5.0/
+alacritty_version="0.6.0"
+wget "https://github.com/alacritty/alacritty/archive/v$alacritty_version.tar.gz"
+tar xf "v$alacritty_version.tar.gz"
+cd "alacritty-$alacritty_version/"
 cargo build --release
 sudo cp target/release/alacritty /usr/local/bin
 sudo mkdir -p /usr/local/share/man/man1
