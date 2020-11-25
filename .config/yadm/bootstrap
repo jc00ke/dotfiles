@@ -181,7 +181,7 @@ sudo dpkg -i "$fd_deb"
 
 log "Installing tealdeer"
 cd $HOME/src
-tealdeer_version="1.3.0"
+tealdeer_version="1.4.1"
 tealdeer="tldr-linux-x86_64-musl"
 wget "https://github.com/dbrgn/tealdeer/releases/download/v$tealdeer_version/$tealdeer"
 sudo mv "$tealdeer" "/usr/local/bin/tldr"
