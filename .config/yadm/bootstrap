@@ -27,7 +27,6 @@ sudo apt install -y \
   gnome-calculator \
   gnome-clocks \
   htop \
-  hub \
   i3xrocks-battery \
   i3xrocks-cpu-usage \
   i3xrocks-key-indicator \
