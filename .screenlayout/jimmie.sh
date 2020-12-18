@@ -1,6 +1,6 @@
 #!/bin/sh
 xrandr \
-  --output DisplayPort-0 --mode 3840x2160 --pos 0x0 --rotate left \
-  --output DisplayPort-1 --off \
+  --output DisplayPort-0 --primary --mode 3840x2160 --pos 0x840 --rotate normal \
+  --output DisplayPort-1 --mode 3840x2160 --pos 3840x0 --rotate left \
   --output DisplayPort-2 --off \
-  --output DisplayPort-3 --mode 3840x2160 --pos 2160x330 --rotate normal --primary
+  --output DisplayPort-3 --off
