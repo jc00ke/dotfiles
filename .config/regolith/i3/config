@@ -567,3 +567,6 @@ set $dark_color solarized_dark.yaml
 
 # Toggle between light and dark colorscheme
 bindsym $mod+Shift+m exec alacritty-colorscheme -C $color_dir -t $light_color $dark_color
+
+workspace 1 output primary
+workspace 2 output primary
