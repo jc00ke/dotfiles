@@ -548,6 +548,8 @@ for_window [class="Bashtop"] floating enable
 for_window [class="Tandem"] floating enable
 for_window [class="Org.gnome.clocks"] floating enable
 for_window [class="1Password"] floating enable
+for_window [class="NoiseTorch"] floating enable
+for_window [class="Solaar"] floating enable
 
 # Open Keybase
 bindsym $mod+Ctrl+k exec "run_keybase %u"
