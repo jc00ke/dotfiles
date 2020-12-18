@@ -22,7 +22,7 @@ set splitright
 set splitbelow
 "
 " folds
-set foldmethod=indent
+set foldmethod=syntax
 set foldcolumn=0
 set foldnestmax=8
 set foldlevel=3
