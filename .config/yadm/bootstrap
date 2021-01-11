@@ -110,7 +110,7 @@ asdf global rust $rust_version
 
 log "Installing alacritty"
 cd $HOME/src
-alacritty_version="0.6.0"
+export alacritty_version="0.7.1"
 wget "https://github.com/alacritty/alacritty/archive/v$alacritty_version.tar.gz"
 tar xf "v$alacritty_version.tar.gz"
 cd "alacritty-$alacritty_version/"
