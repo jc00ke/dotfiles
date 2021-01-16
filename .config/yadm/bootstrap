@@ -209,6 +209,14 @@ wget "https://github.com/ClementTsang/bottom/releases/download/$bottom_version/$
 tar xf "$bottom.tar.gz"
 sudo mv "btm" "/usr/local/bin/btm"
 
+log "Installing gping"
+cd $HOME/src
+gping_version="v1.2.0-post"
+gping="gping-x86_64-unknown-linux-musl.tar.gz"
+wget "https://github.com/orf/gping/releases/download/$gping_version/$gping"
+tar xf "$gping"
+sudo mv "gping" "/usr/local/bin/gping"
+
 log "Installing node"
 asdf plugin-add nodejs https://github.com/asdf-vm/asdf-nodejs.git
 bash ~/.asdf/plugins/nodejs/bin/import-release-team-keyring
