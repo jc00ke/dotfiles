@@ -217,6 +217,14 @@ wget "https://github.com/orf/gping/releases/download/$gping_version/$gping"
 tar xf "$gping"
 sudo mv "gping" "/usr/local/bin/gping"
 
+log "Installing duf"
+cd $HOME/src
+duf_version="0.5.0"
+duf="duf_${duf_version}_linux_amd64"
+duf_deb="$duf.deb"
+wget "https://github.com/muesli/duf/releases/download/v$duf_version/$duf_deb"
+sudo dpkg -i "$duf_deb"
+
 log "Installing node"
 asdf plugin-add nodejs https://github.com/asdf-vm/asdf-nodejs.git
 bash ~/.asdf/plugins/nodejs/bin/import-release-team-keyring
