@@ -286,8 +286,3 @@ sudo apt-key adv --keyserver keyserver.ubuntu.com --recv-key C99B11DEB97541F0
 sudo apt-add-repository https://cli.github.com/packages
 sudo apt update
 sudo apt install gh
-
-log "Set up Apple HID file for keyboard"
-echo "options hid_apple swap_fn_leftctrl=1
-options hid_apple swap_opt_cmd=1" | sudo tee /etc/modprobe.d/hid_apple.conf
-sudo update-initramfs -u
