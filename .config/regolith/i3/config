@@ -667,12 +667,6 @@ for_window [class="1Password"] floating enable
 for_window [class="NoiseTorch"] floating enable
 for_window [class="Solaar"] floating enable
 
-# Open Keybase
-bindsym $mod+Ctrl+k exec "run_keybase %u"
-
-# Open bashtop
-bindsym $mod+Ctrl+b exec $terminal_path --class Bashtop --start-as normal bashtop
-
 ## Modify // Sound Settings // <> s ##
 bindsym $mod+s exec gnome-control-center sound
 
