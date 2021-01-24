@@ -230,10 +230,14 @@ bindsym $mod+Shift+Up move up
 bindsym $mod+Shift+Right move right
 
 ## Modify // Window Position // <><Shift> k j h l ##
-bindsym $mod+Shift+h move left
-bindsym $mod+Shift+j move down
-bindsym $mod+Shift+k move up
-bindsym $mod+Shift+l move right
+set_from_resource $i3-wm.binding.move_left i3-wm.binding.move_left Shift+h
+set_from_resource $i3-wm.binding.move_right i3-wm.binding.move_right Shift+l
+set_from_resource $i3-wm.binding.move_up i3-wm.binding.move_up Shift+k
+set_from_resource $i3-wm.binding.move_down i3-wm.binding.move_down Shift+j
+bindsym $mod+$i3-wm.binding.move_left move left
+bindsym $mod+$i3-wm.binding.move_down move down
+bindsym $mod+$i3-wm.binding.move_up move up
+bindsym $mod+$i3-wm.binding.move_right move right
 
 ## Modify // Containing Workspace // <><Ctrl><Shift> ↑ ↓ ← → ##
 bindsym $mod+Ctrl+Shift+Left move workspace to output left
@@ -668,9 +672,6 @@ exec --no-startup-id $i3-wm.program.3
 bindsym $mod+Ctrl+Shift+Return exec "firefox -P Music -no-remote"
 bindsym $mod+Ctrl+Shift+g exec "firefox -P Geometer -no-remote"
 bindsym $mod+Shift+Print exec flameshot gui
-
-bindsym $mod+Shift+minus move scratchpad
-bindsym $mod+Shift+plus scratchpad show
 
 # xprop helps here
 for_window [title="Authy" window_role="app"] floating enable
