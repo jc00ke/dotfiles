@@ -91,7 +91,7 @@ set_from_resource $ws10_key i3-wm.workspace.10.key 0
 
 ## Launch // Terminal // <> Enter ##
 set_from_resource $i3-wm.binding.terminal i3-wm.binding.terminal Return
-bindsym $mod+$i3-wm.binding.terminal exec /usr/local/bin/alacritty
+bindsym $mod+$i3-wm.binding.terminal exec /usr/bin/x-terminal-emulator
 
 ## Launch // Browser // <><Shift> Enter ##
 set_from_resource $i3-wm.binding.browser i3-wm.binding.browser Shift+Return
