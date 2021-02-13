@@ -112,4 +112,8 @@ call plug#begin('~/.local/share/nvim/plugged')
   Plug 'kburdett/vim-nuuid'
 
   Plug 'direnv/direnv.vim'
+
+  Plug 'kristijanhusak/vim-carbon-now-sh'
+  vnoremap <F5> :CarbonNowSh<CR>
+  let g:carbon_now_sh_options = 'bg=rgba%2838%2C139%2C210%2C1%29&ln=true&t=solarized+light&fm=Source+Code+Pro'
 call plug#end()
