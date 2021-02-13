@@ -652,6 +652,8 @@ exec --no-startup-id $i3-wm.program.3
 bindsym $mod+Ctrl+Shift+Return exec "firefox -P Music -no-remote"
 bindsym $mod+Ctrl+Shift+g exec "firefox -P Geometer -no-remote"
 bindsym $mod+Shift+Print exec flameshot gui
+bindsym $mod+e exec emoji-picker
+bindsym $mod+Ctrl+e exec emoji-picker | xclip -selection clipboard
 
 # xprop helps here
 for_window [title="Authy" window_role="app"] floating enable
@@ -666,6 +668,7 @@ for_window [class="Org.gnome.clocks"] floating enable
 for_window [class="1Password"] floating enable
 for_window [class="NoiseTorch"] floating enable
 for_window [class="Solaar"] floating enable
+for_window [class="Emoji-picker"] floating enable
 
 ## Modify // Sound Settings // <> s ##
 bindsym $mod+s exec gnome-control-center sound
