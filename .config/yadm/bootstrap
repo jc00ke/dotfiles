@@ -7,11 +7,7 @@ function log() {
   echo "********************************************"
   echo ""
 }
-sudo apt-add-repository ppa:zanchey/asciinema
-sudo apt-get update
-
 sudo apt install -y \
-  asciinema \
   autoconf \
   autopoint \
   bison \
@@ -131,7 +127,7 @@ sudo update-alternatives --config x-terminal-emulator
 # to remove
 # sudo update-alternatives --remove "x-terminal-emulator" "/usr/local/bin/alacritty"
 
-pip3 install alacritty-colorscheme
+pip3 install alacritty-colorscheme asciinema
 
 log "Installing ripgrep"
 cd $HOME/src
