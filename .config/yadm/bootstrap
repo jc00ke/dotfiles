@@ -40,6 +40,7 @@ sudo apt install -y \
   libfreetype6-dev \
   libfontconfig1-dev \
   libgdbm-dev \
+  libgtk-3-dev \
   libncurses5-dev \
   libreadline-dev \
   libssl-dev \
@@ -282,3 +283,10 @@ sudo apt-key adv --keyserver keyserver.ubuntu.com --recv-key C99B11DEB97541F0
 sudo apt-add-repository https://cli.github.com/packages
 sudo apt update
 sudo apt install gh
+
+log "Installing emoji-picker"
+cd $HOME/src
+gh repo clone jmackie/emoji-picker
+cd emoji-picker
+cargo build --release
+mv target/release/emoji-picker ~/.local/bin/
