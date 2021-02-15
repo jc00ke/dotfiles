@@ -73,7 +73,6 @@ abbr -a conflicts "git ls-files --unmerged | cut -f2 | uniq"
 abbr -a dc "docker-compose"
 abbr -a e nvim
 abbr -a es "nvim -S"
-abbr -a fd "fdfind"
 abbr -a free "free -m"
 abbr -a ga "git add"
 abbr -a gap "git add -p"
