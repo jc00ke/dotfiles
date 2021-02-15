@@ -75,8 +75,6 @@ call plug#begin('~/.local/share/nvim/plugged')
 
   " search
   Plug 'liuchengxu/vim-clap', { 'do': ':Clap install-binary!' }
-  Plug 'jremmen/vim-ripgrep'
-  "let g:clap_theme = 'solarized_light'
   Plug 'haya14busa/is.vim'
 
   " color themes & usability
