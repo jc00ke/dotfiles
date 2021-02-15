@@ -290,3 +290,7 @@ gh repo clone jmackie/emoji-picker
 cd emoji-picker
 cargo build --release
 mv target/release/emoji-picker ~/.local/bin/
+
+log "Installing Python deps for Neovim"
+echo "See: https://github.com/liuchengxu/vim-clap/issues/556#issuecomment-712867766"
+pip install neovim pyx
