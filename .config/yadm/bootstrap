@@ -51,7 +51,6 @@ sudo apt install -y \
   parallel \
   peek \
   pkg-config \
-  pspg \
   python3 \
   python3-pip \
   regolith-look-solarized-dark \
@@ -113,6 +112,7 @@ source "$DIR/_exa.sh"
 source "$DIR/_fd.sh"
 source "$DIR/_gping.sh"
 source "$DIR/_miniserve.sh"
+source "$DIR/_pspg.sh"
 source "$DIR/_ripgrep.sh"
 source "$DIR/_sd.sh"
 source "$DIR/_starship.sh"
