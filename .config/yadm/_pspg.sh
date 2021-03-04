@@ -17,6 +17,7 @@ if [ "$latest_version" != "$installed_version" ]; then
   cd "$HOME/src" || exit 1
   wget "https://github.com/okbob/pspg/archive/$pspg_version.tar.gz"
   tar xf "$pspg_version.tar.gz"
+  cd "pspg-$pspg_version"
   ./configure
   make && sudo make install
 else
