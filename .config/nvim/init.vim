@@ -55,6 +55,7 @@ source $HOME/.config/nvim/ignores.vim
 source $HOME/.config/nvim/testing.vim
 source $HOME/.config/nvim/clap.vim
 source $HOME/.config/nvim/git.vim
+source $HOME/.config/nvim/telescope.vim
 source $HOME/.config/nvim/terminal.vim
 
 let g:indent_guides_auto_colors=0

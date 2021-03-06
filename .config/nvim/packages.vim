@@ -77,6 +77,11 @@ call plug#begin('~/.local/share/nvim/plugged')
   Plug 'liuchengxu/vim-clap', { 'do': ':Clap install-binary!' }
   Plug 'haya14busa/is.vim'
 
+  " nvim 0.5+
+  Plug 'nvim-lua/popup.nvim'
+  Plug 'nvim-lua/plenary.nvim'
+  Plug 'nvim-telescope/telescope.nvim'
+
   " color themes & usability
   Plug 'flazz/vim-colorschemes'
   Plug 'Yggdroot/indentLine'
