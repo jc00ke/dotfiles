@@ -1,3 +1,12 @@
+lua << EOF
+local actions = require('telescope.actions')
+require('telescope').setup{
+  defaults = {
+    prompt_position = "top",
+    sorting_strategy = "ascending"
+  }
+}
+EOF
 " Find files using Telescope command-line sugar.
 nnoremap <C-p> <cmd>Telescope find_files<cr>
 nnoremap <C-_> <cmd>Telescope current_buffer_fuzzy_find<cr>
