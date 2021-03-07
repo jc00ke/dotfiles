@@ -75,7 +75,6 @@ call plug#begin('~/.local/share/nvim/plugged')
   let g:test#runner_commands = ['ExUnit', 'ElmTest']
 
   " search
-  Plug 'liuchengxu/vim-clap', { 'do': ':Clap install-binary!' }
   Plug 'haya14busa/is.vim'
 
   " nvim 0.5+

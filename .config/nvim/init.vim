@@ -53,7 +53,6 @@ source $HOME/.config/nvim/json.vim
 source $HOME/.config/nvim/elm.vim
 source $HOME/.config/nvim/ignores.vim
 source $HOME/.config/nvim/testing.vim
-source $HOME/.config/nvim/clap.vim
 source $HOME/.config/nvim/git.vim
 source $HOME/.config/nvim/telescope.vim
 source $HOME/.config/nvim/terminal.vim
