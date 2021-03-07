@@ -56,6 +56,7 @@ call plug#begin('~/.local/share/nvim/plugged')
 
   " Start interactive EasyAlign for a motion/text object (e.g. gaip)
   nmap ga <Plug>(EasyAlign)
+  Plug 'phaazon/hop.nvim'
 
   " Markdown
   Plug 'iamcco/markdown-preview.nvim', { 'do': 'cd app & yarn install'  }
