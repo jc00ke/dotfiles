@@ -79,6 +79,7 @@ call plug#begin('~/.local/share/nvim/plugged')
   Plug 'haya14busa/is.vim'
 
   " nvim 0.5+
+  Plug 'kyazdani42/nvim-web-devicons'
   Plug 'nvim-lua/popup.nvim'
   Plug 'nvim-lua/plenary.nvim'
   Plug 'nvim-telescope/telescope.nvim'
