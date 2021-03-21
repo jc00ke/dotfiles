@@ -7,3 +7,4 @@ ruby 2.7.1
 elm 0.19.1
 golang 1.15.2
 python 3.9.1
+lua 5.4.2
