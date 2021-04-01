@@ -157,6 +157,26 @@ echo ""
 echo "then run:"
 echo "sudo systemctl enable resume-r8152.service"
 
+log "Consider installing wol service for network adapter."
+echo "https://www.techrepublic.com/article/how-to-enable-wake-on-lan-in-ubuntu-server-18-04/"
+echo "In /etc/systemd/system/wol.service add the following:"
+
+echo "[Unit]
+Description=Configure Wake On LAN
+
+[Service]
+Type=oneshot
+ExecStart=/sbin/ethtool -s enp39s0 wol g
+
+[Install]
+WantedBy=basic.target"
+
+echo ""
+echo "then run:"
+echo "sudo systemctl daemon-reload"
+echo "sudo systemctl enable wol.service"
+echo "sudo systemctl start wol.service"
+
 log "Installing 1Password"
 sudo apt-key \
   --keyring /usr/share/keyrings/1password.gpg \
