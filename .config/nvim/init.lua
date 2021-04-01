@@ -13,6 +13,7 @@ local indent = 2
     * https://alpha2phi.medium.com/neovim-init-lua-e80f4f136030
     * https://github.com/mjlbach/nix-dotfiles/blob/master/nixpkgs/configs/neovim/init.lua
     * https://github.com/akinsho/nvim-toggleterm.lua
+    * https://github.com/icyphox/dotfiles/tree/master/config/nvim
 
 --]]
 
@@ -142,12 +143,30 @@ vim.cmd 'packadd paq-nvim'            -- Load package
 local paq = require('paq-nvim').paq   -- Import module and bind `paq` function
 paq{'savq/paq-nvim', opt=true}        -- Let Paq manage itself
 paq 'tpope/vim-sensible'
---paq 'ap/vim-css-color'
 paq 'tpope/vim-obsession'
 paq 'scrooloose/nerdcommenter'
-paq 'scrooloose/nerdtree'
-map('', '<Leader>n', ':NERDTreeToggle<CR>')
-g["NERDTreeIgnore"] = {'\\~$', 'tfstate$', 'tfstate\\.backup$'}
+--paq 'scrooloose/nerdtree'
+--map('', '<Leader>n', ':NERDTreeToggle<CR>')
+--g["NERDTreeIgnore"] = {'\\~$', 'tfstate$', 'tfstate\\.backup$'}
+paq 'kyazdani42/nvim-tree.lua'
+map('n', '<leader>n', ':NvimTreeToggle<CR>')
+map('n', '<leader>r', ':NvimTreeRefresh<CR>')
+map('n', '<C-n>', ':NvimTreeFindFile<CR>')
+g["nvim_tree_ignore"] = {
+  '\\~$',
+  'tfstate$',
+  'tfstate\\.backup$',
+  '.git',
+  'node_modules',
+  '.cache',
+  '.direnv',
+  '.elixir_ls',
+  '_build',
+  'cover'
+}
+--g["nvim_tree_show_icons"] = {
+  --'git'
+--}
 
 --[[
 --TERMINAL
@@ -160,13 +179,57 @@ g["terminal_scrollback_buffer_size"] = 100000
 g["split_term_default_shell"] = "fish"
 
 -- map esc to exit to normal mode in terminal too
-create_augroup({
+--[[create_augroup({
     { 'TermOpen', '*', 'tnoremap', '<buffer>', '<Esc>', '<c-\\><c-n>' },
     { 'TermOpen', '*', 'set', 'nonu' },
 }, 'Terminal')
+--]]
 
 -- Jump and Create splits easily
 map('n', '<Leader>fs', ':Term<CR>')
 map('n', '<Leader>fv', ':VTerm<CR>')
 map('n', '<Leader>ff', ':TTerm<CR>')
 map('n', '<Leader>fp', ':TTerm<CR> postgres<CR>')
+
+paq 'sheerun/vim-polyglot'
+g["rustfmt_autosave"] = 1
+
+-- sessions
+paq 'tpope/vim-obsession'
+
+-- git
+paq 'tpope/vim-fugitive'
+paq 'junegunn/gv.vim'
+paq 'tpope/vim-rhubarb'
+paq 'idanarye/vim-merginal'
+paq 'mhinz/vim-signify'
+g.updatetime = 100
+
+paq 'scrooloose/nerdcommenter'
+
+paq 'phaazon/hop.nvim'
+map('n', '<leader>h', ':HopWord<CR>')
+
+paq{'iamcco/markdown-preview.nvim', run='cd app & yarn install'}
+
+-- Unix
+paq 'tpope/vim-eunuch'
+paq 'tpope/vim-dotenv'
+paq 'direnv/direnv.vim'
+
+-- Ruby
+paq 'tpope/vim-rails' --, { 'for': 'ruby' }
+paq 'tpope/vim-rake' --, { 'for': 'ruby' }
+
+-- Testing
+paq 'vim-test/vim-test'
+-- https://github.com/vim-test/vim-test#cli-options
+g["test#runner_commands"] = {'ExUnit', 'ElmTest'}
+
+-- search
+paq 'haya14busa/is.vim'
+
+-- colors
+-- may be replaced by treesitter
+paq 'norcalli/nvim-colorizer.lua'
+require('colorizer').setup()
