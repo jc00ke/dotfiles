@@ -43,6 +43,7 @@ call plug#begin('~/.local/share/nvim/plugged')
   Plug 'tpope/vim-rhubarb'
   Plug 'idanarye/vim-merginal'
   Plug 'mhinz/vim-signify'
+  Plug 'TimUntersberger/neogit'
   set updatetime=100
 
   " text editing
