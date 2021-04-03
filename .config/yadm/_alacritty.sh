@@ -29,7 +29,7 @@ if [ "$latest_version" != "v$installed_version" ]; then
   # to remove
   # sudo update-alternatives --remove "x-terminal-emulator" "/usr/local/bin/alacritty"
 
-  pip3 install alacritty-colorscheme asciinema
+  pip3 install alacritty-colorscheme
 else
   echo "Already on latest: $alacritty_version"
 fi
