@@ -69,7 +69,6 @@ g.visualbell = true
 -- preview replace
 g.inccommand = "nosplit"
 
-cmd 'colorscheme desert'                              -- Put your favorite colorscheme here
 vim.bo.formatoptions = vim.bo.formatoptions .. ',w'   -- Tack on 'w' to format options
 cmd 'retab'                                           -- Replaces all sequences of white-space containing a <Tab> with spaces
 opt('b', 'expandtab', true)                           -- Use spaces instead of tabs
@@ -144,10 +143,6 @@ local paq = require('paq-nvim').paq   -- Import module and bind `paq` function
 paq{'savq/paq-nvim', opt=true}        -- Let Paq manage itself
 paq 'tpope/vim-sensible'
 paq 'tpope/vim-obsession'
-paq 'scrooloose/nerdcommenter'
---paq 'scrooloose/nerdtree'
---map('', '<Leader>n', ':NERDTreeToggle<CR>')
---g["NERDTreeIgnore"] = {'\\~$', 'tfstate$', 'tfstate\\.backup$'}
 paq 'kyazdani42/nvim-tree.lua'
 map('n', '<leader>n', ':NvimTreeToggle<CR>')
 map('n', '<leader>r', ':NvimTreeRefresh<CR>')
@@ -204,8 +199,12 @@ paq 'tpope/vim-rhubarb'
 paq 'idanarye/vim-merginal'
 paq 'mhinz/vim-signify'
 g.updatetime = 100
+paq 'TimUntersberger/neogit'
 
-paq 'scrooloose/nerdcommenter'
+paq 'b3nj5m1n/kommentary'
+map("n", "<leader>cc", "<Plug>kommentary_line_default", {})
+map("n", "<leader>c", "<Plug>kommentary_motion_default", {})
+map("v", "<leader>c", "<Plug>kommentary_visual_default", {})
 
 paq 'phaazon/hop.nvim'
 map('n', '<leader>h', ':HopWord<CR>')
@@ -233,3 +232,26 @@ paq 'haya14busa/is.vim'
 -- may be replaced by treesitter
 paq 'norcalli/nvim-colorizer.lua'
 require('colorizer').setup()
+
+-- themes
+paq 'tjdevries/colorbuddy.vim'
+paq 'Th3Whit3Wolf/onebuddy'
+require('colorbuddy').colorscheme('onebuddy')
+
+-- statusline
+paq 'hoob3rt/lualine.nvim'
+require('lualine').setup({ options = { theme = 'onedark' } })
+
+paq 'junegunn/vim-easy-align'
+-- Start interactive EasyAlign in visual mode (e.g. vipga)
+map('x', 'ga', '<Plug>(EasyAlign)')
+-- Start interactive EasyAlign for a motion/text object (e.g. gaip)
+map('n', 'ga', '<Plug>(EasyAlign)')
+
+paq 'kyazdani42/nvim-web-devicons'
+paq 'nvim-lua/popup.nvim'
+paq 'nvim-lua/plenary.nvim'
+paq 'nvim-telescope/telescope.nvim'
+
+-- JSON
+paq 'gennaro-tedesco/nvim-jqx'
