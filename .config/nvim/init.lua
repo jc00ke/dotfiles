@@ -189,6 +189,9 @@ map('n', '<Leader>fp', ':TTerm<CR> postgres<CR>')
 paq 'sheerun/vim-polyglot'
 g["rustfmt_autosave"] = 1
 
+-- utils
+paq 'nvim-lua/plenary.nvim'
+
 -- sessions
 paq 'tpope/vim-obsession'
 
@@ -250,7 +253,6 @@ map('n', 'ga', '<Plug>(EasyAlign)')
 
 paq 'kyazdani42/nvim-web-devicons'
 paq 'nvim-lua/popup.nvim'
-paq 'nvim-lua/plenary.nvim'
 paq 'nvim-telescope/telescope.nvim'
 
 -- JSON
