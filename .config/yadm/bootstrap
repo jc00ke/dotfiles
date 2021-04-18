@@ -45,7 +45,6 @@ sudo apt install -y \
   libxml2-dev \
   libxslt1-dev \
   libyaml-dev \
-  neovim \
   openconnect \
   openvpn \
   parallel \
@@ -130,8 +129,10 @@ curl -o- -L https://yarnpkg.com/install.sh | bash
 asdf reshim
 
 if command -v nvim > /dev/null 2>&1; then
+  asdf plugin add neovim
+  asdf install neovim stable
   log "Bootstraping Neovim"
-  nvim '+PlugUpdate' '+PlugClean!' '+PlugUpdate' '+qall'
+  nvim '+PaqInstall' '+PaqClean' '+PaqUpdate' '+qall'
 fi
 
 log "Consider installing resume service for network adapter."
