@@ -10,7 +10,6 @@ sudo apt install -y \
   build-essential \
   cmake \
   curl \
-  direnv \
   exuberant-ctags \
   fish \
   flameshot \

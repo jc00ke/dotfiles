@@ -57,6 +57,7 @@ scratch.sql
 scratch.txt
 
 .envrc
+.envrc.private
 
 # Elixir #
 ##########
