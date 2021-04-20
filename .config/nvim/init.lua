@@ -257,6 +257,17 @@ map('n', 'ga', '<Plug>(EasyAlign)')
 paq 'kyazdani42/nvim-web-devicons'
 paq 'nvim-lua/popup.nvim'
 paq 'nvim-telescope/telescope.nvim'
+local actions = require('telescope.actions')
+require('telescope').setup{
+  defaults = {
+    prompt_position = "top",
+    sorting_strategy = "ascending"
+  }
+}
+map('n', '<C-p>', [[<Cmd>lua require('telescope.builtin').find_files()<CR>  ]], { noremap = true, silent = true })
+map('n', '<C-_>', [[<Cmd>lua require('telescope.builtin').current_buffer_fuzzy_find()<CR>  ]], { noremap = true, silent = true })
+map('n', '<Leader>a', [[<Cmd>lua require('telescope.builtin').live_grep()<CR>  ]], { noremap = true, silent = true })
+map('n', '<Leader>A', [[<Cmd>lua require('telescope.builtin').grep_string()<CR>  ]], { noremap = true, silent = true })
 
 -- JSON
 paq 'gennaro-tedesco/nvim-jqx'
