@@ -15,6 +15,22 @@ local indent = 2
     * https://github.com/akinsho/nvim-toggleterm.lua
     * https://github.com/icyphox/dotfiles/tree/master/config/nvim
 
+    ╭─────────────────────────────────────────────────────────────────────────────────────────────────╮
+    │String value │  Help page   │  Affected modes                           │  Vimscript equivalent  │
+    │─────────────────────────────────────────────────────────────────────────────────────────────────│
+    │''           │  mapmode-nvo │  Normal, Visual, Select, Operator-pending │  :map                  │
+    │'n'          │  mapmode-n   │  Normal                                   │  :nmap                 │
+    │'v'          │  mapmode-v   │  Visual and Select                        │  :vmap                 │
+    │'s'          │  mapmode-s   │  Select                                   │  :smap                 │
+    │'x'          │  mapmode-x   │  Visual                                   │  :xmap                 │
+    │'o'          │  mapmode-o   │  Operator-pending                         │  :omap                 │
+    │'!'          │  mapmode-ic  │  Insert and Command-line                  │  :map!                 │
+    │'i'          │  mapmode-i   │  Insert                                   │  :imap                 │
+    │'l'          │  mapmode-l   │  Insert, Command-line, Lang-Arg           │  :lmap                 │
+    │'c'          │  mapmode-c   │  Command-line                             │  :cmap                 │
+    │'t'          │  mapmode-t   │  Terminal                                 │  :tmap                 │
+    ╰─────────────────────────────────────────────────────────────────────────────────────────────────╯
+
 --]]
 
 local function opt(scope, key, value)
