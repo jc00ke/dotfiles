@@ -241,8 +241,8 @@ paq 'tjdevries/colorbuddy.vim'
 paq 'marko-cerovac/material.nvim'
 require('colorbuddy').colorscheme('material')
 require('material').change_style('oceanic')
-map('n', '<C-L>', [[<Cmd>lua require('material').change_style('lighter')<CR>]], { noremap = true, silent = true })
-map('n', '<C-D>', [[<Cmd>lua require('material').change_style('oceanic')<CR>]], { noremap = true, silent = true })
+map('n', '<leader>L', [[<Cmd>lua require('material').change_style('lighter')<CR>]], { noremap = true, silent = true })
+map('n', '<leader>D', [[<Cmd>lua require('material').change_style('oceanic')<CR>]], { noremap = true, silent = true })
 
 -- statusline
 paq 'hoob3rt/lualine.nvim'
