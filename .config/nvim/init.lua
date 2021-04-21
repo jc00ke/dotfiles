@@ -269,5 +269,41 @@ map('n', '<C-_>', [[<Cmd>lua require('telescope.builtin').current_buffer_fuzzy_f
 map('n', '<Leader>a', [[<Cmd>lua require('telescope.builtin').live_grep()<CR>  ]], { noremap = true, silent = true })
 map('n', '<Leader>A', [[<Cmd>lua require('telescope.builtin').grep_string()<CR>  ]], { noremap = true, silent = true })
 
+-- map('n', '<leader>tff', <cmd>lua require('telescope.builtin').find_files()<cr>
+-- map('n', '<leader>tfg', <cmd>lua require('telescope.builtin').live_grep()<cr>
+-- map('n', '<leader>tfb', <cmd>lua require('telescope.builtin').buffers()<cr>
+-- map('n', '<leader>tfh', <cmd>lua require('telescope.builtin').help_tags()<cr>
+
 -- JSON
 paq 'gennaro-tedesco/nvim-jqx'
+
+-- LSP
+paq 'neovim/nvim-lspconfig'
+paq 'kabouzeid/nvim-lspinstall'
+require'lspinstall'.setup() -- important
+
+local servers = require('lspinstall').installed_servers()
+for _, server in pairs(servers) do
+  require'lspconfig'[server].setup{}
+end
+
+local function setup_servers()
+  require'lspinstall'.setup()
+  local servers = require'lspinstall'.installed_servers()
+  for _, server in pairs(servers) do
+    require('lspconfig')[server].setup{}
+  end
+end
+
+setup_servers()
+
+-- Automatically reload after `:LspInstall <server>` so we don't have to restart neovim
+require'lspinstall'.post_install_hook = function ()
+  setup_servers() -- reload installed servers
+  vim.cmd("bufdo e") -- this triggers the FileType autocmd that starts the server
+end
+
+require'lspconfig'.elixirls.setup{
+    -- Unix
+    cmd = { "/home/jesse/src/elixir-ls/release/language_server.sh" };
+}
