@@ -97,6 +97,7 @@ g.visualbell = true
 -- preview replace
 g.inccommand = "nosplit"
 
+vim.o.shortmess = vim.o.shortmess .. 'c'   -- Avoid showing message extra message when using completion
 vim.bo.formatoptions = vim.bo.formatoptions .. ',w'   -- Tack on 'w' to format options
 cmd 'retab'                                           -- Replaces all sequences of white-space containing a <Tab> with spaces
 opt('b', 'expandtab', true)                           -- Use spaces instead of tabs
