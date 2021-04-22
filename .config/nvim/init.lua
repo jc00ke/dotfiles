@@ -5,32 +5,31 @@ local scopes = {o = vim.o, b = vim.bo, w = vim.wo}
 local indent = 2
 
 --[[
-    Resources
+  Resources
 
-    * https://icyphox.sh/blog/nvim-lua/
-    * https://oroques.dev/notes/neovim-init/
-    * https://github.com/nanotee/nvim-lua-guide
-    * https://alpha2phi.medium.com/neovim-init-lua-e80f4f136030
-    * https://github.com/mjlbach/nix-dotfiles/blob/master/nixpkgs/configs/neovim/init.lua
-    * https://github.com/akinsho/nvim-toggleterm.lua
-    * https://github.com/icyphox/dotfiles/tree/master/config/nvim
+  * https://icyphox.sh/blog/nvim-lua/
+  * https://oroques.dev/notes/neovim-init/
+  * https://github.com/nanotee/nvim-lua-guide
+  * https://alpha2phi.medium.com/neovim-init-lua-e80f4f136030
+  * https://github.com/mjlbach/nix-dotfiles/blob/master/nixpkgs/configs/neovim/init.lua
+  * https://github.com/akinsho/nvim-toggleterm.lua
+  * https://github.com/icyphox/dotfiles/tree/master/config/nvim
 
-    ╭─────────────────────────────────────────────────────────────────────────────────────────────────╮
-    │String value │  Help page   │  Affected modes                           │  Vimscript equivalent  │
-    │─────────────────────────────────────────────────────────────────────────────────────────────────│
-    │''           │  mapmode-nvo │  Normal, Visual, Select, Operator-pending │  :map                  │
-    │'n'          │  mapmode-n   │  Normal                                   │  :nmap                 │
-    │'v'          │  mapmode-v   │  Visual and Select                        │  :vmap                 │
-    │'s'          │  mapmode-s   │  Select                                   │  :smap                 │
-    │'x'          │  mapmode-x   │  Visual                                   │  :xmap                 │
-    │'o'          │  mapmode-o   │  Operator-pending                         │  :omap                 │
-    │'!'          │  mapmode-ic  │  Insert and Command-line                  │  :map!                 │
-    │'i'          │  mapmode-i   │  Insert                                   │  :imap                 │
-    │'l'          │  mapmode-l   │  Insert, Command-line, Lang-Arg           │  :lmap                 │
-    │'c'          │  mapmode-c   │  Command-line                             │  :cmap                 │
-    │'t'          │  mapmode-t   │  Terminal                                 │  :tmap                 │
-    ╰─────────────────────────────────────────────────────────────────────────────────────────────────╯
-
+  ╭────────────────────────────────────────────────────────────────────────────────────────────────────╮
+  │  String value  │  Help page   │  Affected modes                           │  Vimscript equivalent  │
+  │────────────────────────────────────────────────────────────────────────────────────────────────────│
+  │  ''            │  mapmode-nvo │  Normal, Visual, Select, Operator-pending │  :map                  │
+  │  'n'           │  mapmode-n   │  Normal                                   │  :nmap                 │
+  │  'v'           │  mapmode-v   │  Visual and Select                        │  :vmap                 │
+  │  's'           │  mapmode-s   │  Select                                   │  :smap                 │
+  │  'x'           │  mapmode-x   │  Visual                                   │  :xmap                 │
+  │  'o'           │  mapmode-o   │  Operator-pending                         │  :omap                 │
+  │  '!'           │  mapmode-ic  │  Insert and Command-line                  │  :map!                 │
+  │  'i'           │  mapmode-i   │  Insert                                   │  :imap                 │
+  │  'l'           │  mapmode-l   │  Insert, Command-line, Lang-Arg           │  :lmap                 │
+  │  'c'           │  mapmode-c   │  Command-line                             │  :cmap                 │
+  │  't'           │  mapmode-t   │  Terminal                                 │  :tmap                 │
+  ╰────────────────────────────────────────────────────────────────────────────────────────────────────╯
 --]]
 
 local function opt(scope, key, value)
