@@ -70,6 +70,18 @@ function create_augroup(autocmds, name)
     cmd('augroup END')
 end
 
+local function t(str)
+    return vim.api.nvim_replace_termcodes(str, true, true, true)
+end
+
+function _G.smart_tab()
+    return vim.fn.pumvisible() == 1 and t'<C-n>' or t'<Tab>'
+end
+
+function _G.smart_shift_tab()
+    return vim.fn.pumvisible() == 1 and t'<C-p>' or t'<S-Tab>'
+end
+
 -- Indentation
 g.mapleader = ","
 g.localleader = "\\"
@@ -323,3 +335,19 @@ require'lspconfig'.elixirls.setup{
     -- Unix
     cmd = { "/home/jesse/src/elixir-ls/release/language_server.sh" };
 }
+
+-- completion
+paq 'nvim-lua/completion-nvim'
+cmd([[autocmd BufEnter * lua require'completion'.on_attach() ]])
+
+-- LSP
+paq 'neovim/nvim-lspconfig'
+require'lspconfig'.elixirls.setup({
+    -- Unix
+    cmd = { "/home/jesse/src/elixir-ls/release/language_server.sh" },
+    --on_attach=require('completion').on_attach;
+})
+
+-- Use <Tab> and <S-Tab> to navigate through popup menu
+map('i', '<Tab>', 'v:lua.smart_tab()', {expr = true, noremap = true})
+map('i', '<S-Tab>', 'v:lua.smart_shift_tab()', {expr = true, noremap = true})
