@@ -149,7 +149,7 @@ autocmd BufReadPost * if line("'\"") > 1 && line("'\"") <= line("$") |   exe "no
 ]])
 
 -- easy vimrc editing
-cmd("autocmd bufwritepost init.lua :luafile %")
+--cmd("autocmd bufwritepost init.lua :luafile %")
 cmd("autocmd bufwritepost init.lua :set nohlsearch")
 
 create_augroup({
