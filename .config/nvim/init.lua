@@ -232,11 +232,10 @@ paq 'mhinz/vim-signify'
 g.updatetime = 100
 paq 'TimUntersberger/neogit'
 
-g.kommentary_create_default_mappings = false
 paq 'b3nj5m1n/kommentary'
-map("n", "<leader>cc",  "<Plug>kommentary_line_default", {})
-map("n", "<leader>c",   "<Plug>kommentary_motion_default", {})
-map("v", "<leader>c",   "<Plug>kommentary_visual_default", {})
+map("n", "<leader>cc", "<Plug>kommentary_line_default", { noremap = false })
+map("n", "<leader>c",  "<Plug>kommentary_motion_default", { noremap = false })
+map("v", "<leader>cc", "<Plug>kommentary_visual_default", { noremap = false })
 
 paq 'phaazon/hop.nvim'
 map('n', '<leader>h', ':HopWord<CR>')
