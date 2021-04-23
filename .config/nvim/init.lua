@@ -298,10 +298,6 @@ map('n', '<C-_>', [[<Cmd>lua require('telescope.builtin').current_buffer_fuzzy_f
 map('n', '<Leader>a', [[<Cmd>lua require('telescope.builtin').live_grep()<CR>  ]], { noremap = true, silent = true })
 map('n', '<Leader>A', [[<Cmd>lua require('telescope.builtin').grep_string()<CR>  ]], { noremap = true, silent = true })
 
--- map('n', '<leader>tff', <cmd>lua require('telescope.builtin').find_files()<cr>
--- map('n', '<leader>tfg', <cmd>lua require('telescope.builtin').live_grep()<cr>
--- map('n', '<leader>tfb', <cmd>lua require('telescope.builtin').buffers()<cr>
--- map('n', '<leader>tfh', <cmd>lua require('telescope.builtin').help_tags()<cr>
 
 -- JSON
 paq 'gennaro-tedesco/nvim-jqx'
