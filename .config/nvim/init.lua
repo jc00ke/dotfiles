@@ -7,13 +7,14 @@ local indent = 2
 --[[
   Resources
 
-  * https://icyphox.sh/blog/nvim-lua/
-  * https://oroques.dev/notes/neovim-init/
-  * https://github.com/nanotee/nvim-lua-guide
   * https://alpha2phi.medium.com/neovim-init-lua-e80f4f136030
-  * https://github.com/mjlbach/nix-dotfiles/blob/master/nixpkgs/configs/neovim/init.lua
   * https://github.com/akinsho/nvim-toggleterm.lua
   * https://github.com/icyphox/dotfiles/tree/master/config/nvim
+  * https://github.com/mjlbach/defaults.nvim/blob/master/init.lua
+  * https://github.com/mjlbach/nix-dotfiles/blob/master/nixpkgs/configs/neovim/init.lua
+  * https://github.com/nanotee/nvim-lua-guide
+  * https://icyphox.sh/blog/nvim-lua/
+  * https://oroques.dev/notes/neovim-init/
 
   ╭────────────────────────────────────────────────────────────────────────────────────────────────────╮
   │  String value  │  Help page   │  Affected modes                           │  Vimscript equivalent  │
