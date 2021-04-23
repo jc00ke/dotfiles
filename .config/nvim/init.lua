@@ -268,10 +268,10 @@ require('colorizer').setup()
 -- themes
 paq 'tjdevries/colorbuddy.vim'
 paq 'marko-cerovac/material.nvim'
-require('colorbuddy').colorscheme('material')
-require('material').change_style('oceanic')
-map('n', '<leader>L', [[<Cmd>lua require('material').change_style('lighter')<CR>]], { noremap = true, silent = true })
-map('n', '<leader>D', [[<Cmd>lua require('material').change_style('oceanic')<CR>]], { noremap = true, silent = true })
+require('material').change_style("oceanic")
+map('n', '<C-m>', [[<Cmd>lua require('material').toggle_style()<CR>]], { noremap = true, silent = true })
+map('n', '<leader>1', [[<Cmd>lua require('material').change_style('lighter')<CR>]], { noremap = true, silent = true })
+map('n', '<Leader>2', [[<Cmd>lua require('material').change_style('oceanic')<CR>]], { noremap = true, silent = true })
 
 -- statusline
 paq 'hoob3rt/lualine.nvim'
