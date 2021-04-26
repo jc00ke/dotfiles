@@ -336,22 +336,22 @@ require'lspinstall'.post_install_hook = function ()
   vim.cmd("bufdo e") -- this triggers the FileType autocmd that starts the server
 end
 
-require'lspconfig'.elixirls.setup{
+--[[ require'lspconfig'.elixirls.setup{
     -- Unix
     cmd = { "/home/jesse/src/elixir-ls/release/language_server.sh" };
-}
+} ]]
 
 -- completion
 paq 'nvim-lua/completion-nvim'
-cmd([[autocmd BufEnter * lua require'completion'.on_attach() ]])
+-- cmd([[autocmd BufEnter * lua require'completion'.on_attach() ]])
 
 -- LSP
 paq 'neovim/nvim-lspconfig'
-require'lspconfig'.elixirls.setup({
+--[[ require'lspconfig'.elixirls.setup({
     -- Unix
     cmd = { "/home/jesse/src/elixir-ls/release/language_server.sh" },
     --on_attach=require('completion').on_attach;
-})
+}) ]]
 
 -- Use <Tab> and <S-Tab> to navigate through popup menu
 map('i', '<Tab>', 'v:lua.smart_tab()', {expr = true, noremap = true})
