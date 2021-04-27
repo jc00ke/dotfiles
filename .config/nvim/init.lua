@@ -132,10 +132,10 @@ opt('w', 'relativenumber', true)                      -- Relative line numbers
 opt('w', 'wrap', false)                               -- Disable line wrap
 
 -- mappings
-map('', '<Leader>j', 'gT')
-map('', '<Leader>k', 'gt')
-map('i', 'jj', '<Esc>')
-map('i', 'kk', '<Esc>:w<CR>')
+map('n', '<Leader>j', 'gT', { noremap = true})
+map('n', '<Leader>k', 'gt', { noremap = true})
+map('i', 'jj', '<Esc>', { noremap = true })
+map('i', 'kk', '<Esc>:w<CR>', { noremap = true })
 map('n', 'gx', 'yiW:!xdg-open <cWORD><CR> <C-r>" & <CR><CR>')
 
 cmd('set showcmd')
