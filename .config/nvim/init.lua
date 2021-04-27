@@ -204,11 +204,10 @@ g["terminal_scrollback_buffer_size"] = 100000
 g["split_term_default_shell"] = "fish"
 
 -- map esc to exit to normal mode in terminal too
---[[create_augroup({
-    { 'TermOpen', '*', 'tnoremap', '<buffer>', '<Esc>', '<c-\\><c-n>' },
+create_augroup({
     { 'TermOpen', '*', 'set', 'nonu' },
+    { 'TermOpen', '*', 'set', 'norelativenumber' }
 }, 'Terminal')
---]]
 
 -- Jump and Create splits easily
 map('n', '<Leader>fs', ':Term<CR>')
