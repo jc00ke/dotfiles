@@ -209,6 +209,8 @@ create_augroup({
     { 'TermOpen', '*', 'set', 'norelativenumber' }
 }, 'Terminal')
 
+-- map esc to exit to normal mode in terminal too
+map("t", "<Esc><Esc>", "<C-\\><C-n>", { noremap = true })
 -- Jump and Create splits easily
 map('n', '<Leader>fs', ':Term<CR>')
 map('n', '<Leader>fv', ':VTerm<CR>')
