@@ -13,6 +13,7 @@ local indent = 2
   * https://github.com/mjlbach/defaults.nvim/blob/master/init.lua
   * https://github.com/mjlbach/nix-dotfiles/blob/master/nixpkgs/configs/neovim/init.lua
   * https://github.com/nanotee/nvim-lua-guide
+  * https://github.com/rockerBOO/awesome-neovim
   * https://icyphox.sh/blog/nvim-lua/
   * https://oroques.dev/notes/neovim-init/
 
