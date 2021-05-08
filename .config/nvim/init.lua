@@ -234,6 +234,7 @@ paq 'idanarye/vim-merginal'
 paq 'mhinz/vim-signify'
 g.updatetime = 100
 paq 'TimUntersberger/neogit'
+map('n', '<Leader>g', ':Neogit<CR>')
 
 paq 'b3nj5m1n/kommentary'
 map("n", "<leader>cc", "<Plug>kommentary_line_default", { noremap = false })
