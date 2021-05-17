@@ -11,6 +11,7 @@
 [alias]
   a = add
   amend = commit --amend -C HEAD # amend to the last commit
+  authors = shortlog -s -n --all --no-merges
   b = branch
   c = commit
   cl = clone
