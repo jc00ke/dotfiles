@@ -3,8 +3,10 @@
   "app.theme": "light",
   "keybinds.open": "Ctrl+Shift+\\",
   "ui.itemList.sortBehavior": "{\"sortKey\":\"title\",\"sortOrder\":\"ascending\"}",
-  "ui.routes.lastUsedRoute": "{\"type\":\"ItemList\",\"content\":{\"unlockedRoute\":{\"collectionUuid\":\"Z6AHAUK4K5DBBNRAGIQLSBPWWI\"},\"itemListType\":{\"type\":\"Vault\",\"content\":\"A0\"},\"category\":null,\"sortBehavior\":null}}",
+  "ui.routes.lastUsedRoute": "{\"type\":\"ItemList\",\"content\":{\"unlockedRoute\":{\"collectionUuid\":\"Z6AHAUK4K5DBBNRAGIQLSBPWWI\"},\"itemListType\":{\"type\":\"AllItems\"},\"category\":null,\"sortBehavior\":null}}",
   "browsers.extension.enabled": true,
   "passwordGenerator.type": "password-generator-menu-entry-type-memorable-password",
-  "passwordGenerator.size.words": 5
+  "passwordGenerator.size.words": 5,
+  "passwordGenerator.capitalize": true,
+  "passwordGenerator.separatorType": "password-generator-menu-entry-separator-numbers-and-symbols"
 }
