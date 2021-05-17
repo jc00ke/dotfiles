@@ -3,7 +3,7 @@
   "app.theme": "light",
   "keybinds.open": "Ctrl+Shift+\\",
   "ui.itemList.sortBehavior": "{\"sortKey\":\"title\",\"sortOrder\":\"ascending\"}",
-  "ui.routes.lastUsedRoute": "{\"type\":\"ItemDetail\",\"content\":{\"itemListRoute\":{\"unlockedRoute\":{\"collectionUuid\":\"7XWI6RQXMRHUNOSXZAAZXDMPHE\"},\"itemListType\":{\"type\":\"Vault\",\"content\":\"65\"},\"category\":null,\"sortBehavior\":null},\"itemId\":\"67B\"}}",
+  "ui.routes.lastUsedRoute": "{\"type\":\"ItemList\",\"content\":{\"unlockedRoute\":{\"collectionUuid\":\"7XWI6RQXMRHUNOSXZAAZXDMPHE\"},\"itemListType\":{\"type\":\"Vault\",\"content\":\"65\"},\"category\":null,\"sortBehavior\":null}}",
   "passwordGenerator.type": "password-generator-menu-entry-type-memorable-password",
   "passwordGenerator.size.words": 5
 }
