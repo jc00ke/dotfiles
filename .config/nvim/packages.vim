@@ -9,7 +9,7 @@ call plug#begin('~/.local/share/nvim/plugged')
 
   " CoC
   Plug 'neoclide/coc.nvim', {'branch': 'release'}
-  Plug 'amiralies/coc-elixir', {'do': 'yarn install && yarn clean && yarn build'}
+  Plug 'elixir-lsp/coc-elixir', {'do': 'yarn install && yarn prepack'}
   Plug 'fannheyward/coc-markdownlint',  {'do': 'yarn install --frozen-lockfile'}
   Plug 'fannheyward/coc-marketplace', {'do': 'yarn install --frozen-lockfile'}
   Plug 'fannheyward/coc-rust-analyzer', {'do': 'yarn install --frozen-lockfile'}
