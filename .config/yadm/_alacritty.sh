@@ -7,7 +7,7 @@ source "$DIR/_helpers.sh"
 log "Installing alacritty"
 installed_version="$(alacritty --version | cut -d " " -f 2)"
 latest_version="$(latest_release_tag_name "alacritty" "alacritty")"
-alacritty_version="0.7.2"
+alacritty_version="0.8.0"
 
 if [ "$latest_version" != "v$installed_version" ]; then
   cd "$HOME/src" || exit 1
