@@ -104,6 +104,9 @@ abbr -a n^s 'asdf uninstall neovim stable && asdf install neovim stable'
 abbr -a n^n 'asdf uninstall neovim nightly && asdf install neovim nightly'
 abbr -a n^m 'asdf uninstall neovim ref:master && asdf install neovim ref:master'
 
+abbr -a wgu "sudo wg-quick up (hostname)"
+abbr -a wgd "sudo wg-quick down (hostname)"
+
 function oops
   eval command sudo $history[1]
 end
