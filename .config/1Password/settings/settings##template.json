@@ -1,0 +1,8 @@
+{
+  "$schema": "https://onepassword.s3.amazonaws.com/schema/settings.json",
+  "app.theme": "light",
+  "keybinds.open": "Ctrl+Shift+\\",
+  "ui.itemList.sortBehavior": "{\"sortKey\":\"title\",\"sortOrder\":\"ascending\"}",
+  "passwordGenerator.type": "password-generator-menu-entry-type-memorable-password",
+  "passwordGenerator.size.words": 5
+}
