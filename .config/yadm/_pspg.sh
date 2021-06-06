@@ -1,7 +1,7 @@
 #!/bin/bash
 
 DIR="${BASH_SOURCE%/*}" || if [[ ! -d "$DIR" ]]; then DIR="$PWD"; fi
-# shellcheck disable=SC1090,SC1091
+# shellcheck source=./_helpers.sh
 source "$DIR/_helpers.sh"
 
 log "Installing pspg"
@@ -17,7 +17,7 @@ if [ "$latest_version" != "$installed_version" ]; then
   cd "$HOME/src" || exit 1
   wget "https://github.com/okbob/pspg/archive/$pspg_version.tar.gz"
   tar xf "$pspg_version.tar.gz"
-  cd "pspg-$pspg_version"
+  cd "pspg-$pspg_version" || exit
   ./configure
   make && sudo make install
 else

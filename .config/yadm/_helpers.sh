@@ -1,4 +1,6 @@
-function log() {
+# shellcheck shell=sh
+
+log() {
   msg="$1"
   echo "********************************************"
   echo "$msg"
@@ -6,7 +8,7 @@ function log() {
   echo ""
 }
 
-function latest_release_tag_name() {
+latest_release_tag_name() {
   owner=$1
   repo=$2
   version="$(curl \
@@ -15,5 +17,5 @@ function latest_release_tag_name() {
     -H "Accept: application/vnd.github.v3+json" \
     "https://api.github.com/repos/$owner/$repo/releases/latest" \
     | jq --raw-output .tag_name)"
-  echo $version
+  echo "$version"
 }

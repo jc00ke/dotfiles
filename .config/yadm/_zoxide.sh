@@ -1,7 +1,7 @@
 #!/bin/bash
 
 DIR="${BASH_SOURCE%/*}" || if [[ ! -d "$DIR" ]]; then DIR="$PWD"; fi
-# shellcheck disable=SC1090,SC1091
+# shellcheck source=./_helpers.sh
 source "$DIR/_helpers.sh"
 
 log "Installing zoxide"

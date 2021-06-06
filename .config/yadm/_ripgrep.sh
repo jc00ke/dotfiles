@@ -1,10 +1,11 @@
 #!/bin/bash
 
 DIR="${BASH_SOURCE%/*}" || if [[ ! -d "$DIR" ]]; then DIR="$PWD"; fi
+# shellcheck source=./_helpers.sh
 source "$DIR/_helpers.sh"
 
 log "Installing ripgrep"
-cd $HOME/src
+cd "$HOME/src" || exit
 ripgrep_version="12.1.1"
 ripgrep="ripgrep_${ripgrep_version}_amd64"
 ripgrep_deb="$ripgrep.deb"
