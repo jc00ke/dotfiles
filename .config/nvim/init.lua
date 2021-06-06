@@ -440,5 +440,5 @@ lspconfig.efm.setup({
   capabilities = capabilities,
   init_options = {documentFormatting = true},
   on_attach = on_attach,
-  filetypes = {"elixir", "lua"}
+  filetypes = {"elixir", "lua", "sh", "yaml"}
 })
