@@ -430,7 +430,6 @@ vim.api.nvim_set_keymap("s", "<S-Tab>", "v:lua.s_tab_complete()", {expr = true})
 local path_to_elixirls = vim.fn.expand("~/src/elixir-ls/release/language_server.sh")
 
 lspconfig.elixirls.setup({
-    -- Unix
     cmd = {path_to_elixirls},
     capabilities = capabilities,
     on_attach = on_attach,
@@ -440,4 +439,10 @@ lspconfig.elixirls.setup({
         fetchDeps = false
       }
     }
+})
+
+lspconfig.efm.setup({
+  capabilities = capabilities,
+  on_attach = on_attach,
+  filetypes = {"elixir"},
 })
