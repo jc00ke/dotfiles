@@ -1,8 +1,5 @@
 #!/bin/bash
 
-DIR="${BASH_SOURCE%/*}" || if [[ ! -d "$DIR" ]]; then DIR="$PWD"; fi
-source "$DIR/_helpers.sh"
-
 sudo apt install -y \
   autoconf \
   autopoint \
@@ -62,24 +59,24 @@ yadm remote set-url origin "git@github.com:jc00ke/dotfiles.git"
 
 chsh -s /usr/bin/fish
 
-mkdir -p $HOME/projects
-mkdir -p $HOME/src
-cd $HOME
+mkdir -p "$HOME/projects"
+mkdir -p "$HOME/src"
+cd "$HOME" || exit
 
 if [ ! -d "$HOME/.config/omf" ]; then
-  cd $HOME/src
+  cd "$HOME/src" || exit
   log "Installing oh-my-fish"
   curl -L http://get.oh-my.fish | fish
   echo "omf install cbjohnson" | fish
 fi
 
-cd $HOME
-if [ ! -d $HOME/.asdf ]; then
+cd "$HOME" || exit
+if [ ! -d "$HOME/.asdf" ]; then
   log "Installing asdf"
   git clone https://github.com/asdf-vm/asdf.git ~/.asdf --branch v0.7.8
 fi
 
-cd $HOME/src
+cd "$HOME/src" || exit
 log "Installing ngrok"
 ngrok_package="ngrok-stable-linux-amd64"
 ngrok_archive="$ngrok_package.zip"
@@ -101,6 +98,10 @@ rust_version="1.50.0"
 asdf install rust $rust_version
 asdf global rust $rust_version
 
+
+DIR="${BASH_SOURCE%/*}" || if [[ ! -d "$DIR" ]]; then DIR="$PWD"; fi
+# shellcheck source=./_helpers.sh
+source "$DIR/_helpers.sh"
 source "$DIR/_alacritty.sh"
 source "$DIR/_bat.sh"
 source "$DIR/_bottom.sh"
@@ -202,9 +203,9 @@ sudo apt update
 sudo apt install gh
 
 log "Installing emoji-picker"
-cd $HOME/src
+cd "$HOME/src" || exit
 gh repo clone jmackie/emoji-picker
-cd emoji-picker
+cd "emoji-picker" || exit
 cargo build --release
 mv target/release/emoji-picker ~/.local/bin/
 
