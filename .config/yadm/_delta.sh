@@ -7,7 +7,7 @@ source "$DIR/_helpers.sh"
 log "Installing delta"
 installed_version="$(delta --version | cut -d " " -f 2)"
 latest_version="$(latest_release_tag_name "dandavison" "delta")"
-delta_version="0.6.0"
+delta_version="0.8.0"
 
 if [ "$latest_version" != "v$installed_version" ]; then
   echo "Installed: $installed_version"

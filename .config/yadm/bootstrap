@@ -100,25 +100,8 @@ asdf global rust $rust_version
 
 
 DIR="${BASH_SOURCE%/*}" || if [[ ! -d "$DIR" ]]; then DIR="$PWD"; fi
-# shellcheck source=./_helpers.sh
-source "$DIR/_helpers.sh"
-source "$DIR/_alacritty.sh"
-source "$DIR/_bat.sh"
-source "$DIR/_bottom.sh"
-source "$DIR/_delta.sh"
-source "$DIR/_direnv.sh"
-source "$DIR/_duf.sh"
-source "$DIR/_efm-langserver.sh"
-source "$DIR/_exa.sh"
-source "$DIR/_fd.sh"
-source "$DIR/_gping.sh"
-source "$DIR/_miniserve.sh"
-source "$DIR/_pspg.sh"
-source "$DIR/_ripgrep.sh"
-source "$DIR/_sd.sh"
-source "$DIR/_starship.sh"
-source "$DIR/_tealdeer.sh"
-source "$DIR/_zoxide.sh"
+# shellcheck source=./_install.sh
+source "$DIR/_install.sh"
 
 log "Installing node"
 asdf plugin-add nodejs https://github.com/asdf-vm/asdf-nodejs.git
@@ -205,7 +188,7 @@ sudo apt install gh
 log "Installing emoji-picker"
 cd "$HOME/src" || exit
 gh repo clone jmackie/emoji-picker
-cd "emoji-picker" || exit
+cd "emoji-picker" || exit" || exit
 cargo build --release
 mv target/release/emoji-picker ~/.local/bin/
 

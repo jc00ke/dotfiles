@@ -5,9 +5,21 @@ DIR="${BASH_SOURCE%/*}" || if [[ ! -d "$DIR" ]]; then DIR="$PWD"; fi
 source "$DIR/_helpers.sh"
 
 log "Installing ripgrep"
-cd "$HOME/src" || exit
+author="BurntSushi"
+project="ripgrep"
+installed_version="$(zoxide -V || echo "na -1" | head -n 1 | cut -d " " -f 2)"
+latest_version="$(latest_release_tag_name "$author" "$project")"
 ripgrep_version="12.1.1"
-ripgrep="ripgrep_${ripgrep_version}_amd64"
-ripgrep_deb="$ripgrep.deb"
-wget "https://github.com/BurntSushi/ripgrep/releases/download/$ripgrep_version/$ripgrep_deb"
-sudo dpkg -i "$ripgrep_deb"
+
+if [ "$latest_version" != "$installed_version" ]; then
+  echo "Installed: $installed_version"
+  echo "Latest: $latest_version"
+
+  cd "$HOME/src" || exit
+  ripgrep="ripgrep_${ripgrep_version}_amd64"
+  ripgrep_deb="$ripgrep.deb"
+  wget "https://github.com/$author/$project/releases/download/$ripgrep_version/$ripgrep_deb"
+  sudo dpkg -i "$ripgrep_deb"
+else
+  echo "Already on latest: $ripgrep_version"
+fi

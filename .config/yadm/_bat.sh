@@ -7,7 +7,7 @@ source "$DIR/_helpers.sh"
 log "Installing bat"
 installed_version="$(bat --version | cut -d " " -f 2)"
 latest_version="$(latest_release_tag_name "sharkdp" "bat")"
-bat_version="0.17.1"
+bat_version="0.18.1"
 
 if [ "$latest_version" != "v$installed_version" ]; then
   echo "Installed: $installed_version"
