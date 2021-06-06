@@ -5,8 +5,8 @@ DIR="${BASH_SOURCE%/*}" || if [[ ! -d "$DIR" ]]; then DIR="$PWD"; fi
 source "$DIR/_helpers.sh"
 
 log "Installing efm-langserver"
-author = "mattn"
-project = "efm-langserver"
+author="mattn"
+project="efm-langserver"
 installed_version="$(efm-langserver -v | cut -d " " -f 2)"
 latest_version="$(latest_release_tag_name "$author" "$project")"
 efm_version="0.0.30"
