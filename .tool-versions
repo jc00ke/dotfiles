@@ -3,7 +3,7 @@ nodejs 16.1.0
 elixir 1.12.0-otp-24
 erlang 24.0.1
 postgres 11.4
-ruby 3.0.0
+ruby 3.0.1
 elm 0.19.1
 golang 1.15.2
 python 3.9.1
