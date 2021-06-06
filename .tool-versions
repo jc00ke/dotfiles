@@ -10,3 +10,4 @@ python 3.9.1
 lua 5.4.2
 neovim nightly
 redis 6.2.3
+deno 1.10.3

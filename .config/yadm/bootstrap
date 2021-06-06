@@ -127,6 +127,11 @@ asdf global nodejs 15.0.1
 log "Installing yarn"
 curl -o- -L https://yarnpkg.com/install.sh | bash
 
+log "Installing deno"
+asdf plugin-add deno https://github.com/asdf-community/asdf-deno.git
+asdf install deno 1.10.3
+asdf global deno 1.10.3
+
 asdf reshim
 
 if command -v nvim > /dev/null 2>&1; then

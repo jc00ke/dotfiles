@@ -442,3 +442,5 @@ lspconfig.efm.setup({
   on_attach = on_attach,
   filetypes = {"elixir", "lua", "sh", "yaml"}
 })
+
+lspconfig.denols.setup({})
