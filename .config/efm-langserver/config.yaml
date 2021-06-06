@@ -16,6 +16,12 @@ tools:
       - mix.lock
       - mix.exs
 
+  lua-lua-format: &lua-lua-format
+    format-command: 'lua-format -i --indent-width=2'
+    format-stdin: true
+
 languages:
   elixir:
     - <<: *mix_credo
+  lua:
+    - <<: *lua-lua-format
