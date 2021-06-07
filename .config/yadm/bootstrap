@@ -54,6 +54,10 @@ sudo apt install -y \
   ubuntu-restricted-extras \
   zlib1g-dev
 
+log "Disabling GNOME Screencast for Peek"
+# https://github.com/phw/peek/issues/677
+gsettings set org.gnome.gnome-flashback screencast false
+
 log "Updating the yadm repo origin URL"
 yadm remote set-url origin "git@github.com:jc00ke/dotfiles.git"
 
