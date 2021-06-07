@@ -444,3 +444,5 @@ lspconfig.efm.setup({
 })
 
 lspconfig.denols.setup({})
+
+lspconfig.solargraph.setup({})
