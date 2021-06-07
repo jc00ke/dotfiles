@@ -19,9 +19,10 @@ if [ "$latest_version" != "$installed_version" ]; then
   zoxide="zoxide-x86_64-unknown-linux-musl"
   wget "https://github.com/$author/$project/releases/download/v$zoxide_version/$zoxide.tar.gz"
   tar xf "$zoxide.tar.gz"
-  sudo mv "$zoxide/zoxide" "/usr/local/bin/zoxide"
+  sudo cp "$zoxide/zoxide" "/usr/local/bin/zoxide"
   sudo chmod +x "/usr/local/bin/zoxide"
-  sudo cp "$zoxide/man/* /usr/local/share/man/man1/"
+  sudo mkdir -p "/usr/local/share/man/man1/"
+  sudo cp -a "$zoxide/man/." "/usr/local/share/man/man1/"
 else
   echo "Already on latest: $zoxide_version"
 fi
