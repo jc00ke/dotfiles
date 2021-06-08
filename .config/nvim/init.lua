@@ -45,7 +45,7 @@ local function map(mode, lhs, rhs, opts)
   vim.api.nvim_set_keymap(mode, lhs, rhs, options)
 end
 
-function sequence(from, to)
+local function sequence(from, to)
   local i = from - 1
   return function()
     if i < to then
@@ -55,14 +55,14 @@ function sequence(from, to)
   end
 end
 
-function range(from, to)
+local function range(from, to)
   local cc = {}
-  for i in sequence(111, 999) do table.insert(cc, i) end
+  for i in sequence(from, to) do table.insert(cc, i) end
 
   return cc
 end
 
-function create_augroup(autocmds, name)
+local function create_augroup(autocmds, name)
   cmd('augroup ' .. name)
   cmd('autocmd!')
   for _, autocmd in ipairs(autocmds) do
@@ -127,7 +127,7 @@ vim.o.shortmess = vim.o.shortmess .. 'c' -- Avoid showing message extra message 
 vim.bo.formatoptions = vim.bo.formatoptions .. ',w' -- Tack on 'w' to format options
 cmd 'retab' -- Replaces all sequences of white-space containing a <Tab> with spaces
 opt('b', 'expandtab', true) -- Use spaces instead of tabs
-opt('b', 'modeline', true) -- 
+opt('b', 'modeline', true)
 opt('b', 'shiftwidth', indent) -- Size of an indent
 opt('b', 'smartindent', true) -- Insert indents automatically
 opt('b', 'tabstop', indent) -- Number of spaces tabs count for
@@ -186,6 +186,7 @@ create_augroup({
 PACKAGES
 --]]
 
+local execute = vim.api.nvim_command
 local install_path = fn.stdpath('data') .. '/site/pack/paqs/opt/paq-nvim'
 if fn.empty(fn.glob(install_path)) > 0 then
   print('Installing paq')
@@ -319,7 +320,7 @@ map('n', 'ga', '<Plug>(EasyAlign)')
 paq 'kyazdani42/nvim-web-devicons'
 paq 'nvim-lua/popup.nvim'
 paq 'nvim-telescope/telescope.nvim'
-local actions = require('telescope.actions')
+-- local actions = require('telescope.actions')
 require('telescope').setup {
   defaults = {prompt_position = "top", sorting_strategy = "ascending"}
 }
@@ -350,23 +351,20 @@ capabilities.textDocument.completion.completionItem.snippetSupport = true
 paq 'hrsh7th/nvim-compe'
 
 local on_attach = function(_, bufnr)
-  local map = function(...) vim.api.nvim_buf_set_keymap(bufnr, ...) end
+  local this_map = function(...) vim.api.nvim_buf_set_keymap(bufnr, ...) end
   local map_opts = {noremap = true, silent = true}
 
-  map("n", "df", [[<cmd>lua vim.lsp.buf.formatting()<cr>]], map_opts)
-  map("n", "gd", [[<cmd>lua vim.lsp.buf.definition()<CR>]], map_opts)
-  map("n", "gD", [[<cmd>lua vim.lsp.buf.declaration()<CR>]], map_opts)
-  map("n", "gr", [[<cmd>lua vim.lsp.buf.references()<CR>]], map_opts)
-  map("n", "gi", [[<cmd>lua vim.lsp.buf.implementation()<CR>]], map_opts)
-  map("n", "K", [[<cmd>lua vim.lsp.buf.hover()<CR>]], map_opts)
-  map("n", "<C-k>", [[<cmd>lua vim.lsp.buf.signature_help()<CR>]], map_opts)
-  map("n", "<Leader>N", [[<cmd>lua vim.lsp.diagnostic.goto_prev()<CR>]],
-      map_opts)
-  map("n", "<Leader>P", [[<cmd>lua vim.lsp.diagnostic.goto_next()<CR>]],
-      map_opts)
-  map("n", "ld", [[<cmd>lua vim.lsp.diagnostic.show_line_diagnostics()<CR>]],
-      map_opts)
-  map("n", "1gD", [[<cmd>lua vim.lsp.buf.type_definition()<CR>]], map_opts)
+  this_map("n", "dF", [[<cmd>lua vim.lsp.buf.formatting()<CR>]], map_opts)
+  this_map("n", "gd", [[<cmd>lua vim.lsp.buf.definition()<CR>]], map_opts)
+  this_map("n", "gD", [[<cmd>lua vim.lsp.buf.declaration()<CR>]], map_opts)
+  this_map("n", "gr", [[<cmd>lua vim.lsp.buf.references()<CR>]], map_opts)
+  this_map("n", "gi", [[<cmd>lua vim.lsp.buf.implementation()<CR>]], map_opts)
+  this_map("n", "K", [[<cmd>lua vim.lsp.buf.hover()<CR>]], map_opts)
+  this_map("n", "<C-k>", [[<cmd>lua vim.lsp.buf.signature_help()<CR>]], map_opts)
+  this_map("n", "<Leader>N", [[<cmd>lua vim.lsp.diagnostic.goto_prev()<CR>]], map_opts)
+  this_map("n", "<Leader>P", [[<cmd>lua vim.lsp.diagnostic.goto_next()<CR>]], map_opts)
+  this_map("n", "sld", [[<cmd>lua vim.lsp.diagnostic.show_line_diagnostics()<CR>]], map_opts)
+  this_map("n", "1gD", [[<cmd>lua vim.lsp.buf.type_definition()<CR>]], map_opts)
 
   cmd([[autocmd BufWritePre *.js lua vim.lsp.buf.formatting_sync(nil, 100)]])
   cmd([[autocmd BufWritePre *.jsx lua vim.lsp.buf.formatting_sync(nil, 100)]])
