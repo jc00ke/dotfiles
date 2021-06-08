@@ -392,11 +392,12 @@ lspconfig.elixirls.setup({
   settings = {elixirLS = {dialyzerEnabled = false, fetchDeps = false}}
 })
 
+
 lspconfig.efm.setup({
   capabilities = capabilities,
+  filetypes = {"elixir", "lua", "sh", "yaml"},
   init_options = {documentFormatting = true},
   on_attach = on_attach,
-  filetypes = {"elixir", "lua", "sh", "yaml"}
 })
 
 lspconfig.denols.setup({})
