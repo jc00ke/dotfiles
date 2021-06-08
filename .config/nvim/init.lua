@@ -328,9 +328,12 @@ local on_attach = function(_, bufnr)
   this_map("n", "gi", [[<cmd>lua vim.lsp.buf.implementation()<CR>]], map_opts)
   this_map("n", "K", [[<cmd>lua vim.lsp.buf.hover()<CR>]], map_opts)
   this_map("n", "<C-k>", [[<cmd>lua vim.lsp.buf.signature_help()<CR>]], map_opts)
-  this_map("n", "<Leader>N", [[<cmd>lua vim.lsp.diagnostic.goto_prev()<CR>]], map_opts)
-  this_map("n", "<Leader>P", [[<cmd>lua vim.lsp.diagnostic.goto_next()<CR>]], map_opts)
-  this_map("n", "sld", [[<cmd>lua vim.lsp.diagnostic.show_line_diagnostics()<CR>]], map_opts)
+  this_map("n", "<Leader>N", [[<cmd>lua vim.lsp.diagnostic.goto_prev()<CR>]],
+           map_opts)
+  this_map("n", "<Leader>P", [[<cmd>lua vim.lsp.diagnostic.goto_next()<CR>]],
+           map_opts)
+  this_map("n", "sld",
+           [[<cmd>lua vim.lsp.diagnostic.show_line_diagnostics()<CR>]], map_opts)
   this_map("n", "1gD", [[<cmd>lua vim.lsp.buf.type_definition()<CR>]], map_opts)
 
   cmd([[autocmd BufWritePre <buffer> lua vim.lsp.buf.formatting_seq_sync()]])
@@ -377,49 +380,48 @@ require('compe').setup {
     snippets_nvim = true,
     spell = true,
     tags = true,
-    treesitter = true,
+    treesitter = true
     -- vsnip = true
   }
 }
 
-
-local elixirls_binary = vim.fn.expand("~/src/elixir-ls/release/language_server.sh")
+local elixirls_binary = vim.fn.expand(
+                            "~/src/elixir-ls/release/language_server.sh")
 local util = require('lspconfig/util')
 
 lspconfig.elixirls.setup({
   cmd = {elixirls_binary},
   capabilities = capabilities,
   on_attach = on_attach,
-  root_dir = util.root_pattern("app.exs", "mix.exs", ".git") or vim.loop.os_homedir(),
+  root_dir = util.root_pattern("app.exs", "mix.exs", ".git") or
+      vim.loop.os_homedir(),
   settings = {elixirLS = {dialyzerEnabled = false, fetchDeps = false}}
 })
-
 
 lspconfig.efm.setup({
   capabilities = capabilities,
   filetypes = {"elixir", "lua", "sh", "yaml"},
   init_options = {documentFormatting = true},
-  on_attach = on_attach,
+  on_attach = on_attach
 })
 
 lspconfig.denols.setup({})
 
 local sumneko_root_path = vim.fn.expand("~/src/lua-language-server")
-local sumneko_binary = vim.fn.expand(sumneko_root_path .. "/bin/Linux/lua-language-server")
+local sumneko_binary = vim.fn.expand(sumneko_root_path ..
+                                         "/bin/Linux/lua-language-server")
 
 lspconfig.sumneko_lua.setup({
-  cmd = {sumneko_binary, "-E", sumneko_root_path .. "/main.lua"};
+  cmd = {sumneko_binary, "-E", sumneko_root_path .. "/main.lua"},
   settings = {
     Lua = {
-      diagnostics = {
-        globals = {"vim", "describe"}
-      },
-      runtime = { version = "LuaJIT", path = vim.split(package.path, ";") }
+      diagnostics = {globals = {"vim", "describe"}},
+      runtime = {version = "LuaJIT", path = vim.split(package.path, ";")}
     },
     workspace = {
       library = {
         [vim.fn.expand('$VIMRUNTIME/lua')] = true,
-        [vim.fn.expand('$VIMRUNTIME/lua/vim/lsp')] = true,
+        [vim.fn.expand('$VIMRUNTIME/lua/vim/lsp')] = true
       }
     }
   }
