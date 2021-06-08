@@ -98,36 +98,48 @@ git clone --depth 1 https://github.com/bigH/git-fuzzy.git ~/.git-fuzzy
 
 log "Installing Rust"
 asdf plugin-add rust https://github.com/code-lever/asdf-rust.git
-rust_version="1.50.0"
-asdf install rust $rust_version
-asdf global rust $rust_version
-
-
-DIR="${BASH_SOURCE%/*}" || if [[ ! -d "$DIR" ]]; then DIR="$PWD"; fi
-# shellcheck source=./_install.sh
-source "$DIR/_install.sh"
 
 log "Installing node"
 asdf plugin-add nodejs https://github.com/asdf-vm/asdf-nodejs.git
 bash ~/.asdf/plugins/nodejs/bin/import-release-team-keyring
-asdf install nodejs 15.0.1
-asdf global nodejs 15.0.1
-log "Installing yarn"
-curl -o- -L https://yarnpkg.com/install.sh | bash
 
 log "Installing deno"
 asdf plugin-add deno https://github.com/asdf-community/asdf-deno.git
-asdf install deno 1.10.3
-asdf global deno 1.10.3
 
-asdf reshim
+log "Installing lua"
+asdf plugin-add lua https://github.com/Stratus3D/asdf-lua.git
 
 if command -v nvim > /dev/null 2>&1; then
+  log "Installing neovim"
   asdf plugin add neovim
-  asdf install neovim stable
   log "Bootstraping Neovim"
   nvim '+PaqInstall' '+PaqClean' '+PaqUpdate' '+qall'
 fi
+
+asdf install
+asdf reshim
+
+log "Installing lua formatter"
+luarocks install --server=https://luarocks.org/dev luaformatter
+
+log "Installing lua LSP"
+sudo apt install ninja-build
+cd "$HOME/src" || exit
+# clone project
+git clone https://github.com/sumneko/lua-language-server
+cd lua-language-server || exit
+git submodule update --init --recursive
+cd 3rd/luamake || exit
+compile/install.sh
+cd ../..
+./3rd/luamake/luamake rebuild
+
+log "Installing yarn"
+curl -o- -L https://yarnpkg.com/install.sh | bash
+
+DIR="${BASH_SOURCE%/*}" || if [[ ! -d "$DIR" ]]; then DIR="$PWD"; fi
+# shellcheck source=./_install.sh
+source "$DIR/_install.sh"
 
 log "Consider installing resume service for network adapter."
 echo "https://askubuntu.com/a/1058760/128339"
