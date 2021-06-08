@@ -284,7 +284,7 @@ map("n", "<leader>t", ":TestNearest<CR>", {silent = true})
 map("n", "<leader>T", ":TestFile<CR>", {silent = true})
 map("n", "<leader>ta", ":TestSuite<CR>", {silent = true})
 map("n", "<leader>l", ":TestLast<CR>", {silent = true})
-map("n", "<leader>g", ":TestVisit<CR>", {silent = true})
+map("n", "<leader>tv", ":TestVisit<CR>", {silent = true})
 
 -- search
 paq 'haya14busa/is.vim'
