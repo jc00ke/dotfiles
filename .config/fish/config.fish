@@ -116,5 +116,6 @@ abbr -a yolo "oops"
 
 eval (direnv hook fish)
 source ~/.asdf/asdf.fish
+fenv source ~/.nix-profile/etc/profile.d/nix.sh
 starship init fish | source
 zoxide init fish | source
