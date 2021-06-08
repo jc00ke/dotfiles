@@ -196,7 +196,7 @@ end
 vim.cmd 'packadd paq-nvim' -- Load package
 local paq = require('paq-nvim').paq -- Import module and bind `paq` function
 paq {'savq/paq-nvim', opt = true} -- Let Paq manage itself
-paq 'nvim-treesitter/nvim-treesitter'
+paq {'nvim-treesitter/nvim-treesitter', run = ":TSUpdate"}
 paq 'tpope/vim-sensible'
 paq 'tpope/vim-obsession'
 paq 'kyazdani42/nvim-tree.lua'
