@@ -269,6 +269,8 @@ map('n', '<leader>1',
 map('n', '<Leader>2',
     [[<Cmd>lua require('material').change_style('oceanic')<CR>]],
     {noremap = true, silent = true})
+paq 'shaunsingh/solarized.nvim'
+-- require('solarized').set()
 
 -- statusline
 paq 'hoob3rt/lualine.nvim'
