@@ -424,13 +424,14 @@ vim.api.nvim_set_keymap("s", "<Tab>", "v:lua.tab_complete()", {expr = true})
 vim.api.nvim_set_keymap("i", "<S-Tab>", "v:lua.s_tab_complete()", {expr = true})
 vim.api.nvim_set_keymap("s", "<S-Tab>", "v:lua.s_tab_complete()", {expr = true})
 
-local path_to_elixirls = vim.fn.expand(
-                             "~/src/elixir-ls/release/language_server.sh")
+local elixirls_binary = vim.fn.expand("~/src/elixir-ls/release/language_server.sh")
+local util = require('lspconfig/util')
 
 lspconfig.elixirls.setup({
-  cmd = {path_to_elixirls},
+  cmd = {elixirls_binary},
   capabilities = capabilities,
   on_attach = on_attach,
+  root_dir = util.root_pattern("app.exs", "mix.exs", ".git") or vim.loop.os_homedir(),
   settings = {elixirLS = {dialyzerEnabled = false, fetchDeps = false}}
 })
 
