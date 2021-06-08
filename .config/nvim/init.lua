@@ -444,4 +444,25 @@ lspconfig.efm.setup({
 
 lspconfig.denols.setup({})
 
+local sumneko_root_path = vim.fn.expand("~/src/lua-language-server")
+local sumneko_binary = vim.fn.expand(sumneko_root_path .. "/bin/Linux/lua-language-server")
+
+lspconfig.sumneko_lua.setup({
+  cmd = {sumneko_binary, "-E", sumneko_root_path .. "/main.lua"};
+  settings = {
+    Lua = {
+      diagnostics = {
+        globals = {"vim", "describe"}
+      },
+      runtime = { version = "LuaJIT", path = vim.split(package.path, ";") }
+    },
+    workspace = {
+      library = {
+        [vim.fn.expand('$VIMRUNTIME/lua')] = true,
+        [vim.fn.expand('$VIMRUNTIME/lua/vim/lsp')] = true,
+      }
+    }
+  }
+})
+
 lspconfig.solargraph.setup({})
