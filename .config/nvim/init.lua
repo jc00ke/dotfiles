@@ -400,7 +400,7 @@ lspconfig.elixirls.setup({
 
 lspconfig.efm.setup({
   capabilities = capabilities,
-  filetypes = {"elixir", "lua", "sh", "yaml"},
+  filetypes = {"elixir", "html", "lua", "sh", "yaml"},
   init_options = {documentFormatting = true},
   on_attach = on_attach
 })

@@ -36,9 +36,15 @@ tools:
     lint-command: 'yamllint -f parsable -'
     lint-stdin: true
 
+  tailwind-class-sort: &tailwind-class-sort
+    format-command: 'rustywind --stdin'
+    format-stdin: true
+
 languages:
   elixir:
     - <<: *mix_credo
+  html:
+    - <<: *tailwind-class-sort
   lua:
     - <<: *lua-lua-format
   sh:
