@@ -157,28 +157,66 @@ if fn.empty(fn.glob(install_path)) > 0 then
 end
 
 vim.cmd 'packadd paq-nvim' -- Load package
-local paq = require('paq-nvim').paq -- Import module and bind `paq` function
-paq {'savq/paq-nvim', opt = true} -- Let Paq manage itself
-paq {'nvim-treesitter/nvim-treesitter', run = ":TSUpdate"}
-paq 'tpope/vim-sensible'
-paq 'tpope/vim-obsession'
-paq 'kyazdani42/nvim-tree.lua'
-map('n', '<leader>n', ':NvimTreeToggle<CR>')
-map('n', '<leader>r', ':NvimTreeRefresh<CR>')
-map('n', '<C-n>', ':NvimTreeFindFile<CR>')
+require('paq-nvim') {
+  -- LuaFormatter off
+  {'savq/paq-nvim', opt = true},        -- Let Paq manage itself
+  {
+    'nvim-treesitter/nvim-treesitter',  -- parsing system
+    run = ":TSUpdate"
+  },
+  'tpope/vim-sensible',                 -- defaults
+  'tpope/vim-obsession',                -- sessions
+  'kyazdani42/nvim-tree.lua',           -- file explorer
+  'vimlab/split-term.vim',              -- terminal
+  'sheerun/vim-polyglot',               -- programming languages
+  'nvim-lua/plenary.nvim',              -- utils
+  'tpope/vim-fugitive',                 -- git
+  'junegunn/gv.vim',                    -- git
+  'tpope/vim-rhubarb',                  -- git
+  'idanarye/vim-merginal',              -- git
+  'mhinz/vim-signify',                  -- gutter signs
+  'TimUntersberger/neogit',             -- git
+  'b3nj5m1n/kommentary',                -- comments
+  'phaazon/hop.nvim',                   -- search
+  {
+    'iamcco/markdown-preview.nvim',     -- markdown
+     run = 'cd app & yarn install'
+   },
+  'tpope/vim-eunuch',                   -- UNIX
+  'tpope/vim-dotenv',                   -- environment variables
+  'direnv/direnv.vim',                  -- environment variables
+  'tpope/vim-rails',                    -- ruby
+  'tpope/vim-rake',                     -- ruby
+  'vim-test/vim-test',                  -- testing
+  'haya14busa/is.vim',                  -- search
+  'norcalli/nvim-colorizer.lua',        -- colors
+  'tjdevries/colorbuddy.vim',           -- colors
+  'marko-cerovac/material.nvim',        -- colors
+  'shaunsingh/solarized.nvim',          -- colors
+  'hoob3rt/lualine.nvim',               -- status line
+  'junegunn/vim-easy-align',            -- text
+  'kyazdani42/nvim-web-devicons',       -- icons
+  'nvim-lua/popup.nvim',                -- UI
+  'nvim-telescope/telescope.nvim',      -- UI
+  'gennaro-tedesco/nvim-jqx',           -- json
+  'neovim/nvim-lspconfig',              -- LSP
+  'hrsh7th/vim-vsnip',                  -- LSP
+  'hrsh7th/vim-vsnip-integ',            -- LSP
+  'hrsh7th/nvim-compe'                  -- LSP
+-- LuaFormatter on
+}
+
 g["nvim_tree_ignore"] = {
   '\\~$', 'tfstate$', 'tfstate\\.backup$', '.git', 'node_modules', '.cache',
   '.direnv', '.elixir_ls', '_build', 'cover'
 }
--- g["nvim_tree_show_icons"] = {
--- 'git'
--- }
 
 --[[
---TERMINAL
+--MAPPINGS
 --]]
-
-paq 'vimlab/split-term.vim'
+map('n', '<leader>n', ':NvimTreeToggle<CR>')
+map('n', '<leader>r', ':NvimTreeRefresh<CR>')
+map('n', '<C-n>', ':NvimTreeFindFile<CR>')
 
 -- allow terminal buffer size to be very large
 g["terminal_scrollback_buffer_size"] = 100000
@@ -197,69 +235,30 @@ map('n', '<Leader>fv', ':VTerm<CR>')
 map('n', '<Leader>ff', ':TTerm<CR>')
 map('n', '<Leader>fp', ':TTerm<CR> postgres<CR>')
 
-paq 'sheerun/vim-polyglot'
 g["rustfmt_autosave"] = 1
 
--- utils
-paq 'nvim-lua/plenary.nvim'
-RELOAD = require('plenary.reload').reload_module
-
--- sessions
-paq 'tpope/vim-obsession'
-
 -- git
-paq 'tpope/vim-fugitive'
-paq 'junegunn/gv.vim'
-paq 'tpope/vim-rhubarb'
-paq 'idanarye/vim-merginal'
-paq 'mhinz/vim-signify'
 g.updatetime = 100
-paq 'TimUntersberger/neogit'
-map('n', '<Leader>g', ':Neogit<CR>')
 
-paq 'b3nj5m1n/kommentary'
+map('n', '<Leader>g', ':Neogit<CR>')
 map("n", "<leader>cc", "<Plug>kommentary_line_default", {noremap = false})
 map("n", "<leader>c", "<Plug>kommentary_motion_default", {noremap = false})
 map("v", "<leader>cc", "<Plug>kommentary_visual_default", {noremap = false})
 
-paq 'phaazon/hop.nvim'
 map('n', '<leader>h', ':HopWord<CR>')
 
-paq {'iamcco/markdown-preview.nvim', run = 'cd app & yarn install'}
-
--- Unix
-paq 'tpope/vim-eunuch'
-paq 'tpope/vim-dotenv'
-paq 'direnv/direnv.vim'
-
--- Ruby
-paq 'tpope/vim-rails' -- , { 'for': 'ruby' }
-paq 'tpope/vim-rake' -- , { 'for': 'ruby' }
-
--- Testing
-paq 'vim-test/vim-test'
 -- https://github.com/vim-test/vim-test#cli-options
 g["test#runner_commands"] = {'ExUnit', 'ElmTest'}
 g["test#strategy"] = "neovim"
--- map("t", "<C-o>", "<C-\\><C-n>")
 
 map("n", "<leader>t", ":TestNearest<CR>", {silent = true})
 map("n", "<leader>T", ":TestFile<CR>", {silent = true})
 map("n", "<leader>ta", ":TestSuite<CR>", {silent = true})
 map("n", "<leader>l", ":TestLast<CR>", {silent = true})
-map("n", "<leader>tv", ":TestVisit<CR>", {silent = true})
-
--- search
-paq 'haya14busa/is.vim'
-
--- colors
--- may be replaced by treesitter
-paq 'norcalli/nvim-colorizer.lua'
-require('colorizer').setup()
+map("n", "<leader>tv", ":TestVisit<CR>", {silent = true}) -- search
 
 -- themes
-paq 'tjdevries/colorbuddy.vim'
-paq 'marko-cerovac/material.nvim'
+require('colorizer').setup()
 require('material').change_style("oceanic")
 map('n', '<C-m>', [[<Cmd>lua require('material').toggle_style()<CR>]],
     {noremap = true, silent = true})
@@ -269,23 +268,16 @@ map('n', '<leader>1',
 map('n', '<Leader>2',
     [[<Cmd>lua require('material').change_style('oceanic')<CR>]],
     {noremap = true, silent = true})
-paq 'shaunsingh/solarized.nvim'
 -- require('solarized').set()
 
 -- statusline
-paq 'hoob3rt/lualine.nvim'
 require('lualine').setup({options = {theme = 'onedark'}})
 
-paq 'junegunn/vim-easy-align'
 -- Start interactive EasyAlign in visual mode (e.g. vipga)
 map('x', 'ga', '<Plug>(EasyAlign)')
 -- Start interactive EasyAlign for a motion/text object (e.g. gaip)
 map('n', 'ga', '<Plug>(EasyAlign)')
 
-paq 'kyazdani42/nvim-web-devicons'
-paq 'nvim-lua/popup.nvim'
-paq 'nvim-telescope/telescope.nvim'
--- local actions = require('telescope.actions')
 require('telescope').setup {
   defaults = {prompt_position = "top", sorting_strategy = "ascending"}
 }
@@ -301,21 +293,13 @@ map('n', '<Leader>A',
     [[<Cmd>lua require('telescope.builtin').grep_string()<CR>  ]],
     {noremap = true, silent = true})
 
--- JSON
-paq 'gennaro-tedesco/nvim-jqx'
-
 -- LSP
-paq 'neovim/nvim-lspconfig'
 local lspconfig = require('lspconfig')
 
 -- Neovim doesn't support snippets out of the box, so we need to mutate the
 -- capabilities we send to the language server to let them know we want snippets.
 local capabilities = vim.lsp.protocol.make_client_capabilities()
 capabilities.textDocument.completion.completionItem.snippetSupport = true
-
-paq 'hrsh7th/vim-vsnip'
-paq 'hrsh7th/vim-vsnip-integ'
-paq 'hrsh7th/nvim-compe'
 
 local on_attach = function(_, bufnr)
   local this_map = function(...) vim.api.nvim_buf_set_keymap(bufnr, ...) end
