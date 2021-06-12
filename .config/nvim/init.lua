@@ -175,6 +175,7 @@ require('paq-nvim') {
   'tpope/vim-rhubarb',                  -- git
   'idanarye/vim-merginal',              -- git
   'mhinz/vim-signify',                  -- gutter signs
+  'sindrets/diffview.nvim',             -- git
   'TimUntersberger/neogit',             -- git
   'b3nj5m1n/kommentary',                -- comments
   'phaazon/hop.nvim',                   -- search
@@ -240,10 +241,13 @@ g["rustfmt_autosave"] = 1
 -- git
 g.updatetime = 100
 
+require("neogit").setup({integrations = {diffview = true}})
 map('n', '<Leader>g', ':Neogit<CR>')
 map("n", "<leader>cc", "<Plug>kommentary_line_default", {noremap = false})
 map("n", "<leader>c", "<Plug>kommentary_motion_default", {noremap = false})
 map("v", "<leader>cc", "<Plug>kommentary_visual_default", {noremap = false})
+map("n", "<leader>dvo", ":DiffViewOpen<CR>", {noremap = false})
+map("n", "<leader>dvc", ":DiffViewClose<CR>", {noremap = false})
 
 map('n', '<leader>h', ':HopWord<CR>')
 
