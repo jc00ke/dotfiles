@@ -250,6 +250,7 @@ map("v", "<leader>cc", "<Plug>kommentary_visual_default", {noremap = false})
 map("n", "<leader>dvo", ":DiffViewOpen<CR>", {noremap = false})
 map("n", "<leader>dvc", ":DiffViewClose<CR>", {noremap = false})
 
+require('hop').setup({})
 map('n', '<leader>h', ':HopWord<CR>')
 
 -- https://github.com/vim-test/vim-test#cli-options
