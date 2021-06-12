@@ -125,6 +125,7 @@ map('n', '<Leader>k', 'gt', {noremap = true})
 map('i', 'jj', '<Esc>', {noremap = true})
 map('i', 'kk', '<Esc>:w<CR>', {noremap = true})
 map('n', 'gx', 'yiW:!xdg-open <cWORD><CR> <C-r>" & <CR><CR>')
+map('v', '<C-r>', [["hy:%s/<C-r>h//gc<left><left><left>]], {noremap = true})
 
 cmd('set showcmd')
 
