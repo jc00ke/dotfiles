@@ -418,3 +418,20 @@ lspconfig.sumneko_lua.setup({
 })
 
 lspconfig.solargraph.setup({})
+
+-- TODO
+
+--[[ " Automatic setting of the executable bit
+" http://vim.wikia.com/wiki/Setting_file_attributes_without_reloading_a_buffer
+function! SetExecutableBit()
+  let fname = expand("%:p")
+  checktime
+  execute "au FileChangedShell " . fname . " :echo"
+  silent !chmod a+x %
+  checktime
+  execute "au! FileChangedShell " . fname
+endfunction
+command! Xbit call SetExecutableBit()
+autocmd BufWritePost *.pl Xbit
+autocmd BufWritePost *.bash Xbit
+autocmd BufWritePost *.sh Xbit ]]
