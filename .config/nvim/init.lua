@@ -191,10 +191,7 @@ require('paq-nvim') {
   'tpope/vim-rake',                     -- ruby
   'vim-test/vim-test',                  -- testing
   'haya14busa/is.vim',                  -- search
-  'norcalli/nvim-colorizer.lua',        -- colors
-  'tjdevries/colorbuddy.vim',           -- colors
-  'marko-cerovac/material.nvim',        -- colors
-  'shaunsingh/solarized.nvim',          -- colors
+  'ishan9299/nvim-solarized-lua',       -- colors
   'hoob3rt/lualine.nvim',               -- status line
   'junegunn/vim-easy-align',            -- text
   'kyazdani42/nvim-web-devicons',       -- icons
@@ -263,21 +260,19 @@ map("n", "<leader>ta", ":TestSuite<CR>", {silent = true})
 map("n", "<leader>l", ":TestLast<CR>", {silent = true})
 map("n", "<leader>tv", ":TestVisit<CR>", {silent = true}) -- search
 
+Set_solarized = function(variant) vim.o.bg = variant end
+
+require('lualine').setup({options = {theme = 'solarized'}})
+
 -- themes
-require('colorizer').setup()
-require('material').change_style("oceanic")
-map('n', '<C-m>', [[<Cmd>lua require('material').toggle_style()<CR>]],
+Set_solarized("dark")
+map('n', '<leader>1', [[<Cmd>lua Set_solarized("dark")<CR>]],
     {noremap = true, silent = true})
-map('n', '<leader>1',
-    [[<Cmd>lua require('material').change_style('lighter')<CR>]],
+map('n', '<Leader>2', [[<Cmd>lua Set_solarized("light")<CR>]],
     {noremap = true, silent = true})
-map('n', '<Leader>2',
-    [[<Cmd>lua require('material').change_style('oceanic')<CR>]],
-    {noremap = true, silent = true})
--- require('solarized').set()
+cmd('colorscheme solarized')
 
 -- statusline
-require('lualine').setup({options = {theme = 'onedark'}})
 
 -- Start interactive EasyAlign in visual mode (e.g. vipga)
 map('x', 'ga', '<Plug>(EasyAlign)')
