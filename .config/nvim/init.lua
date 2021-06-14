@@ -262,7 +262,7 @@ map("n", "<leader>tv", ":TestVisit<CR>", {silent = true}) -- search
 
 Set_solarized = function(variant) vim.o.bg = variant end
 
-require('lualine').setup({options = {theme = 'solarized'}})
+require('lualine').setup({options = {theme = 'solarized_dark'}})
 
 -- themes
 Set_solarized("dark")
@@ -282,16 +282,15 @@ map('n', 'ga', '<Plug>(EasyAlign)')
 require('telescope').setup {
   defaults = {prompt_position = "top", sorting_strategy = "ascending"}
 }
-map('n', '<C-p>', [[<Cmd>lua require('telescope.builtin').find_files()<CR>  ]],
+map('n', '<C-p>', [[<Cmd>lua require('telescope.builtin').find_files()<CR>]],
     {noremap = true, silent = true})
 map('n', '<C-_>',
-    [[<Cmd>lua require('telescope.builtin').current_buffer_fuzzy_find()<CR>  ]],
+    [[<Cmd>lua require('telescope.builtin').current_buffer_fuzzy_find()<CR>]],
     {noremap = true, silent = true})
-map('n', '<Leader>a',
-    [[<Cmd>lua require('telescope.builtin').live_grep()<CR>  ]],
+map('n', '<Leader>a', [[<Cmd>lua require('telescope.builtin').live_grep()<CR>]],
     {noremap = true, silent = true})
 map('n', '<Leader>A',
-    [[<Cmd>lua require('telescope.builtin').grep_string()<CR>  ]],
+    [[<Cmd>lua require('telescope.builtin').grep_string()<CR>]],
     {noremap = true, silent = true})
 
 -- LSP
