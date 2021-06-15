@@ -167,6 +167,7 @@ require('paq-nvim') {
   },
   'tpope/vim-sensible',                 -- defaults
   'tpope/vim-obsession',                -- sessions
+  'tpope/vim-projectionist',            -- project config
   'kyazdani42/nvim-tree.lua',           -- file explorer
   'vimlab/split-term.vim',              -- terminal
   'sheerun/vim-polyglot',               -- programming languages
