@@ -453,3 +453,13 @@ au FileType elixir nnoremap <leader>r orequire IEx; IEx.pry<esc> ]]
 -- au FileType ruby map <Leader>fsl gg O# frozen_string_literal: true<CR><Esc>x
 
 -- autocmd Filetype elm setlocal ts=4 sw=4 sts=4 expandtab nowrap
+--
+--[[ Plug 'tpope/vim-dadbod'
+Plug 'kristijanhusak/vim-dadbod-ui'
+autocmd User DBUIOpened let b:dotenv = DotenvRead('.envrc') | norm R
+let g:db_ui_save_location = './exploration'
+let g:completion_matching_strategy_list = ['exact', 'substring'] ]]
+
+--[[ Plug 'kristijanhusak/vim-carbon-now-sh'
+vnoremap <F5> :CarbonNowSh<CR>
+let g:carbon_now_sh_options = 'bg=rgba%2838%2C139%2C210%2C1%29&ln=true&t=solarized+light&fm=Source+Code+Pro' ]]
