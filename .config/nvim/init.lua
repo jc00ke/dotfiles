@@ -386,6 +386,8 @@ lspconfig.elixirls.setup({
   settings = {elixirLS = {dialyzerEnabled = false, fetchDeps = false}}
 })
 
+lspconfig.denols.setup({})
+
 lspconfig.efm.setup({
   capabilities = capabilities,
   filetypes = {"elixir", "html", "lua", "sh", "yaml"},
@@ -393,7 +395,15 @@ lspconfig.efm.setup({
   on_attach = on_attach
 })
 
-lspconfig.denols.setup({})
+lspconfig.html.setup({
+  capabilities = capabilities,
+  init_options = {
+    configurationSection = {"html", "css", "javascript"},
+    documentFormatting = true,
+    embeddedLanguages = {css = true, javascript = true}
+  },
+  on_attach = on_attach
+})
 
 local sumneko_root_path = vim.fn.expand("~/src/lua-language-server")
 local sumneko_binary = vim.fn.expand(sumneko_root_path ..
