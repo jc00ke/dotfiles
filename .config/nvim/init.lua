@@ -261,12 +261,15 @@ map("n", "<leader>ta", ":TestSuite<CR>", {silent = true})
 map("n", "<leader>l", ":TestLast<CR>", {silent = true})
 map("n", "<leader>tv", ":TestVisit<CR>", {silent = true}) -- search
 
-Set_solarized = function(variant) vim.o.bg = variant end
-
-require('lualine').setup({options = {theme = 'solarized_dark'}})
+require('lualine').setup({
+  options = {
+    disabled_filetypes = {'toggleterm', 'terminal'},
+    theme = 'solarized_dark'
+  }
+})
 
 -- themes
-Set_solarized("dark")
+vim.o.bg = "dark"
 map('n', '<leader>1', [[<Cmd>lua Set_solarized("dark")<CR>]],
     {noremap = true, silent = true})
 map('n', '<Leader>2', [[<Cmd>lua Set_solarized("light")<CR>]],
