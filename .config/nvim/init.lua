@@ -165,44 +165,47 @@ require('paq-nvim') {
     'nvim-treesitter/nvim-treesitter',  -- parsing system
     run = ":TSUpdate"
   },
-  'tpope/vim-sensible',                 -- defaults
-  'tpope/vim-obsession',                -- sessions
-  'tpope/vim-projectionist',            -- project config
-  'kyazdani42/nvim-tree.lua',           -- file explorer
-  'vimlab/split-term.vim',              -- terminal
-  'sheerun/vim-polyglot',               -- programming languages
-  'nvim-lua/plenary.nvim',              -- utils
-  'tpope/vim-fugitive',                 -- git
-  'junegunn/gv.vim',                    -- git
-  'tpope/vim-rhubarb',                  -- git
-  'idanarye/vim-merginal',              -- git
-  'mhinz/vim-signify',                  -- gutter signs
-  'sindrets/diffview.nvim',             -- git
-  'TimUntersberger/neogit',             -- git
-  'b3nj5m1n/kommentary',                -- comments
-  'phaazon/hop.nvim',                   -- search
+  'tpope/vim-sensible',                     -- defaults
+  'tpope/vim-obsession',                    -- sessions
+  'tpope/vim-projectionist',                -- project config
+  'kyazdani42/nvim-tree.lua',               -- file explorer
+  'vimlab/split-term.vim',                  -- terminal
+  'sheerun/vim-polyglot',                   -- programming languages
+  'nvim-lua/plenary.nvim',                  -- utils
+  'tpope/vim-fugitive',                     -- git
+  'junegunn/gv.vim',                        -- git
+  'tpope/vim-rhubarb',                      -- git
+  'idanarye/vim-merginal',                  -- git
+  'mhinz/vim-signify',                      -- gutter signs
+  'sindrets/diffview.nvim',                 -- git
+  'TimUntersberger/neogit',                 -- git
+  'b3nj5m1n/kommentary',                    -- comments
+  'phaazon/hop.nvim',                       -- search
   {
-    'iamcco/markdown-preview.nvim',     -- markdown
+    'iamcco/markdown-preview.nvim',         -- markdown
      run = 'cd app & yarn install'
    },
-  'tpope/vim-eunuch',                   -- UNIX
-  'tpope/vim-dotenv',                   -- environment variables
-  'direnv/direnv.vim',                  -- environment variables
-  'tpope/vim-rails',                    -- ruby
-  'tpope/vim-rake',                     -- ruby
-  'vim-test/vim-test',                  -- testing
-  'haya14busa/is.vim',                  -- search
-  'ishan9299/nvim-solarized-lua',       -- colors
-  'hoob3rt/lualine.nvim',               -- status line
-  'junegunn/vim-easy-align',            -- text
-  'kyazdani42/nvim-web-devicons',       -- icons
-  'nvim-lua/popup.nvim',                -- UI
-  'nvim-telescope/telescope.nvim',      -- UI
-  'gennaro-tedesco/nvim-jqx',           -- json
-  'neovim/nvim-lspconfig',              -- LSP
-  'hrsh7th/vim-vsnip',                  -- LSP
-  'hrsh7th/vim-vsnip-integ',            -- LSP
-  'hrsh7th/nvim-compe'                  -- LSP
+  'tpope/vim-eunuch',                       -- UNIX
+  'tpope/vim-dotenv',                       -- environment variables
+  'direnv/direnv.vim',                      -- environment variables
+  'tpope/vim-rails',                        -- ruby
+  'tpope/vim-rake',                         -- ruby
+  'vim-test/vim-test',                      -- testing
+  'haya14busa/is.vim',                      -- search
+  'ishan9299/nvim-solarized-lua',           -- colors
+  'hoob3rt/lualine.nvim',                   -- status line
+  'junegunn/vim-easy-align',                -- text
+  'kyazdani42/nvim-web-devicons',           -- icons
+  'nvim-lua/popup.nvim',                    -- UI
+  'nvim-telescope/telescope.nvim',          -- UI
+  'nvim-telescope/telescope-symbols.nvim',  -- UI
+  'nvim-telescope/telescope-github.nvim',   -- github
+  'jvgrootveld/telescope-zoxide',           -- projects
+  'gennaro-tedesco/nvim-jqx',               -- json
+  'neovim/nvim-lspconfig',                  -- LSP
+  'hrsh7th/vim-vsnip',                      -- LSP
+  'hrsh7th/vim-vsnip-integ',                -- LSP
+  'hrsh7th/nvim-compe'                      -- LSP
 -- LuaFormatter on
 }
 
@@ -288,13 +291,40 @@ require('telescope').setup {
 }
 map('n', '<C-p>', [[<Cmd>lua require('telescope.builtin').find_files()<CR>]],
     {noremap = true, silent = true})
+
 map('n', '<C-_>',
     [[<Cmd>lua require('telescope.builtin').current_buffer_fuzzy_find()<CR>]],
     {noremap = true, silent = true})
+
 map('n', '<Leader>a', [[<Cmd>lua require('telescope.builtin').live_grep()<CR>]],
     {noremap = true, silent = true})
+
 map('n', '<Leader>A',
     [[<Cmd>lua require('telescope.builtin').grep_string()<CR>]],
+    {noremap = true, silent = true})
+
+map('n', "<leader>cd",
+    [[<Cmd>lua require('telescope').extensions.zoxide.list({})<CR>]],
+    {noremap = true, silent = true})
+
+map('n', "<leader>E",
+    [[<Cmd>lua require('telescope.builtin').symbols({sources = {'emoji', 'gitmoji'}})<CR>]],
+    {noremap = true, silent = true})
+
+map('n', "<leader>ghi",
+    [[<Cmd>lua require('telescope').extensions.gh.issues()<CR>]],
+    {noremap = true, silent = true})
+
+map('n', "<leader>ghr",
+    [[<Cmd>lua require('telescope').extensions.gh.run()<CR>]],
+    {noremap = true, silent = true})
+
+map('n', "<leader>ghpr",
+    [[<Cmd>lua require('telescope').extensions.gh.pull_request()<CR>]],
+    {noremap = true, silent = true})
+
+map('n', "<leader>ghg",
+    [[<Cmd>lua require('telescope').extensions.gh.gist()<CR>]],
     {noremap = true, silent = true})
 
 -- LSP
@@ -463,3 +493,10 @@ let g:completion_matching_strategy_list = ['exact', 'substring'] ]]
 --[[ Plug 'kristijanhusak/vim-carbon-now-sh'
 vnoremap <F5> :CarbonNowSh<CR>
 let g:carbon_now_sh_options = 'bg=rgba%2838%2C139%2C210%2C1%29&ln=true&t=solarized+light&fm=Source+Code+Pro' ]]
+
+-- paq
+--[[ 'romgrk/barbar.nvim',                 -- UI
+{
+  'lukas-reineke/indent-blankline.nvim',  -- UI
+  branch = 'lua'
+}, ]]
