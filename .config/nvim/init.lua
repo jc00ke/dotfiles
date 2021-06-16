@@ -160,9 +160,9 @@ end
 vim.cmd 'packadd paq-nvim' -- Load package
 require('paq-nvim') {
   -- LuaFormatter off
-  {'savq/paq-nvim', opt = true},        -- Let Paq manage itself
+  {'savq/paq-nvim', opt = true},            -- Let Paq manage itself
   {
-    'nvim-treesitter/nvim-treesitter',  -- parsing system
+    'nvim-treesitter/nvim-treesitter',      -- parsing system
     run = ":TSUpdate"
   },
   'tpope/vim-sensible',                     -- defaults
@@ -173,9 +173,7 @@ require('paq-nvim') {
   'sheerun/vim-polyglot',                   -- programming languages
   'nvim-lua/plenary.nvim',                  -- utils
   'tpope/vim-fugitive',                     -- git
-  'junegunn/gv.vim',                        -- git
   'tpope/vim-rhubarb',                      -- git
-  'idanarye/vim-merginal',                  -- git
   'mhinz/vim-signify',                      -- gutter signs
   'sindrets/diffview.nvim',                 -- git
   'TimUntersberger/neogit',                 -- git
