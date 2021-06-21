@@ -109,7 +109,8 @@ opt('o', 'splitright', true) -- Put new windows right of current
 opt('o', 'termguicolors', true) -- True color support
 opt('o', 'wildmode', 'longest:full,full') -- Command-line completion mode
 opt('w', 'cursorline', true) -- Highlight the screen line of the cursor with CursorLine
-opt('w', 'foldmethod', 'syntax') -- The kind of folding used for the current window
+opt('w', 'foldmethod', 'expr') -- The kind of folding used for the current window
+opt('w', 'foldexpr', 'nvim_treesitter#foldexpr()')
 opt('w', 'foldcolumn', '0') -- When and how to draw the foldcolumn
 opt('w', 'foldnestmax', 8) -- Sets the maximum nesting of folds for the "indent" and "syntax" methods
 opt('w', 'foldlevel', 3) -- Sets the fold level: higher levels will be closed.
