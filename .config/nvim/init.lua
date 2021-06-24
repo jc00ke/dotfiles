@@ -279,6 +279,7 @@ require('nvim-treesitter.configs').setup({
 -- statusline
 
 require('lualine').setup({
+  extensions = {'nvim-tree'},
   options = {
     disabled_filetypes = {'toggleterm', 'terminal'},
     theme = 'solarized_dark'
