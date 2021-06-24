@@ -239,6 +239,7 @@ map('n', '<Leader>fs', ':Term<CR>')
 map('n', '<Leader>fv', ':VTerm<CR>')
 map('n', '<Leader>ff', ':TTerm<CR>')
 map('n', '<Leader>fp', ':TTerm<CR> postgres<CR>')
+map('t', '<C-o>', '<C-\\><C-n>')
 
 g["rustfmt_autosave"] = 1
 
