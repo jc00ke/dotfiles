@@ -169,6 +169,7 @@ require('paq-nvim') {
   'tpope/vim-sensible',                     -- defaults
   'tpope/vim-obsession',                    -- sessions
   'tpope/vim-projectionist',                -- project config
+  'tpope/vim-surround',                     -- text
   'kyazdani42/nvim-tree.lua',               -- file explorer
   'vimlab/split-term.vim',                  -- terminal
   'sheerun/vim-polyglot',                   -- programming languages
@@ -204,7 +205,8 @@ require('paq-nvim') {
   'neovim/nvim-lspconfig',                  -- LSP
   'hrsh7th/vim-vsnip',                      -- LSP
   'hrsh7th/vim-vsnip-integ',                -- LSP
-  'hrsh7th/nvim-compe'                      -- LSP
+  'hrsh7th/nvim-compe',                     -- LSP
+  'elixir-editors/vim-elixir',              -- Elixir
 -- LuaFormatter on
 }
 
@@ -262,6 +264,16 @@ map("n", "<leader>T", ":TestFile<CR>", {silent = true})
 map("n", "<leader>ta", ":TestSuite<CR>", {silent = true})
 map("n", "<leader>l", ":TestLast<CR>", {silent = true})
 map("n", "<leader>tv", ":TestVisit<CR>", {silent = true}) -- search
+
+-- treesitter
+
+require('nvim-treesitter.configs').setup({
+  ensure_installed = "all",
+  highlight = {enable = true},
+  indent = {enable = true}
+})
+
+-- statusline
 
 require('lualine').setup({
   options = {
