@@ -221,6 +221,7 @@ g["nvim_tree_ignore"] = {
 map('n', '<leader>n', ':NvimTreeToggle<CR>')
 map('n', '<leader>r', ':NvimTreeRefresh<CR>')
 map('n', '<C-n>', ':NvimTreeFindFile<CR>')
+map('n', 'BDA', [[<Cmd>%bd|e#<CR>]])
 
 -- allow terminal buffer size to be very large
 g["terminal_scrollback_buffer_size"] = 100000
