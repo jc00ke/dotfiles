@@ -304,7 +304,12 @@ map('n', 'ga', '<Plug>(EasyAlign)')
 require('telescope').setup {
   defaults = {prompt_position = "top", sorting_strategy = "ascending"}
 }
-map('n', '<C-p>', [[<Cmd>lua require('telescope.builtin').find_files()<CR>]],
+map('n', '<C-p>', [[<Cmd>lua require('telescope.builtin').git_files()<CR>]],
+    {noremap = true, silent = true})
+map('n', '<C-P>', [[<Cmd>lua require('telescope.builtin').find_files()<CR>]],
+    {noremap = true, silent = true})
+
+map('n', '<C-b>', [[<Cmd>lua require('telescope.builtin').buffers()<CR>]],
     {noremap = true, silent = true})
 
 map('n', '<C-_>',
@@ -316,6 +321,10 @@ map('n', '<Leader>a', [[<Cmd>lua require('telescope.builtin').live_grep()<CR>]],
 
 map('n', '<Leader>A',
     [[<Cmd>lua require('telescope.builtin').grep_string()<CR>]],
+    {noremap = true, silent = true})
+
+map('n', '<Leader>fb',
+    [[<Cmd>lua require('telescope.builtin').file_browser()<CR>]],
     {noremap = true, silent = true})
 
 map('n', "<leader>cd",
