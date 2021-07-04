@@ -114,8 +114,8 @@ abbr -a fuck "oops"
 abbr -a yolo "oops"
 
 
-eval (direnv hook fish)
 source ~/.asdf/asdf.fish
+eval (direnv hook fish)
 if test -f ~/.nix-profile/etc/profile.d/nix.sh
   fenv source ~/.nix-profile/etc/profile.d/nix.sh
 end
