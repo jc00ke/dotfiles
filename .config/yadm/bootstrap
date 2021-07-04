@@ -1,58 +1,58 @@
 #!/bin/bash
 
 sudo apt install -y \
-  autoconf \
-  autopoint \
-  bison \
-  build-essential \
-  cmake \
-  curl \
-  exuberant-ctags \
-  fish \
-  flameshot \
-  git \
-  git-doc \
-  git-gui \
-  git-svn \
-  gitg \
-  gnome-calculator \
-  gnome-clocks \
-  htop \
-  i3xrocks-battery \
-  i3xrocks-cpu-usage \
-  i3xrocks-key-indicator \
-  i3xrocks-memory \
-  i3xrocks-net-traffic \
-  i3xrocks-time \
-  i3xrocks-weather \
-  imagemagick \
-  inotify-tools \
-  jq \
-  libclang-dev libffi-dev \
-  libfreetype6-dev \
-  libfontconfig1-dev \
-  libgdbm-dev \
-  libgtk-3-dev \
-  libncurses5-dev \
-  libreadline-dev \
-  libssl-dev \
-  libtool \
-  libxcb-xfixes0-dev \
-  libxml2-dev \
-  libxslt1-dev \
-  libyaml-dev \
-  openconnect \
-  openvpn \
-  parallel \
-  peek \
-  pkg-config \
-  python3 \
-  python3-pip \
-  regolith-look-solarized-dark \
-  shellcheck \
-  software-properties-common \
-  ubuntu-restricted-extras \
-  zlib1g-dev
+	autoconf \
+	autopoint \
+	bison \
+	build-essential \
+	cmake \
+	curl \
+	exuberant-ctags \
+	fish \
+	flameshot \
+	git \
+	git-doc \
+	git-gui \
+	git-svn \
+	gitg \
+	gnome-calculator \
+	gnome-clocks \
+	htop \
+	i3xrocks-battery \
+	i3xrocks-cpu-usage \
+	i3xrocks-key-indicator \
+	i3xrocks-memory \
+	i3xrocks-net-traffic \
+	i3xrocks-time \
+	i3xrocks-weather \
+	imagemagick \
+	inotify-tools \
+	jq \
+	libclang-dev libffi-dev \
+	libfreetype6-dev \
+	libfontconfig1-dev \
+	libgdbm-dev \
+	libgtk-3-dev \
+	libncurses5-dev \
+	libreadline-dev \
+	libssl-dev \
+	libtool \
+	libxcb-xfixes0-dev \
+	libxml2-dev \
+	libxslt1-dev \
+	libyaml-dev \
+	openconnect \
+	openvpn \
+	parallel \
+	peek \
+	pkg-config \
+	python3 \
+	python3-pip \
+	regolith-look-solarized-dark \
+	shellcheck \
+	software-properties-common \
+	ubuntu-restricted-extras \
+	zlib1g-dev
 
 log "Disabling GNOME Screencast for Peek"
 # https://github.com/phw/peek/issues/677
@@ -72,17 +72,17 @@ mkdir -p "$HOME/src"
 cd "$HOME" || exit
 
 if [ ! -d "$HOME/.config/omf" ]; then
-  cd "$HOME/src" || exit
-  log "Installing oh-my-fish"
-  curl -L http://get.oh-my.fish | fish
-  echo "omf install cbjohnson" | fish
-  echo "omf install foreign-env" | fish
+	cd "$HOME/src" || exit
+	log "Installing oh-my-fish"
+	curl -L http://get.oh-my.fish | fish
+	echo "omf install cbjohnson" | fish
+	echo "omf install foreign-env" | fish
 fi
 
 cd "$HOME" || exit
 if [ ! -d "$HOME/.asdf" ]; then
-  log "Installing asdf"
-  git clone https://github.com/asdf-vm/asdf.git ~/.asdf --branch v0.8.1
+	log "Installing asdf"
+	git clone https://github.com/asdf-vm/asdf.git ~/.asdf --branch v0.8.1
 fi
 
 cd "$HOME/src" || exit
@@ -148,7 +148,7 @@ cd ../..
 log "Installing yarn"
 curl -o- -L https://yarnpkg.com/install.sh | bash
 
-DIR="${BASH_SOURCE%/*}" || if [[ ! -d "$DIR" ]]; then DIR="$PWD"; fi
+DIR="${BASH_SOURCE%/*}" || if [[ ! -d $DIR ]]; then DIR="$PWD"; fi
 # shellcheck source=./_install.sh
 source "$DIR/_install.sh"
 
@@ -197,13 +197,13 @@ echo "sudo systemctl start wol.service"
 
 log "Installing 1Password"
 sudo apt-key \
-  --keyring /usr/share/keyrings/1password.gpg \
-  adv \
-  --keyserver keyserver.ubuntu.com \
-  --recv-keys 3FEF9748469ADBE15DA7CA80AC2D62742012EA22
+	--keyring /usr/share/keyrings/1password.gpg \
+	adv \
+	--keyserver keyserver.ubuntu.com \
+	--recv-keys 3FEF9748469ADBE15DA7CA80AC2D62742012EA22
 echo 'deb [arch=amd64 signed-by=/usr/share/keyrings/1password.gpg] 
 https://onepassword.s3.amazonaws.com/linux/debian edge main' \
-  | sudo tee /etc/apt/sources.list.d/1password.list
+	| sudo tee /etc/apt/sources.list.d/1password.list
 sudo apt update && sudo apt install 1password
 
 log "Installing GitHub CLI"

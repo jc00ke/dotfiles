@@ -1,6 +1,6 @@
 #!/bin/bash
 
-DIR="${BASH_SOURCE%/*}" || if [[ ! -d "$DIR" ]]; then DIR="$PWD"; fi
+DIR="${BASH_SOURCE%/*}" || if [[ ! -d $DIR ]]; then DIR="$PWD"; fi
 # shellcheck source=./_alacritty.sh
 source "$DIR/_alacritty.sh"
 source "$DIR/_bottom.sh"
