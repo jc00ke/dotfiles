@@ -12,3 +12,4 @@ redis 6.2.3
 ruby 3.0.1
 rust 1.52.1
 ripgrep 13.0.0
+bat 0.18.1

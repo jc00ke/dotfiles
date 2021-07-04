@@ -117,6 +117,9 @@ asdf plugin-add lua https://github.com/Stratus3D/asdf-lua.git
 log "Installing ripgrep"
 asdf plugin add ripgrep
 
+Log "Installing bat"
+asdf plugin add bat
+
 if command -v nvim >/dev/null 2>&1; then
 	log "Installing neovim"
 	asdf plugin add neovim
