@@ -17,3 +17,4 @@ direnv 2.28.0
 starship 0.55.0
 zoxide 0.7.2
 fd 8.2.1
+exa 0.10.1

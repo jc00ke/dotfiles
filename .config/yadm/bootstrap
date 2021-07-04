@@ -132,6 +132,9 @@ asdf plugin add starship
 Log "Installing fd"
 asdf plugin add fd
 
+Log "Installing exa"
+asdf plugin add exa
+
 if command -v nvim >/dev/null 2>&1; then
 	log "Installing neovim"
 	asdf plugin add neovim
