@@ -126,6 +126,9 @@ asdf plugin-add direnv
 Log "Installing zoxide"
 asdf plugin add zoxide https://github.com/nyrst/asdf-zoxide.git
 
+Log "Installing starship"
+asdf plugin add starship
+
 if command -v nvim >/dev/null 2>&1; then
 	log "Installing neovim"
 	asdf plugin add neovim
