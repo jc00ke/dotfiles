@@ -13,3 +13,4 @@ ruby 3.0.1
 rust 1.52.1
 ripgrep 13.0.0
 bat 0.18.1
+direnv 2.28.0
