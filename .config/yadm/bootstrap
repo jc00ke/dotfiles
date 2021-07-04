@@ -114,11 +114,14 @@ asdf plugin-add deno https://github.com/asdf-community/asdf-deno.git
 log "Installing lua"
 asdf plugin-add lua https://github.com/Stratus3D/asdf-lua.git
 
-if command -v nvim > /dev/null 2>&1; then
-  log "Installing neovim"
-  asdf plugin add neovim
-  log "Bootstraping Neovim"
-  nvim '+PaqInstall' '+PaqClean' '+PaqUpdate' '+qall'
+log "Installing ripgrep"
+asdf plugin add ripgrep
+
+if command -v nvim >/dev/null 2>&1; then
+	log "Installing neovim"
+	asdf plugin add neovim
+	log "Bootstraping Neovim"
+	nvim '+PackerInstall' '+PackerClean' '+PackerUpdate' '+PackerCompile' '+qall'
 fi
 
 asdf install
