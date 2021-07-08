@@ -120,14 +120,8 @@ asdf plugin-add ripgrep
 Log "Installing bat"
 asdf plugin-add bat
 
-Log "Installing direnv"
-asdf plugin-add direnv
-
 Log "Installing zoxide"
 asdf plugin add zoxide https://github.com/nyrst/asdf-zoxide.git
-
-Log "Installing starship"
-asdf plugin add starship
 
 Log "Installing fd"
 asdf plugin add fd
@@ -147,6 +141,14 @@ fi
 
 asdf install
 asdf reshim
+
+log "Installing starship"
+sh -c "$(curl -fsSL https://starship.rs/install.sh)"
+
+log "Installing direnv"
+wget "https://github.com/direnv/direnv/releases/download/v2.28.0/direnv.linux-amd64"
+mv "direnv.linux-amd64" "$HOME/.local/bin/direnv"
+chmod +x "$HOME/.local/bin/direnv"
 
 log "Installing lua formatter"
 luarocks install --server=https://luarocks.org/dev luaformatter
