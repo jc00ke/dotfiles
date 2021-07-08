@@ -178,8 +178,6 @@ require('packer').startup(function()
       }
     end
   }
-  -- Add indentation guides even on blank lines
-  use { 'lukas-reineke/indent-blankline.nvim', branch="lua" }
   -- Add git related info in the signs columns and popups
   use {'lewis6991/gitsigns.nvim', requires = {'nvim-lua/plenary.nvim'} }
   use 'neovim/nvim-lspconfig'        -- Collection of configurations for built-in LSP client
@@ -207,8 +205,8 @@ require('packer').startup(function()
       vim.g["split_term_default_shell"] = "fish"
     end
   }
-  use 'sheerun/vim-polyglot'                   -- programming languages
-  use 'mhinz/vim-signify'                      -- gutter signs
+--  use 'sheerun/vim-polyglot'                   -- programming languages
+--  use 'mhinz/vim-signify'                      -- gutter signs
   use {
     'TimUntersberger/neogit',                 -- git
     config = function ()
@@ -270,10 +268,10 @@ require('packer').startup(function()
    'iamcco/markdown-preview.nvim',         -- markdown
     run = 'cd app & yarn install'
   }
---  use {
---    'nvim-treesitter/nvim-treesitter',      -- parsing system
---    run = ":TSUpdate"
---  }
+  use {
+    'nvim-treesitter/nvim-treesitter',      -- parsing system
+    run = ":TSUpdate"
+  }
   -- LuaFormatter on
 end)
 
@@ -397,8 +395,7 @@ autocmd BufReadPost * if line("'\"") > 1 && line("'\"") <= line("$") |   exe "no
 
 -- Y yank until the end of line
 vim.api.nvim_set_keymap('n', 'Y', 'y$', {noremap = true})
---
--- LSP settings
+
 local nvim_lsp = require('lspconfig')
 local on_attach = function(_client, bufnr)
   vim.api.nvim_buf_set_option(bufnr, 'omnifunc', 'v:lua.vim.lsp.omnifunc')
@@ -453,6 +450,7 @@ local on_attach = function(_client, bufnr)
 end
 
 -- Enable the following language servers
+
 local servers = {
   'clangd', 'denols', 'rust_analyzer', 'pyright', 'solargraph', 'tsserver'
 }
@@ -522,6 +520,7 @@ vim.cmd([[ command! Format execute 'lua vim.lsp.buf.formatting()' ]])
 vim.o.completeopt = "menuone,noinsert"
 
 -- Compe setup
+
 require'compe'.setup {
   autocomplete = true,
   debug = false,
