@@ -91,10 +91,79 @@ require('packer').startup(function()
   use 'tpope/vim-fugitive'           -- Git commands in nvim
   use 'tpope/vim-rhubarb'            -- Fugitive-companion to interact with github
   use 'tpope/vim-commentary'         -- "gc" to comment visual regions/lines
-  use 'ludovicchabant/vim-gutentags' -- Automatic tags management
   -- UI to select things (files, grep results, open buffers...)
-  use {'nvim-telescope/telescope.nvim', requires = {{'nvim-lua/popup.nvim'}, {'nvim-lua/plenary.nvim'}} }
-  use 'joshdick/onedark.vim'         -- Theme inspired by Atom
+  use {
+    'nvim-telescope/telescope.nvim',
+    config = function ()
+      require('telescope').setup {
+      defaults = {
+        file_sorter = require'telescope.sorters'.get_fzy_sorter,
+        generic_sorter = require'telescope.sorters'.get_fzy_sorter,
+        mappings = {i = {["<C-u>"] = false, ["<C-d>"] = false}},
+        layout_config = {prompt_position = "top"},
+        sorting_strategy = "ascending"
+      }
+      }
+      -- Add leader shortcuts
+      vim.api.nvim_set_keymap('n', '<C-p>',
+                              [[<Cmd>lua require('telescope.builtin').git_files()<CR>]],
+                              {noremap = true, silent = true})
+      vim.api.nvim_set_keymap('n', '<C-P>',
+                              [[<cmd>lua require('telescope.builtin').find_files()<cr>]],
+                              {noremap = true, silent = true})
+      vim.api.nvim_set_keymap('n', '<C-b>',
+                              [[<cmd>lua require('telescope.builtin').buffers()<cr>]],
+                              {noremap = true, silent = true})
+      vim.api.nvim_set_keymap('n', '<leader>F',
+                              [[<cmd>lua require('telescope.builtin').current_buffer_fuzzy_find()<cr>]],
+                              {noremap = true, silent = true})
+      vim.api.nvim_set_keymap('n', '<C-_>',
+                              [[<cmd>lua require('telescope.builtin').oldfiles()<cr>]],
+                              {noremap = true, silent = true})
+      vim.api.nvim_set_keymap('n', '<leader>A',
+                              [[<cmd>lua require('telescope.builtin').grep_string()<cr>]],
+                              {noremap = true, silent = true})
+      vim.api.nvim_set_keymap('n', '<leader>a',
+                              [[<cmd>lua require('telescope.builtin').live_grep()<cr>]],
+                              {noremap = true, silent = true})
+      vim.api.nvim_set_keymap('n', '<leader>o',
+                              [[<cmd>lua require('telescope.builtin').tags{ only_current_buffer = true }<cr>]],
+                              {noremap = true, silent = true})
+      vim.api.nvim_set_keymap('n', '<Leader>fb',
+                              [[<Cmd>lua require('telescope.builtin').file_browser()<CR>]],
+                              {noremap = true, silent = true})
+      vim.api.nvim_set_keymap('n', "<leader>cd",
+                              [[<Cmd>lua require('telescope').extensions.zoxide.list({})<CR>]],
+                              {noremap = true, silent = true})
+      vim.api.nvim_set_keymap('n', "<leader>E",
+                              [[<Cmd>lua require('telescope.builtin').symbols({sources = {'emoji', 'gitmoji'}})<CR>]],
+                              {noremap = true, silent = true})
+      vim.api.nvim_set_keymap('n', '<leader>gc',
+                              [[<cmd>lua require('telescope.builtin').git_commits()<cr>]],
+                              {noremap = true, silent = true})
+      vim.api.nvim_set_keymap('n', '<leader>gb',
+                              [[<cmd>lua require('telescope.builtin').git_branches()<cr>]],
+                              {noremap = true, silent = true})
+      vim.api.nvim_set_keymap('n', '<leader>gs',
+                              [[<cmd>lua require('telescope.builtin').git_status()<cr>]],
+                              {noremap = true, silent = true})
+      vim.api.nvim_set_keymap('n', '<leader>gp',
+                              [[<cmd>lua require('telescope.builtin').git_bcommits()<cr>]],
+                              {noremap = true, silent = true})
+      vim.api.nvim_set_keymap('n', "<leader>gi",
+                              [[<Cmd>lua require('telescope').extensions.gh.issues()<CR>]],
+                              {noremap = true, silent = true})
+      vim.api.nvim_set_keymap('n', "<leader>gr",
+                              [[<Cmd>lua require('telescope').extensions.gh.run()<CR>]],
+                              {noremap = true, silent = true})
+      vim.api.nvim_set_keymap('n', "<leader>gpr",
+                              [[<Cmd>lua require('telescope').extensions.gh.pull_request()<CR>]],
+                              {noremap = true, silent = true})
+      vim.api.nvim_set_keymap('n', "<leader>gg",
+                              [[<Cmd>lua require('telescope').extensions.gh.gist()<CR>]],
+                              {noremap = true, silent = true})
+    end,
+    requires = {{'nvim-lua/popup.nvim'}, {'nvim-lua/plenary.nvim'}} }
   use {
     'itchyny/lightline.vim',        -- Fancier statusline
     config = function ()
@@ -301,75 +370,6 @@ end
 
 vim.api.nvim_set_keymap('n', '<F10>', '<cmd>lua ToggleMouse()<cr>',
                         {noremap = true})
-
--- Telescope
-require('telescope').setup {
-  defaults = {
-    file_sorter = require'telescope.sorters'.get_fzy_sorter,
-    generic_sorter = require'telescope.sorters'.get_fzy_sorter,
-    mappings = {i = {["<C-u>"] = false, ["<C-d>"] = false}},
-    layout_config = {prompt_position = "top"},
-    sorting_strategy = "ascending"
-  }
-}
--- Add leader shortcuts
-vim.api.nvim_set_keymap('n', '<C-p>',
-                        [[<Cmd>lua require('telescope.builtin').git_files()<CR>]],
-                        {noremap = true, silent = true})
-vim.api.nvim_set_keymap('n', '<C-P>',
-                        [[<cmd>lua require('telescope.builtin').find_files()<cr>]],
-                        {noremap = true, silent = true})
-vim.api.nvim_set_keymap('n', '<C-b>',
-                        [[<cmd>lua require('telescope.builtin').buffers()<cr>]],
-                        {noremap = true, silent = true})
-vim.api.nvim_set_keymap('n', '<leader>F',
-                        [[<cmd>lua require('telescope.builtin').current_buffer_fuzzy_find()<cr>]],
-                        {noremap = true, silent = true})
-vim.api.nvim_set_keymap('n', '<C-_>',
-                        [[<cmd>lua require('telescope.builtin').oldfiles()<cr>]],
-                        {noremap = true, silent = true})
-vim.api.nvim_set_keymap('n', '<leader>A',
-                        [[<cmd>lua require('telescope.builtin').grep_string()<cr>]],
-                        {noremap = true, silent = true})
-vim.api.nvim_set_keymap('n', '<leader>a',
-                        [[<cmd>lua require('telescope.builtin').live_grep()<cr>]],
-                        {noremap = true, silent = true})
-vim.api.nvim_set_keymap('n', '<leader>o',
-                        [[<cmd>lua require('telescope.builtin').tags{ only_current_buffer = true }<cr>]],
-                        {noremap = true, silent = true})
-vim.api.nvim_set_keymap('n', '<Leader>fb',
-                        [[<Cmd>lua require('telescope.builtin').file_browser()<CR>]],
-                        {noremap = true, silent = true})
-vim.api.nvim_set_keymap('n', "<leader>cd",
-                        [[<Cmd>lua require('telescope').extensions.zoxide.list({})<CR>]],
-                        {noremap = true, silent = true})
-vim.api.nvim_set_keymap('n', "<leader>E",
-                        [[<Cmd>lua require('telescope.builtin').symbols({sources = {'emoji', 'gitmoji'}})<CR>]],
-                        {noremap = true, silent = true})
-vim.api.nvim_set_keymap('n', '<leader>gc',
-                        [[<cmd>lua require('telescope.builtin').git_commits()<cr>]],
-                        {noremap = true, silent = true})
-vim.api.nvim_set_keymap('n', '<leader>gb',
-                        [[<cmd>lua require('telescope.builtin').git_branches()<cr>]],
-                        {noremap = true, silent = true})
-vim.api.nvim_set_keymap('n', '<leader>gs',
-                        [[<cmd>lua require('telescope.builtin').git_status()<cr>]],
-                        {noremap = true, silent = true})
-vim.api.nvim_set_keymap('n', '<leader>gp',
-                        [[<cmd>lua require('telescope.builtin').git_bcommits()<cr>]],
-                        {noremap = true, silent = true})
-vim.api.nvim_set_keymap('n', "<leader>gi",
-                        [[<Cmd>lua require('telescope').extensions.gh.issues()<CR>]],
-                        {noremap = true, silent = true})
-vim.api.nvim_set_keymap('n', "<leader>gr",
-                        [[<Cmd>lua require('telescope').extensions.gh.run()<CR>]],
-                        {noremap = true, silent = true})
-vim.api.nvim_set_keymap('n', "<leader>gpr",
-                        [[<Cmd>lua require('telescope').extensions.gh.pull_request()<CR>]],
-                        {noremap = true, silent = true})
-vim.api.nvim_set_keymap('n', "<leader>gg",
-                        [[<Cmd>lua require('telescope').extensions.gh.gist()<CR>]],
-                        {noremap = true, silent = true})
 
 -- Change preview window location
 vim.g.splitbelow = true
