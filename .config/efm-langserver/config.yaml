@@ -1,4 +1,7 @@
+---
 version: 2
+log-file: /home/jesse/output.log
+log-level: 1
 
 tools:
   mix_credo: &mix_credo
@@ -32,6 +35,16 @@ tools:
     format-command: 'shfmt -ci -s -bn'
     format-stdin: true
 
+  yaml-cfn-lint: &yaml-cfn-lint
+    # https://vim-jp.org/vimdoc-en/quickfix.html#error-file-format
+    # https://github.com/reviewdog/errorformat
+    lint-command: >
+      cfn-lint -f parseable - |
+      awk '{ split($0,a,":"); print a[1] ":" a[2] ":" a[3] ":" a[6] ":" a[7] }'
+    lint-formats:
+      - '%f:%l:%c:%n:%m'
+    lint-stdin: true
+
   yaml-yamllint: &yaml-yamllint
     lint-command: 'yamllint -f parsable -'
     lint-stdin: true
@@ -51,4 +64,5 @@ languages:
     - <<: *sh-shellcheck
     - <<: *sh-shfmt
   yaml:
+    - <<: *yaml-cfn-lint
     - <<: *yaml-yamllint
