@@ -521,6 +521,8 @@ capabilities.textDocument.completion.completionItem.resolveSupport = {
   properties = {'documentation', 'detail', 'additionalTextEdits'}
 }
 
+nvim_lsp.bashls.setup({capabilities = capabilities})
+
 nvim_lsp.efm.setup({
   capabilities = capabilities,
   filetypes = {"elixir", "html", "lua", "sh", "yaml"},
