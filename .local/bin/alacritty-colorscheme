@@ -1,0 +1,8 @@
+#!/bin/env bash
+
+config_file="$HOME/.config/alacritty/alacritty.yml"
+
+yq e '.schemes | keys | .[]' "$config_file" \
+  | sort \
+  | fzf \
+  | xargs -I {} yq e -i '.colors alias |= "{}"' "$config_file"
