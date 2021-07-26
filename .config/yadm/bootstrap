@@ -132,6 +132,9 @@ asdf plugin add exa
 Log "Installing delta"
 asdf plugin add delta
 
+Log "Installing yq"
+asdf plugin add yq
+
 if command -v nvim >/dev/null 2>&1; then
 	log "Installing neovim"
 	asdf plugin add neovim
