@@ -32,7 +32,7 @@ tools:
       - '%f:%l:%c: %tote: %m'
 
   sh-shfmt: &sh-shfmt
-    format-command: 'shfmt -ci -s -bn'
+    format-command: 'shfmt -ci -s -i 2 -bn'
     format-stdin: true
 
   yaml-cfn-lint: &yaml-cfn-lint
