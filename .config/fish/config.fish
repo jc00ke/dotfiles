@@ -99,6 +99,7 @@ abbr -a xclipx "xclip -selection clipboard"
 abbr -a xx "exit"
 abbr -a e! "nvim +PlugInstall"
 abbr -a e^ "nvim +PlugUpdate"
+abbr -a o "xdg-open"
 
 abbr -a n^s 'asdf uninstall neovim stable && asdf install neovim stable'
 abbr -a n^n 'asdf uninstall neovim nightly && asdf install neovim nightly'
