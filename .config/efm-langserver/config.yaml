@@ -1,8 +1,6 @@
----
 version: 2
 log-file: /home/jesse/output.log
 log-level: 1
-
 tools:
   mix_credo: &mix_credo
     lint-command: |
@@ -18,51 +16,49 @@ tools:
     root-markers:
       - mix.lock
       - mix.exs
-
   lua-lua-format: &lua-lua-format
-    format-command: 'lua-format -i --indent-width=2'
+    format-command: lua-format -i --indent-width=2
     format-stdin: true
-
   sh-shellcheck: &sh-shellcheck
-    lint-command: 'shellcheck -f gcc -x'
-    lint-source: 'shellcheck'
+    lint-command: shellcheck -f gcc -x
+    lint-source: shellcheck
     lint-formats:
       - '%f:%l:%c: %trror: %m'
       - '%f:%l:%c: %tarning: %m'
       - '%f:%l:%c: %tote: %m'
-
   sh-shfmt: &sh-shfmt
-    format-command: 'shfmt -ci -s -i 2 -bn'
+    format-command: shfmt -ci -s -i 2 -bn
     format-stdin: true
-
   yaml-cfn-lint: &yaml-cfn-lint
     # https://vim-jp.org/vimdoc-en/quickfix.html#error-file-format
     # https://github.com/reviewdog/errorformat
-    lint-command: >
-      cfn-lint -f parseable - |
-      awk '{ split($0,a,":"); print a[1] ":" a[2] ":" a[3] ":" a[6] ":" a[7] }'
+    lint-command: |
+      cfn-lint \
+      -f parseable \
+      ${INPUT} \
+      | awk \
+      '{ split($0,a,":"); print a[1] ":" a[2] ":" a[3] ":" a[6] ":" a[7] }'
     lint-formats:
       - '%f:%l:%c:%n:%m'
     lint-stdin: true
-
   yaml-yamllint: &yaml-yamllint
-    lint-command: 'yamllint -f parsable -'
+    lint-command: yamllint -f parsable -
     lint-stdin: true
-
-  tailwind-class-sort: &tailwind-class-sort
-    format-command: 'rustywind --stdin'
+    format-command: yq e -P -M
     format-stdin: true
-
+  tailwind-class-sort: &tailwind-class-sort
+    format-command: rustywind --stdin
+    format-stdin: true
 languages:
   elixir:
-    - <<: *mix_credo
+    - !!merge <<: *mix_credo
   html:
-    - <<: *tailwind-class-sort
+    - !!merge <<: *tailwind-class-sort
   lua:
-    - <<: *lua-lua-format
+    - !!merge <<: *lua-lua-format
   sh:
-    - <<: *sh-shellcheck
-    - <<: *sh-shfmt
+    - !!merge <<: *sh-shellcheck
+    - !!merge <<: *sh-shfmt
   yaml:
-    - <<: *yaml-cfn-lint
-    - <<: *yaml-yamllint
+    #- !!merge <<: *yaml-cfn-lint
+    - !!merge <<: *yaml-yamllint
