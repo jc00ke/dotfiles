@@ -16,8 +16,8 @@ tools:
     root-markers:
       - mix.lock
       - mix.exs
-  lua-lua-format: &lua-lua-format
-    format-command: lua-format -i --indent-width=2
+  lua-stylua: &lua-stylua
+    format-command: stylua --indent-type=Spaces --indent-width=2 --column-width=110 -
     format-stdin: true
   sh-shellcheck: &sh-shellcheck
     lint-command: shellcheck -f gcc -x
@@ -55,7 +55,7 @@ languages:
   html:
     - !!merge <<: *tailwind-class-sort
   lua:
-    - !!merge <<: *lua-lua-format
+    - !!merge <<: *lua-stylua
   sh:
     - !!merge <<: *sh-shellcheck
     - !!merge <<: *sh-shfmt

@@ -156,8 +156,12 @@ wget "https://github.com/direnv/direnv/releases/download/v2.28.0/direnv.linux-am
 mv "direnv.linux-amd64" "$HOME/.local/bin/direnv"
 chmod +x "$HOME/.local/bin/direnv"
 
-log "Installing lua formatter"
-luarocks install --server=https://luarocks.org/dev luaformatter
+log "installing stylua formatter"
+cd "$HOME/src" || exit
+wget https://github.com/JohnnyMorganz/StyLua/releases/download/v0.10.0/stylua-0.10.0-linux.zip
+unzip stylua-0.10.0-linux.zip
+chmod +x stylua
+mv stylua "$HOME/.local/bin/"
 
 log "Installing lua LSP"
 sudo apt install ninja-build
