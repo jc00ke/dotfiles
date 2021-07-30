@@ -1,5 +1,5 @@
 version: 2
-log-file: /home/jesse/output.log
+log-file: /home/jesse/.efm-langserver.log
 log-level: 1
 tools:
   mix_credo: &mix_credo
