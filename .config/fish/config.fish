@@ -97,8 +97,8 @@ abbr -a l "exa -l -a -s type"
 abbr -a lv "nvim -R"
 abbr -a xclipx "xclip -selection clipboard"
 abbr -a xx "exit"
-abbr -a e! "nvim +PlugInstall"
-abbr -a e^ "nvim +PlugUpdate"
+abbr -a e! "nvim +PackerInstall"
+abbr -a e^ "nvim +PackerUpdate"
 abbr -a o "xdg-open"
 
 abbr -a n^s 'asdf uninstall neovim stable && asdf install neovim stable'
@@ -114,6 +114,11 @@ end
 abbr -a fuck "oops"
 abbr -a yolo "oops"
 
+if not pgrep --full ssh-agent | string collect > /dev/null
+  eval (ssh-agent -c)
+  set -Ux SSH_AGENT_PID $SSH_AGENT_PID
+  set -Ux SSH_AUTH_SOCK $SSH_AUTH_SOCK
+end
 
 source ~/.asdf/asdf.fish
 eval (direnv hook fish)
