@@ -348,6 +348,7 @@ require("packer").startup(function()
       -- Start interactive EasyAlign for a motion/text object (e.g. gaip)
       vim.api.nvim_set_keymap('n', 'ga', '<Plug>(EasyAlign)', {noremap = true})
     end}
+  )
   use 'kyazdani42/nvim-web-devicons'           -- icons
   use 'nvim-telescope/telescope-symbols.nvim'  -- UI
   use 'nvim-telescope/telescope-github.nvim'   -- github
@@ -414,7 +415,7 @@ require("packer").startup(function()
         },
       })
     end,
-  })
+  }
   use("nvim-treesitter/nvim-treesitter-textobjects")
 end)
 
