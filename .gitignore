@@ -55,6 +55,7 @@ Session.vim
 scratch.md
 scratch.sql
 scratch.txt
+.doctor.out
 
 .envrc
 .envrc.private
