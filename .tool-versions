@@ -10,7 +10,7 @@ postgres 11.4
 python 3.9.1
 redis 6.2.3
 ruby 3.0.1
-rust 1.52.1
+rust 1.54.0
 ripgrep 13.0.0
 bat 0.18.1
 direnv 2.28.0
