@@ -609,25 +609,25 @@ end
 
 -- Enable the following language servers
 
-local servers = {
-  "clangd",
-  "denols",
-  "rust_analyzer",
-  "pyright",
-  "solargraph",
-  "tsserver",
-}
-for _, lsp in ipairs(servers) do
-  nvim_lsp[lsp].setup({ on_attach = on_attach })
-end
-
 local capabilities = vim.lsp.protocol.make_client_capabilities()
 capabilities.textDocument.completion.completionItem.snippetSupport = true
 capabilities.textDocument.completion.completionItem.resolveSupport = {
   properties = { "documentation", "detail", "additionalTextEdits" },
 }
 
+local servers = {
+  "clangd",
+  "rust_analyzer",
+  "pyright",
+  "solargraph",
+}
+for _, lsp in ipairs(servers) do
+  nvim_lsp[lsp].setup({ capabilities = capabilities, on_attach = on_attach })
+end
+
 nvim_lsp.bashls.setup({ capabilities = capabilities })
+
+nvim_lsp.denols.setup({ capabilities = capabilities, init_options = { enable = true, lint = true, unstable = true }})
 
 nvim_lsp.efm.setup({
   capabilities = capabilities,
