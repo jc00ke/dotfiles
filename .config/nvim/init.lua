@@ -834,4 +834,6 @@ create_augroup({
 }, 'BgHighlight')
 --]]
 
+-- https://github.com/ayamir/nvimdots
+
 vim.g["rustfmt_autosave"] = 1
