@@ -3,6 +3,6 @@
 config_file="$HOME/.config/alacritty/alacritty.yml"
 
 yq e '.schemes | keys | .[]' "$config_file" \
-  | sort \
+  | sort --reverse \
   | fzf \
   | xargs -I {} yq e -i '.colors alias |= "{}"' "$config_file"
