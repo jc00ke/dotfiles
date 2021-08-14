@@ -1,0 +1,1 @@
+POSTGRES_EXTRA_CONFIGURE_OPTIONS="--with-uuid=e2fs --with-openssl"
