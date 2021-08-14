@@ -670,6 +670,8 @@ nvim_lsp.elixirls.setup({
   settings = { elixirLS = { dialyzerEnabled = false, fetchDeps = false } },
 })
 
+nvim_lsp.fsautocomplete.setup({ capabilities = capabilities, on_attach = on_attach })
+
 nvim_lsp.hls.setup({ capabilities = capabilities, on_attach = on_attach })
 
 nvim_lsp.html.setup({
