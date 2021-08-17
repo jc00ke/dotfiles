@@ -541,17 +541,6 @@ vim.api.nvim_set_keymap("n", "<F10>", "<cmd>lua ToggleMouse()<cr>", { noremap = 
 -- Change preview window location
 vim.g.splitbelow = true
 
-vim.api.nvim_exec(
-  [[
-  augroup Terminal
-    autocmd!
-    autocmd TermOpen * set nonu
-    autocmd TermOpen * set norelativenumber
-  augroup end
-]],
-  false
-)
-
 -- Highlight on yank
 vim.api.nvim_exec(
   [[
@@ -563,16 +552,18 @@ vim.api.nvim_exec(
   false
 )
 
-vim.api.nvim_exec([[
-augroup CurrentBuffer
-    autocmd!
-    autocmd WinEnter * set relativenumber
-    autocmd WinEnter * set cul
-    autocmd WinLeave * set norelativenumber
-    autocmd WinLeave * set nocul
+vim.api.nvim_exec(
+  [[
+augroup numbertoggle
+  autocmd!
+  autocmd BufNew,BufEnter,FocusGained,InsertLeave,WinEnter  * if &nu | set rnu cul     | endif
+  autocmd BufLeave,FocusLost,InsertEnter,WinLeave           * if &nu | set nornu nocul | endif
+  autocmd TermOpen * setlocal nornu nonu nocul
 augroup END
-]], false)
---
+]],
+  false
+)
+
 -- restore cursor position
 vim.cmd([[
 autocmd BufReadPost * if line("'\"") > 1 && line("'\"") <= line("$") |   exe "normal! g`\"" | endif
