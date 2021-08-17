@@ -654,7 +654,10 @@ end
 
 nvim_lsp.bashls.setup({ capabilities = capabilities })
 
-nvim_lsp.denols.setup({ capabilities = capabilities, init_options = { enable = true, lint = true, unstable = true }})
+nvim_lsp.denols.setup({
+  capabilities = capabilities,
+  init_options = { enable = true, lint = true, unstable = true },
+})
 
 nvim_lsp.efm.setup({
   capabilities = capabilities,
