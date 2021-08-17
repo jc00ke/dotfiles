@@ -346,22 +346,24 @@ require("packer").startup(function()
       -- Start interactive EasyAlign in visual mode (e.g. vipga)
       vim.api.nvim_set_keymap("x", "ga", "<Plug>(EasyAlign)", { noremap = true })
       -- Start interactive EasyAlign for a motion/text object (e.g. gaip)
-      vim.api.nvim_set_keymap('n', 'ga', '<Plug>(EasyAlign)', {noremap = true})
-    end}
-  )
-  use 'kyazdani42/nvim-web-devicons'           -- icons
-  use 'nvim-telescope/telescope-symbols.nvim'  -- UI
-  use 'nvim-telescope/telescope-github.nvim'   -- github
-  use 'jvgrootveld/telescope-zoxide'           -- projects
-  use 'gennaro-tedesco/nvim-jqx'               -- json
-  use 'elixir-editors/vim-elixir'              -- Elixir
-  use {
-    'iamcco/markdown-preview.nvim',         -- markdown
-    ft = 'markdown',
-    run = function() vim.fn['mkdp#util#install']() end
-  }
-  use {
-    'nvim-treesitter/nvim-treesitter',      -- parsing system
+      vim.api.nvim_set_keymap("n", "ga", "<Plug>(EasyAlign)", { noremap = true })
+    end,
+  })
+  use("kyazdani42/nvim-web-devicons") -- icons
+  use("nvim-telescope/telescope-symbols.nvim") -- UI
+  use("nvim-telescope/telescope-github.nvim") -- github
+  use("jvgrootveld/telescope-zoxide") -- projects
+  use("gennaro-tedesco/nvim-jqx") -- json
+  use("elixir-editors/vim-elixir") -- Elixir
+  use({
+    "iamcco/markdown-preview.nvim", -- markdown
+    ft = "markdown",
+    run = function()
+      vim.fn["mkdp#util#install"]()
+    end,
+  })
+  use({
+    "nvim-treesitter/nvim-treesitter", -- parsing system
     run = ":TSUpdate",
     config = function()
       require("nvim-treesitter.configs").setup({
@@ -415,9 +417,10 @@ require("packer").startup(function()
         },
       })
     end,
-  }
+  })
   use("nvim-treesitter/nvim-treesitter-textobjects")
   --use({"lukas-reineke/indent-blankline.nvim", config = function () vim.g["indent_blankline_enabled"] = false end})
+  use("lambdalisue/suda.vim")
 end)
 
 -- Incremental live completion
