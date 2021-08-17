@@ -643,7 +643,9 @@ capabilities.textDocument.completion.completionItem.resolveSupport = {
 }
 
 local servers = {
+  "bashls",
   "clangd",
+  "dockerls",
   "rust_analyzer",
   "pyright",
   "solargraph",
@@ -651,8 +653,6 @@ local servers = {
 for _, lsp in ipairs(servers) do
   nvim_lsp[lsp].setup({ capabilities = capabilities, on_attach = on_attach })
 end
-
-nvim_lsp.bashls.setup({ capabilities = capabilities })
 
 nvim_lsp.denols.setup({
   capabilities = capabilities,
