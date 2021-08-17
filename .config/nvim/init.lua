@@ -559,6 +559,16 @@ vim.api.nvim_exec(
 ]],
   false
 )
+
+vim.api.nvim_exec([[
+augroup CurrentBuffer
+    autocmd!
+    autocmd WinEnter * set relativenumber
+    autocmd WinEnter * set cul
+    autocmd WinLeave * set norelativenumber
+    autocmd WinLeave * set nocul
+augroup END
+]], false)
 --
 -- restore cursor position
 vim.cmd([[
