@@ -417,7 +417,7 @@ require("packer").startup(function()
     end,
   }
   use("nvim-treesitter/nvim-treesitter-textobjects")
-  use("lukas-reineke/indent-blankline.nvim")
+  --use({"lukas-reineke/indent-blankline.nvim", config = function () vim.g["indent_blankline_enabled"] = false end})
 end)
 
 -- Incremental live completion
@@ -494,7 +494,7 @@ vim.o.pastetoggle = "<F3>"
 -- vim.g.indent_blankline_indent_level = 3
 -- vim.g.indent_blankline_use_treesitter = true
 --
-require("indent_blankline").setup {
+--[[ require("indent_blankline").setup {
     char = "│",
     show_first_indent_level = true,
     filetype_exclude = {
@@ -511,21 +511,21 @@ require("indent_blankline").setup {
         "^if", "^table", "if_statement", "while", "for", "type", "var",
         "import"
     }
-}
+} ]]
 -- because lazy load indent-blankline so need readd this autocmd
-vim.cmd('autocmd CursorMoved * IndentBlanklineRefresh')
-vim.api.nvim_set_keymap("n", "<leader>tbl", ":IndentBlanklineToggle<cr>", { noremap = true })
+-- vim.cmd('autocmd CursorMoved * IndentBlanklineRefresh')
+-- vim.api.nvim_set_keymap("n", "<leader>tbl", ":IndentBlanklineToggle<cr>", { noremap = true })
 
 -- Toggle to disable mouse mode and indentlines for easier paste
 ToggleMouse = function()
   if vim.o.mouse == "a" then
-    vim.cmd([[IndentBlanklineDisable]])
+    --vim.cmd([[IndentBlanklineDisable]])
     vim.wo.signcolumn = "no"
     vim.o.mouse = "v"
     vim.wo.number = false
     print("Mouse disabled")
   else
-    vim.cmd([[IndentBlanklineEnable]])
+    --vim.cmd([[IndentBlanklineEnable]])
     vim.wo.signcolumn = "yes"
     vim.o.mouse = "a"
     vim.wo.number = true
