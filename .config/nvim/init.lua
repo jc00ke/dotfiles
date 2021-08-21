@@ -243,6 +243,12 @@ require("packer").startup(function()
   })
   -- Add git related info in the signs columns and popups
   use({ "lewis6991/gitsigns.nvim", requires = { "nvim-lua/plenary.nvim" } })
+  use({
+    "tveskag/nvim-blame-line",
+    config = function()
+      vim.api.nvim_set_keymap("n", "<leader>b", [[:ToggleBlameLine<CR>]], { noremap = true, silent = true })
+    end,
+  })
   use("neovim/nvim-lspconfig") -- Collection of configurations for built-in LSP client
   use({
     "hrsh7th/vim-vsnip", -- LSP
