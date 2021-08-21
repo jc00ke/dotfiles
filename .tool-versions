@@ -4,7 +4,7 @@ elm 0.19.1
 erlang 24.0.2
 golang 1.15.2
 lua 5.4.2
-neovim 0.5.0
+neovim nightly
 nodejs 16.1.0
 postgres 11.4
 python 3.9.1
