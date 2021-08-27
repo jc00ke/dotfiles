@@ -1,4 +1,4 @@
-deno 1.12.2
+deno 1.13.2
 elixir 1.12.1-otp-24
 elm 0.19.1
 erlang 24.0.2
@@ -12,14 +12,13 @@ redis 6.2.3
 ruby 3.0.1
 rust 1.54.0
 ripgrep 13.0.0
-bat 0.18.1
-direnv 2.28.0
-starship 0.55.0
-zoxide 0.7.2
+bat 0.18.3
+starship 0.57.0
+zoxide 0.7.4
 fd 8.2.1
 exa 0.10.1
 duf 0.6.2
-delta 0.8.2
-shfmt 3.3.0
+delta 0.8.3
+shfmt 3.3.1
 yq v4.11.2
 haskell 9.0.1
