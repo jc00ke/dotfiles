@@ -425,6 +425,7 @@ require("packer").startup(function()
     end,
   })
   use("nvim-treesitter/nvim-treesitter-textobjects")
+  use('JoosepAlviste/nvim-ts-context-commentstring')
   --use({"lukas-reineke/indent-blankline.nvim", config = function () vim.g["indent_blankline_enabled"] = false end})
   use("lambdalisue/suda.vim")
 end)
