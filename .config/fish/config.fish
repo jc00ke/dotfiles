@@ -92,6 +92,7 @@ abbr -a xx "exit"
 abbr -a e! "nvim +PackerInstall"
 abbr -a e^ "nvim +PackerUpdate"
 abbr -a o "xdg-open"
+abbr -a open "xdg-open"
 
 abbr -a n^s 'asdf uninstall neovim stable && asdf install neovim stable'
 abbr -a n^n 'asdf uninstall neovim nightly && asdf install neovim nightly'
