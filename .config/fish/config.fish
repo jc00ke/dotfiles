@@ -9,25 +9,16 @@ function append_to_path
   end
 end
 
-# Path to your oh-my-fish.
-set -g OMF_PATH $HOME/.local/share/omf
+function prepend_to_path
+  if not test -d $argv[1]
+    return
+  end
+  if not contains $argv[1] $PATH
+    set PATH $argv[1] $PATH
+  end
+end
 
-# Path to your oh-my-fish configuration.
-set -g OMF_CONFIG $HOME/.config/omf
-
-# Path to here
-set fish_path $HOME/.local/share/omf
 set fish_config $HOME/.config/fish
-
-### Configuration required to load oh-my-fish ###
-# Note: Only add configurations that are required to be set before oh-my-fish is loaded.
-# For common configurations, we advise you to add them to your $OMF_CONFIG/init.fish file or
-# to create a custom plugin instead.
-
-# Load oh-my-fish configuration.
-source $OMF_PATH/init.fish
-set -g theme_display_ruby no
-set -g theme_color_scheme base16
 
 set -x TERM "xterm-256color"
 set -x TERMINAL "alacritty"
