@@ -1,6 +1,6 @@
 # Paths
 # =====
-function add_to_path
+function append_to_path
   if not test -d $argv[1]
     return
   end
@@ -37,15 +37,15 @@ set -x MANPAGER "sh -c 'col -bx | bat -l man -p'"
 set -x ERL_AFLAGS "-kernel shell_history enabled"
 set -gx FZF_DEFAULT_COMMAND  'rg --files --color=never'
 
-add_to_path "$HOME/src/bin"
-add_to_path "$HOME/bin"
-add_to_path "$HOME/.local/bin"
-add_to_path "$HOME/src/node/bin"
-add_to_path "$HOME/src/DataGrip/bin"
-add_to_path "$HOME/.config/yarn/global/node_modules/.bin"
-add_to_path "$HOME/.yarn/bin"
-add_to_path "$HOME/.git-fuzzy/bin"
-add_to_path "$HOME/.dotnet/tools"
+append_to_path "$HOME/src/bin"
+append_to_path "$HOME/bin"
+append_to_path "$HOME/.local/bin"
+append_to_path "$HOME/src/node/bin"
+append_to_path "$HOME/src/DataGrip/bin"
+append_to_path "$HOME/.config/yarn/global/node_modules/.bin"
+append_to_path "$HOME/.yarn/bin"
+append_to_path "$HOME/.git-fuzzy/bin"
+append_to_path "$HOME/.dotnet/tools"
 set PATH $PATH ".git/safe/../../bin"
 
 # this function may be required
@@ -122,3 +122,4 @@ if test -f ~/.nix-profile/etc/profile.d/nix.sh
 end
 starship init fish | source
 zoxide init fish | source
+prepend_to_path "$HOME/.nvim"
