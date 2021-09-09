@@ -109,9 +109,6 @@ abbr -a yolo "oops"
 
 source ~/.asdf/asdf.fish
 eval (direnv hook fish)
-if test -f ~/.nix-profile/etc/profile.d/nix.sh
-  fenv source ~/.nix-profile/etc/profile.d/nix.sh
-end
 starship init fish | source
 zoxide init fish | source
 prepend_to_path "$HOME/.nvim"
