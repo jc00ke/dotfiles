@@ -23,6 +23,7 @@ sudo apt install -y \
   i3xrocks-key-indicator \
   i3xrocks-memory \
   i3xrocks-net-traffic \
+  i3xrocks-temp \
   i3xrocks-time \
   i3xrocks-weather \
   imagemagick \
