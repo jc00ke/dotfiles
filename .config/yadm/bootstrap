@@ -71,14 +71,6 @@ mkdir -p "$HOME/projects"
 mkdir -p "$HOME/src"
 cd "$HOME" || exit
 
-if [ ! -d "$HOME/.config/omf" ]; then
-  cd "$HOME/src" || exit
-  log "Installing oh-my-fish"
-  curl -L http://get.oh-my.fish | fish
-  echo "omf install cbjohnson" | fish
-  echo "omf install foreign-env" | fish
-fi
-
 cd "$HOME" || exit
 if [ ! -d "$HOME/.asdf" ]; then
   log "Installing asdf"
