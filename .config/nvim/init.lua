@@ -304,8 +304,11 @@ require("packer").startup(function()
   --  use 'mhinz/vim-signify'                      -- gutter signs
   use({
     "TimUntersberger/neogit", -- git
+    disable = true,
     config = function()
-      require("neogit").setup({ integrations = { diffview = true } })
+      vim.defer_fn(function()
+        require("neogit").setup({ integrations = { diffview = true } })
+      end)
       vim.api.nvim_set_keymap("n", "<Leader>g", ":Neogit<CR>", { noremap = true })
       vim.api.nvim_set_keymap("n", "<leader>dvo", ":DiffViewOpen<CR>", { noremap = false })
       vim.api.nvim_set_keymap("n", "<leader>dvc", ":DiffViewClose<CR>", { noremap = false })
