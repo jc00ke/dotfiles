@@ -4,7 +4,7 @@ deno 1.13.2
 duf 0.6.2
 elixir 1.12.1-otp-24
 elm 0.19.1
-erlang 24.0.2
+erlang 24.0.5
 exa 0.10.1
 fd 8.2.1
 golang 1.15.2
