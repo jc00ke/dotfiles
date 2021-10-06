@@ -283,7 +283,11 @@ require("packer").startup(function()
   use("tpope/vim-obsession") -- sessions
   use("tpope/vim-projectionist") -- project config
   use("tpope/vim-surround") -- text
-  use("kyazdani42/nvim-tree.lua") -- file explorer
+  use {
+      'kyazdani42/nvim-tree.lua', -- file explorer
+      requires = 'kyazdani42/nvim-web-devicons',
+      config = function() require'nvim-tree'.setup {} end
+  }
   use({
     "vimlab/split-term.vim", -- terminal
     config = function()
@@ -362,7 +366,6 @@ require("packer").startup(function()
       vim.api.nvim_set_keymap("n", "ga", "<Plug>(EasyAlign)", { noremap = true })
     end,
   })
-  use("kyazdani42/nvim-web-devicons") -- icons
   use("nvim-telescope/telescope-symbols.nvim") -- UI
   use("nvim-telescope/telescope-github.nvim") -- github
   use("jvgrootveld/telescope-zoxide") -- projects
