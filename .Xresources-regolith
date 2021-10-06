@@ -1,3 +1,3 @@
 #include "/etc/regolith/styles/solarized-dark/root"
-i3-wm.client.focused.color.child_border: #d33682
+i3-wm.client.focused.color.child_border: color_magenta
 i3-wm.window.border.size: 2
