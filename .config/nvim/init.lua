@@ -332,8 +332,12 @@ require("packer").startup(function()
     "vim-test/vim-test",
     config = function()
       -- https://github.com/vim-test/vim-test#cli-options
-      vim.g["test#runner_commands"] = { "ExUnit", "ElmTest" }
+      vim.g["test#runner_commands"] = { "ExUnit", "ElmTest", "ShellSpec" }
       vim.g["test#strategy"] = "neovim"
+      vim.g["test#shell#runner"] = "shellspec"
+      local custom_runners = vim.empty_dict()
+      custom_runners.Shell = {"ShellSpec"}
+      vim.g["test#custom_runners"] = custom_runners
 
       vim.api.nvim_set_keymap("n", "<leader>t", ":TestNearest<CR>", { silent = true })
       vim.api.nvim_set_keymap("n", "<leader>T", ":TestFile<CR>", { silent = true })
