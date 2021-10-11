@@ -485,6 +485,12 @@ vim.api.nvim_set_keymap("i", "kk", "<Esc>:w<CR>", { noremap = true })
 vim.api.nvim_set_keymap("n", "gx", 'yiW:!xdg-open <cWORD><CR> <C-r>" & <CR><CR>', { noremap = true })
 vim.api.nvim_set_keymap("v", "<C-r>", [["hy:%s/<C-r>h//gc<left><left><left>]], { noremap = true })
 
+vim.api.nvim_set_keymap("n", "<Leader>cf", [[:let @*=expand("%:p")<CR>]], { noremap = true })     -- copy file path
+vim.api.nvim_set_keymap("n", "<Leader>yf", [[:let @"=expand("%:p")<CR>]], { noremap = true })     -- yank file path
+vim.api.nvim_set_keymap("n", "<Leader>cl", [[:let @+=expand("%:p")<CR>]], { noremap = true })     -- copy file path to clipboard
+vim.api.nvim_set_keymap("n", "<Leader>fn", [[:let @"=expand("%")<CR>]], { noremap = true })       -- yank file name
+vim.api.nvim_set_keymap("n", "<Leader>cs", [[:let @+=expand("%")<CR>]], { noremap = true })       -- copy file name to clipboard
+
 -- backups
 vim.g.backup = false
 vim.g.writebackup = false
