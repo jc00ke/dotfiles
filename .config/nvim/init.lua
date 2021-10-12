@@ -283,11 +283,13 @@ require("packer").startup(function()
   use("tpope/vim-obsession") -- sessions
   use("tpope/vim-projectionist") -- project config
   use("tpope/vim-surround") -- text
-  use {
-      'kyazdani42/nvim-tree.lua', -- file explorer
-      requires = 'kyazdani42/nvim-web-devicons',
-      config = function() require'nvim-tree'.setup {} end
-  }
+  use({
+    "kyazdani42/nvim-tree.lua", -- file explorer
+    requires = "kyazdani42/nvim-web-devicons",
+    config = function()
+      require("nvim-tree").setup({})
+    end,
+  })
   use({
     "vimlab/split-term.vim", -- terminal
     config = function()
