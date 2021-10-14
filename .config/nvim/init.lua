@@ -310,16 +310,13 @@ require("packer").startup(function()
   --  use 'mhinz/vim-signify'                      -- gutter signs
   use({
     "TimUntersberger/neogit", -- git
-    disable = true,
+    -- disable = true,
     config = function()
-      vim.defer_fn(function()
-        require("neogit").setup({ integrations = { diffview = true } })
-      end)
       vim.api.nvim_set_keymap("n", "<Leader>g", ":Neogit<CR>", { noremap = true })
       vim.api.nvim_set_keymap("n", "<leader>dvo", ":DiffViewOpen<CR>", { noremap = false })
       vim.api.nvim_set_keymap("n", "<leader>dvc", ":DiffViewClose<CR>", { noremap = false })
     end,
-    requires = { "sindrets/diffview.nvim" },
+    requires = { "sindrets/diffview.nvim", "nvim-lua/plenary.nvim" },
   })
   use({
     "phaazon/hop.nvim", -- search
@@ -822,6 +819,7 @@ vim.api.nvim_set_keymap("n", "BDA", [[<Cmd>%bd|e#<CR>]], { noremap = true })
 
 vim.api.nvim_set_keymap("n", "<leader>~", [[:s/\v<(.)(\w*)/\u\1\L\2/g<CR>]], { noremap = true })
 
+require("neogit").setup({ integrations = { diffview = true } })
 -- TODO
 
 --[[ " Automatic setting of the executable bit
