@@ -111,4 +111,4 @@ source ~/.asdf/asdf.fish
 eval (direnv hook fish)
 starship init fish | source
 zoxide init fish | source
-prepend_to_path "$HOME/.nvim"
+prepend_to_path "$HOME/.nvim/bin"
