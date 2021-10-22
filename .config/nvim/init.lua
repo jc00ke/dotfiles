@@ -868,3 +868,4 @@ create_augroup({
 -- https://github.com/ayamir/nvimdots
 
 vim.g["rustfmt_autosave"] = 1
+vim.g["shada"] = "'20,<50,s10"
