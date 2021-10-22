@@ -10,7 +10,7 @@ fd 8.2.1
 golang 1.15.2
 haskell 9.0.1
 lua 5.4.2
-neovim 0.5.1
+neovim nightly
 nodejs 16.1.0
 postgres 11.4
 python 3.9.1
