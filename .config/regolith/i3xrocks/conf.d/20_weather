@@ -3,3 +3,4 @@
 # Display local weather
 [weather]
 interval=3600
+weather_location=Portland
