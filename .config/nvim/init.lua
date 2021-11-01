@@ -286,7 +286,23 @@ require("packer").startup(function()
     "kyazdani42/nvim-tree.lua", -- file explorer
     requires = "kyazdani42/nvim-web-devicons",
     config = function()
-      require("nvim-tree").setup({})
+      require("nvim-tree").setup({
+        nvim_tree_ignore = {
+          ".cache",
+          ".direnv",
+          ".elixir_ls",
+          ".git",
+          "\\~$",
+          "_build",
+          "cover",
+          "node_modules",
+          "tfstate$",
+          "tfstate\\.backup$",
+        }
+      })
+      vim.api.nvim_set_keymap("n", "<leader>n", ":NvimTreeToggle<CR>", { noremap = true })
+      vim.api.nvim_set_keymap("n", "<leader>r", ":NvimTreeRefresh<CR>", { noremap = true })
+      vim.api.nvim_set_keymap("n", "<C-n>", ":NvimTreeFindFile<CR>", { noremap = true })
     end,
   })
   use({
@@ -796,23 +812,7 @@ vim.api.nvim_set_keymap("s", "<Tab>", "v:lua.tab_complete()", { expr = true })
 vim.api.nvim_set_keymap("i", "<S-Tab>", "v:lua.s_tab_complete()", { expr = true })
 vim.api.nvim_set_keymap("s", "<S-Tab>", "v:lua.s_tab_complete()", { expr = true })
 
-vim.g["nvim_tree_ignore"] = {
-  "\\~$",
-  "tfstate$",
-  "tfstate\\.backup$",
-  ".git",
-  "node_modules",
-  ".cache",
-  ".direnv",
-  ".elixir_ls",
-  "_build",
-  "cover",
-}
-vim.api.nvim_set_keymap("n", "<leader>n", ":NvimTreeToggle<CR>", { noremap = true })
-vim.api.nvim_set_keymap("n", "<leader>r", ":NvimTreeRefresh<CR>", { noremap = true })
-vim.api.nvim_set_keymap("n", "<C-n>", ":NvimTreeFindFile<CR>", { noremap = true })
 vim.api.nvim_set_keymap("n", "BDA", [[<Cmd>%bd|e#<CR>]], { noremap = true })
-
 vim.api.nvim_set_keymap("n", "<leader>~", [[:s/\v<(.)(\w*)/\u\1\L\2/g<CR>]], { noremap = true })
 
 require("neogit").setup({ integrations = { diffview = true } })
