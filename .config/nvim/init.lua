@@ -93,7 +93,12 @@ require("packer").startup(function()
   use("wbthomason/packer.nvim") -- Package manager
   use("tpope/vim-fugitive") -- Git commands in nvim
   use("tpope/vim-rhubarb") -- Fugitive-companion to interact with github
-  use("tpope/vim-commentary") -- "gc" to comment visual regions/lines
+  use({
+    "numToStr/Comment.nvim",
+    config = function()
+      require("Comment").setup()
+    end,
+  })
   -- use "lukas-reineke/indent-blankline.nvim"  -- indentation lines
   -- UI to select things (files, grep results, open buffers...)
   use({
@@ -298,7 +303,7 @@ require("packer").startup(function()
           "node_modules",
           "tfstate$",
           "tfstate\\.backup$",
-        }
+        },
       })
       vim.api.nvim_set_keymap("n", "<leader>n", ":NvimTreeToggle<CR>", { noremap = true })
       vim.api.nvim_set_keymap("n", "<leader>r", ":NvimTreeRefresh<CR>", { noremap = true })
