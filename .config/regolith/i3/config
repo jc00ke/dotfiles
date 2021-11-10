@@ -672,6 +672,7 @@ for_window [class="Emoji-picker"] floating enable
 for_window [class="Zeal"] floating enable
 for_window [title="Zoom Meeting"] floating enable
 for_window [title="Zoom - Licensed Account"] floating enable
+for_window [class="zoom"] floating enable
 
 ## Modify // Sound Settings // <> s ##
 bindsym $mod+s exec gnome-control-center sound
