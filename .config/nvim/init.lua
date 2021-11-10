@@ -697,7 +697,7 @@ nvim_lsp.denols.setup({
 
 nvim_lsp.efm.setup({
   capabilities = capabilities,
-  filetypes = { "elixir", "html", "lua", "sh", "yaml" },
+  filetypes = { "elixir", "lua", "sh", "yaml" },
   init_options = { documentFormatting = true },
   on_attach = on_attach,
 })
@@ -719,6 +719,7 @@ nvim_lsp.hls.setup({ capabilities = capabilities, on_attach = on_attach })
 
 nvim_lsp.html.setup({
   capabilities = capabilities,
+  filetypes = { "html" },
   init_options = {
     configurationSection = { "html", "css", "javascript" },
     documentFormatting = true,
