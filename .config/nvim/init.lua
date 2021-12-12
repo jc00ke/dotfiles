@@ -254,10 +254,18 @@ require("packer").startup(function()
     end,
   })
   use("neovim/nvim-lspconfig") -- Collection of configurations for built-in LSP client
-  use("hrsh7th/nvim-cmp") -- Autocompletion plugin
+
   use("hrsh7th/cmp-nvim-lsp")
   use("hrsh7th/cmp-vsnip")
   use("hrsh7th/vim-vsnip")
+  use("hrsh7th/cmp-buffer")
+  use("hrsh7th/cmp-path")
+  use("hrsh7th/cmp-cmdline")
+  use("hrsh7th/cmp-emoji")
+  use("lukas-reineke/cmp-rg")
+  use("onsails/lspkind-nvim")
+  use("hrsh7th/nvim-cmp") -- Autocompletion plugin
+
   use("tpope/vim-sensible") -- defaults
   use("tpope/vim-obsession") -- sessions
   use("tpope/vim-projectionist") -- project config
@@ -735,6 +743,24 @@ cmp.setup({
   sources = {
     { name = "nvim_lsp" },
     { name = "vsnip" },
+    { name = "spell", keyword_length = 5 },
+    { name = "rg", keyword_length = 5 },
+    { name = "emoji" },
+    { name = "path" },
+  },
+  formatting = {
+    format = require("lspkind").cmp_format({
+      with_text = true,
+      menu = {
+        buffer = "[Buffer]",
+        nvim_lsp = "[LSP]",
+        nvim_lua = "[Lua]",
+        emoji = "[Emoji]",
+        spell = "[Spell]",
+        path = "[Path]",
+        rg = "[Rg]",
+      },
+    }),
   },
 })
 
