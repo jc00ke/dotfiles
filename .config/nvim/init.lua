@@ -254,35 +254,10 @@ require("packer").startup(function()
     end,
   })
   use("neovim/nvim-lspconfig") -- Collection of configurations for built-in LSP client
-  use({
-    "hrsh7th/vim-vsnip", -- LSP
-    config = function()
-      --[[
-      " Expand
-      imap <expr> <C-j>   vsnip#expandable()  ? '<Plug>(vsnip-expand)'         : '<C-j>'
-      smap <expr> <C-j>   vsnip#expandable()  ? '<Plug>(vsnip-expand)'         : '<C-j>'
-
-      " Expand or jump
-      imap <expr> <C-l>   vsnip#available(1)  ? '<Plug>(vsnip-expand-or-jump)' : '<C-l>'
-      smap <expr> <C-l>   vsnip#available(1)  ? '<Plug>(vsnip-expand-or-jump)' : '<C-l>'
-
-      " Jump forward or backward
-      imap <expr> <Tab>   vsnip#jumpable(1)   ? '<Plug>(vsnip-jump-next)'      : '<Tab>'
-      smap <expr> <Tab>   vsnip#jumpable(1)   ? '<Plug>(vsnip-jump-next)'      : '<Tab>'
-      imap <expr> <S-Tab> vsnip#jumpable(-1)  ? '<Plug>(vsnip-jump-prev)'      : '<S-Tab>'
-      smap <expr> <S-Tab> vsnip#jumpable(-1)  ? '<Plug>(vsnip-jump-prev)'      : '<S-Tab>'
-
-      " Select or cut text to use as $TM_SELECTED_TEXT in the next snippet.
-      " See https://github.com/hrsh7th/vim-vsnip/pull/50
-      nmap        s   <Plug>(vsnip-select-text)
-      xmap        s   <Plug>(vsnip-select-text)
-      nmap        S   <Plug>(vsnip-cut-text)
-      xmap        S   <Plug>(vsnip-cut-text)onfig  function ()
-    --]]
-    end,
-    requires = { "hrsh7th/vim-vsnip-integ" },
-  })
-  use("hrsh7th/nvim-compe") -- Autocompletion plugin
+  use("hrsh7th/nvim-cmp") -- Autocompletion plugin
+  use("hrsh7th/cmp-nvim-lsp")
+  use("hrsh7th/cmp-vsnip")
+  use("hrsh7th/vim-vsnip")
   use("tpope/vim-sensible") -- defaults
   use("tpope/vim-obsession") -- sessions
   use("tpope/vim-projectionist") -- project config
@@ -609,74 +584,56 @@ autocmd BufReadPost * if line("'\"") > 1 && line("'\"") <= line("$") |   exe "no
 vim.api.nvim_set_keymap("n", "Y", "y$", { noremap = true })
 
 local nvim_lsp = require("lspconfig")
-local on_attach = function(_client, bufnr)
-  vim.api.nvim_buf_set_option(bufnr, "omnifunc", "v:lua.vim.lsp.omnifunc")
-
-  local opts = { noremap = true, silent = true }
-  vim.api.nvim_buf_set_keymap(bufnr, "n", "gD", "<Cmd>lua vim.lsp.buf.declaration()<CR>", opts)
-  vim.api.nvim_buf_set_keymap(bufnr, "n", "gd", "<Cmd>lua vim.lsp.buf.definition()<CR>", opts)
-  vim.api.nvim_buf_set_keymap(bufnr, "n", "K", "<Cmd>lua vim.lsp.buf.hover()<CR>", opts)
-  vim.api.nvim_buf_set_keymap(bufnr, "n", "gi", "<cmd>lua vim.lsp.buf.implementation()<CR>", opts)
-  vim.api.nvim_buf_set_keymap(bufnr, "n", "<C-k>", "<cmd>lua vim.lsp.buf.signature_help()<CR>", opts)
-  vim.api.nvim_buf_set_keymap(
-    bufnr,
-    "n",
-    "<leader>wa",
-    "<cmd>lua vim.lsp.buf.add_workspace_folder()<CR>",
-    opts
-  )
-  vim.api.nvim_buf_set_keymap(
-    bufnr,
-    "n",
-    "<leader>wr",
-    "<cmd>lua vim.lsp.buf.remove_workspace_folder()<CR>",
-    opts
-  )
-  vim.api.nvim_buf_set_keymap(
-    bufnr,
-    "n",
-    "<leader>wl",
-    "<cmd>lua print(vim.inspect(vim.lsp.buf.list_workspace_folders()))<CR>",
-    opts
-  )
-  vim.api.nvim_buf_set_keymap(bufnr, "n", "<leader>D", "<cmd>lua vim.lsp.buf.type_definition()<CR>", opts)
-  vim.api.nvim_buf_set_keymap(bufnr, "n", "<leader>rn", "<cmd>lua vim.lsp.buf.rename()<CR>", opts)
-  vim.api.nvim_buf_set_keymap(bufnr, "n", "gr", "<cmd>lua vim.lsp.buf.references()<CR>", opts)
-  vim.api.nvim_buf_set_keymap(bufnr, "n", "<leader>ca", "<cmd>lua vim.lsp.buf.code_action()<CR>", opts)
-  vim.api.nvim_buf_set_keymap(
-    bufnr,
-    "n",
-    "<leader>e",
-    "<cmd>lua vim.lsp.diagnostic.show_line_diagnostics()<CR>",
-    opts
-  )
-  vim.api.nvim_buf_set_keymap(bufnr, "n", "[d", "<cmd>lua vim.lsp.diagnostic.goto_prev()<CR>", opts)
-  vim.api.nvim_buf_set_keymap(bufnr, "n", "]d", "<cmd>lua vim.lsp.diagnostic.goto_next()<CR>", opts)
-  vim.api.nvim_buf_set_keymap(bufnr, "n", "<leader>q", "<cmd>lua vim.lsp.diagnostic.set_loclist()<CR>", opts)
-  vim.api.nvim_buf_set_keymap(
-    bufnr,
-    "n",
-    "dF",
-    [[<cmd>lua vim.lsp.buf.formatting()<CR>]],
-    { noremap = true, silent = true }
-  )
-  vim.api.nvim_buf_set_keymap(
-    bufnr,
-    "n",
-    "1gD",
-    [[<cmd>lua vim.lsp.buf.type_definition()<CR>]],
-    { noremap = true, silent = true }
-  )
-  vim.cmd([[autocmd BufWritePre <buffer> lua vim.lsp.buf.formatting_seq_sync()]])
-end
-
--- Enable the following language servers
 
 local capabilities = vim.lsp.protocol.make_client_capabilities()
 capabilities.textDocument.completion.completionItem.snippetSupport = true
-capabilities.textDocument.completion.completionItem.resolveSupport = {
-  properties = { "documentation", "detail", "additionalTextEdits" },
-}
+local on_attach = function(_, bufnr)
+  local function map(...)
+    vim.api.nvim_buf_set_keymap(bufnr, ...)
+  end
+  local map_opts = {noremap = true, silent = true}
+
+  map("n", "df", "<cmd>lua vim.lsp.buf.formatting()<cr>", map_opts)
+  map("n", "gd", "<cmd>lua vim.lsp.diagnostic.show_line_diagnostics()<cr>", map_opts)
+  map("n", "dt", "<cmd>lua vim.lsp.buf.definition()<cr>", map_opts)
+  map("n", "K", "<cmd>lua vim.lsp.buf.hover()<cr>", map_opts)
+  map("n", "gD", "<Cmd>lua vim.lsp.buf.declaration()<CR>", map_opts)
+  map("n", "gi", "<cmd>lua vim.lsp.buf.implementation()<CR>", map_opts)
+  map("n", "<C-k>", "<cmd>lua vim.lsp.buf.signature_help()<CR>", map_opts)
+  map("n", "1gD", "<cmd>lua vim.lsp.buf.type_definition()<cr>", map_opts)
+  map("n", "<leader>rn", "<cmd>lua vim.lsp.buf.rename()<CR>", map_opts)
+  map("n", "gr", "<cmd>lua vim.lsp.buf.references()<CR>", map_opts)
+  map("n", "<leader>ca", "<cmd>lua vim.lsp.buf.code_action()<CR>", map_opts)
+  map("n", "<leader>e", "<cmd>lua vim.lsp.diagnostic.show_line_diagnostics()<CR>", map_opts)
+  map("n", "[d", "<cmd>lua vim.lsp.diagnostic.goto_prev()<CR>", map_opts)
+  map("n", "]d", "<cmd>lua vim.lsp.diagnostic.goto_next()<CR>", map_opts)
+  map("n", "<leader>q", "<cmd>lua vim.lsp.diagnostic.set_loclist()<CR>", map_opts)
+  map("n", "dF", [[<cmd>lua vim.lsp.buf.formatting()<CR>]], map_opts)
+  -- vim.cmd([[autocmd BufWritePre <buffer> lua vim.lsp.buf.formatting_seq_sync()]])
+
+  -- These have a different style than above because I was fiddling
+  -- around and never converted them. Instead of converting them
+  -- now, I'm leaving them as they are for this article because this is
+  -- what I actually use, and hey, it works ¯\_(ツ)_/¯.
+  vim.cmd [[imap <expr> <C-l> vsnip#available(1) ? '<Plug>(vsnip-expand-or-jump)' : '<C-l>']]
+  vim.cmd [[smap <expr> <C-l> vsnip#available(1) ? '<Plug>(vsnip-expand-or-jump)' : '<C-l>']]
+
+  vim.cmd [[imap <expr> <Tab> vsnip#jumpable(1) ? '<Plug>(vsnip-jump-next)' : '<Tab>']]
+  vim.cmd [[smap <expr> <Tab> vsnip#jumpable(1) ? '<Plug>(vsnip-jump-next)' : '<Tab>']]
+  vim.cmd [[imap <expr> <S-Tab> vsnip#jumpable(-1) ? '<Plug>(vsnip-jump-prev)' : '<S-Tab>']]
+  vim.cmd [[smap <expr> <S-Tab> vsnip#jumpable(-1) ? '<Plug>(vsnip-jump-prev)' : '<S-Tab>']]
+
+  vim.cmd [[inoremap <silent><expr> <C-Space> compe#complete()]]
+  vim.cmd [[inoremap <silent><expr> <CR> compe#confirm('<CR>')]]
+  vim.cmd [[inoremap <silent><expr> <C-e> compe#close('<C-e>')]]
+  vim.cmd [[inoremap <silent><expr> <C-f> compe#scroll({ 'delta': +4 })]]
+  vim.cmd [[inoremap <silent><expr> <C-d> compe#scroll({ 'delta': -4 })]]
+
+  -- tell nvim-cmp about our desired capabilities
+  require("cmp_nvim_lsp").update_capabilities(capabilities)
+end
+
+-- Enable the following language servers
 
 local servers = {
   "bashls",
@@ -703,14 +660,19 @@ nvim_lsp.efm.setup({
 })
 
 local elixirls_binary = vim.fn.expand("~/src/elixir-ls/release/language_server.sh")
-local util = require("lspconfig/util")
+-- local util = require("lspconfig/util")
 
 nvim_lsp.elixirls.setup({
   cmd = { elixirls_binary },
   capabilities = capabilities,
   on_attach = on_attach,
-  root_dir = util.root_pattern("app.exs", "mix.exs", ".git") or vim.loop.os_homedir(),
-  settings = { elixirLS = { dialyzerEnabled = false, fetchDeps = false } },
+  -- root_dir = util.root_pattern("app.exs", "mix.exs", ".git") or vim.loop.os_homedir(),
+  settings = {
+    elixirLS = {
+      dialyzerEnabled = false,
+      fetchDeps = false
+    }
+  },
 })
 
 nvim_lsp.fsautocomplete.setup({ capabilities = capabilities, on_attach = on_attach })
@@ -754,69 +716,27 @@ vim.cmd([[ command! Format execute 'lua vim.lsp.buf.formatting()' ]])
 -- Set completeopt to have a better completion experience
 vim.o.completeopt = "menuone,noinsert"
 
--- Compe setup
+local cmp = require("cmp")
 
-require("compe").setup({
-  autocomplete = true,
-  debug = false,
-  documentation = true,
-  enabled = true,
-  incomplete_delay = 400,
-  max_abbr_width = 100,
-  max_kind_width = 100,
-  max_menu_width = 100,
-  min_length = 1,
-  preselect = "enable",
-  source_timeout = 200,
-  throttle_time = 80,
-
-  source = {
-    -- buffer = true,
-    -- calc = true,
-    nvim_lsp = true,
-    nvim_lua = true,
-    path = true,
-    snippets_nvim = true,
+cmp.setup({
+  snippet = {
+    expand = function(args)
+    -- for vsnip user
+    vim.fn["vsnip#anonymous"](args.body)
+  end
+  },
+  mapping = {
+    ["<C-b>"] = cmp.mapping.scroll_docs(-4),
+    ["<C-f>"] = cmp.mapping.scroll_docs(4),
+    ["<C-Space>"] = cmp.mapping.complete(),
+    ["<C-e>"] = cmp.mapping.close(),
+    ["<C-y>"] = cmp.mapping.confirm({ select = true }),
+  },
+  sources = {
+    { name = "nvim_lsp" },
+    { name = "vsnip" },
   },
 })
-
-local t = function(str)
-  return vim.api.nvim_replace_termcodes(str, true, true, true)
-end
-
-local check_back_space = function()
-  local col = vim.fn.col(".") - 1
-  if col == 0 or vim.fn.getline("."):sub(col, col):match("%s") then
-    return true
-  else
-    return false
-  end
-end
-
--- Use (s-)tab to:
---- move to prev/next item in completion menuone
---- jump to prev/next snippet's placeholder
-_G.tab_complete = function()
-  if vim.fn.pumvisible() == 1 then
-    return t("<C-n>")
-  elseif check_back_space() then
-    return t("<Tab>")
-  else
-    return vim.fn["compe#complete"]()
-  end
-end
-_G.s_tab_complete = function()
-  if vim.fn.pumvisible() == 1 then
-    return t("<C-p>")
-  else
-    return t("<S-Tab>")
-  end
-end
-
-vim.api.nvim_set_keymap("i", "<Tab>", "v:lua.tab_complete()", { expr = true })
-vim.api.nvim_set_keymap("s", "<Tab>", "v:lua.tab_complete()", { expr = true })
-vim.api.nvim_set_keymap("i", "<S-Tab>", "v:lua.s_tab_complete()", { expr = true })
-vim.api.nvim_set_keymap("s", "<S-Tab>", "v:lua.s_tab_complete()", { expr = true })
 
 vim.api.nvim_set_keymap("n", "BDA", [[<Cmd>%bd|e#<CR>]], { noremap = true })
 vim.api.nvim_set_keymap("n", "<leader>~", [[:s/\v<(.)(\w*)/\u\1\L\2/g<CR>]], { noremap = true })
