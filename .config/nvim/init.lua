@@ -368,6 +368,7 @@ require("packer").startup(function()
     end,
   })
   use({
+    disable = true,
     "nvim-treesitter/nvim-treesitter", -- parsing system
     run = ":TSUpdate",
     config = function()
