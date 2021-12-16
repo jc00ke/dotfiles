@@ -368,13 +368,13 @@ require("packer").startup(function()
     end,
   })
   use({
-    disable = true,
+    disable = false,
     "nvim-treesitter/nvim-treesitter", -- parsing system
     run = ":TSUpdate",
     config = function()
       require("nvim-treesitter.configs").setup({
         highlight = {
-          enable = true, -- false will disable the whole extension
+          enable = false, -- false will disable the whole extension
         },
         incremental_selection = {
           enable = true,
