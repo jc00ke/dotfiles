@@ -255,7 +255,6 @@ require("packer").startup(function()
   use("hrsh7th/cmp-buffer")
   use("hrsh7th/cmp-path")
   use("hrsh7th/cmp-cmdline")
-  use("hrsh7th/cmp-emoji")
   use("lukas-reineke/cmp-rg")
   use("onsails/lspkind-nvim")
   use("hrsh7th/nvim-cmp") -- Autocompletion plugin
@@ -739,7 +738,6 @@ cmp.setup({
     { name = "vsnip" },
     { name = "spell", keyword_length = 5 },
     { name = "rg", keyword_length = 5 },
-    { name = "emoji" },
     { name = "path" },
   },
   formatting = {
@@ -749,7 +747,6 @@ cmp.setup({
         buffer = "[Buffer]",
         nvim_lsp = "[LSP]",
         nvim_lua = "[Lua]",
-        emoji = "[Emoji]",
         spell = "[Spell]",
         path = "[Path]",
         rg = "[Rg]",
