@@ -6,7 +6,7 @@ elixir 1.13.0-otp-24
 elm 0.19.1
 erlang 24.1.7
 exa 0.10.1
-fd 8.2.1
+fd 8.3.0
 golang 1.15.2
 haskell 9.0.1
 lua 5.4.2
