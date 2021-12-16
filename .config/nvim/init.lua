@@ -158,12 +158,6 @@ require("packer").startup(function()
       )
       vim.api.nvim_set_keymap(
         "n",
-        "<leader>o",
-        [[<cmd>lua require('telescope.builtin').tags{ only_current_buffer = true }<cr>]],
-        { noremap = true, silent = true }
-      )
-      vim.api.nvim_set_keymap(
-        "n",
         "<Leader>fb",
         [[<Cmd>lua require('telescope.builtin').file_browser()<CR>]],
         { noremap = true, silent = true }
