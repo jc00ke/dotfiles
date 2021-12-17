@@ -423,6 +423,11 @@ require("packer").startup(function()
         },
       })
     end,
+    defaults = {
+      preview = {
+        treesitter = false,
+      }
+    }
   })
   use("nvim-treesitter/nvim-treesitter-textobjects")
   use("JoosepAlviste/nvim-ts-context-commentstring")
