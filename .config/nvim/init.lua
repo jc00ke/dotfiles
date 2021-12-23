@@ -426,8 +426,8 @@ require("packer").startup(function()
     defaults = {
       preview = {
         treesitter = false,
-      }
-    }
+      },
+    },
   })
   use("nvim-treesitter/nvim-treesitter-textobjects")
   use("JoosepAlviste/nvim-ts-context-commentstring")
@@ -657,8 +657,8 @@ nvim_lsp.elixirls.setup({
   settings = {
     elixirLS = {
       dialyzerEnabled = false,
-      fetchDeps = false
-    }
+      fetchDeps = false,
+    },
   },
 })
 
@@ -708,9 +708,9 @@ local cmp = require("cmp")
 cmp.setup({
   snippet = {
     expand = function(args)
-    -- for vsnip user
-    vim.fn["vsnip#anonymous"](args.body)
-  end
+      -- for vsnip user
+      vim.fn["vsnip#anonymous"](args.body)
+    end,
   },
   mapping = {
     ["<C-b>"] = cmp.mapping.scroll_docs(-4),
