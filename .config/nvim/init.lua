@@ -598,23 +598,22 @@ local on_attach = function(_, bufnr)
   local function map(...)
     vim.api.nvim_buf_set_keymap(bufnr, ...)
   end
-  local map_opts = {noremap = true, silent = true}
+  local map_opts = { noremap = true, silent = true }
 
-  map("n", "gd", "<cmd>lua vim.lsp.diagnostic.show_line_diagnostics()<cr>", map_opts)
-  map("n", "K", "<cmd>lua vim.lsp.buf.hover()<cr>", map_opts)
-  map("n", "gD", "<Cmd>lua vim.lsp.buf.declaration()<CR>", map_opts)
-  map("n", "gi", "<cmd>lua vim.lsp.buf.implementation()<CR>", map_opts)
-  map("n", "<C-k>", "<cmd>lua vim.lsp.buf.signature_help()<CR>", map_opts)
   map("n", "1gD", "<cmd>lua vim.lsp.buf.type_definition()<cr>", map_opts)
-  map("n", "<leader>rn", "<cmd>lua vim.lsp.buf.rename()<CR>", map_opts)
-  map("n", "gr", "<cmd>lua vim.lsp.buf.references()<CR>", map_opts)
+  map("n", "<C-k>", "<cmd>lua vim.lsp.buf.signature_help()<CR>", map_opts)
   map("n", "<leader>ca", "<cmd>lua vim.lsp.buf.code_action()<CR>", map_opts)
   map("n", "<leader>e", "<cmd>lua vim.lsp.diagnostic.show_line_diagnostics()<CR>", map_opts)
+  map("n", "<leader>q", "<cmd>lua vim.lsp.diagnostic.set_loclist()<CR>", map_opts)
+  map("n", "<leader>rn", "<cmd>lua vim.lsp.buf.rename()<CR>", map_opts)
+  map("n", "K", "<cmd>lua vim.lsp.buf.hover()<cr>", map_opts)
   map("n", "[d", "<cmd>lua vim.lsp.diagnostic.goto_prev()<CR>", map_opts)
   map("n", "]d", "<cmd>lua vim.lsp.diagnostic.goto_next()<CR>", map_opts)
-  map("n", "<leader>q", "<cmd>lua vim.lsp.diagnostic.set_loclist()<CR>", map_opts)
   map("n", "dF", [[<cmd>lua vim.lsp.buf.formatting()<CR>]], map_opts)
-  map("n", "dT", "<cmd>lua vim.lsp.buf.definition()<cr>", map_opts)
+  map("n", "gD", "<Cmd>lua vim.lsp.buf.declaration()<CR>", map_opts)
+  map("n", "gd", "<cmd>lua vim.lsp.buf.definition()<cr>", map_opts)
+  map("n", "gi", "<cmd>lua vim.lsp.buf.implementation()<CR>", map_opts)
+  map("n", "gr", "<cmd>lua vim.lsp.buf.references()<CR>", map_opts)
   vim.cmd([[autocmd BufWritePre <buffer> lua vim.lsp.buf.formatting_seq_sync()]])
 
   -- tell nvim-cmp about our desired capabilities
