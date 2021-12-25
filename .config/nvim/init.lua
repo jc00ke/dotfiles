@@ -32,44 +32,8 @@
 --]]
 local execute = vim.api.nvim_command
 local scopes = { o = vim.o, b = vim.bo, w = vim.wo }
-local indent = 2
-local function opt(scope, key, value)
-  scopes[scope][key] = value
-  if scope ~= "o" then
-    scopes["o"][key] = value
-  end
-end
 
-opt("b", "expandtab", true) -- Use spaces instead of tabs
-opt("b", "modeline", true)
-opt("b", "shiftwidth", indent) -- Size of an indent
-opt("b", "smartindent", true) -- Insert indents automatically
-opt("b", "tabstop", indent) -- Number of spaces tabs count for
-opt("b", "swapfile", false) -- Swapfile
-opt("b", "textwidth", 110) -- Match GitHub's 110 char width
--- opt('o', 'completeopt', 'menuone,noselect') -- Completion options (for deoplete)
-opt("o", "hidden", true) -- Enable modified buffers in background
-opt("o", "ignorecase", true) -- Ignore case
-opt("o", "joinspaces", false) -- No double spaces with join after a dot
-opt("o", "scrolloff", 4) -- Lines of context
-opt("o", "shiftround", true) -- Round indent
-opt("o", "sidescrolloff", 8) -- Columns of context
-opt("o", "smartcase", true) -- Don't ignore case with capitals
-opt("o", "splitbelow", true) -- Put new windows below current
-opt("o", "splitright", true) -- Put new windows right of current
-opt("o", "wildmode", "longest:full,full") -- Command-line completion mode
-opt("w", "cursorline", true) -- Highlight the screen line of the cursor with CursorLine
-opt("w", "foldmethod", "expr") -- The kind of folding used for the current window
-opt("w", "foldexpr", "nvim_treesitter#foldexpr()")
-opt("w", "foldcolumn", "0") -- When and how to draw the foldcolumn
-opt("w", "foldnestmax", 8) -- Sets the maximum nesting of folds for the "indent" and "syntax" methods
-opt("w", "foldlevel", 3) -- Sets the fold level: higher levels will be closed.
-opt("w", "list", true) -- Show some invisible characters (tabs...)
-opt("w", "listchars", "tab:»\\ ,nbsp:෴,trail:-") -- Replace tabs, &nbsp and trailing chars with visible chars
-opt("w", "wrap", false) -- Disable line wrap
-
-vim.o.shortmess = vim.o.shortmess .. "c" -- Avoid showing message extra message when using completion
-vim.bo.formatoptions = vim.bo.formatoptions .. ",w" -- Tack on 'w' to format options
+require("user.options")
 
 -- Install packer
 local install_path = vim.fn.stdpath("data") .. "/site/pack/packer/start/packer.nvim"
