@@ -13,27 +13,12 @@
   * https://oroques.dev/notes/neovim-init/
 
   vim.o Get or set editor options, like |:set|. Invalid key is an error.
-
-  ╭────────────────────────────────────────────────────────────────────────────────────────────────────╮
-  │  String value  │  Help page   │  Affected modes                           │  Vimscript equivalent  │
-  │────────────────────────────────────────────────────────────────────────────────────────────────────│
-  │  ''            │  mapmode-nvo │  Normal, Visual, Select, Operator-pending │  :map                  │
-  │  'n'           │  mapmode-n   │  Normal                                   │  :nmap                 │
-  │  'v'           │  mapmode-v   │  Visual and Select                        │  :vmap                 │
-  │  's'           │  mapmode-s   │  Select                                   │  :smap                 │
-  │  'x'           │  mapmode-x   │  Visual                                   │  :xmap                 │
-  │  'o'           │  mapmode-o   │  Operator-pending                         │  :omap                 │
-  │  '!'           │  mapmode-ic  │  Insert and Command-line                  │  :map!                 │
-  │  'i'           │  mapmode-i   │  Insert                                   │  :imap                 │
-  │  'l'           │  mapmode-l   │  Insert, Command-line, Lang-Arg           │  :lmap                 │
-  │  'c'           │  mapmode-c   │  Command-line                             │  :cmap                 │
-  │  't'           │  mapmode-t   │  Terminal                                 │  :tmap                 │
-  ╰────────────────────────────────────────────────────────────────────────────────────────────────────╯
 --]]
 local execute = vim.api.nvim_command
 local scopes = { o = vim.o, b = vim.bo, w = vim.wo }
 
 require("user.options")
+require("user.keymaps")
 
 -- Install packer
 local install_path = vim.fn.stdpath("data") .. "/site/pack/packer/start/packer.nvim"
@@ -78,114 +63,6 @@ require("packer").startup(function()
         },
       })
       -- Add leader shortcuts
-      vim.api.nvim_set_keymap(
-        "n",
-        "<C-p>",
-        [[<Cmd>lua require('telescope.builtin').git_files()<CR>]],
-        { noremap = true, silent = true }
-      )
-      vim.api.nvim_set_keymap(
-        "n",
-        "<C-P>",
-        [[<cmd>lua require('telescope.builtin').find_files()<cr>]],
-        { noremap = true, silent = true }
-      )
-      vim.api.nvim_set_keymap(
-        "n",
-        "<C-b>",
-        [[<cmd>lua require('telescope.builtin').buffers()<cr>]],
-        { noremap = true, silent = true }
-      )
-      vim.api.nvim_set_keymap(
-        "n",
-        "<leader>F",
-        [[<cmd>lua require('telescope.builtin').current_buffer_fuzzy_find()<cr>]],
-        { noremap = true, silent = true }
-      )
-      vim.api.nvim_set_keymap(
-        "n",
-        "<C-_>",
-        [[<cmd>lua require('telescope.builtin').oldfiles()<cr>]],
-        { noremap = true, silent = true }
-      )
-      vim.api.nvim_set_keymap(
-        "n",
-        "<leader>A",
-        [[<cmd>lua require('telescope.builtin').grep_string()<cr>]],
-        { noremap = true, silent = true }
-      )
-      vim.api.nvim_set_keymap(
-        "n",
-        "<leader>a",
-        [[<cmd>lua require('telescope.builtin').live_grep()<cr>]],
-        { noremap = true, silent = true }
-      )
-      vim.api.nvim_set_keymap(
-        "n",
-        "<Leader>fb",
-        [[<Cmd>lua require('telescope.builtin').file_browser()<CR>]],
-        { noremap = true, silent = true }
-      )
-      vim.api.nvim_set_keymap(
-        "n",
-        "<leader>cd",
-        [[<Cmd>lua require('telescope').extensions.zoxide.list({})<CR>]],
-        { noremap = true, silent = true }
-      )
-      vim.api.nvim_set_keymap(
-        "n",
-        "<leader>E",
-        [[<Cmd>lua require('telescope.builtin').symbols({sources = {'emoji', 'gitmoji'}})<CR>]],
-        { noremap = true, silent = true }
-      )
-      vim.api.nvim_set_keymap(
-        "n",
-        "<leader>gc",
-        [[<cmd>lua require('telescope.builtin').git_commits()<cr>]],
-        { noremap = true, silent = true }
-      )
-      vim.api.nvim_set_keymap(
-        "n",
-        "<leader>gb",
-        [[<cmd>lua require('telescope.builtin').git_branches()<cr>]],
-        { noremap = true, silent = true }
-      )
-      vim.api.nvim_set_keymap(
-        "n",
-        "<leader>gs",
-        [[<cmd>lua require('telescope.builtin').git_status()<cr>]],
-        { noremap = true, silent = true }
-      )
-      vim.api.nvim_set_keymap(
-        "n",
-        "<leader>gp",
-        [[<cmd>lua require('telescope.builtin').git_bcommits()<cr>]],
-        { noremap = true, silent = true }
-      )
-      vim.api.nvim_set_keymap(
-        "n",
-        "<leader>gi",
-        [[<Cmd>lua require('telescope').extensions.gh.issues()<CR>]],
-        { noremap = true, silent = true }
-      )
-      vim.api.nvim_set_keymap(
-        "n",
-        "<leader>gr",
-        [[<Cmd>lua require('telescope').extensions.gh.run()<CR>]],
-        { noremap = true, silent = true }
-      )
-      vim.api.nvim_set_keymap(
-        "n",
-        "<leader>gpr",
-        [[<Cmd>lua require('telescope').extensions.gh.pull_request()<CR>]],
-        { noremap = true, silent = true }
-      )
-      vim.api.nvim_set_keymap(
-        "n",
-        "<leader>gg",
-        [[<Cmd>lua require('telescope').extensions.gh.gist()<CR>]],
-        { noremap = true, silent = true }
-      )
     end,
     requires = { { "nvim-lua/popup.nvim" }, { "nvim-lua/plenary.nvim" } },
   })
@@ -207,9 +84,7 @@ require("packer").startup(function()
   -- Add git related info in the signs columns and popups
   use({
     "tveskag/nvim-blame-line",
-    config = function()
-      vim.api.nvim_set_keymap("n", "<leader>b", [[:ToggleBlameLine<CR>]], { noremap = true, silent = true })
-    end,
+    config = function() end,
   })
   use("neovim/nvim-lspconfig") -- Collection of configurations for built-in LSP client
 
@@ -245,22 +120,11 @@ require("packer").startup(function()
           "tfstate\\.backup$",
         },
       })
-      vim.api.nvim_set_keymap("n", "<leader>n", ":NvimTreeToggle<CR>", { noremap = true })
-      vim.api.nvim_set_keymap("n", "<leader>r", ":NvimTreeRefresh<CR>", { noremap = true })
-      vim.api.nvim_set_keymap("n", "<C-n>", ":NvimTreeFindFile<CR>", { noremap = true })
     end,
   })
   use({
     "vimlab/split-term.vim", -- terminal
     config = function()
-      -- Remap escape to leave terminal mode
-      vim.api.nvim_set_keymap("t", "<Esc>", [[<c-\><c-n>]], { noremap = true })
-      vim.api.nvim_set_keymap("t", "<C-o>", [[<C-\><C-n>]], { noremap = true })
-      -- Jump and Create splits easily
-      vim.api.nvim_set_keymap("n", "<Leader>fs", ":Term<CR>", { noremap = true })
-      vim.api.nvim_set_keymap("n", "<Leader>fv", ":VTerm<CR>", { noremap = true })
-      vim.api.nvim_set_keymap("n", "<Leader>ff", ":TTerm<CR>", { noremap = true })
-      vim.api.nvim_set_keymap("n", "<Leader>fp", ":TTerm<CR> postgres<CR>", { noremap = true })
       -- allow terminal buffer size to be very large
       vim.g["terminal_scrollback_buffer_size"] = 100000
       vim.g["split_term_default_shell"] = "fish"
@@ -271,19 +135,12 @@ require("packer").startup(function()
   use({
     "TimUntersberger/neogit", -- git
     -- disable = true,
-    config = function()
-      vim.api.nvim_set_keymap("n", "<Leader>g", ":Neogit<CR>", { noremap = true })
-      vim.api.nvim_set_keymap("n", "<leader>dvo", ":DiffViewOpen<CR>", { noremap = false })
-      vim.api.nvim_set_keymap("n", "<leader>dvc", ":DiffViewClose<CR>", { noremap = false })
-    end,
     requires = { "sindrets/diffview.nvim", "nvim-lua/plenary.nvim" },
   })
   use({
     "phaazon/hop.nvim", -- search
     config = function()
       require("hop").setup({})
-      vim.api.nvim_set_keymap("n", "<leader>h", ":HopWord<CR>", { noremap = true })
-      vim.api.nvim_set_keymap("n", "HH", ":HopWord<CR>", { noremap = true })
     end,
   })
   use("tpope/vim-eunuch") -- UNIX
@@ -295,12 +152,6 @@ require("packer").startup(function()
     "vim-test/vim-test",
     config = function()
       vim.g["test#strategy"] = "neovim"
-
-      vim.api.nvim_set_keymap("n", "<leader>t", ":TestNearest<CR>", { silent = true })
-      vim.api.nvim_set_keymap("n", "<leader>T", ":TestFile<CR>", { silent = true })
-      vim.api.nvim_set_keymap("n", "<leader>ta", ":TestSuite<CR>", { silent = true })
-      vim.api.nvim_set_keymap("n", "<leader>l", ":TestLast<CR>", { silent = true })
-      vim.api.nvim_set_keymap("n", "<leader>tv", ":TestVisit<CR>", { silent = true })
     end,
   })
   use("haya14busa/is.vim") -- search
@@ -312,12 +163,7 @@ require("packer").startup(function()
   })
   use({
     "junegunn/vim-easy-align",
-    config = function()
-      -- Start interactive EasyAlign in visual mode (e.g. vipga)
-      vim.api.nvim_set_keymap("x", "ga", "<Plug>(EasyAlign)", { noremap = true })
-      -- Start interactive EasyAlign for a motion/text object (e.g. gaip)
-      vim.api.nvim_set_keymap("n", "ga", "<Plug>(EasyAlign)", { noremap = true })
-    end,
+    config = function() end,
   })
   use("nvim-telescope/telescope-symbols.nvim") -- UI
   use("nvim-telescope/telescope-github.nvim") -- github
@@ -435,21 +281,6 @@ vim.o.termguicolors = true
 vim.o.bg = "dark"
 
 -- Remap space as leader key
-vim.api.nvim_set_keymap("", "<Space>", "<Nop>", { noremap = true, silent = true })
-vim.g.mapleader = ","
-vim.g.maplocalleader = "\\"
-vim.api.nvim_set_keymap("n", "<Leader>j", "gT", { noremap = true })
-vim.api.nvim_set_keymap("n", "<Leader>k", "gt", { noremap = true })
-vim.api.nvim_set_keymap("i", "jj", "<Esc>", { noremap = true })
-vim.api.nvim_set_keymap("i", "kk", "<Esc>:w<CR>", { noremap = true })
-vim.api.nvim_set_keymap("n", "gx", 'yiW:!xdg-open <cWORD><CR> <C-r>" & <CR><CR>', { noremap = true })
-vim.api.nvim_set_keymap("v", "<C-r>", [["hy:%s/<C-r>h//gc<left><left><left>]], { noremap = true })
-
-vim.api.nvim_set_keymap("n", "<Leader>cf", [[:let @*=expand("%:p")<CR>]], { noremap = true }) -- copy file path
-vim.api.nvim_set_keymap("n", "<Leader>yf", [[:let @"=expand("%:p")<CR>]], { noremap = true }) -- yank file path
-vim.api.nvim_set_keymap("n", "<Leader>cl", [[:let @+=expand("%:p")<CR>]], { noremap = true }) -- copy file path to clipboard
-vim.api.nvim_set_keymap("n", "<Leader>fn", [[:let @"=expand("%")<CR>]], { noremap = true }) -- yank file name
-vim.api.nvim_set_keymap("n", "<Leader>cs", [[:let @+=expand("%")<CR>]], { noremap = true }) -- copy file name to clipboard
 
 -- backups
 vim.g.backup = false
@@ -460,10 +291,6 @@ vim.g.errorbells = false
 vim.g.visualbell = true
 
 vim.cmd("retab") -- Replaces all sequences of white-space containing a <Tab> with spaces
-
--- Remap for dealing with word wrap
-vim.api.nvim_set_keymap("n", "k", "v:count == 0 ? 'gk' : 'k'", { noremap = true, expr = true, silent = true })
-vim.api.nvim_set_keymap("n", "j", "v:count == 0 ? 'gj' : 'j'", { noremap = true, expr = true, silent = true })
 
 -- Add map to enter paste mode
 vim.o.pastetoggle = "<F3>"
@@ -497,9 +324,6 @@ vim.o.pastetoggle = "<F3>"
         "import"
     }
 } ]]
--- because lazy load indent-blankline so need readd this autocmd
--- vim.cmd('autocmd CursorMoved * IndentBlanklineRefresh')
--- vim.api.nvim_set_keymap("n", "<leader>tbl", ":IndentBlanklineToggle<cr>", { noremap = true })
 
 -- Toggle to disable mouse mode and indentlines for easier paste
 ToggleMouse = function()
@@ -517,8 +341,6 @@ ToggleMouse = function()
     print("Mouse enabled")
   end
 end
-
-vim.api.nvim_set_keymap("n", "<F10>", "<cmd>lua ToggleMouse()<cr>", { noremap = true })
 
 -- Change preview window location
 vim.g.splitbelow = true
@@ -550,9 +372,6 @@ augroup END
 vim.cmd([[
 autocmd BufReadPost * if line("'\"") > 1 && line("'\"") <= line("$") |   exe "normal! g`\"" | endif
 ]])
-
--- Y yank until the end of line
-vim.api.nvim_set_keymap("n", "Y", "y$", { noremap = true })
 
 local nvim_lsp = require("lspconfig")
 
@@ -704,9 +523,6 @@ cmp.setup({
     }),
   },
 })
-
-vim.api.nvim_set_keymap("n", "BDA", [[<Cmd>%bd|e#<CR>]], { noremap = true })
-vim.api.nvim_set_keymap("n", "<leader>~", [[:s/\v<(.)(\w*)/\u\1\L\2/g<CR>]], { noremap = true })
 
 require("neogit").setup({ integrations = { diffview = true } })
 -- TODO
