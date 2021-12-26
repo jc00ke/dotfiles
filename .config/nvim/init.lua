@@ -22,6 +22,7 @@ require("user.lualine")
 require("user.colorscheme")
 require("user.hop")
 require("user.telescope")
+require("user.nvim-tree")
 
 -- Incremental live completion
 vim.o.inccommand = "nosplit"

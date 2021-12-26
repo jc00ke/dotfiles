@@ -76,22 +76,6 @@ packer.startup(function(use)
   use({
     "kyazdani42/nvim-tree.lua", -- file explorer
     requires = "kyazdani42/nvim-web-devicons",
-    config = function()
-      require("nvim-tree").setup({
-        nvim_tree_ignore = {
-          ".cache",
-          ".direnv",
-          ".elixir_ls",
-          ".git",
-          "\\~$",
-          "_build",
-          "cover",
-          "node_modules",
-          "tfstate$",
-          "tfstate\\.backup$",
-        },
-      })
-    end,
   })
   use({
     "vimlab/split-term.vim", -- terminal
