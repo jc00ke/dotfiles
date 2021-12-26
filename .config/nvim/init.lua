@@ -27,6 +27,7 @@ require("user.split-term")
 require("user.vim-test")
 require("user.treesitter")
 require("user.autocommands")
+require("user.cmp")
 
 local nvim_lsp = require("lspconfig")
 
@@ -131,44 +132,6 @@ nvim_lsp.sumneko_lua.setup({
         },
       },
     },
-  },
-})
-
-local cmp = require("cmp")
-
-cmp.setup({
-  snippet = {
-    expand = function(args)
-      -- for vsnip user
-      vim.fn["vsnip#anonymous"](args.body)
-    end,
-  },
-  mapping = {
-    ["<C-b>"] = cmp.mapping.scroll_docs(-4),
-    ["<C-f>"] = cmp.mapping.scroll_docs(4),
-    ["<C-Space>"] = cmp.mapping.complete(),
-    ["<C-e>"] = cmp.mapping.close(),
-    ["<C-y>"] = cmp.mapping.confirm({ select = true }),
-  },
-  sources = {
-    { name = "nvim_lsp" },
-    { name = "vsnip" },
-    { name = "spell", keyword_length = 5 },
-    { name = "rg", keyword_length = 5 },
-    { name = "path" },
-  },
-  formatting = {
-    format = require("lspkind").cmp_format({
-      with_text = true,
-      menu = {
-        buffer = "[Buffer]",
-        nvim_lsp = "[LSP]",
-        nvim_lua = "[Lua]",
-        spell = "[Spell]",
-        path = "[Path]",
-        rg = "[Rg]",
-      },
-    }),
   },
 })
 

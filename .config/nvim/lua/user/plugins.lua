@@ -59,15 +59,15 @@ packer.startup(function(use)
   use("tveskag/nvim-blame-line")
   use("neovim/nvim-lspconfig") -- Collection of configurations for built-in LSP client
 
-  use("hrsh7th/cmp-nvim-lsp")
-  use("hrsh7th/cmp-vsnip")
-  use("hrsh7th/vim-vsnip")
+  use("hrsh7th/nvim-cmp") -- Autocompletion plugin
   use("hrsh7th/cmp-buffer")
   use("hrsh7th/cmp-path")
   use("hrsh7th/cmp-cmdline")
   use("lukas-reineke/cmp-rg")
+  use("saadparwaiz1/cmp_luasnip")
+  use("hrsh7th/cmp-nvim-lsp")
+
   use("onsails/lspkind-nvim")
-  use("hrsh7th/nvim-cmp") -- Autocompletion plugin
 
   use("tpope/vim-sensible") -- defaults
   use("tpope/vim-obsession") -- sessions
