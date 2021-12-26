@@ -52,18 +52,6 @@ packer.startup(function(use)
   use("numToStr/Comment.nvim")
   use({
     "nvim-telescope/telescope.nvim",
-    config = function()
-      require("telescope").setup({
-        defaults = {
-          file_sorter = require("telescope.sorters").get_fzy_sorter,
-          generic_sorter = require("telescope.sorters").get_fzy_sorter,
-          mappings = { i = { ["<C-u>"] = false, ["<C-d>"] = false } },
-          layout_config = { prompt_position = "top" },
-          sorting_strategy = "ascending",
-        },
-      })
-      -- Add leader shortcuts
-    end,
     requires = { { "nvim-lua/popup.nvim" }, { "nvim-lua/plenary.nvim" } },
   })
   use("nvim-lualine/lualine.nvim")
