@@ -38,6 +38,9 @@ local options = {
   wildmode = "longest:full,full", -- Command-line completion mode
   wrap = false, -- display lines as one long line
   writebackup = false, -- if a file is being edited by another program (or was written to file while editing with another program), it is not allowed to be edited
+  -- Set colorscheme (order is important here)
+  termguicolors = true,
+  bg = "dark",
 }
 
 local buffer_options = {

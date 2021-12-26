@@ -19,6 +19,7 @@ require("user.options")
 require("user.keymaps")
 require("user.plugins")
 require("user.lualine")
+require("user.colorscheme")
 
 -- Incremental live completion
 vim.o.inccommand = "nosplit"
@@ -50,10 +51,6 @@ vim.o.smartcase = true
 -- Decrease update time
 vim.o.updatetime = 250
 vim.wo.signcolumn = "yes"
-
--- Set colorscheme (order is important here)
-vim.o.termguicolors = true
-vim.o.bg = "dark"
 
 -- Remap space as leader key
 
