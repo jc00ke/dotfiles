@@ -2,6 +2,7 @@ local indent = 2
 local options = {
   -- termguicolors = true,                    -- set term gui colors (most terminals support this)
   backup = false, -- creates a backup file
+  breakindent = true,
   clipboard = "unnamedplus", -- allows neovim to access the system clipboard
   cmdheight = 2, -- more space in the neovim command line for displaying messages
   completeopt = { "menuone", "noselect" }, -- mostly just for cmp
@@ -11,12 +12,15 @@ local options = {
   fileencoding = "utf-8", -- the encoding written to a file
   guifont = "monospace:h17", -- the font used in graphical neovim applications
   hidden = true, -- Enable modified buffers in background
-  hlsearch = true, -- highlight all matches on previous search pattern
+  hlsearch = false, -- highlight all matches on previous search pattern
+  inccommand = "nosplit", -- incremental live completion
+  incsearch = true, -- set highlight on search
   ignorecase = true, -- ignore case in search patterns
   joinspaces = false, -- No double spaces with join after a dot
   mouse = "a", -- allow the mouse to be used in neovim
   number = true, -- set numbered lines
   numberwidth = 4, -- set number column width to 2 {default 4}
+  pastetoggle = "<F3>",
   pumheight = 10, -- pop up menu height
   relativenumber = true, -- set relative numbered lines
   scrolloff = 8, -- is one of my fav
@@ -34,7 +38,7 @@ local options = {
   tabstop = indent, -- insert 2 spaces for a tab
   -- timeoutlen = 100, -- time to wait for a mapped sequence to complete (in milliseconds)
   undofile = true, -- enable persistent undo
-  updatetime = 300, -- faster completion (4000ms default)
+  updatetime = 250, -- faster completion (4000ms default)
   wildmode = "longest:full,full", -- Command-line completion mode
   wrap = false, -- display lines as one long line
   writebackup = false, -- if a file is being edited by another program (or was written to file while editing with another program), it is not allowed to be edited
@@ -58,6 +62,11 @@ local window_options = {
   listchars = "tab:»\\ ,nbsp:෴,trail:-", -- Replace tabs, &nbsp and trailing chars with visible chars
 }
 
+local global_options = {
+  errorbells = false,
+  visualbells = true,
+}
+
 vim.opt.shortmess:append("c")
 -- vim.bo.formatoptions:append("w")
 
@@ -73,6 +82,11 @@ for k, v in pairs(window_options) do
   vim.wo[k] = v
 end
 
-vim.cmd("set whichwrap+=<,>,[,],h,l")
+for k, v in pairs(global_options) do
+  vim.g[k] = v
+end
+
+vim.cmd([[set whichwrap+=<,>,[,],h,l]])
 vim.cmd([[set iskeyword+=-]])
 vim.cmd([[set formatoptions-=cro]]) -- TODO: this doesn't seem to work
+vim.cmd([[retab]]) -- Replaces all sequences of white-space containing a <Tab> with spaces
