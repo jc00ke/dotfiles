@@ -63,13 +63,12 @@ packer.startup(function(use)
   use("hrsh7th/cmp-buffer")
   use("hrsh7th/cmp-path")
   use("hrsh7th/cmp-cmdline")
-  use("lukas-reineke/cmp-rg")
   use("saadparwaiz1/cmp_luasnip")
   use("hrsh7th/cmp-nvim-lsp")
+  use("L3MON4D3/LuaSnip") --snippet engine
 
   use("onsails/lspkind-nvim")
 
-  use("tpope/vim-sensible") -- defaults
   use("tpope/vim-obsession") -- sessions
   use("tpope/vim-projectionist") -- project config
   use("tpope/vim-surround") -- text

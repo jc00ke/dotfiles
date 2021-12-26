@@ -101,12 +101,11 @@ cmp.setup {
       vim_item.kind = string.format("%s", kind_icons[vim_item.kind])
       -- vim_item.kind = string.format('%s %s', kind_icons[vim_item.kind], vim_item.kind) -- This concatonates the icons with the name of the item kind
       vim_item.menu = ({
-        buffer = "[Buffer]",
         nvim_lsp = "[LSP]",
         luasnip = "[Snippet]",
+        buffer = "[Buffer]",
         path = "[Path]",
         spell = "[Spell]",
-        rg = "[Rg]",
       })[entry.source.name]
       return vim_item
     end,
@@ -117,7 +116,6 @@ cmp.setup {
     { name = "buffer" },
     { name = "path" },
     { name = "spell", keyword_length = 4 },
-    { name = "rg", keyword_length = 4 },
   },
   confirm_opts = {
     behavior = cmp.ConfirmBehavior.Replace,
