@@ -28,64 +28,24 @@ require("user.vim-test")
 require("user.treesitter")
 require("user.autocommands")
 require("user.cmp")
+require("user.lsp")
 
 local nvim_lsp = require("lspconfig")
 
 local capabilities = vim.lsp.protocol.make_client_capabilities()
 capabilities.textDocument.completion.completionItem.snippetSupport = true
 local on_attach = function(_, bufnr)
-  local function map(...)
-    vim.api.nvim_buf_set_keymap(bufnr, ...)
-  end
-  local map_opts = { noremap = true, silent = true }
-
-  map("n", "1gD", "<cmd>lua vim.lsp.buf.type_definition()<cr>", map_opts)
-  map("n", "<C-k>", "<cmd>lua vim.lsp.buf.signature_help()<CR>", map_opts)
-  map("n", "<leader>ca", "<cmd>lua vim.lsp.buf.code_action()<CR>", map_opts)
-  map("n", "<leader>e", "<cmd>lua vim.lsp.diagnostic.show_line_diagnostics()<CR>", map_opts)
-  map("n", "<leader>q", "<cmd>lua vim.lsp.diagnostic.set_loclist()<CR>", map_opts)
-  map("n", "<leader>rn", "<cmd>lua vim.lsp.buf.rename()<CR>", map_opts)
-  map("n", "K", "<cmd>lua vim.lsp.buf.hover()<cr>", map_opts)
-  map("n", "[d", "<cmd>lua vim.lsp.diagnostic.goto_prev()<CR>", map_opts)
-  map("n", "]d", "<cmd>lua vim.lsp.diagnostic.goto_next()<CR>", map_opts)
-  map("n", "dF", [[<cmd>lua vim.lsp.buf.formatting()<CR>]], map_opts)
-  map("n", "gD", "<Cmd>lua vim.lsp.buf.declaration()<CR>", map_opts)
-  map("n", "gd", "<cmd>lua vim.lsp.buf.definition()<cr>", map_opts)
-  map("n", "gi", "<cmd>lua vim.lsp.buf.implementation()<CR>", map_opts)
-  map("n", "gr", "<cmd>lua vim.lsp.buf.references()<CR>", map_opts)
-
-  -- tell nvim-cmp about our desired capabilities
-  require("cmp_nvim_lsp").update_capabilities(capabilities)
 end
 
--- Enable the following language servers
 
-local servers = {
-  "bashls",
-  "clangd",
-  "dockerls",
-  "rust_analyzer",
-  "pyright",
-  "solargraph",
-}
-for _, lsp in ipairs(servers) do
-  nvim_lsp[lsp].setup({ capabilities = capabilities, on_attach = on_attach })
-end
-
-nvim_lsp.denols.setup({
-  capabilities = capabilities,
-  init_options = { enable = true, lint = true, unstable = true },
-})
-
-nvim_lsp.efm.setup({
-  capabilities = capabilities,
-  filetypes = { "elixir", "lua", "sh", "yaml" },
-  init_options = { documentFormatting = true },
-  on_attach = on_attach,
-})
+-- nvim_lsp.efm.setup({
+--   capabilities = capabilities,
+--   filetypes = { "elixir", "lua", "sh", "yaml" },
+--   init_options = { documentFormatting = true },
+--   on_attach = on_attach,
+-- })
 
 local elixirls_binary = vim.fn.expand("~/src/elixir-ls/release/language_server.sh")
--- local util = require("lspconfig/util")
 
 nvim_lsp.elixirls.setup({
   cmd = { elixirls_binary },
@@ -100,10 +60,6 @@ nvim_lsp.elixirls.setup({
   },
 })
 
-nvim_lsp.fsautocomplete.setup({ capabilities = capabilities, on_attach = on_attach })
-
-nvim_lsp.hls.setup({ capabilities = capabilities, on_attach = on_attach })
-
 nvim_lsp.html.setup({
   capabilities = capabilities,
   filetypes = { "html" },
@@ -113,26 +69,6 @@ nvim_lsp.html.setup({
     embeddedLanguages = { css = true, javascript = true },
   },
   on_attach = on_attach,
-})
-
-local sumneko_root_path = vim.fn.expand("~/src/lua-language-server")
-local sumneko_binary = vim.fn.expand(sumneko_root_path .. "/bin/Linux/lua-language-server")
-
-nvim_lsp.sumneko_lua.setup({
-  cmd = { sumneko_binary, "-E", sumneko_root_path .. "/main.lua" },
-  on_attach = on_attach,
-  settings = {
-    Lua = {
-      runtime = { version = "LuaJIT", path = vim.split(package.path, ";") },
-      diagnostics = { globals = { "vim" } },
-      workspace = {
-        library = {
-          [vim.fn.expand("$VIMRUNTIME/lua")] = true,
-          [vim.fn.expand("$VIMRUNTIME/lua/vim/lsp")] = true,
-        },
-      },
-    },
-  },
 })
 
 require("neogit").setup({ integrations = { diffview = true } })
