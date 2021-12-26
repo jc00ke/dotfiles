@@ -20,6 +20,7 @@ require("user.keymaps")
 require("user.plugins")
 require("user.lualine")
 require("user.colorscheme")
+require("user.hop")
 
 -- Incremental live completion
 vim.o.inccommand = "nosplit"
