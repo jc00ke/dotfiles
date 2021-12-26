@@ -24,6 +24,7 @@ require("user.hop")
 require("user.telescope")
 require("user.nvim-tree")
 require("user.split-term")
+require("user.vim-test")
 
 -- Incremental live completion
 vim.o.inccommand = "nosplit"

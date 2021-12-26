@@ -89,12 +89,7 @@ packer.startup(function(use)
   use("direnv/direnv.vim") -- environment variables
   use("tpope/vim-rails") -- ruby
   use("tpope/vim-rake") -- ruby
-  use({
-    "vim-test/vim-test",
-    config = function()
-      vim.g["test#strategy"] = "neovim"
-    end,
-  })
+  use("vim-test/vim-test")
   use("haya14busa/is.vim") -- search
   use("ishan9299/nvim-solarized-lua")
   use("junegunn/vim-easy-align")
