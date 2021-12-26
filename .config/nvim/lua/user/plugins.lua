@@ -77,14 +77,7 @@ packer.startup(function(use)
     "kyazdani42/nvim-tree.lua", -- file explorer
     requires = "kyazdani42/nvim-web-devicons",
   })
-  use({
-    "vimlab/split-term.vim", -- terminal
-    config = function()
-      -- allow terminal buffer size to be very large
-      vim.g["terminal_scrollback_buffer_size"] = 100000
-      vim.g["split_term_default_shell"] = "fish"
-    end,
-  })
+  use("vimlab/split-term.vim")
   use({
     "TimUntersberger/neogit", -- git
     -- disable = true,
