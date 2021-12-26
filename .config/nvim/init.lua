@@ -25,6 +25,7 @@ require("user.telescope")
 require("user.nvim-tree")
 require("user.split-term")
 require("user.vim-test")
+require("user.treesitter")
 
 -- Incremental live completion
 vim.o.inccommand = "nosplit"
