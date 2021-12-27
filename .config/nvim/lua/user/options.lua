@@ -65,6 +65,7 @@ local window_options = {
 local global_options = {
   errorbells = false,
   visualbells = true,
+  shada = "'20,<50,s10",
 }
 
 vim.opt.shortmess:append("c")
