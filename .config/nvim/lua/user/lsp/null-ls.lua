@@ -3,10 +3,12 @@ if not null_ls_status_ok then
   return
 end
 
+-- https://github.com/jose-elias-alvarez/null-ls.nvim/blob/b7de45a0e62bf93f19db2b43ecded48c5763248d/doc/BUILTINS.md
+
 -- https://github.com/jose-elias-alvarez/null-ls.nvim/tree/main/lua/null-ls/builtins/formatting
 local formatting = null_ls.builtins.formatting
 -- https://github.com/jose-elias-alvarez/null-ls.nvim/tree/main/lua/null-ls/builtins/diagnostics
--- local diagnostics = null_ls.builtins.diagnostics
+local diagnostics = null_ls.builtins.diagnostics
 
 null_ls.setup({
   debug = false,
@@ -16,10 +18,13 @@ null_ls.setup({
     end
   end,
   sources = {
+    diagnostics.shellcheck,
     formatting.black.with({ extra_args = { "--fast" } }),
     formatting.elm_format,
     formatting.mix,
     formatting.prettier.with({ extra_args = { "--no-semi", "--single-quote", "--jsx-single-quote" } }),
+    formatting.shellharden,
+    formatting.shfmt.with({ extra_args = { "-ci", "-s", "-i", "2", "-bn" } }),
     formatting.stylua,
   },
 })
