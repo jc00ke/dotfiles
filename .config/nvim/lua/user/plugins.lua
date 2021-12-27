@@ -83,7 +83,7 @@ packer.startup(function(use)
     "TimUntersberger/neogit", -- git
     -- disable = true,
     requires = { "sindrets/diffview.nvim", "nvim-lua/plenary.nvim" },
-    config = function ()
+    config = function()
       require("neogit").setup({ integrations = { diffview = true } })
     end,
   })
@@ -118,10 +118,11 @@ packer.startup(function(use)
   use("lambdalisue/suda.vim")
   use({
     "kristijanhusak/vim-carbon-now-sh",
-    config = function ()
-      vim.g["carbon_now_sh_options"] = [[bg=rgba%2838%2C139%2C210%2C1%29&ln=true&t=solarized+light&fm=Source+Code+Pro]]
+    config = function()
+      vim.g["carbon_now_sh_options"] =
+        [[bg=rgba%2838%2C139%2C210%2C1%29&ln=true&t=solarized+light&fm=Source+Code+Pro]]
       vim.api.nvim_set_keymap("v", [[<F5>]], [[:CarbonNowSh<CR>]], { noremap = true, silent = true })
-    end
+    end,
   })
 
   if PACKER_BOOTSTRAP then
