@@ -7,26 +7,17 @@ vim.cmd([[
 ]])
 
 vim.cmd([[
-augroup numbertoggle
-  autocmd!
-  autocmd BufNew,BufEnter,FocusGained,InsertLeave,WinEnter  * if &nu | set rnu cul     | endif
-  autocmd BufLeave,FocusLost,InsertEnter,WinLeave           * if &nu | set nornu nocul | endif
-  autocmd TermOpen * setlocal nornu nonu nocul
-augroup END
+  augroup NumberToggle
+    autocmd!
+    autocmd BufNew,BufEnter,FocusGained,InsertLeave,WinEnter  * if &nu | set rnu cul     | endif
+    autocmd BufLeave,FocusLost,InsertEnter,WinLeave           * if &nu | set nornu nocul | endif
+    autocmd TermOpen * setlocal nornu nonu nocul
+  augroup END
 ]])
 
 -- restore cursor position
 vim.cmd([[
   autocmd BufReadPost * if line("'\"") > 1 && line("'\"") <= line("$") |   exe "normal! g`\"" | endif
-]])
-
-
--- Map :Format to vim.lsp.buf.formatting()
-vim.cmd([[
-  command! Format execute 'lua vim.lsp.buf.formatting()'
-]])
-vim.cmd([[
-  autocmd BufWritePre <buffer> lua vim.lsp.buf.formatting_seq_sync()
 ]])
 
 vim.cmd([[
