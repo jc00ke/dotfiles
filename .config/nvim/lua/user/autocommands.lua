@@ -45,7 +45,8 @@ vim.cmd([[
   au FileType elixir nnoremap <leader>r orequire IEx; IEx.pry<esc>
 ]])
 
---[[ " Automatic setting of the executable bit
+vim.cmd([[
+" Automatic setting of the executable bit
 " http://vim.wikia.com/wiki/Setting_file_attributes_without_reloading_a_buffer
 function! SetExecutableBit()
   let fname = expand("%:p")
@@ -56,7 +57,6 @@ function! SetExecutableBit()
   execute "au! FileChangedShell " . fname
 endfunction
 command! Xbit call SetExecutableBit()
-autocmd BufWritePost *.pl Xbit
 autocmd BufWritePost *.bash Xbit
-autocmd BufWritePost *.sh Xbit ]]
-
+autocmd BufWritePost *.sh Xbit
+]])
