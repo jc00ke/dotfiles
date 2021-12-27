@@ -13,9 +13,7 @@ null_ls.setup({
   sources = {
     formatting.black.with({ extra_args = { "--fast" } }),
     formatting.elm_format,
-    formatting.lua_format,
     formatting.prettier.with({ extra_args = { "--no-semi", "--single-quote", "--jsx-single-quote" } }),
     formatting.stylua,
-    -- diagnostics.flake8
   },
 })
