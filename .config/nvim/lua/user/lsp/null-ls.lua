@@ -12,12 +12,13 @@ null_ls.setup({
   debug = false,
   on_attach = function(client)
     if client.resolved_capabilities.document_formatting then
-      vim.cmd("autocmd BufWritePre <buffer> lua vim.lsp.buf.formatting_sync()")
+      vim.cmd("autocmd BufWritePre <buffer> lua vim.lsp.buf.formatting_seq_sync()")
     end
   end,
   sources = {
     formatting.black.with({ extra_args = { "--fast" } }),
     formatting.elm_format,
+    formatting.mix,
     formatting.prettier.with({ extra_args = { "--no-semi", "--single-quote", "--jsx-single-quote" } }),
     formatting.stylua,
   },

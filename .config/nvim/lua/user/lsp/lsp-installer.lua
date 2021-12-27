@@ -8,7 +8,7 @@ local servers = {
   "clangd",
   "denols",
   "dockerls",
-  "elixirls",
+  --"elixirls",
   "elmls",
   "html",
   "pyright",
@@ -39,11 +39,6 @@ lsp_installer.on_server_ready(function(server)
   if server.name == "denols" then
     local denols_opts = require("user.lsp.settings.denols")
     opts = vim.tbl_deep_extend("force", denols_opts, opts)
-  end
-
-  if server.name == "elixirls" then
-    local elixirls_opts = require("user.lsp.settings.elixirls")
-    opts = vim.tbl_deep_extend("force", elixirls_opts, opts)
   end
 
   if server.name == "html" then

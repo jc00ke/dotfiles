@@ -20,6 +20,8 @@ vim.cmd([[
   autocmd BufReadPost * if line("'\"") > 1 && line("'\"") <= line("$") |   exe "normal! g`\"" | endif
 ]])
 
+vim.api.nvim_command([[autocmd BufWritePre <buffer> lua vim.lsp.buf.formatting_sync()]])
+
 vim.cmd([[
   au FileType elixir nnoremap io o\|> IO.inspect(printable_limit: :infinity)<Esc>
 ]])
