@@ -9,8 +9,9 @@ telescope.setup({
   defaults = {
     file_sorter = sorters.get_fzy_sorter,
     generic_sorter = sorters.get_fzy_sorter,
-    mappings = { i = { ["<C-u>"] = false, ["<C-d>"] = false } },
     layout_config = { prompt_position = "top" },
+    mappings = { i = { ["<C-u>"] = false, ["<C-d>"] = false } },
+    preview = { treesitter = false },
     sorting_strategy = "ascending",
   },
 })
