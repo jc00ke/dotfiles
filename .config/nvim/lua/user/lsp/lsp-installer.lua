@@ -9,6 +9,7 @@ local servers = {
   "denols",
   "dockerls",
   "elixirls",
+  "elmls",
   "html",
   "pyright",
   "rust_analyzer",
