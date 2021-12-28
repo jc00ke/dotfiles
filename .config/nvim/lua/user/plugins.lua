@@ -124,6 +124,7 @@ packer.startup(function(use)
       vim.api.nvim_set_keymap("v", [[<F5>]], [[:CarbonNowSh<CR>]], { noremap = true, silent = true })
     end,
   })
+  use("nanotee/sqls.nvim")
 
   if PACKER_BOOTSTRAP then
     require("packer").sync()
