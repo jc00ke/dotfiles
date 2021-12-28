@@ -17,6 +17,7 @@ null_ls.setup({
   end,
   sources = {
     diagnostics.credo,
+    diagnostics.hadolint,
     diagnostics.shellcheck,
     formatting.black.with({ extra_args = { "--fast" } }),
     formatting.elm_format,
