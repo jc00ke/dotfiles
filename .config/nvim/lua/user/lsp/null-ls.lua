@@ -27,5 +27,7 @@ null_ls.setup({
     formatting.shellharden,
     formatting.shfmt.with({ extra_args = { "-ci", "-s", "-i", "2", "-bn" } }),
     formatting.stylua,
+    formatting.trim_newlines,
+    formatting.trim_whitespace,
   },
 })
