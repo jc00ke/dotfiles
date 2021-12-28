@@ -16,6 +16,7 @@ local servers = {
   "solargraph",
   "sqls",
   "sumneko_lua",
+  "tailwindcss",
   "yamlls",
 }
 

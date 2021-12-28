@@ -22,6 +22,7 @@ null_ls.setup({
     formatting.elm_format,
     formatting.mix,
     formatting.prettier.with({ extra_args = { "--no-semi", "--single-quote", "--jsx-single-quote" } }),
+    formatting.rustywind,
     formatting.shellharden,
     formatting.shfmt.with({ extra_args = { "-ci", "-s", "-i", "2", "-bn" } }),
     formatting.stylua,
