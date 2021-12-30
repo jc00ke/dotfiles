@@ -20,9 +20,12 @@ null_ls.setup({
     diagnostics.hadolint,
     diagnostics.shellcheck,
     formatting.black.with({ extra_args = { "--fast" } }),
+    formatting.deno_fmt,
     formatting.elm_format,
     formatting.mix,
-    formatting.prettier.with({ extra_args = { "--no-semi", "--single-quote", "--jsx-single-quote" } }),
+    formatting.prettier.with({
+      extra_args = { "--no-semi", "--single-quote", "--jsx-single-quote" },
+    }),
     formatting.rustywind,
     formatting.shellharden,
     formatting.shfmt.with({ extra_args = { "-ci", "-s", "-i", "2", "-bn" } }),
