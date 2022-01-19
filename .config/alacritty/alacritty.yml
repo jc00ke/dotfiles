@@ -618,7 +618,6 @@ key_bindings:
 # (Windows only)
 #- { key: Return,   mods: Alt,           action: ToggleFullscreen }
 
-
 # (Windows, Linux, and BSD only)
 
 #- { key: V,        mods: Control|Shift,           action: Paste            }
