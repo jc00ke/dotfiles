@@ -7,10 +7,11 @@ source "$DIR/_helpers.sh"
 log "Installing alacritty"
 installed_version="$(alacritty --version | cut -d " " -f 2)"
 latest_version="$(latest_release_tag_name "alacritty" "alacritty")"
-alacritty_version="0.9.0"
+alacritty_version="0.10.0"
 
 if [ "$latest_version" != "v$installed_version" ]; then
   cd "$HOME/src" || exit 1
+  rm "v$alacritty_version.tar.gz"
   wget "https://github.com/alacritty/alacritty/archive/v$alacritty_version.tar.gz"
   tar xf "v$alacritty_version.tar.gz"
   cd "alacritty-$alacritty_version/" || exit 1
