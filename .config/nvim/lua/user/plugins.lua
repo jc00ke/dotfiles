@@ -114,10 +114,11 @@ packer.startup(function(use)
     end,
   })
   use("nanotee/sqls.nvim")
-  use({"stevearc/qf_helper.nvim",
-  config = function ()
-    require("qf_helper").setup()
-  end
+  use({
+    "stevearc/qf_helper.nvim",
+    config = function()
+      require("qf_helper").setup()
+    end,
   })
 
   if PACKER_BOOTSTRAP then
