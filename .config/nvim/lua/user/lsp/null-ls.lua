@@ -22,6 +22,7 @@ null_ls.setup({
     formatting.black.with({ extra_args = { "--fast" } }),
     formatting.deno_fmt,
     formatting.elm_format,
+    formatting.json_tool,
     formatting.mix,
     formatting.prettier.with({
       extra_args = { "--no-semi", "--single-quote", "--jsx-single-quote" },
