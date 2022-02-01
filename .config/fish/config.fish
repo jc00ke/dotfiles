@@ -29,14 +29,12 @@ set -x ERL_AFLAGS "-kernel shell_history enabled"
 set -gx FZF_DEFAULT_COMMAND  'rg --files --color=never'
 
 append_to_path "$HOME/src/bin"
-append_to_path "$HOME/bin"
 append_to_path "$HOME/.local/bin"
-append_to_path "$HOME/src/node/bin"
-append_to_path "$HOME/src/DataGrip/bin"
 append_to_path "$HOME/.config/yarn/global/node_modules/.bin"
 append_to_path "$HOME/.yarn/bin"
 append_to_path "$HOME/.git-fuzzy/bin"
 append_to_path "$HOME/.dotnet/tools"
+append_to_path "$HOME/projects/ratio/ratio-ops/bin"
 set PATH $PATH ".git/safe/../../bin"
 
 # this function may be required
