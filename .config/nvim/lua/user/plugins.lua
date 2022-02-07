@@ -60,7 +60,8 @@ packer.startup(function(use)
 
   use("onsails/lspkind-nvim")
 
-  use("tpope/vim-obsession") -- sessions
+  -- use("tpope/vim-obsession") -- sessions
+  use("rmagatti/auto-session")
   use("tpope/vim-projectionist") -- project config
   use("tpope/vim-surround") -- text
   use({
