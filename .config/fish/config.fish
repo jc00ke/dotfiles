@@ -35,6 +35,7 @@ append_to_path "$HOME/.yarn/bin"
 append_to_path "$HOME/.git-fuzzy/bin"
 append_to_path "$HOME/.dotnet/tools"
 append_to_path "$HOME/projects/ratio/ratio-ops/bin"
+append_to_path "$HOME/.pulumi/bin"
 set PATH $PATH ".git/safe/../../bin"
 
 # this function may be required
