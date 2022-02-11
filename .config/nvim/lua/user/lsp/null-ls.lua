@@ -19,7 +19,7 @@ local cfn_lint = {
     args = { "--format", "parseable", "-" },
     format = "line",
     check_exit_code = function(code)
-      return code == 0 or code == 255
+      return code == 0 or code == 255 or code == 4
     end,
     on_output = function(line, params)
       local row, col, end_row, end_col, code, message = line:match(":(%d+):(%d+):(%d+):(%d+):(.*):(.*)")
