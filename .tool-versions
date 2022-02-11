@@ -7,7 +7,6 @@ elm 0.19.1
 erlang 24.1.7
 exa 0.10.1
 fd 8.3.2
-golang 1.15.2
 lua 5.4.2
 neovim 0.6.1
 nodejs 16.1.0
