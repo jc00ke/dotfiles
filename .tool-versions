@@ -11,7 +11,7 @@ lua 5.4.2
 neovim 0.6.1
 nodejs 16.1.0
 postgres 11.4
-python 3.9.1
+python 3.10.2
 redis 6.2.3
 ripgrep 13.0.0
 ruby 3.0.1

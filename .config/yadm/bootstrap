@@ -29,6 +29,7 @@ sudo apt install -y \
   imagemagick \
   inotify-tools \
   jq \
+  libbz2-dev \
   libclang-dev libffi-dev \
   libfreetype6-dev \
   libfontconfig1-dev \
