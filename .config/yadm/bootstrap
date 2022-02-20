@@ -132,6 +132,15 @@ asdf plugin add yq
 Log "Installing shfmt"
 asdf plugin add shfmt
 
+log "installing stylua formatter"
+asdf plugin add https://github.com/jc00ke/asdf-stylua.git
+
+log "installing jless"
+asdf plugin add https://github.com/jc00ke/asdf-jless.git
+
+Log "Installing starship"
+asdf plugin add starship
+
 if command -v nvim >/dev/null 2>&1; then
   log "Installing neovim"
   asdf plugin add neovim
@@ -142,20 +151,10 @@ fi
 asdf install
 asdf reshim
 
-log "Installing starship"
-sh -c "$(curl -fsSL https://starship.rs/install.sh)"
-
 log "Installing direnv"
 wget "https://github.com/direnv/direnv/releases/download/v2.28.0/direnv.linux-amd64"
 mv "direnv.linux-amd64" "$HOME/.local/bin/direnv"
 chmod +x "$HOME/.local/bin/direnv"
-
-log "installing stylua formatter"
-cd "$HOME/src" || exit
-wget https://github.com/JohnnyMorganz/StyLua/releases/download/v0.10.0/stylua-0.10.0-linux.zip
-unzip stylua-0.10.0-linux.zip
-chmod +x stylua
-mv stylua "$HOME/.local/bin/"
 
 log "Installing lua LSP"
 sudo apt install ninja-build
