@@ -22,3 +22,4 @@ yq v4.11.2
 zoxide 0.8.0
 shellspec 0.28.1
 stylua 0.12.2
+jless 0.7.1
