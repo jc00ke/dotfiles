@@ -3,6 +3,7 @@ return {
     yaml = {
       customTags = {
         "!GetAtt",
+        "!Join",
         "!Ref",
         "!Sub",
         "!Sub sequence",
