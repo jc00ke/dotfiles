@@ -66,8 +66,7 @@ font:
 # If `true`, bold text is drawn using the bright color variants.
 #draw_bold_text_with_bright_colors: false
 schemes:
-  solarized_dark: &solarized_dark
-    # Default colors
+  solarized_dark: &solarized_dark # Default colors
     primary:
       background: '#002b36' # base03
       foreground: '#839496' # base0
@@ -95,8 +94,7 @@ schemes:
       magenta: '#6c71c4' # violet
       cyan: '#93a1a1' # base1
       white: '#fdf6e3' # base3
-  solarized_light: &solarized_light
-    # Default colors
+  solarized_light: &solarized_light # Default colors
     primary:
       background: '#fdf6e3' # base3
       foreground: '#657b83' # base00
@@ -124,8 +122,7 @@ schemes:
       magenta: '#6c71c4' # violet
       cyan: '#93a1a1' # base1
       white: '#fdf6e3' # base3
-  pencil_light: &pencil_light
-    # Default Colors
+  pencil_light: &pencil_light # Default Colors
     primary:
       background: '#f1f1f1'
       foreground: '#424242'
@@ -149,8 +146,7 @@ schemes:
       magenta: '#6855de'
       cyan: '#4fb8cc'
       white: '#f1f1f1'
-  pencil_dark: &pencil_dark
-    # Default Colors
+  pencil_dark: &pencil_dark # Default Colors
     primary:
       background: '#212121'
       foreground: '#f1f1f1'
