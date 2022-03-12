@@ -58,6 +58,23 @@ keymap("n", "<leader>A", [[<cmd>lua require('telescope.builtin').grep_string()<c
 keymap("n", "<leader>a", [[<cmd>lua require('telescope.builtin').live_grep()<cr>]], opts)
 keymap("n", "<Leader>fb", [[<Cmd>lua require('telescope.builtin').file_browser()<CR>]], opts)
 keymap("n", "<leader>cd", [[<Cmd>lua require('telescope').extensions.zoxide.list({})<CR>]], opts)
+
+keymap("n", "<Leader>dx", [[<Cmd>lua require('telescope.builtin').diagnostics()<CR>]], opts) --	Lists Diagnostics for all open buffers or a specific buffer. Use option bufnr=0 for current buffer.
+keymap("n", "<Leader>tr", [[<Cmd>lua require('telescope.builtin').lsp_references()<CR>]], opts) --	Lists LSP references for word under the cursor
+keymap("n", "<Leader>ds", [[<Cmd>lua require('telescope.builtin').lsp_document_symbols()<CR>]], opts) --	Lists LSP document symbols in the current buffer
+keymap("n", "<Leader>ws", [[<Cmd>lua require('telescope.builtin').lsp_workspace_symbols()<CR>]], opts) --	Lists LSP document symbols in the current workspace
+keymap(
+  "n",
+  "<Leader>tdws",
+  [[<Cmd>lua require('telescope.builtin').lsp_dynamic_workspace_symbols()<CR>]],
+  opts
+) --	Dynamically Lists LSP for all workspace symbols
+keymap("n", "<Leader>ca", [[<Cmd>lua require('telescope.builtin').lsp_code_actions()<CR>]], opts) --	Lists any LSP actions for the word under the cursor, that can be triggered with <cr>
+keymap("n", "<Leader>rca", [[<Cmd>lua require('telescope.builtin').lsp_range_code_actions()<CR>]], opts) --	Lists any LSP actions for a given range, that can be triggered with <cr>
+keymap("n", "<Leader>i", [[<Cmd>lua require('telescope.builtin').lsp_implementations()<CR>]], opts) --	Goto the implementation of the word under the cursor if there's only one, otherwise show all options in Telescope
+keymap("n", "<Leader>d", [[<Cmd>lua require('telescope.builtin').lsp_definitions()<CR>]], opts) --	Goto the definition of the word under the cursor, if there's only one, otherwise show all options in Telescope
+keymap("n", "<Leader>td", [[<Cmd>lua require('telescope.builtin').lsp_type_definitions()<CR>]], opts) --	Goto the definition of the type of the word under the cursor, if there's only one, otherwise show all options in Telescope
+
 keymap(
   "n",
   "<leader>E",
