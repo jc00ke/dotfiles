@@ -10,7 +10,6 @@ local servers = {
   "dockerls",
   --"elixirls",
   "elmls",
-  "html",
   "pyright",
   "rust_analyzer",
   "solargraph",
@@ -40,11 +39,6 @@ lsp_installer.on_server_ready(function(server)
   if server.name == "denols" then
     local denols_opts = require("user.lsp.settings.denols")
     opts = vim.tbl_deep_extend("force", denols_opts, opts)
-  end
-
-  if server.name == "html" then
-    local html_opts = require("user.lsp.settings.html")
-    opts = vim.tbl_deep_extend("force", html_opts, opts)
   end
 
   if server.name == "jsonls" then
