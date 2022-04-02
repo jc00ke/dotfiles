@@ -43,8 +43,6 @@ sudo apt install -y \
   libxml2-dev \
   libxslt1-dev \
   libyaml-dev \
-  openconnect \
-  openvpn \
   parallel \
   peek \
   pkg-config \
