@@ -8,7 +8,7 @@ erlang 24.1.7
 exa 0.10.1
 fd 8.3.2
 lua 5.4.2
-neovim 0.6.1
+neovim 0.7.0
 nodejs 16.1.0
 postgres 11.4
 python 3.10.2
