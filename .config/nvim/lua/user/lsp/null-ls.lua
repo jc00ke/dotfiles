@@ -34,5 +34,6 @@ null_ls.setup({
     formatting.stylua,
     formatting.trim_newlines,
     formatting.trim_whitespace,
+    formatting.xmllint,
   },
 })
