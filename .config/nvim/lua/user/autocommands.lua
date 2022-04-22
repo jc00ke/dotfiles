@@ -1,19 +1,43 @@
 -- Highlight on yank
-vim.cmd([[
-  augroup YankHighlight
-    autocmd!
-    autocmd TextYankPost * silent! lua vim.highlight.on_yank()
-  augroup end
-]])
+local highlight_group = vim.api.nvim_create_augroup("YankHighlight", { clear = true })
+vim.api.nvim_create_autocmd("TextYankPost", {
+  callback = function()
+    vim.highlight.on_yank()
+  end,
+  group = highlight_group,
+  pattern = "*",
+})
 
-vim.cmd([[
-  augroup NumberToggle
-    autocmd!
-    autocmd BufNew,BufEnter,FocusGained,InsertLeave,WinEnter  * if &nu | set rnu cul     | endif
-    autocmd BufLeave,FocusLost,InsertEnter,WinLeave           * if &nu | set nornu nocul | endif
-    autocmd TermOpen * setlocal nornu nonu nocul
-  augroup END
-]])
+local number_toggle_group = vim.api.nvim_create_augroup("NumberToggle", { clear = true })
+vim.api.nvim_create_autocmd("BufNew,BufEnter,FocusGained,InsertLeave,WinEnter", {
+  callback = function()
+    if vim.wo.nu then
+      vim.wo.rnu = true
+      vim.wo.cul = true
+    end
+  end,
+  group = number_toggle_group,
+  pattern = "*",
+})
+vim.api.nvim_create_autocmd("BufLeave,FocusLost,InsertEnter,WinLeave", {
+  callback = function()
+    if vim.wo.nu then
+      vim.wo.rnu = false
+      vim.wo.cul = false
+    end
+  end,
+  group = number_toggle_group,
+  pattern = "*",
+})
+vim.api.nvim_create_autocmd("TermOpen", {
+  callback = function()
+    vim.opt_local.rnu = false
+    vim.opt_local.nu = false
+    vim.opt_local.cul = false
+  end,
+  group = number_toggle_group,
+  pattern = "*",
+})
 
 -- restore cursor position
 vim.cmd([[
@@ -49,7 +73,10 @@ function! SetExecutableBit()
   checktime
   execute "au! FileChangedShell " . fname
 endfunction
-command! Xbit call SetExecutableBit()
-autocmd BufWritePost *.bash Xbit
-autocmd BufWritePost *.sh Xbit
 ]])
+local xbit_group = vim.api.nvim_create_augroup("Xbit", { clear = true })
+vim.api.nvim_create_user_command("Xbit", "call SetExecutableBit()", {})
+vim.api.nvim_create_autocmd(
+  "BufWritePost",
+  { command = "Xbit", group = xbit_group, pattern = { "*.bash", "*.sh" } }
+)

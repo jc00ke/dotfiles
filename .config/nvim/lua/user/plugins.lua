@@ -111,7 +111,7 @@ packer.startup(function(use)
     config = function()
       vim.g["carbon_now_sh_options"] =
         [[bg=rgba%2838%2C139%2C210%2C1%29&ln=true&t=solarized+light&fm=Source+Code+Pro]]
-      vim.api.nvim_set_keymap("v", [[<F5>]], [[:CarbonNowSh<CR>]], { noremap = true, silent = true })
+      vim.keymap.set("v", [[<F5>]], [[:CarbonNowSh<CR>]], { noremap = true, silent = true })
     end,
   })
   use("nanotee/sqls.nvim")
