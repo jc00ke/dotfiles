@@ -22,8 +22,8 @@ vim.api.nvim_create_autocmd("BufNew,BufEnter,FocusGained,InsertLeave,WinEnter", 
 vim.api.nvim_create_autocmd("BufLeave,FocusLost,InsertEnter,WinLeave", {
   callback = function()
     if vim.wo.nu then
-      vim.wo.rnu = false
-      vim.wo.cul = false
+      vim.wo.rnu = true
+      vim.wo.cul = true
     end
   end,
   group = number_toggle_group,
