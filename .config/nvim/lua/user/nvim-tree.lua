@@ -4,16 +4,18 @@ if not status_ok then
 end
 
 nvim_tree.setup({
-  nvim_tree_ignore = {
-    ".cache",
-    ".direnv",
-    ".elixir_ls",
-    ".git",
-    "\\~$",
-    "_build",
-    "cover",
-    "node_modules",
-    "tfstate$",
-    "tfstate\\.backup$",
+  filters = {
+    custom = {
+      ".cache",
+      ".direnv",
+      ".elixir_ls",
+      ".git",
+      "\\~$",
+      "_build",
+      "cover",
+      "node_modules",
+      "tfstate$",
+      "tfstate\\.backup$",
+    },
   },
 })
