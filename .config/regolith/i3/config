@@ -421,8 +421,8 @@ bindsym $mod+$i3-wm.binding.notification_ui exec $i3-wm.program.notification_ui
 set_from_resource $i3-wm.binding.save_layout i3-wm.binding.save_layout comma
 bindsym $mod+$i3-wm.binding.save_layout  exec /usr/bin/i3-snapshot -o > /tmp/i3-snapshot
 ## Modify // Load Window Layout // <> . ##
-set_from_resource $i3-wm.binding.load_layout i3-wm.binding.load_layout period
-bindsym $mod+$i3-wm.binding.load_layout exec /usr/bin/i3-snapshot -c < /tmp/i3-snapshot
+# set_from_resource $i3-wm.binding.load_layout i3-wm.binding.load_layout period
+# bindsym $mod+$i3-wm.binding.load_layout exec /usr/bin/i3-snapshot -c < /tmp/i3-snapshot
 
 # Toggle bar visibility
 ## Modify // Toggle Bar // <> i ##
@@ -652,8 +652,8 @@ exec --no-startup-id $i3-wm.program.3
 bindsym $mod+Ctrl+Shift+Return exec "firefox -P Music -no-remote"
 bindsym $mod+Ctrl+Shift+g exec "firefox -P Geometer -no-remote"
 bindsym $mod+Shift+Print exec flameshot gui
-bindsym $mod+e exec emoji-picker
-bindsym $mod+Ctrl+e exec emoji-picker | xclip -selection clipboard
+# https://github.com/GaZaTu/x11-emoji-picker
+bindsym $mod+period exec emoji-picker
 
 # xprop helps here
 for_window [title="Authy" window_role="app"] floating enable
