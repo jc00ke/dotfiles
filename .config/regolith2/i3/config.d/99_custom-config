@@ -10,6 +10,7 @@ for_window [title="Peek" class="Peek"] floating enable
 for_window [class="Gnome-calculator"] floating enable
 for_window [class="Insync"] floating enable
 for_window [class="Org.gnome.clocks"] floating enable
+for_window [class="Org.gnome.Characters"] floating enable
 for_window [class="1Password"] floating enable
 for_window [class="Solaar"] floating enable
 for_window [class="Zeal"] floating enable
