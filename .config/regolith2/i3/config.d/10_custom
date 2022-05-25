@@ -1,0 +1,21 @@
+# vi: ft=i3config
+
+bindsym $mod+Ctrl+Shift+Return exec "firefox -P Music -no-remote"
+bindsym $mod+Shift+Print exec flameshot gui
+# https://github.com/GaZaTu/x11-emoji-picker
+bindsym $mod+period exec emoji-picker --class=floating_window
+
+# xprop helps here
+for_window [title="Peek" class="Peek"] floating enable
+for_window [class="Gnome-calculator"] floating enable
+for_window [class="Insync"] floating enable
+for_window [class="Org.gnome.clocks"] floating enable
+for_window [class="1Password"] floating enable
+for_window [class="Solaar"] floating enable
+for_window [class="Zeal"] floating enable
+for_window [title="Zoom Meeting"] floating enable
+for_window [title="Zoom - Licensed Account"] floating enable
+for_window [class="zoom"] floating enable
+
+## Modify // Sound Settings // <> s ##
+bindsym $mod+s exec regolith-control-center sound --class=floating_window
