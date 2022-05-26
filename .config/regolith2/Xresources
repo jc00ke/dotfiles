@@ -1,6 +1,11 @@
 gnome.terminal.font: JetBrains Mono 15
 regolith.wallpaper.file: /home/jesse/Drive/personal/Desktops/moon.png
 i3-wm.bar.trayoutput: primary
+
+# 35_i3-gaps defaulted inc_gaps_big and dec_gaps_big to Shift+plus/minus
+# respectively, which conflicted with my scratchpad mapping.
+i3-wm.binding.inc_gaps_big: $alt+Shift+plus
+i3-wm.binding.dec_gaps_big: $alt+Shift+minus
 i3-wm.binding.scratchpad: Shift+plus
 i3-wm.binding.move_scratchpad: Shift+minus
 
