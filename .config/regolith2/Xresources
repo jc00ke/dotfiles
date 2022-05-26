@@ -3,8 +3,10 @@ regolith.wallpaper.file: /home/jesse/Drive/personal/Desktops/moon.png
 i3-wm.bar.trayoutput: primary
 i3-wm.binding.scratchpad: Shift+plus
 i3-wm.binding.move_scratchpad: Shift+minus
-i3-wm.binding.inc_gaps_big: Ctrl+Shift+{
-i3-wm.binding.dec_gaps_big: Ctrl+Shift+}
-!regolith.look.path: /usr/share/regolith-look/default
-!regolith.look.path: /usr/share/regolith-look/nevil
+
 regolith.look.path: /usr/share/regolith-look/default
+
+i3-wm.client.focused.color.child_border: color_orange
+i3-wm.window.border.size: 2
+i3-wm.client.focused.color.indicator: color_blue
+i3-wm.client.focused_inactive.color.indicator: color_blue
