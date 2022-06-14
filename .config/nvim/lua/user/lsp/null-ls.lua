@@ -12,7 +12,12 @@ null_ls.setup({
   debug = false,
   on_attach = function(client)
     if client.resolved_capabilities.document_formatting then
-      vim.cmd("autocmd BufWritePre <buffer> lua vim.lsp.buf.formatting_seq_sync()")
+      local format_cmd = "vim.lsp.buf.formatting_seq_sync()"
+      local vv = vim.version()
+      if vv.major == 0 and vv.minor > 7 then
+        format_cmd = "vim.lsp.buf.format()"
+      end
+      vim.cmd("autocmd BufWritePre <buffer> lua " .. format_cmd)
     end
   end,
   sources = {
