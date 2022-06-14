@@ -12,7 +12,7 @@ lspconfig.elixirls.setup(elixirls_opts)
 
 lspconfig.sqls.setup({
   on_attach = function(client)
-    client.resolved_capabilities.execute_command = true
+    client.server_capabilities.execute_command = true
     client.commands = require("sqls").commands -- Neovim 0.6+ only
 
     require("sqls").setup({ picker = "telescope" })
