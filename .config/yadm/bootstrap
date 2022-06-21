@@ -240,6 +240,9 @@ cd "emoji-picker" || exit
 cargo build --release
 mv target/release/emoji-picker ~/.local/bin/
 
+cd "$HOME"
+gh repo clone wfxr/forgit .forgit
+
 log "Installing fastmod"
 cargo install fastmod
 
