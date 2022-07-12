@@ -135,3 +135,11 @@ keymap("n", "<F10>", "<cmd>lua ToggleMouse()<cr>", opts)
 keymap("n", "Y", "y$", opts)
 keymap("n", "BDA", [[<Cmd>%bd|e#<CR>]], opts)
 keymap("n", "<leader>~", [[:s/\v<(.)(\w*)/\u\1\L\2/g<CR>]], opts)
+
+-- Trouble
+keymap("n", "<leader>xx", "<cmd>Trouble<cr>", opts)
+keymap("n", "<leader>xw", "<cmd>Trouble workspace_diagnostics<cr>", opts)
+keymap("n", "<leader>xd", "<cmd>Trouble document_diagnostics<cr>", opts)
+keymap("n", "<leader>xl", "<cmd>Trouble loclist<cr>", opts)
+keymap("n", "<leader>xq", "<cmd>Trouble quickfix<cr>", opts)
+keymap("n", "gR", "<cmd>Trouble lsp_references<cr>", opts)
