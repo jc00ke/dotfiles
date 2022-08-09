@@ -46,8 +46,14 @@ packer.startup(function(use)
   use("nvim-lualine/lualine.nvim")
   -- Add git related info in the signs columns and popups
   use("tveskag/nvim-blame-line")
+  use({
+    "williamboman/mason.nvim",
+    config = function()
+      require("mason").setup()
+    end,
+  }) -- simple to use language server installer
+  use("williamboman/mason-lspconfig.nvim")
   use("neovim/nvim-lspconfig") -- Collection of configurations for built-in LSP client
-  use("williamboman/nvim-lsp-installer") -- simple to use language server installer
   use("jose-elias-alvarez/null-ls.nvim") -- for formatters and linters
 
   use("hrsh7th/nvim-cmp") -- Autocompletion plugin
