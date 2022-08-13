@@ -5,7 +5,6 @@ end
 
 local actions = require("telescope.actions")
 local sorters = require("telescope.sorters")
-local trouble = require("trouble.providers.telescope")
 
 telescope.setup({
   defaults = {
@@ -16,11 +15,8 @@ telescope.setup({
       i = {
         ["<C-u>"] = false,
         ["<C-d>"] = actions.delete_buffer,
-        ["<C-t>"] = trouble.open_with_trouble,
       },
-      n = {
-        ["<C-t>"] = trouble.open_with_trouble,
-      },
+      n = {},
     },
     preview = { treesitter = false },
     sorting_strategy = "ascending",
