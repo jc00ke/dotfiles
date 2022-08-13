@@ -38,6 +38,7 @@ end
 
 packer.startup(function(use)
   use("wbthomason/packer.nvim") -- Package manager
+  use("dstein64/vim-startuptime")
   use("numToStr/Comment.nvim")
   use({
     "nvim-telescope/telescope.nvim",
