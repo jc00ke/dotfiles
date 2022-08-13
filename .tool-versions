@@ -15,7 +15,7 @@ python 3.10.2
 redis 6.2.3
 ripgrep 13.0.0
 ruby 3.0.1
-rust 1.58.1
+rust 1.62.0
 shfmt 3.4.3
 starship 1.8.0
 yq v4.11.2
