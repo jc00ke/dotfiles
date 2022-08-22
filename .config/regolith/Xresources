@@ -1,7 +1,0 @@
-gnome.terminal.font: JetBrains Mono 15
-gnome.wallpaper: /home/jesse/Drive/personal/Desktops/moon.png
-i3-wm.bar.trayoutput: primary
-i3-wm.binding.scratchpad: Shift+plus
-i3-wm.binding.move_scratchpad: Shift+minus
-i3-wm.binding.inc_gaps_big: Ctrl+Shift+{
-i3-wm.binding.dec_gaps_big: Ctrl+Shift+}
