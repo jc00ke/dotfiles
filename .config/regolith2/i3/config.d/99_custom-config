@@ -18,6 +18,7 @@ for_window [title="Zoom Meeting"] floating enable
 for_window [title="Zoom - Licensed Account"] floating enable
 for_window [class="zoom"] floating enable
 for_window [class="firefox"] border pixel 2
+for_window [class="Org.gnome.Nautilus"] border pixel 2
 
 ## Modify // Sound Settings // <> s ##
 bindsym $mod+s exec regolith-control-center sound --class=floating_window
