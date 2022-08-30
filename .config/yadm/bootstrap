@@ -16,6 +16,7 @@ sudo apt install -y \
   gitg \
   gnome-calculator \
   gnome-clocks \
+  gnome-weather \
   htop \
   i3xrocks-battery \
   i3xrocks-cpu-usage \
