@@ -130,10 +130,10 @@ asdf plugin add yq
 Log "Installing shfmt"
 asdf plugin add shfmt
 
-log "installing stylua formatter"
+log "Installing stylua formatter"
 asdf plugin add https://github.com/jc00ke/asdf-stylua.git
 
-log "installing jless"
+log "Installing jless"
 asdf plugin add https://github.com/jc00ke/asdf-jless.git
 
 Log "Installing starship"
