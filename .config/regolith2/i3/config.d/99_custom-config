@@ -12,6 +12,7 @@ for_window [class="Solaar"] floating enable
 for_window [class="Zeal"] floating enable
 for_window [class="Evince"] border pixel 2
 for_window [class="firefox"] border pixel 2
+for_window [class="Qalculate-gtk"] floating enable
 for_window [class="zoom"] floating enable
 for_window [title="Peek" class="Peek"] floating enable
 for_window [title="Zoom - Licensed Account"] floating enable
