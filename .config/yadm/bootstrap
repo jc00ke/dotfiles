@@ -139,6 +139,9 @@ asdf plugin add https://github.com/jc00ke/asdf-jless.git
 Log "Installing starship"
 asdf plugin add starship
 
+log "Installing GitHub CLI"
+asdf plugin-add github-cli https://github.com/bartlomiejdanek/asdf-github-cli.git
+
 if command -v nvim >/dev/null 2>&1; then
   log "Installing neovim"
   asdf plugin add neovim

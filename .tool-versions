@@ -24,3 +24,4 @@ shellspec 0.28.1
 stylua 0.13.0
 jless 0.7.1
 shellcheck 0.8.0
+github-cli 2.14.7
