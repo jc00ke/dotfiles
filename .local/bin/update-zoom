@@ -1,0 +1,32 @@
+#!/bin/bash
+# from https://gist.github.com/kovetskiy/a4bb510595b3a6b17bfd1bd9ac8bb4a5#gistcomment-3367404
+
+set -o pipefail
+
+Help=$(
+  cat <<-"HELP"
+
+ update-zoom — downloads and installs the latest .deb
+
+ Usage:
+   update-zoom
+
+   -h        Show this message.
+
+HELP
+)
+
+help() {
+  echo "$Help"
+}
+
+if [[ $1 == "-h" ]]; then
+  help
+  exit 1
+fi
+
+file="zoom_amd64.deb"
+rm -f "$file"
+wget "https://us06web.zoom.us/client/latest/$file"
+
+sudo dpkg -i "$file" && rm -f "$file"
