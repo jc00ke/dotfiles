@@ -1,7 +1,7 @@
 [user]
 	name = Jesse Cooke
   email = jesse@relativepath.io
-  signingkey = 7EBD3956
+	signingkey = ssh-ed25519 AAAAC3NzaC1lZDI1NTE5AAAAIOB6m3RWpvewEgYMSRumUt4mKIMbG2OfutRxEF2Bdn7m
 [format]
   pretty="format:%C(yellow)%h%Creset %C(magenta bold)%aN%Creset%C(blue) %ad%Creset %s"
 [push]
@@ -59,3 +59,7 @@
   gpgsign = true
 [init]
 	defaultBranch = main
+[gpg]
+	format = ssh
+[gpg "ssh"]
+	program = /opt/1Password/op-ssh-sign
