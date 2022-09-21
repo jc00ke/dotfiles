@@ -32,15 +32,6 @@
   serve = daemon --verbose --export-all --base-path=.git --reuseaddr --strict-paths .git/
   staged = diff --cached # diff the index against the previous commit
   update-remotes = remote update --prune # update all remotes, pruning removed tracking branches
-[delta]
-    features = side-by-side line-numbers decorations
-    whitespace-error-style = 22 reverse
-[delta "decorations"]
-    commit-decoration-style = bold yellow box ul
-    file-style = bold yellow ul
-    file-decoration-style = none
-[interactive]
-  diffFilter = delta --color-only
 [core]
   excludesfile = ~/.gitignore
   autocrlf = input
@@ -63,3 +54,5 @@
 	format = ssh
 [gpg "ssh"]
 	program = /opt/1Password/op-ssh-sign
+[diff]
+	external = difft
