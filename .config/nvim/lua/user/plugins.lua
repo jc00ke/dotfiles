@@ -98,7 +98,8 @@ packer.startup(function(use)
   use("nvim-telescope/telescope-github.nvim") -- github
   use("jvgrootveld/telescope-zoxide") -- projects
   use("gennaro-tedesco/nvim-jqx") -- json
-  use("elixir-editors/vim-elixir") -- Elixir
+  -- use("elixir-editors/vim-elixir") -- Elixir
+  use({ "mhanberg/elixir.nvim", requires = { "neovim/nvim-lspconfig", "nvim-lua/plenary.nvim" } }) -- Elixir
   use({
     "iamcco/markdown-preview.nvim", -- markdown
     ft = "markdown",

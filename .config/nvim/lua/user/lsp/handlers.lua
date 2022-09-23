@@ -73,7 +73,22 @@ local function lsp_keymaps(bufnr)
   vim.keymap.set("n", "gl", '<cmd>lua vim.diagnostic.open_float({ border = "rounded" })<CR>', opts)
   vim.keymap.set("n", "]d", '<cmd>lua vim.diagnostic.goto_next({ border = "rounded" })<CR>', opts)
   vim.keymap.set("n", "<leader>q", "<cmd>lua vim.diagnostic.setloclist()<CR>", opts)
+  vim.keymap.set("n", "1gD", "<cmd>lua vim.lsp.buf.type_definition()<cr>", opts)
+  vim.keymap.set("n", "g0", ":DocumentSymbols<cr>", opts)
+  vim.keymap.set("n", "gW", ":WorkspaceSymbols<cr>", opts)
+  vim.keymap.set("n", "<leader>d", ":Diagnostics<cr>", opts)
+  vim.keymap.set("n", "<space>r", vim.lsp.codelens.run, opts)
+  -- Elixir-specific
+  -- remove the pipe operator
+  vim.keymap.set("n", "<space>fp", ":ElixirFromPipe<cr>", opts)
+  -- add the pipe operator
+  vim.keymap.set("n", "<space>tp", ":ElixirToPipe<cr>", opts)
+  vim.keymap.set("v", "<space>em", ":ElixirExpandMacro<cr>", opts)
   vim.api.nvim_create_user_command("Format", vim.lsp.buf.formatting, {})
+
+  -- update capabilities for nvim-cmp: https://github.com/hrsh7th/nvim-cmp
+  local capabilities = require("user.lsp.handlers").capabilities
+  require("cmp_nvim_lsp").update_capabilities(capabilities)
 end
 
 M.on_attach = function(client, bufnr)

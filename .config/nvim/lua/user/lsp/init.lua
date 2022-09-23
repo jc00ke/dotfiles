@@ -7,8 +7,11 @@ require("user.lsp.lsp-installer")
 require("user.lsp.handlers").setup()
 require("user.lsp.null-ls")
 
-local elixirls_opts = require("user.lsp.settings.elixirls")
-lspconfig.elixirls.setup(elixirls_opts)
+require("elixir").setup({
+  cmd = { vim.fn.expand("~/src/elixir-ls/release/language_server.sh") },
+
+  on_attach = require("user.lsp.handlers").on_attach,
+})
 
 lspconfig.sqls.setup({
   on_attach = function(client)
