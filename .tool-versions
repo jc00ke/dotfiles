@@ -14,7 +14,7 @@ postgres 11.4
 python 3.10.2
 redis 6.2.3
 ripgrep 13.0.0
-ruby 3.0.1
+ruby 3.1.2
 rust 1.62.0
 shfmt 3.4.3
 starship 1.8.0
