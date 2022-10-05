@@ -102,6 +102,10 @@ end
 abbr -a fuck "oops"
 abbr -a yolo "oops"
 
+if test -f /opt/homebrew/bin/brew
+  eval "$(/opt/homebrew/bin/brew shellenv)"
+end
+
 source ~/.asdf/asdf.fish
 eval (direnv hook fish)
 starship init fish | source
