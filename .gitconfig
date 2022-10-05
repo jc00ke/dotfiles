@@ -53,6 +53,6 @@
 [gpg]
 	format = ssh
 [gpg "ssh"]
-	program = /opt/1Password/op-ssh-sign
+	program = /Applications/1Password.app/Contents/MacOS/op-ssh-sign
 [diff]
 	external = difft
