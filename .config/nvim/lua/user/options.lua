@@ -66,9 +66,6 @@ local global_options = {
   errorbells = false,
   visualbells = true,
   shada = "'20,<50,s10",
-  -- https://neovim.io/news/2022/04#filetypelua
-  do_filetype_lua = 1,
-  did_load_filetypes = 0,
 }
 
 vim.opt.shortmess:append("c")
