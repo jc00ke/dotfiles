@@ -15,7 +15,6 @@ local default_opts = {
   capabilities = require("user.lsp.handlers").capabilities,
 }
 local denols_opts = require("user.lsp.settings.denols")
-local elixirls_opts = require("user.lsp.settings.elixirls")
 local sumneko_lua_opts = require("user.lsp.settings.sumneko_lua")
 local yamlls_opts = require("user.lsp.settings.yamlls")
 
@@ -24,7 +23,6 @@ local servers = {
   clangd = default_opts,
   denols = vim.tbl_extend("keep", denols_opts, default_opts),
   dockerls = default_opts,
-  elixirls = vim.tbl_extend("keep", elixirls_opts, default_opts),
   elmls = default_opts,
   rust_analyzer = default_opts,
   solargraph = default_opts,
