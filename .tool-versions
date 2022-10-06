@@ -5,7 +5,7 @@ elm 0.19.1
 erlang 25.0.2
 fd 8.3.2
 lua 5.4.2
-neovim 0.7.2
+neovim 0.8.0
 nodejs 16.1.0
 postgres 11.4
 python 3.10.2
@@ -24,3 +24,4 @@ shellcheck 0.8.0
 github-cli 2.14.7
 difftastic 0.36.1
 direnv 2.32.1
+delta 0.14.0
