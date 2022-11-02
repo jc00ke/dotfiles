@@ -12,7 +12,7 @@ python 3.10.2
 redis 6.2.3
 ripgrep 13.0.0
 ruby 3.1.2
-rust 1.62.0
+rust 1.64.0
 shfmt 3.4.3
 starship 1.10.3
 yq 4.27.5
@@ -25,3 +25,4 @@ github-cli 2.14.7
 difftastic 0.36.1
 direnv 2.32.1
 delta 0.14.0
+bat 0.22.1
