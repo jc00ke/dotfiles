@@ -85,10 +85,6 @@ local function lsp_keymaps(bufnr)
   vim.keymap.set("n", "<space>tp", ":ElixirToPipe<cr>", opts)
   vim.keymap.set("v", "<space>em", ":ElixirExpandMacro<cr>", opts)
   vim.api.nvim_create_user_command("Format", vim.lsp.buf.formatting, {})
-
-  -- update capabilities for nvim-cmp: https://github.com/hrsh7th/nvim-cmp
-  local capabilities = require("user.lsp.handlers").capabilities
-  require("cmp_nvim_lsp").update_capabilities(capabilities)
 end
 
 M.on_attach = function(client, bufnr)
@@ -98,14 +94,5 @@ M.on_attach = function(client, bufnr)
   lsp_keymaps(bufnr)
   lsp_highlight_document(client)
 end
-
-local capabilities = vim.lsp.protocol.make_client_capabilities()
-
-local status_ok, cmp_nvim_lsp = pcall(require, "cmp_nvim_lsp")
-if not status_ok then
-  return
-end
-
-M.capabilities = cmp_nvim_lsp.update_capabilities(capabilities)
 
 return M
