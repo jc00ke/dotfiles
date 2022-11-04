@@ -24,6 +24,7 @@ local servers = {
   denols = vim.tbl_extend("keep", denols_opts, default_opts),
   dockerls = default_opts,
   elmls = default_opts,
+  gopls = default_opts,
   rust_analyzer = default_opts,
   solargraph = default_opts,
   sumneko_lua = vim.tbl_extend("keep", sumneko_lua_opts, default_opts),
