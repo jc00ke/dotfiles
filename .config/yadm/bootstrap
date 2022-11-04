@@ -94,9 +94,7 @@ log "Installing git-fuzzy"
 git clone --depth 1 https://github.com/bigH/git-fuzzy.git ~/.git-fuzzy
 
 log "Installing direnv"
-wget "https://github.com/direnv/direnv/releases/download/v2.28.0/direnv.linux-amd64"
-mv "direnv.linux-amd64" "$HOME/.local/bin/direnv"
-chmod +x "$HOME/.local/bin/direnv"
+curl -sfL https://direnv.net/install.sh | bash
 
 log "Installing lua LSP"
 sudo apt install ninja-build
