@@ -46,7 +46,7 @@ vim.cmd([[
 
 vim.api.nvim_create_autocmd("BufReadPost", {
   callback = function()
-    vim.lsp.buf.formatting_sync()
+    vim.lsp.buf.format()
   end,
   pattern = "<buffer>",
 })
