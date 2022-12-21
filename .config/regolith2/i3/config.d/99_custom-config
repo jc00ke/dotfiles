@@ -3,7 +3,7 @@
 bindsym $mod+Ctrl+Shift+Return exec "firefox -P Music -no-remote"
 bindsym $mod+Shift+Print exec flameshot gui
 # https://github.com/GaZaTu/x11-emoji-picker
-bindsym $mod+period exec emoji-picker --class=floating_window
+#bindsym $mod+period exec emoji-picker --class=floating_window
 
 # xprop helps here
 for_window [class="1Password"] floating enable
