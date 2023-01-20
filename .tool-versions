@@ -12,7 +12,7 @@ github-cli 2.14.7
 golang 1.19.3
 jless 0.7.1
 lua 5.4.2
-neovim 0.8.0
+neovim 0.8.2
 nodejs 16.1.0
 postgres 15.0
 python 3.10.2
