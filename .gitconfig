@@ -1,7 +1,9 @@
 [user]
-	name = Jesse Cooke
+  name = Jesse Cooke
   email = jesse@relativepath.io
-	signingkey = ssh-ed25519 AAAAC3NzaC1lZDI1NTE5AAAAIOB6m3RWpvewEgYMSRumUt4mKIMbG2OfutRxEF2Bdn7m
+  signingkey = ssh-ed25519 AAAAC3NzaC1lZDI1NTE5AAAAIOB6m3RWpvewEgYMSRumUt4mKIMbG2OfutRxEF2Bdn7m
+[includeIf "gitdir:~/projects/ratio/"]
+  path = ~/.gitconfig-ratio.inc
 [format]
   pretty="format:%C(yellow)%h%Creset %C(magenta bold)%aN%Creset%C(blue) %ad%Creset %s"
 [push]
@@ -53,6 +55,7 @@
 [gpg]
 	format = ssh
 [gpg "ssh"]
-	program = /opt/1Password/op-ssh-sign
+  program = /opt/1Password/op-ssh-sign
+  allowedSignersFile = ~/.ssh/allowed_signers
 [diff]
 	external = difft
