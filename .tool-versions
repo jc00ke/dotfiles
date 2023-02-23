@@ -8,7 +8,7 @@ elm 0.19.1
 erlang 25.1.2
 exa 0.10.1
 fd 8.3.2
-github-cli 2.14.7
+github-cli 2.23.0
 golang 1.19.3
 jless 0.7.1
 lua 5.4.2
