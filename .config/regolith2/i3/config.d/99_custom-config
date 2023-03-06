@@ -26,4 +26,4 @@ for_window [class="Org.gnome.Nautilus"] border pixel 2
 
 ## Modify // Sound Settings // <> s ##
 bindsym $mod+s exec regolith-control-center sound --class=floating_window
-bindsym $mod+Shift+n exec nautilus
+# bindsym $mod+Shift+n exec nautilus
