@@ -53,8 +53,26 @@ packer.startup(function(use)
       require("mason").setup()
     end,
   }) -- simple to use language server installer
-  use("williamboman/mason-lspconfig.nvim")
-  use("neovim/nvim-lspconfig") -- Collection of configurations for built-in LSP client
+  use({
+    "williamboman/mason-lspconfig.nvim",
+    after = "mason.nvim",
+    config = function()
+      require("mason-lspconfig").setup({
+        ensure_installed = require("user.lsp.lsp-installer").ensure_installed,
+      })
+    end,
+  })
+  use({
+    "neovim/nvim-lspconfig",
+    after = "mason-lspconfig.nvim",
+    config = function()
+      local lspconfig = require("lspconfig")
+      local servers = require("user.lsp.lsp-installer").servers
+      for server, opts in pairs(servers) do
+        lspconfig[server].setup(opts)
+      end
+    end,
+  }) -- Collection of configurations for built-in LSP client
   use("jose-elias-alvarez/null-ls.nvim") -- for formatters and linters
 
   use("hrsh7th/nvim-cmp") -- Autocompletion plugin

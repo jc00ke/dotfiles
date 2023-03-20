@@ -1,14 +1,15 @@
-local mason_ok, mason_lspconfig = pcall(require, "mason-lspconfig")
-if not mason_ok then
-  print("mason-lspconfig is not available!")
-  return
-end
-
-local lspconfig_ok, lspconfig = pcall(require, "lspconfig")
-if not lspconfig_ok then
-  print("lspconfig is not available!")
-  return
-end
+local M = {}
+-- local mason_ok, mason_lspconfig = pcall(require, "mason-lspconfig")
+-- if not mason_ok then
+--   print("mason-lspconfig is not available!")
+--   return
+-- end
+--
+-- local lspconfig_ok, lspconfig = pcall(require, "lspconfig")
+-- if not lspconfig_ok then
+--   print("kenichi! lspconfig is not available!")
+--   return
+-- end
 
 local default_opts = {
   on_attach = require("user.lsp.handlers").on_attach,
@@ -25,9 +26,9 @@ local servers = {
   dockerls = default_opts,
   elmls = default_opts,
   gopls = default_opts,
+  lua_ls = vim.tbl_extend("keep", sumneko_lua_opts, default_opts),
   rust_analyzer = default_opts,
   solargraph = default_opts,
-  sumneko_lua = vim.tbl_extend("keep", sumneko_lua_opts, default_opts),
   tailwindcss = default_opts,
   yamlls = vim.tbl_extend("keep", yamlls_opts, default_opts),
 }
@@ -37,10 +38,14 @@ for server, _ in pairs(servers) do
   table.insert(ensure_installed, server)
 end
 
-mason_lspconfig.setup({
-  ensure_installed = ensure_installed,
-})
-
-for server, opts in pairs(servers) do
-  lspconfig[server].setup(opts)
-end
+M.ensure_installed = ensure_installed
+M.servers = servers
+return M
+--
+--     mason_lspconfig.setup({
+--       ensure_installed = ensure_installed,
+--     })
+--
+-- for server, opts in pairs(servers) do
+--   lspconfig[server].setup(opts)
+-- end
