@@ -27,3 +27,4 @@ starship 1.11.0
 stylua 0.13.0
 yq 4.27.5
 zoxide 0.8.0
+sqlite 3.41.1
