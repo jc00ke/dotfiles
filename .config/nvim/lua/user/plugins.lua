@@ -113,7 +113,18 @@ packer.startup(function(use)
   use("ishan9299/nvim-solarized-lua")
   use("junegunn/vim-easy-align")
   use("nvim-telescope/telescope-symbols.nvim") -- UI
-  use("nvim-telescope/telescope-github.nvim") -- github
+  use {
+    'pwntester/octo.nvim',
+    requires = {
+      'nvim-lua/plenary.nvim',
+      'nvim-telescope/telescope.nvim',
+      'kyazdani42/nvim-web-devicons',
+    },
+    config = function ()
+      require('octo').setup()
+    end
+  } -- github
+  use({ 'mrjones2014/op.nvim', run = 'make install' }) -- 1Password
   use("jvgrootveld/telescope-zoxide") -- projects
   use("gennaro-tedesco/nvim-jqx") -- json
   -- use("elixir-editors/vim-elixir") -- Elixir
