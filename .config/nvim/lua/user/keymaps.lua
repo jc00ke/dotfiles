@@ -90,7 +90,7 @@ keymap("n", "<leader>gr", [[<Cmd>lua require('telescope').extensions.gh.run()<CR
 keymap("n", "<leader>gpr", [[<Cmd>lua require('telescope').extensions.gh.pull_request()<CR>]], opts)
 keymap("n", "<leader>gg", [[<Cmd>lua require('telescope').extensions.gh.gist()<CR>]], opts)
 
-keymap("n", "<leader>b", [[:ToggleBlameLine<CR>]], opts)
+keymap("n", "<leader>b", [[:GitBlameToggle<CR>]], opts)
 
 keymap("n", "<leader>n", ":NvimTreeToggle<CR>", opts)
 keymap("n", "<leader>r", ":NvimTreeRefresh<CR>", opts)

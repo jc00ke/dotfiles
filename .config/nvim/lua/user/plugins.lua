@@ -46,7 +46,7 @@ packer.startup(function(use)
   })
   use("nvim-lualine/lualine.nvim")
   -- Add git related info in the signs columns and popups
-  use("tveskag/nvim-blame-line")
+  use("f-person/git-blame.nvim")
   use({
     "williamboman/mason.nvim",
     config = function()
