@@ -18,7 +18,7 @@ python 3.10.2
 redis 6.2.3
 ripgrep 13.0.0
 ruby 3.1.2
-rust 1.64.0
+rust 1.68.2
 shellcheck 0.8.0
 shellspec 0.28.1
 shfmt 3.4.3
