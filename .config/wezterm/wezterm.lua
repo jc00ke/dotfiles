@@ -17,7 +17,7 @@ config.warn_about_missing_glyphs = false
 -- For example, changing the color scheme:
 config.color_scheme = 'Solarized (dark) (terminal.sexy)'
 
-config.hide_tab_bar_if_only_one_tab = true
+config.enable_tab_bar = false
 
 -- and finally, return the configuration to wezterm
 return config
