@@ -50,7 +50,7 @@ set -e fish_user_abbreviations
 
 abbr -a .. "cd .."
 abbr -a ... "cd ../.."
-abbr -a u^ "sudo apt update; apt list --upgradable"
+abbr -a "u^" "sudo apt update; apt list --upgradable"
 abbr -a u! "sudo apt upgrade -y"
 abbr -a u- "sudo apt autoremove -y"
 abbr -a b "bundle exec"
@@ -85,13 +85,9 @@ abbr -a lv "nvim -R"
 abbr -a xclipx "xclip -selection clipboard"
 abbr -a xx "exit"
 abbr -a e! "nvim +PackerInstall"
-abbr -a e^ "nvim +PackerUpdate"
+abbr -a "e^" "nvim +PackerUpdate"
 abbr -a o "xdg-open"
 abbr -a open "xdg-open"
-
-abbr -a n^s 'asdf uninstall neovim stable && asdf install neovim stable'
-abbr -a n^n 'asdf uninstall neovim nightly && asdf install neovim nightly'
-abbr -a n^m 'asdf uninstall neovim ref:master && asdf install neovim ref:master'
 
 abbr -a wgu "sudo wg-quick up (hostname)"
 abbr -a wgd "sudo wg-quick down (hostname)"
@@ -112,3 +108,4 @@ starship init fish | source
 zoxide init fish | source
 prepend_to_path "$HOME/.nvim/bin"
 source ~/.forgit/conf.d/forgit.plugin.fish
+source ~/.config/op/plugins.sh
