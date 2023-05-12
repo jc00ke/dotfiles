@@ -15,6 +15,7 @@ for_window [class="firefox"] border pixel 2
 for_window [class="Qalculate-gtk"] floating enable
 for_window [class="zoom"] floating enable
 for_window [title="Peek" class="Peek"] floating enable
+for_window [title="Tuba" class="Tuba"] floating enable
 for_window [title="Zoom - Licensed Account"] floating enable
 for_window [title="Zoom Meeting"] floating enable
 
