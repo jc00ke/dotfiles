@@ -58,4 +58,9 @@
   program = /opt/1Password/op-ssh-sign
   allowedSignersFile = ~/.ssh/allowed_signers
 [diff]
-	external = difft
+  external = difft
+  colorMoved = default
+[interactive]
+  diffFilter = delta --color-only
+[merge]
+  conflictstyle = diff3
