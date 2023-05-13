@@ -109,3 +109,4 @@ zoxide init fish | source
 prepend_to_path "$HOME/.nvim/bin"
 source ~/.forgit/conf.d/forgit.plugin.fish
 source ~/.config/op/plugins.sh
+rtx activate fish | source
