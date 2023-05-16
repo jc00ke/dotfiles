@@ -102,8 +102,11 @@ if test -f /opt/homebrew/bin/brew
   eval (/opt/homebrew/bin/brew shellenv)
 end
 
+if test -f "$HOME/.config/op/plugins.sh"
+  source "$HOME/.config/op/plugins.sh"
+end
+
 rtx activate fish | source
-source ~/.config/op/plugins.sh
 starship init fish | source
 rtx exec -- zoxide init fish | source
 rtx exec -- direnv hook fish | source
