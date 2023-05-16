@@ -102,11 +102,8 @@ if test -f /opt/homebrew/bin/brew
   eval (/opt/homebrew/bin/brew shellenv)
 end
 
-source ~/.asdf/asdf.fish
-eval (direnv hook fish)
-starship init fish | source
-zoxide init fish | source
-prepend_to_path "$HOME/.nvim/bin"
-source ~/.forgit/conf.d/forgit.plugin.fish
-source ~/.config/op/plugins.sh
 rtx activate fish | source
+source ~/.config/op/plugins.sh
+starship init fish | source
+rtx exec -- zoxide init fish | source
+rtx exec -- direnv hook fish | source
