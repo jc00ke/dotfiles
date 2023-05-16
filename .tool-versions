@@ -22,3 +22,6 @@ stylua 0.13.0
 yq 4.27.5
 zoxide 0.9.1
 steampipe 0.20.0-test.1
+direnv 2.32.2
+fzf 0.40.0
+delta 0.15.1
