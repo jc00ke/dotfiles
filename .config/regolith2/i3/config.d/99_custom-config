@@ -19,7 +19,7 @@ for_window [title="Tuba" class="Tuba"] floating enable
 for_window [title="Zoom - Licensed Account"] floating enable
 for_window [title="Zoom Meeting"] floating enable
 
-for_window [class="Gnome-calculator"] floating enable, border pixel 2
+for_window [class="gnome-calculator"] floating enable, border pixel 2
 for_window [class="Org.gnome.clocks"] floating enable, border pixel 2
 for_window [class="Org.gnome.Characters"] floating enable, border pixel 2
 for_window [class="Org.gnome.Weather"] floating enable, border pixel 2
