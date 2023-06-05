@@ -107,6 +107,7 @@ if test -f "$HOME/.config/op/plugins.sh"
 end
 
 rtx activate fish | source
+rtx hook-env | source
 rtx exec -- starship init fish | source
 rtx exec -- zoxide init fish | source
 rtx exec -- direnv hook fish | source
