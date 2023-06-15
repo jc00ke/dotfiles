@@ -20,6 +20,10 @@ help() {
   echo "$Help"
 }
 
+zoom_version() {
+  echo "$1" | grep "Version:" | awk '{$1=$1};{print $2}' 
+}
+
 if [[ $1 == "-h" ]]; then
   help
   exit 1
@@ -29,4 +33,15 @@ file="zoom_amd64.deb"
 rm -f "$file"
 wget "https://us06web.zoom.us/client/latest/$file"
 
-sudo dpkg -i "$file" && rm -f "$file"
+installed_zoom_info="$(apt-cache show zoom)"
+installed_zoom_version=$(zoom_version "$installed_zoom_info")
+downloaded_zoom_info="$(dpkg -I $file)"
+downloaded_zoom_version=$(zoom_version "$downloaded_zoom_info")
+
+if [ "$installed_zoom_version" != "$downloaded_zoom_version" ]; then
+  sudo dpkg -i "$file" && rm -f "$file"
+else
+  echo "Freshly downloaded version is same as installed version: $installed_zoom_version"
+  echo "Removing $file"
+  rm -f "$file"
+fi
