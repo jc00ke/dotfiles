@@ -71,3 +71,5 @@ keymap("n", "<leader>b", [[<cmd>GitBlameToggle<cr>]], opts)
 keymap("n", "Y", "y$", opts)
 keymap("n", "BDA", [[<Cmd>%bd|e#<cr>]], opts)
 keymap("n", "<leader>~", [[:s/\v<(.)(\w*)/\u\1\L\2/g<cr>]], opts)
+
+vim.cmd([[au FileType elixir nnoremap !d o\|> dbg()<esc>]])
