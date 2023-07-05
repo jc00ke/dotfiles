@@ -6,7 +6,7 @@ return {
 		end
 	},
 	{
-		"TimUntersberger/neogit",
+		"NeogitOrg/neogit",
 		dependencies = { "sindrets/diffview.nvim", "nvim-lua/plenary.nvim" },
 		config = function()
 			require("neogit").setup({ integrations = { diffview = true } })
