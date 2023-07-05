@@ -36,7 +36,9 @@ append_to_path "$HOME/.git-fuzzy/bin"
 append_to_path "$HOME/.dotnet/tools"
 append_to_path "$HOME/projects/ratio/ratio-ops/bin"
 append_to_path "$HOME/.pulumi/bin"
+append_to_path "$HOME/.fly/bin"
 set PATH $PATH ".git/safe/../../bin"
+set FLYCTL_INSTALL "$HOME/.fly"
 
 # this function may be required
 function fish_title
