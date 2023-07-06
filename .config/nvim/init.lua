@@ -433,6 +433,7 @@ local servers = {
       telemetry = { enable = false },
     },
   },
+  tailwindcss = {}
 }
 
 -- Setup neovim lua configuration
