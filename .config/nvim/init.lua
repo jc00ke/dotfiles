@@ -428,13 +428,49 @@ local servers = {
   -- tsserver = {},
 
   lua_ls = {
-    Lua = {
-      workspace = { checkThirdParty = false },
-      telemetry = { enable = false },
-    },
+    settings = {
+      Lua = {
+        workspace = { checkThirdParty = false },
+        telemetry = { enable = false },
+      },
+    }
   },
-  tailwindcss = {}
+  tailwindcss = {
+    filetypes = { "html", "elixir", "eelixir", "heex" },
+    init_options = {
+      userLanguages = {
+        elixir = "html-eex",
+        eelixir = "html-eex",
+        heex = "html-eex",
+      },
+    },
+    root_dir = function(lspconfig)
+      lspconfig.util.root_pattern(
+        'tailwind.config.js',
+        'tailwind.config.ts',
+        'postcss.config.js',
+        'postcss.config.ts',
+        'package.json',
+        'node_modules',
+        '.git',
+        'mix.exs'
+      )
+    end,
+    settings = {
+      tailwindCSS = {
+        experimental = {
+          classRegex = {
+            'class[:]\\s*"([^"]*)"',
+          },
+        },
+      },
+    },
+  }
 }
+
+local default_root_dir = function(_lspconfig)
+  return nil
+end
 
 -- Setup neovim lua configuration
 require('neodev').setup()
@@ -452,10 +488,15 @@ mason_lspconfig.setup {
 
 mason_lspconfig.setup_handlers {
   function(server_name)
-    require('lspconfig')[server_name].setup {
+    local config = servers[server_name] or {}
+    local lspconfig = require('lspconfig')
+    lspconfig[server_name].setup {
       capabilities = capabilities,
       on_attach = on_attach,
-      settings = servers[server_name],
+      settings = config["settings"] or {},
+      init_options = config["init_options"] or {},
+      file_types = config["file_types"] or {},
+      root_dir = (config["root_dir"] or default_root_dir)(lspconfig)
     }
   end,
 }
