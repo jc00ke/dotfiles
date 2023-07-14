@@ -31,11 +31,7 @@ for_window [class="Org.gnome.Nautilus"] border pixel 2
 bindsym $mod+s exec regolith-control-center sound --class=floating_window
 # bindsym $mod+Shift+n exec nautilus
 
-input type:touchpad {
-    accel_profile adaptive
-    click_method button_areas
-    dwt disabled
+input "1739:30383:DELL07E6:00_06CB:76AF_Touchpad" {
     natural_scroll enabled
-    scroll_method two_finger
     tap enabled
 }
