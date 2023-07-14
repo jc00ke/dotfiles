@@ -1,0 +1,18 @@
+wm.bar.trayoutput: primary
+
+! 35_gaps defaulted inc_gaps_big and dec_gaps_big to Shift+plus/minus
+! respectively, which conflicted with my scratchpad mapping.
+wm.binding.inc_gaps_big: "$alt+Shift+plus"
+wm.binding.dec_gaps_big: "$alt+Shift+minus"
+wm.binding.scratchpad: Shift+plus
+wm.binding.move_scratchpad: Shift+minus
+
+#include "solarized-dark-colors"
+
+wm.client.focused.color.child_border: color_magenta
+wm.client.focused.color.border: color_magenta
+wm.window.border.size: 2
+wm.client.focused.color.indicator: color_blue
+wm.client.focused_inactive.color.indicator: color_orange
+
+regolith.look.path: /usr/share/regolith-look/solarized-dark

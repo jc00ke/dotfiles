@@ -1,0 +1,39 @@
+# vi: ft=i3config
+
+bindsym $mod+Ctrl+Shift+Return exec "firefox -P Music -no-remote"
+bindsym $mod+Shift+Print exec flameshot gui
+# https://github.com/GaZaTu/x11-emoji-picker
+# bindsym $mod+period exec emoji-picker --class=floating_window
+
+# xprop helps here
+for_window [class="1Password"] floating enable
+for_window [class="Insync"] floating enable
+for_window [class="Solaar"] floating enable
+for_window [class="Zeal"] floating enable
+for_window [class="Evince"] border pixel 2
+for_window [class="firefox"] border pixel 2
+for_window [class="Qalculate-gtk"] floating enable
+for_window [class="zoom"] floating enable
+for_window [title="Peek" class="Peek"] floating enable
+for_window [title="Tuba" class="Tuba"] floating enable
+for_window [title="Zoom - Licensed Account"] floating enable
+for_window [title="Zoom Meeting"] floating enable
+
+for_window [class="gnome-calculator"] floating enable, border pixel 2
+for_window [class="Org.gnome.clocks"] floating enable, border pixel 2
+for_window [class="Org.gnome.Characters"] floating enable, border pixel 2
+for_window [class="Org.gnome.Weather"] floating enable, border pixel 2
+for_window [class="Org.gnome.Nautilus"] border pixel 2
+
+## Modify // Sound Settings // <> s ##
+bindsym $mod+s exec regolith-control-center sound --class=floating_window
+# bindsym $mod+Shift+n exec nautilus
+
+input type:touchpad {
+    accel_profile adaptive
+    click_method button_areas
+    dwt disabled
+    natural_scroll enabled
+    scroll_method two_finger
+    tap enabled
+}
