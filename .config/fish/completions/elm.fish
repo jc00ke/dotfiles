@@ -1,1 +1,0 @@
-/home/jesse/projects/elm-sh-completion/elm.fish
