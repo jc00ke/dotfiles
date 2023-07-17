@@ -26,7 +26,6 @@ set -x fish_greeting ''
 set -x EDITOR "nvim"
 set -x MANPAGER "sh -c 'col -bx | bat -l man -p'"
 set -x ERL_AFLAGS "-kernel shell_history enabled"
-set -gx FZF_DEFAULT_COMMAND  'rg --files --color=never'
 
 append_to_path "$HOME/src/bin"
 append_to_path "$HOME/.local/bin"
