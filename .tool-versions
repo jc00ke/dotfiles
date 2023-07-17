@@ -1,4 +1,3 @@
-bat 0.22.1
 delta 0.15.1
 deno 1.26.2
 difftastic 0.36.1
@@ -6,8 +5,6 @@ direnv 2.32.2
 duf 0.8.1
 elm 0.19.1
 exa 0.10.1
-fd 8.3.2
-fzf 0.40.0
 jless 0.7.1
 lua 5.4.2
 python 3.10.2
