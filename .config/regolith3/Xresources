@@ -16,3 +16,5 @@ wm.client.focused.color.indicator: color_blue
 wm.client.focused_inactive.color.indicator: color_orange
 
 regolith.look.path: /usr/share/regolith-look/solarized-dark
+
+wm.bar.status_config: /home/jesse/.config/regolith3/i3status-rust/config.toml
