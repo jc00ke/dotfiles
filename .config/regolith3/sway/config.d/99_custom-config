@@ -4,6 +4,7 @@ bindsym $mod+Ctrl+Shift+Return exec "firefox -P Music -no-remote"
 bindsym $mod+Shift+Print exec flameshot gui
 bindsym Ctrl+Shift+backslash exec 1password
 bindsym Ctrl+Shift+space exec 1password --quick-access
+bindsym --no-warn $mod+plus exec "swaymsg scratchpad show"
 # https://github.com/GaZaTu/x11-emoji-picker
 # bindsym $mod+period exec emoji-picker --class=floating_window
 

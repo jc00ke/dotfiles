@@ -4,7 +4,7 @@ wm.bar.trayoutput: primary
 ! respectively, which conflicted with my scratchpad mapping.
 wm.binding.inc_gaps_big: "$alt+Shift+plus"
 wm.binding.dec_gaps_big: "$alt+Shift+minus"
-wm.binding.scratchpad: Shift+plus
+wm.binding.scratchpad: plus
 wm.binding.move_scratchpad: Shift+minus
 
 #include "solarized-dark-colors"

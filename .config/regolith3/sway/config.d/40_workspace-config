@@ -68,8 +68,8 @@ bindsym --no-warn $mod+$wm.binding.fullscreen_toggle fullscreen toggle
 set_from_resource $wm.binding.float_toggle wm.binding.float_toggle Shift+f
 bindsym --no-warn $mod+Shift+$wm.binding.float_toggle floating toggle
 
-## Modify // Move to Scratchpad // <><Ctrl> m ##
-set_from_resource $wm.binding.move_scratchpad wm.binding.move_scratchpad Ctrl+m
+## Modify // Move to Scratchpad // <><Shift> - ##
+set_from_resource $wm.binding.move_scratchpad wm.binding.move_scratchpad Shift+minus
 bindsym --no-warn $mod+$wm.binding.move_scratchpad move to scratchpad
 
 ## Modify // Tile/Float Focus Toggle // <><Shift> t ##
