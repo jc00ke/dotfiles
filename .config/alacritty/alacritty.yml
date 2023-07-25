@@ -66,7 +66,7 @@ font:
 # If `true`, bold text is drawn using the bright color variants.
 #draw_bold_text_with_bright_colors: false
 import:
-  - /home/jesse/.config/alacritty/themes/solarized_dark.yaml
+  - /home/jesse/.config/alacritty/themes/one_light.yaml
 cursor:
   # Cursor style
   #
