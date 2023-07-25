@@ -65,112 +65,8 @@ font:
 
 # If `true`, bold text is drawn using the bright color variants.
 #draw_bold_text_with_bright_colors: false
-schemes:
-  solarized_dark: &solarized_dark # Default colors
-    primary:
-      background: '#002b36' # base03
-      foreground: '#839496' # base0
-    # Cursor colors
-    cursor:
-      text: '#002b36' # base03
-      cursor: '#839496' # base0
-    # Normal colors
-    normal:
-      black: '#073642' # base02
-      red: '#dc322f' # red
-      green: '#859900' # green
-      yellow: '#b58900' # yellow
-      blue: '#268bd2' # blue
-      magenta: '#d33682' # magenta
-      cyan: '#2aa198' # cyan
-      white: '#eee8d5' # base2
-    # Bright colors
-    bright:
-      black: '#002b36' # base03
-      red: '#cb4b16' # orange
-      green: '#586e75' # base01
-      yellow: '#657b83' # base00
-      blue: '#839496' # base0
-      magenta: '#6c71c4' # violet
-      cyan: '#93a1a1' # base1
-      white: '#fdf6e3' # base3
-  solarized_light: &solarized_light # Default colors
-    primary:
-      background: '#fdf6e3' # base3
-      foreground: '#657b83' # base00
-    # Cursor colors
-    cursor:
-      text: '#fdf6e3' # base3
-      cursor: '#657b83' # base00
-    # Normal colors
-    normal:
-      black: '#073642' # base02
-      red: '#dc322f' # red
-      green: '#859900' # green
-      yellow: '#b58900' # yellow
-      blue: '#268bd2' # blue
-      magenta: '#d33682' # magenta
-      cyan: '#2aa198' # cyan
-      white: '#eee8d5' # base2
-    # Bright colors
-    bright:
-      black: '#002b36' # base03
-      red: '#cb4b16' # orange
-      green: '#586e75' # base01
-      yellow: '#657b83' # base00
-      blue: '#839496' # base0
-      magenta: '#6c71c4' # violet
-      cyan: '#93a1a1' # base1
-      white: '#fdf6e3' # base3
-  pencil_light: &pencil_light # Default Colors
-    primary:
-      background: '#f1f1f1'
-      foreground: '#424242'
-    # Normal colors
-    normal:
-      black: '#212121'
-      red: '#c30771'
-      green: '#10a778'
-      yellow: '#a89c14'
-      blue: '#008ec4'
-      magenta: '#523c79'
-      cyan: '#20a5ba'
-      white: '#e0e0e0'
-    # Bright colors
-    bright:
-      black: '#212121'
-      red: '#fb007a'
-      green: '#5fd7af'
-      yellow: '#f3e430'
-      blue: '#20bbfc'
-      magenta: '#6855de'
-      cyan: '#4fb8cc'
-      white: '#f1f1f1'
-  pencil_dark: &pencil_dark # Default Colors
-    primary:
-      background: '#212121'
-      foreground: '#f1f1f1'
-    # Normal colors
-    normal:
-      black: '#212121'
-      red: '#c30771'
-      green: '#10a778'
-      yellow: '#a89c14'
-      blue: '#008ec4'
-      magenta: '#523c79'
-      cyan: '#20a5ba'
-      white: '#e0e0e0'
-    # Bright colors
-    bright:
-      black: '#212121'
-      red: '#fb007a'
-      green: '#5fd7af'
-      yellow: '#f3e430'
-      blue: '#20bbfc'
-      magenta: '#6855de'
-      cyan: '#4fb8cc'
-      white: '#f1f1f1'
-colors: *solarized_dark
+import:
+  - /home/jesse/.config/alacritty/themes/solarized_dark.yaml
 cursor:
   # Cursor style
   #
@@ -613,27 +509,15 @@ key_bindings:
     action: Paste
 # (Windows only)
 #- { key: Return,   mods: Alt,           action: ToggleFullscreen }
-
 # (Windows, Linux, and BSD only)
-
 #- { key: V,        mods: Control|Shift,           action: Paste            }
-
 #- { key: C,        mods: Control|Shift,           action: Copy             }
-
 #- { key: F,        mods: Control|Shift,           action: SearchForward    }
-
 #- { key: B,        mods: Control|Shift,           action: SearchBackward   }
-
 #- { key: C,        mods: Control|Shift, mode: Vi, action: ClearSelection   }
-
 #- { key: Insert,   mods: Shift,                   action: PasteSelection   }
-
 #- { key: Key0,     mods: Control,                 action: ResetFontSize    }
-
 #- { key: Equals,   mods: Control,                 action: IncreaseFontSize }
-
 #- { key: Add,      mods: Control,                 action: IncreaseFontSize }
-
 #- { key: Subtract, mods: Control,                 action: DecreaseFontSize }
-
 #- { key: Minus,    mods: Control,                 action: DecreaseFontSize }
