@@ -41,12 +41,6 @@ socket_path = "/tmp/rofi_notification_daemon"
 button = "left"
 cmd = "ilia -p notifications"
 
-# [[block]]
-# block = "sound"
-# [[block.click]]
-# button = "left"
-# cmd = "pavucontrol"
-
 [[block]]
 block = "sound"
 driver = "pulseaudio"
@@ -54,6 +48,13 @@ driver = "pulseaudio"
 [[block.click]]
 button = "left"
 cmd = "regolith-control-center sound"
+
+[[block]]
+block = "sound"
+driver = "pulseaudio"
+device_kind = "source"
+show_volume_when_muted = true
+max_vol = 100
 
 [[block]]
 block = "time"
