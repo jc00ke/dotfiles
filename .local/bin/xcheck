@@ -1,0 +1,129 @@
+#!/usr/bin/env bash
+# https://gitlab.com/wef/dotfiles/-/blob/master/bin/xcheck
+
+TIME_STAMP="20220627.153533"
+
+# Copyright (C) 2009-2021 Bob Hepple <bob dot hepple at gmail dot com>
+#
+# This program is free software; you can redistribute it and/or modify
+# it under the terms of the GNU General Public License as published by
+# the Free Software Foundation; either version 2 of the License, or
+# (at your option) any later version.
+#
+# This program is distributed in the hope that it will be useful,
+# but WITHOUT ANY WARRANTY; without even the implied warranty of
+# MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+# GNU General Public License for more details.
+#
+# You should have received a copy of the GNU General Public License
+# along with this program; if not, see <http://www.gnu.org/licenses/>.
+
+check_and_process_opts() {
+    ARGS=$( cat << EOF
+ARGP_DELETE=quiet
+ARGP_VERSION=$VERSION
+ARGP_PROG=$PROG
+##############################################################   
+#OPTIONS:
+#name=default   sname arg       type range           description
+##############################################################   
+FORCE=''        f     ''        b    ''      always display output
+WATCH='$WATCH'  w     time      i    0:1000  time to watch the app. 0==forever.
+##############################################################   
+ARGP_ARGS=[--] $ARGUMENTS
+ARGP_SHORT=$SHORT_DESC
+ARGP_USAGE=$USAGE
+EOF
+            )
+
+    exec 4>&1
+    eval "$(echo "$ARGS" | argp.sh "$@" 3>&1 1>&4 || echo exit $? )"
+    exec 4>&-
+
+    NEW_ARGS=( "$@" )
+    return 0
+}
+
+PROG=$( basename "$0" )
+VERSION="$TIME_STAMP"
+VERBOSE=""
+WATCH=5
+ARGUMENTS="<x-command>"
+
+USAGE="Run a GUI command (incl Wayland) capturing stdout and stderr. 
+If it gives an error, popup a viewer with the messages.
+If it survives for $WATCH seconds, exit this script and delete any temporary files.
+"
+
+TMP=$( mktemp )
+TMPOUT="$TMP.out"
+TMPERR="$TMP.err"
+TMPFILE="$TMP.file"
+
+trap '/bin/rm -f $TMPOUT $TMPERR $TMPFILE $TMP' EXIT
+
+export POSIXLY_CORRECT=true
+
+NEW_ARGS=( )
+type argp.sh &>/dev/null && check_and_process_opts "$@" && set -- "${NEW_ARGS[@]}"
+unset POSIXLY_CORRECT # as it's only relevant to argp.sh
+
+# At this point, all the options have been processed and removed from
+# the arg list. We can now process $@ as arguments to the program.
+
+# MAIN PROCESSING
+[[ "$VERBOSE" ]] && set -x
+
+"$@" >"$TMPOUT" 2>"$TMPERR" &
+JOBPID=$!
+
+(( WATCH > 0 )) && {
+    kill -0 $JOBPID &>/dev/null && {
+        sleep 0.5
+        kill -0 $JOBPID &>/dev/null && {
+            sleep $WATCH
+            kill -0 $JOBPID &> /dev/null && {
+                # job seems to be OK, let's die nicely:
+                exit 0
+            }
+        }
+    }
+}
+
+wait $JOBPID
+STATUS=$?
+
+if [[ $STATUS != 0 || "$FORCE" ]]; then
+    (
+        echo "[$( date '+%Y%M%d:%H%M%S')] $* exited with status $STATUS"
+        echo
+        echo "STDERR:"
+        echo "-------"
+        echo
+        cat "$TMPERR"
+        echo
+        echo "STDOUT:"
+        echo "-------"
+        echo
+        cat "$TMPOUT"
+    ) > "$TMPFILE"
+
+    # rofi -normal-window -e "$( cat "$TMPFILE" )"
+
+    # or:
+    # zenity does not allow --no-cancel here!
+    zenity --text-info --width 400 --height 400 --filename "$TMPFILE" &> /dev/null
+
+    # or:
+    #gxmessage -file $TMPFILE
+
+    cat "$TMPFILE" # for .xsession-errors
+fi
+
+exit $STATUS
+# Local Variables:
+# mode: shell-script
+# time-stamp-pattern: "4/TIME_STAMP=\"%:y%02m%02d.%02H%02M%02S\""
+# eval: (add-hook 'before-save-hook 'time-stamp)
+# End:
+
