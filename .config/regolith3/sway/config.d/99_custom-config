@@ -8,25 +8,33 @@ bindsym --no-warn $mod+plus exec "swaymsg scratchpad show"
 # https://github.com/GaZaTu/x11-emoji-picker
 # bindsym $mod+period exec emoji-picker --class=floating_window
 
-# xprop helps here
-for_window [class="1Password"] floating enable
-for_window [class="Insync"] floating enable
-for_window [class="Solaar"] floating enable
-for_window [class="Zeal"] floating enable
-for_window [class="Evince"] border pixel 2
-for_window [class="firefox"] border pixel 2
-for_window [class="Qalculate-gtk"] floating enable
-for_window [class="zoom"] floating enable
-for_window [title="Peek" class="Peek"] floating enable
-for_window [title="Tuba" class="Tuba"] floating enable
-for_window [title="Zoom - Licensed Account"] floating enable
-for_window [title="Zoom Meeting"] floating enable
+# wlprop helps here
+for_window {
+    [class="1Password"] floating enable
+    [class="Insync"] floating enable
+    [class="Solaar"] floating enable
+    [class="Zeal"] floating enable
+    [class="Evince"] border pixel 2
+    [class="firefox"] border pixel 2
+    [class="Qalculate-gtk"] floating enable
+    [class="zoom"] floating enable
+    [title="Peek" class="Peek"] floating enable
+    [title="Tuba" class="Tuba"] floating enable
+    [title="Zoom - Licensed Account"] floating enable
+    [title="Zoom Meeting"] floating enable
+    
+    [app_id="jesse.firefox.music"] floating enable, border pixel 2
+    [app_id="org.gnome.Calculator"] floating enable, border pixel 2
+    [app_id="org.gnome.clocks"] floating enable, border pixel 2
+    [app_id="org.gnome.Characters"] floating enable, border pixel 2
+    [app_id="org.gnome.Weather"] floating enable, border pixel 2
+    [app_id="org.gnome.Nautilus"] border pixel 2
 
-for_window [class="gnome-calculator"] floating enable, border pixel 2
-for_window [class="Org.gnome.clocks"] floating enable, border pixel 2
-for_window [class="Org.gnome.Characters"] floating enable, border pixel 2
-for_window [class="Org.gnome.Weather"] floating enable, border pixel 2
-for_window [class="Org.gnome.Nautilus"] border pixel 2
+    [window_role="pop-up"] floating enable
+    [window_role="bubble"] floating enable
+    [window_role="dialog"] floating enable
+    [window_type="dialog"] floating enable
+}
 
 ## Modify // Sound Settings // <> s ##
 bindsym $mod+s exec regolith-control-center sound --class=floating_window
