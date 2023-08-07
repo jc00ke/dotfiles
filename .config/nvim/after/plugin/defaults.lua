@@ -75,4 +75,4 @@ keymap("n", "<leader>~", [[:s/\v<(.)(\w*)/\u\1\L\2/g<cr>]], opts)
 vim.cmd([[au FileType elixir nnoremap !d o\|> dbg()<esc>]])
 
 -- somewhere in your config:
-vim.cmd("colorscheme onelight")
+vim.cmd("colorscheme solarized")
