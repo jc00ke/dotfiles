@@ -5,8 +5,8 @@ bindsym $mod+Shift+Print exec flameshot gui
 bindsym Ctrl+Shift+backslash exec 1password
 bindsym Ctrl+Shift+space exec 1password --quick-access
 bindsym --no-warn $mod+plus exec "swaymsg scratchpad show"
-# https://github.com/GaZaTu/x11-emoji-picker
-# bindsym $mod+period exec emoji-picker --class=floating_window
+# https://github.com/marty-oehme/bemoj
+bindsym --no-warn $mod+period exec "bemoji -n"
 
 # wlprop helps here
 for_window {
