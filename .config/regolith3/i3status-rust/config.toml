@@ -26,12 +26,16 @@ block = "memory"
 format = " $icon $mem_total_used_percents.eng(w:2) "
 format_alt = " $icon_swap $swap_used_percents.eng(w:2) "
 
+# https://github.com/greshake/i3status-rust/issues/1427
+# https://github.com/greshake/i3status-rust/issues/1317
+# https://github.com/greshake/i3status-rust/issues/1862
 [[block]]
 block = "battery"
 format = " $icon\u2009 $percentage "
 missing_format = ""
 device = "DisplayDevice"
-driver = "upower"
+driver = "sysfs"
+interval = 30
 
 [[block]]
 block = "rofication"
