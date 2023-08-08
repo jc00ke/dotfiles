@@ -22,6 +22,7 @@ for_window {
     [title="Tuba" class="Tuba"] floating enable
     [title="Zoom - Licensed Account"] floating enable
     [title="Zoom Meeting"] floating enable
+    [title="zoom" shell="xwayland"] floating enable
     
     [app_id="jesse.firefox.music"] floating enable, border pixel 2
     [app_id="org.gnome.Calculator"] floating enable, border pixel 2
