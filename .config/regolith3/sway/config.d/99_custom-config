@@ -15,7 +15,7 @@ for_window {
     [class="Solaar"] floating enable
     [class="Zeal"] floating enable
     [class="Evince"] border pixel 2
-    [class="firefox"] border pixel 2
+    [class="firefox"] border pixel 2 inhibit_idle
     [class="Qalculate-gtk"] floating enable
     [class="zoom"] floating enable
     [title="Peek" class="Peek"] floating enable
@@ -23,6 +23,7 @@ for_window {
     [title="Zoom - Licensed Account"] floating enable
     [title="Zoom Meeting"] floating enable
     [title="zoom" shell="xwayland"] floating enable
+    [app_id="Alacritty"] inhibit_idle
     
     [app_id="jesse.firefox.music"] floating enable, border pixel 2
     [app_id="org.gnome.Calculator"] floating enable, border pixel 2
