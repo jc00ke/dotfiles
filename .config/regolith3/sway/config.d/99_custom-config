@@ -30,6 +30,7 @@ for_window {
     [app_id="org.gnome.Characters"] floating enable, border pixel 2
     [app_id="org.gnome.Weather"] floating enable, border pixel 2
     [app_id="org.gnome.Nautilus"] border pixel 2
+    [app_id="org.regolith.Settings"] floating enable, border pixel 2
 
     [window_role="pop-up"] floating enable
     [window_role="bubble"] floating enable
@@ -38,7 +39,7 @@ for_window {
 }
 
 ## Modify // Sound Settings // <> s ##
-bindsym $mod+s exec regolith-control-center sound --class=floating_window
+bindsym $mod+s exec regolith-control-center sound
 # bindsym $mod+Shift+n exec nautilus
 
 # Microphone
