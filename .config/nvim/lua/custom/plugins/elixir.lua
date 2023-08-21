@@ -48,23 +48,49 @@ local on_attach = function(_, bufnr)
 	end, { desc = 'Format current buffer with LSP' })
 end
 
+local lexical_config = {
+	filetypes = { "elixir", "eelixir" },
+	cmd = { "/home/jesse/src/lexical/_build/dev/rel/lexical/bin/lexical" },
+	settings = {},
+}
+
 return {
 	"elixir-tools/elixir-tools.nvim",
 	ft = { "elixir", "eex", "heex", "surface" },
 	event = { "BufReadPre", "BufNewFile" },
 	config = function()
+		-- local lspconfig = require("lspconfig")
+		-- local configs = require("lspconfig.configs")
+		--
+		-- if not configs.lexical then
+		-- 	configs.lexical = {
+		-- 		default_config = {
+		-- 			filetypes = lexical_config.filetypes,
+		-- 			cmd = lexical_config.cmd,
+		-- 			root_dir = function(fname)
+		-- 				return lspconfig.util.root_pattern("mix.exs", ".git", "*.exs")(fname) or vim.loop.os_homedir()
+		-- 			end,
+		-- 			settings = lexical_config.settings
+		-- 		}
+		-- 	}
+		-- end
+		-- lspconfig.lexical.setup({ on_attach = on_attach })
+		local lspconfig = require("lspconfig")
 		local elixir = require("elixir")
 		local elixirls = require("elixir.elixirls")
 
 		elixir.setup {
-			credo = {},
+			credo = { enable = true },
 			elixirls = {
-				enabled = true,
+				enable = true,
 				settings = elixirls.settings {
 					dialyzerEnabled = false,
 					enableTestLenses = false,
 				},
-				on_attach = on_attach
+				on_attach = on_attach,
+				root_dir = function(fname)
+					return lspconfig.util.root_pattern("mix.exs", ".git", "main.exs")(fname) or vim.loop.os_homedir()
+				end
 			}
 		}
 	end,
