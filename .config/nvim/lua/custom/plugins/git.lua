@@ -9,7 +9,10 @@ return {
 		"NeogitOrg/neogit",
 		dependencies = { "sindrets/diffview.nvim", "nvim-lua/plenary.nvim" },
 		config = function()
-			require("neogit").setup({ integrations = { diffview = true } })
+			require("neogit").setup({
+				disable_commit_confirmation = true,
+				integrations = { diffview = true },
+			})
 		end,
 		keys = {
 			{ "<leader>g",   "<cmd>Neogit<cr>",        noremap = true,  desc = "Open Neogit" },
