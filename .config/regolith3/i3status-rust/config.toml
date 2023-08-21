@@ -34,8 +34,7 @@ block = "battery"
 format = " $icon\u2009 $percentage "
 missing_format = ""
 device = "DisplayDevice"
-driver = "sysfs"
-interval = 30
+driver = "upower"
 
 [[block]]
 block = "rofication"
