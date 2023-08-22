@@ -20,4 +20,5 @@ regolith.lockscreen.wallpaper.color.primary: color_blue
 
 wm.bar.status_config: /home/jesse/.config/regolith3/i3status-rust/config.toml
 
+!regolith.look.path: /usr/share/regolith-look/solarized-dark
 regolith.look.path: /usr/share/regolith-look/solarized-dark
