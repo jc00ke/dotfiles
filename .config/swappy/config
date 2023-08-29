@@ -1,0 +1,4 @@
+[Default]
+save_dir=$HOME/Downloads
+save_filename_format=%Y-%m-%d--%H%M%S.png
+early_exit=true
