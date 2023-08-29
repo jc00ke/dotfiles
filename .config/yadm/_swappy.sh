@@ -22,4 +22,4 @@ cd $HOME/src
 git clone git@github.com:jtheoof/swappy.git
 meson setup build
 ninja -C build
-cp -f build/swappy $HOME/.local/bin/
+sudo cp -f build/swappy /usr/local/bin/

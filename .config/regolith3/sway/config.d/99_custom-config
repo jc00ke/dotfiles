@@ -1,7 +1,7 @@
 # vi: ft=i3config
 
 bindsym $mod+Ctrl+Shift+Return exec firefox -P Music -no-remote --name="jesse.firefox.music"
-bindsym $mod+Shift+Print exec flameshot gui
+bindsym $mod+Shift+Print exec grimshot save area - | swappy -f -
 bindsym Ctrl+Shift+backslash exec 1password
 bindsym Ctrl+Shift+space exec 1password --quick-access
 bindsym --no-warn $mod+plus exec "swaymsg scratchpad show"
