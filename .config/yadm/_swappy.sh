@@ -20,6 +20,7 @@ sudo apt install \
 
 cd $HOME/src
 git clone git@github.com:jtheoof/swappy.git
+cd swappy
 meson setup build
 ninja -C build
 sudo cp -f build/swappy /usr/local/bin/
