@@ -1,0 +1,100 @@
+#!/bin/bash
+set -o pipefail
+
+Help=$(cat <<-"HELP"
+ archive-statement — moves a statement into my Google Drive archive
+ Usage:
+   archive-statement <institution> <type> <path>
+ Options:
+   <institution>  Bank or credit union.
+   <type_or_sub>  Type of statement, or sub account.
+   <path>         Path to file to archive.
+   -h             Show this message.
+HELP
+)
+
+help() {
+    echo "$Help"
+}
+
+if [[ $# == 0 ]] || [[ "$1" == "-h" ]]; then
+    help
+    exit 1
+fi
+
+institution="$1"
+statement_type="$2"
+statement_path="$3"
+
+move_us_bank_statement () {
+  local statement_path="$1"
+  local statement=$(basename -- "$statement_path")
+  local extension="${statement##*.}"
+  local file_name="${statement%.*}"
+  local date_stamp=$(echo $file_name | cut -d' ' -f 1)
+  local last_4="${file_name: -4}"
+  local destination=$(find $HOME/Drive/personal/us_bank -type d -name "*$last_4" -print)
+
+  mv -i "$statement_path" "$destination/$date_stamp.$extension"
+}
+
+move_rivermark_statement () {
+  local statement_path="$1"
+  local statement_type="$2"
+  local statement=$(basename -- "$statement_path")
+  local extension="${statement##*.}"
+  local file_name="${statement%.*}"
+
+  case $statement_type in
+    mortgage)
+      local destination="$HOME/Drive/personal/rivermark/mortgage"
+      date_stamp=$(echo $file_name | cut -d'-' -f 3)
+      month=$(echo $date_stamp | cut -d'_' -f 1 | xargs printf %02d)
+      day=$(echo $date_stamp | cut -d'_' -f 2 | xargs printf %02d)
+      year=$(echo $date_stamp | cut -d'_' -f 3)
+      mv -i "$statement_path" "$destination/$year-$month-$day.$extension"
+      ;;
+    heloc)
+      local destination="$HOME/Drive/personal/rivermark/heloc"
+      mv -i "$statement_path" "$destination/$statement"
+      ;;
+    accounts)
+      local destination="$HOME/Drive/personal/rivermark/accounts"
+      mv -i "$statement_path" "$destination/$statement"
+      ;;
+    *)
+      echo "Unsupported Rivermark statement type"
+      exit 1
+  esac
+}
+
+move_wf_statement () {
+  local statement_path="$1"
+  local statement_type="$2"
+  local statement=$(basename -- "$statement_path")
+  local extension="${statement##*.}"
+  local file_name="${statement%.*}"
+  local year=$(echo $file_name | cut -d'-' -f 1)
+  local month=$(echo $file_name | cut -d'-' -f 2)
+  local household=$(echo $file_name | cut -d'-' -f 3)
+  if [ ! -z "$household" ]; then
+    household="-household"
+  fi
+  local destination="$HOME/Drive/personal/investments/$year/$statement_type/$month$household.$extension"
+  mv -i "$statement_path" "$destination"
+}
+
+case $institution in
+  usb | us_bank)
+    move_us_bank_statement "$statement_path"
+    ;;
+  rm | rivermark)
+    move_rivermark_statement "$statement_path" "$statement_type"
+    ;;
+  wf | wells_fargo)
+    move_wf_statement "$statement_path" "$statement_type"
+    ;;
+  *)
+    echo -n "Unsupported institution"
+    exit 1
+esac
