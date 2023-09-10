@@ -71,12 +71,6 @@ mkdir -p "$HOME/projects"
 mkdir -p "$HOME/src"
 cd "$HOME" || exit
 
-cd "$HOME" || exit
-if [ ! -d "$HOME/.asdf" ]; then
-  log "Installing asdf"
-  git clone https://github.com/asdf-vm/asdf.git ~/.asdf --branch v0.8.1
-fi
-
 cd "$HOME/src" || exit
 log "Installing ngrok"
 ngrok_package="ngrok-stable-linux-amd64"
@@ -112,8 +106,6 @@ log "Installing yarn"
 curl -o- -L https://yarnpkg.com/install.sh | bash
 
 DIR="${BASH_SOURCE%/*}" || if [[ ! -d $DIR ]]; then DIR="$PWD"; fi
-# shellcheck source=./_install.sh
-source "$DIR/_asdf.sh"
 source "$DIR/_install.sh"
 
 log "Consider installing resume service for network adapter."
