@@ -17,12 +17,7 @@ for_window {
     [class="Evince"] border pixel 2
     [class="firefox"] border pixel 2 inhibit_idle
     [class="Qalculate-gtk"] floating enable
-    [class="zoom"] floating enable
     [title="Peek" class="Peek"] floating enable
-    [title="Tuba" class="Tuba"] floating enable
-    [title="Zoom - Licensed Account"] floating enable
-    [title="Zoom Meeting"] floating enable
-    [title="zoom" shell="xwayland"] floating enable
     [app_id="Alacritty"] inhibit_idle
  
     [app_id="nm-openconnect-auth-dialog"] floating enable, border pixel 2
@@ -34,11 +29,18 @@ for_window {
     [app_id="org.gnome.Weather"] floating enable, border pixel 2
     [app_id="org.gnome.Nautilus"] border pixel 2
     [app_id="org.regolith.Settings"] floating enable, border pixel 2
+    [app_id="dev.geopjr.Tuba"] floating enable, border pixel 2
 
     [window_role="pop-up"] floating enable
     [window_role="bubble"] floating enable
     [window_role="dialog"] floating enable
     [window_type="dialog"] floating enable
+
+    [class="zoom"] floating enable
+    [class="zoom" shell="xwayland"] floating enable
+    [title="Zoom - Licensed Account"] floating enable
+    [title="Zoom Meeting"] floating enable
+    [title="zoom" shell="xwayland"] floating enable
 }
 
 ## Modify // Sound Settings // <> s ##
