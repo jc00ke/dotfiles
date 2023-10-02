@@ -40,7 +40,6 @@ for_window {
     [class="zoom"] floating enable
     [class="zoom" shell="xwayland"] floating enable
     [title="Zoom - Licensed Account"] floating enable
-    [title="Zoom Meeting"] floating enable
     [title="zoom" shell="xwayland"] floating enable
 }
 
