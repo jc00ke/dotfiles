@@ -1,6 +1,7 @@
 return {
 	{
 		"vim-test/vim-test",
+		enabled = false,
 		keys = {
 			{ '<leader>t',  "<cmd>TestNearest<cr>", desc = "Run nearest test" },
 			{ '<leader>l',  "<cmd>TestLast<cr>",    desc = "Run last test" },
@@ -15,12 +16,12 @@ return {
 	},
 	{
 		"nvim-neotest/neotest",
-		enabled = false,
+		-- enabled = false,
 		config = function()
 			require("neotest").setup({
 				adapters = {
-					-- require("neotest-elixir"),
-					require("neotest-vim-test")({ allow_file_types = { "ruby", "elixir" } })
+					require("neotest-elixir"),
+					-- require("neotest-vim-test")({ allow_file_types = { "ruby", "elixir" } })
 				},
 				quickfix = {
 					open = false
@@ -31,8 +32,8 @@ return {
 			"antoinemadec/FixCursorHold.nvim",
 			"jfpedroza/neotest-elixir",
 			"nvim-tree/nvim-web-devicons",
-			"vim-test/vim-test",
-			"nvim-neotest/neotest-vim-test",
+			-- "vim-test/vim-test",
+			-- "nvim-neotest/neotest-vim-test",
 		},
 		keys = {
 			{
