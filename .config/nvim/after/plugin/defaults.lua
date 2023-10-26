@@ -75,6 +75,9 @@ keymap("n", "<leader>~", [[:s/\v<(.)(\w*)/\u\1\L\2/g<cr>]], opts)
 keymap("n", "<leader>o", [[o<Esc>0"_D]], opts)
 keymap("n", "<leader>O", [[O<Esc>0"_D]], opts)
 
+keymap("t", [[<S-Space>]], [[<Space>]], opts)
+keymap("t", [[<S-Enter>]], [[<Enter>]], opts)
+
 vim.cmd([[au FileType elixir nnoremap !d o\|> dbg()<esc>]])
 
 -- somewhere in your config:
