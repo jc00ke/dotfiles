@@ -1,7 +1,7 @@
 return {
 	{
 		"vim-test/vim-test",
-		enabled = false,
+		enabled = true,
 		keys = {
 			{ '<leader>t',  "<cmd>TestNearest<cr>", desc = "Run nearest test" },
 			{ '<leader>l',  "<cmd>TestLast<cr>",    desc = "Run last test" },
@@ -16,7 +16,7 @@ return {
 	},
 	{
 		"nvim-neotest/neotest",
-		-- enabled = false,
+		enabled = false,
 		config = function()
 			require("neotest").setup({
 				adapters = {
