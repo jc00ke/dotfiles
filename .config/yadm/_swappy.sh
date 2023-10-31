@@ -19,7 +19,9 @@ sudo apt install \
 	# otf-font-awesome
 
 cd $HOME/src
-git clone git@github.com:jtheoof/swappy.git
+if [ ! -d "swappy" ]; then
+	git clone https://github.com/jtheoof/swappy.git
+fi
 cd swappy
 meson setup build
 ninja -C build

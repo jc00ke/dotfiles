@@ -1,4 +1,8 @@
 #!/bin/env bash
+set -eox pipefail
+DIR="$(dirname "$(readlink -f "$0")")"
+
+source "$DIR/_helpers.sh"
 
 sudo apt install -y \
   autoconf \
@@ -18,21 +22,13 @@ sudo apt install -y \
   gnome-clocks \
   gnome-weather \
   htop \
-  i3xrocks-battery \
-  i3xrocks-cpu-usage \
-  i3xrocks-key-indicator \
-  i3xrocks-memory \
-  i3xrocks-net-traffic \
-  i3xrocks-temp \
-  i3xrocks-time \
-  i3xrocks-weather \
   imagemagick \
   inotify-tools \
   jq \
   libbz2-dev \
   libclang-dev libffi-dev \
-  libfreetype6-dev \
   libfontconfig1-dev \
+  libfreetype6-dev \
   libgdbm-dev \
   libgtk-3-dev \
   libncurses5-dev \
@@ -43,144 +39,40 @@ sudo apt install -y \
   libxml2-dev \
   libxslt1-dev \
   libyaml-dev \
+  nautilus \
   parallel \
-  peek \
   pkg-config \
-  python3 \
-  python3-pip \
-  regolith-look-solarized-dark \
-  shellcheck \
-  software-properties-common \
-  ubuntu-restricted-extras \
+  pspg \
+  regolith-look-ayu-dark \
   zlib1g-dev
-
-log "Disabling GNOME Screencast for Peek"
-# https://github.com/phw/peek/issues/677
-gsettings set org.gnome.gnome-flashback screencast false
 
 log "Updating the yadm repo origin URL"
 yadm remote set-url origin "git@github.com:jc00ke/dotfiles.git"
 
 chsh -s /usr/bin/fish
 
-log "Installing nix package manager!"
-sudo install -d -m755 -o "$(id -u)" -g "$(id -g)" /nix
-curl -L https://nixos.org/nix/install | sh
-
 mkdir -p "$HOME/projects"
 mkdir -p "$HOME/src"
 cd "$HOME" || exit
 
-cd "$HOME/src" || exit
-log "Installing ngrok"
-ngrok_package="ngrok-stable-linux-amd64"
-ngrok_archive="$ngrok_package.zip"
-wget "https://bin.equinox.io/c/4VmDzA7iaHb/$ngrok_archive"
-unzip "$ngrok_archive"
-chmod +x ngrok
-sudo mv ngrok /usr/local/bin/
-
-log "Installing fzf"
-git clone --depth 1 https://github.com/junegunn/fzf.git ~/.fzf
-~/.fzf/install
-
-log "Installing git-fuzzy"
-git clone --depth 1 https://github.com/bigH/git-fuzzy.git ~/.git-fuzzy
-
-log "Installing direnv"
-curl -sfL https://direnv.net/install.sh | bash
-
-log "Installing lua LSP"
-sudo apt install ninja-build
-cd "$HOME/src" || exit
-# clone project
-git clone https://github.com/sumneko/lua-language-server
-cd lua-language-server || exit
-git submodule update --init --recursive
-cd 3rd/luamake || exit
-compile/install.sh
-cd ../..
-./3rd/luamake/luamake rebuild
-
-log "Installing yarn"
-curl -o- -L https://yarnpkg.com/install.sh | bash
-
-DIR="${BASH_SOURCE%/*}" || if [[ ! -d $DIR ]]; then DIR="$PWD"; fi
 source "$DIR/_install.sh"
 
-log "Consider installing resume service for network adapter."
-echo "https://askubuntu.com/a/1058760/128339"
-echo "In /etc/systemd/system/resume-r8152.service add the following:"
+log "Setting up 1Password"
+curl -sS https://downloads.1password.com/linux/keys/1password.asc | sudo gpg --dearmor --output /usr/share/keyrings/1password-archive-keyring.gpg
+echo 'deb [arch=amd64 signed-by=/usr/share/keyrings/1password-archive-keyring.gpg] https://downloads.1password.com/linux/debian/amd64 stable main' | sudo tee /etc/apt/sources.list.d/1password.list
+sudo mkdir -p /etc/debsig/policies/AC2D62742012EA22/
+curl -sS https://downloads.1password.com/linux/debian/debsig/1password.pol | sudo tee /etc/debsig/policies/AC2D62742012EA22/1password.pol
+sudo mkdir -p /usr/share/debsig/keyrings/AC2D62742012EA22
+curl -sS https://downloads.1password.com/linux/keys/1password.asc | sudo gpg --dearmor --output /usr/share/debsig/keyrings/AC2D62742012EA22/debsig.gpg
 
-echo "[Unit]
-Description=Fix RTL-8152 Driver on resume from suspend
-After=suspend.target
+log "Setting up gh CLI"
+curl -fsSL https://cli.github.com/packages/githubcli-archive-keyring.gpg | sudo dd of=/usr/share/keyrings/githubcli-archive-keyring.gpg \
+  && sudo chmod go+r /usr/share/keyrings/githubcli-archive-keyring.gpg \
+  && echo "deb [arch=$(dpkg --print-architecture) signed-by=/usr/share/keyrings/githubcli-archive-keyring.gpg] https://cli.github.com/packages stable main" \
+  | sudo tee /etc/apt/sources.list.d/github-cli.list > /dev/null
 
-[Service]
-User=root
-Type=oneshot
-ExecStartPre=/sbin/modprobe -r r8152
-ExecStart=/sbin/modprobe r8152
-TimeoutSec=0
-StandardOutput=syslog
+sudo apt update && sudo apt install 1password gh -y
 
-[Install]
-WantedBy=suspend.target"
-
-echo ""
-echo "then run:"
-echo "sudo systemctl enable resume-r8152.service"
-
-log "Consider installing wol service for network adapter."
-echo "https://www.techrepublic.com/article/how-to-enable-wake-on-lan-in-ubuntu-server-18-04/"
-echo "In /etc/systemd/system/wol.service add the following:"
-
-echo "[Unit]
-Description=Configure Wake On LAN
-
-[Service]
-Type=oneshot
-ExecStart=/sbin/ethtool -s enp39s0 wol g
-
-[Install]
-WantedBy=basic.target"
-
-echo ""
-echo "then run:"
-echo "sudo systemctl daemon-reload"
-echo "sudo systemctl enable wol.service"
-echo "sudo systemctl start wol.service"
-
-log "Installing 1Password"
-sudo apt-key \
-  --keyring /usr/share/keyrings/1password.gpg \
-  adv \
-  --keyserver keyserver.ubuntu.com \
-  --recv-keys 3FEF9748469ADBE15DA7CA80AC2D62742012EA22
-echo 'deb [arch=amd64 signed-by=/usr/share/keyrings/1password.gpg]
-https://onepassword.s3.amazonaws.com/linux/debian edge main' \
-  | sudo tee /etc/apt/sources.list.d/1password.list
-sudo apt update && sudo apt install 1password
-
-log "Installing GitHub CLI"
-sudo apt-key adv --keyserver keyserver.ubuntu.com --recv-key C99B11DEB97541F0
-sudo apt-add-repository https://cli.github.com/packages
-sudo apt update
-sudo apt install gh
-
-log "Installing emoji-picker"
-cd "$HOME/src" || exit
-gh repo clone jmackie/emoji-picker
-cd "emoji-picker" || exit
-cargo build --release
-mv target/release/emoji-picker ~/.local/bin/
-
-cd "$HOME"
-gh repo clone wfxr/forgit .forgit
-
-log "Installing fastmod"
-cargo install fastmod
-
-log "Installing Python deps for Neovim"
-echo "See: https://github.com/liuchengxu/vim-clap/issues/556#issuecomment-712867766"
-pip install neovim pyx
+# log "Installing Python deps for Neovim"
+# echo "See: https://github.com/liuchengxu/vim-clap/issues/556#issuecomment-712867766"
+# pip install neovim pyx
