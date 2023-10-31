@@ -1,24 +1,25 @@
 wm.bar.trayoutput: primary
 
-! 35_gaps defaulted inc_gaps_big and dec_gaps_big to Shift+plus/minus
+! 35_gaps defaulted inc_gaps_big and dec_gaps_big to Shift+p
 ! respectively, which conflicted with my scratchpad mapping.
-wm.binding.inc_gaps_big: "$alt+Shift+plus"
-wm.binding.dec_gaps_big: "$alt+Shift+minus"
-wm.binding.scratchpad: plus
-wm.binding.move_scratchpad: Shift+minus
-
-#include "solarized-dark-colors"
-
-wm.client.focused.color.child_border: color_magenta
-wm.client.focused.color.border: color_magenta
-wm.window.border.size: 2
-wm.client.focused.color.indicator: color_blue
-wm.client.focused_inactive.color.indicator: color_orange
-
-regolith.lockscreen.wallpaper.file:
-regolith.lockscreen.wallpaper.color.primary: color_blue
-
+! wm.binding.inc_gaps_big: "$alt+Shift+plus"                  
+! wm.binding.dec_gaps_big: "$alt+Shift+minus"                 
+! wm.binding.scratchpad: plus                                 
+wm.binding.move_scratchpad: Shift+minus                     
+                                                            
+#include "solarized-dark-colors"                            
+                                                            
+wm.client.focused.color.child_border: color_magenta         
+wm.client.focused.color.border: color_magenta               
+wm.window.border.size: 2                                    
+wm.client.focused.color.indicator: color_blue               
+wm.client.focused_inactive.color.indicator: color_orange    
+                                                            
+regolith.lockscreen.wallpaper.file:                         
+regolith.lockscreen.wallpaper.color.primary: color_blue     
+                                                            
 wm.bar.status_config: /home/jesse/.config/regolith3/i3status-rust/config.toml
-
-!regolith.look.path: /usr/share/regolith-look/solarized-dark
-regolith.look.path: /usr/share/regolith-look/solarized-dark
+                                                            
+regolith.wallpaper.file: /usr/share/desktop-base/futureprototype-theme/wallpaper-withlogo/gnome-background.xml
+regolith.lockscreen.wallpaper.file: /usr/share/desktop-base/futureprototype-theme/wallpaper-withlogo/gnome-background.xml
+regolith.look.path: /usr/share/regolith-look/ayu-dark
