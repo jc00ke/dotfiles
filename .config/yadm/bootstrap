@@ -21,6 +21,7 @@ sudo apt install -y \
   gnome-calculator \
   gnome-clocks \
   gnome-weather \
+  grimshot \
   htop \
   imagemagick \
   inotify-tools \
@@ -33,13 +34,16 @@ sudo apt install -y \
   libgtk-3-dev \
   libncurses5-dev \
   libreadline-dev \
+  libsensors-dev \
   libssl-dev \
   libtool \
   libxcb-xfixes0-dev \
   libxml2-dev \
   libxslt1-dev \
   libyaml-dev \
+  lm-sensors \
   nautilus \
+  pandoc \
   parallel \
   pkg-config \
   pspg \
