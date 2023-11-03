@@ -13,6 +13,8 @@ sudo apt install -y \
   curl \
   exuberant-ctags \
   fish \
+  fonts-nerd-font-jetbrainsmono \
+  fonts-noto-color-emoji \
   git \
   git-doc \
   git-gui \
