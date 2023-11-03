@@ -21,11 +21,13 @@ end
 set fish_config $HOME/.config/fish
 
 set -x TERM "xterm-256color"
-set -x TERMINAL "wezterm"
+set -x TERMINAL "foot"
 set -x fish_greeting ''
 set -x EDITOR "nvim"
 set -x MANPAGER "sh -c 'col -bx | bat -l man -p'"
 set -x ERL_AFLAGS "-kernel shell_history enabled"
+set -x XDG_SESSION_TYPE "wayland"
+set -x MOZ_ENABLE_WAYLAND "1"
 
 append_to_path "$HOME/src/bin"
 append_to_path "$HOME/.local/bin"
