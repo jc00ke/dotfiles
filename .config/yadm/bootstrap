@@ -4,6 +4,21 @@ DIR="$(dirname "$(readlink -f "$0")")"
 
 source "$DIR/_helpers.sh"
 
+echo "Swap stable/bookworm for testing in /etc/apt/sources.list"
+echo "ALSO"
+echo "Considering adding the following line to /etc/apt/sources.list to install firefox via unstable"
+echo "deb http://debian.osuosl.org/debian/ unstable main contrib non-free"
+echo "and set unstable priority to be low by creating /etc/apt/preferences.d/99pin-unstable"
+echo "Package: *
+Pin: release a=testing
+Pin-Priority: 900
+
+Package: *
+Pin: release a=unstable
+Pin-Priority: 10"
+
+exit 1
+
 sudo apt install -y \
   autoconf \
   autopoint \
@@ -12,6 +27,7 @@ sudo apt install -y \
   cmake \
   curl \
   exuberant-ctags \
+  firefox \
   fish \
   fonts-nerd-font-jetbrainsmono \
   fonts-noto-color-emoji \
