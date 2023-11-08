@@ -1,8 +1,10 @@
 return {
 	{
 		"f-person/git-blame.nvim",
-		init = function()
-			vim.g.gitblame_enabled = 0 -- disable by default, toggle with <Leader>b
+		config = function()
+			require("gitblame").setup({
+				enabled = false
+			})
 		end
 	},
 	{
