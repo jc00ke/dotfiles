@@ -31,6 +31,8 @@ for_window {
     [app_id="org.gnome.Nautilus"] border pixel 2
     [app_id="org.regolith.Settings"] floating enable, border pixel 2
     [app_id="dev.geopjr.Tuba"] floating enable, border pixel 2
+    [app_id="org.gnome.NautilusPreviewer"] floating enable
+    [app_id="org.gnome.Snapshot"] floating enable
 
     [window_role="pop-up"] floating enable
     [window_role="bubble"] floating enable
