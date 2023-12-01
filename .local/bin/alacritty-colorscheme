@@ -1,7 +1,0 @@
-#!/bin/env bash
-
-alacritty_dir="$HOME/.config/alacritty"
-config_file="$alacritty_dir/alacritty.yml"
-theme=$(ls "$alacritty_dir/themes" | fzf)
-
-yq e -i ".import[0] = \"$alacritty_dir/themes/$theme\"" "$config_file"
