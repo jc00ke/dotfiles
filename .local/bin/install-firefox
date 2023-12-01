@@ -4,6 +4,6 @@ cd "$HOME/Downloads"
 
 wget -qO "firefox-setup.tar.bz2" "https://download.mozilla.org/?product=firefox-latest&os=linux64&lang=en-US"
 
-sudo tar xjf firefox-setup.tar.bz2 -C /opt/firefox/
+sudo tar xjf firefox-setup.tar.bz2 -C /opt/firefox
 
 rm "firefox-setup.tar.bz2"
