@@ -1,11 +1,14 @@
 return {
-	"folke/persistence.nvim",
-	event = "BufReadPre",
-	opts = { options = { "buffers", "curdir", "tabpages", "winsize", "help", "globals", "skiprtp" } },
-	-- stylua: ignore
+	"olimorris/persisted.nvim",
+	config = function()
+		require("persisted").setup({
+			autoload = true,
+		})
+	end,
+	init = function()
+		require("telescope").load_extension("persisted")
+	end,
 	keys = {
-		{ "<leader>qs", function() require("persistence").load() end,                desc = "Restore Session" },
-		{ "<leader>ql", function() require("persistence").load({ last = true }) end, desc = "Restore Last Session" },
-		{ "<leader>qd", function() require("persistence").stop() end,                desc = "Don't Save Current Session" },
-	},
+		{ '<leader>st', "<cmd>Telescope persisted<cr>", desc = "[S]ession [T]elescope" }
+	}
 }
