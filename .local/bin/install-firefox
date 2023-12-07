@@ -2,8 +2,25 @@
 
 cd "$HOME/Downloads"
 
-wget -qO "firefox-setup.tar.bz2" "https://download.mozilla.org/?product=firefox-latest&os=linux64&lang=en-US"
+OPT_FF="/opt/firefox"
+FF="$OPT_FF/firefox"
+archive="firefox-setup.tar.bz2"
+trap "rm -vf $archive" EXIT
+url="https://download.mozilla.org/?product=firefox-latest&os=linux64&lang=en-US"
 
-sudo tar xjf firefox-setup.tar.bz2 -C /opt/firefox
+if [ -x "$FF" ]; then
+				installed_version="$("$FF" --version | cut -d' ' -f3)"
+				remote_version="$(curl -Ls -w %{url_effective} -o /dev/null "$url" | grep -Eo "releases/.*/linux" | cut -d'/' -f2)"
+				echo "Firefox installed: $installed_version"
+				echo "Firefox latest:    $remote_version"
+				if $(dpkg --compare-versions "$installed_version" "lt" "$remote_version"); then
+								echo "Downloading latest..."
+								wget -qO "$archive" "$url"
 
-rm "firefox-setup.tar.bz2"
+								echo "Unpacking to $OPT_FF"
+								sudo tar xjf "$archive" -C "$OPT_FF"
+								echo "Done!"
+				else
+								echo "Latest already installed. Quitting."
+				fi
+fi
