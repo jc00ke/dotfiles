@@ -1,0 +1,7 @@
+#!/bin/bash
+
+if [ -x "/opt/firefox/firefox" ]; then
+				/opt/firefox/firefox $@
+else
+				firefox $@
+fi
