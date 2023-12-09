@@ -1,12 +1,28 @@
 #!/bin/bash
 
+set -eo pipefail
 cd "$HOME/Downloads"
 
-OPT_FF="/opt/firefox"
+OPT="/opt"
+OPT_FF="$OPT/firefox"
 FF="$OPT_FF/firefox"
 archive="firefox-setup.tar.bz2"
 trap "rm -vf $archive" EXIT
 url="https://download.mozilla.org/?product=firefox-latest&os=linux64&lang=en-US"
+
+function download_ff () {
+	if [ ! -e "$archive" ]; then
+		echo "Downloading latest..."
+		wget -qO "$archive" "$url"
+	fi
+
+}
+
+function install_ff () {
+	echo "Unpacking to $OPT_FF"
+	sudo tar xjf "$archive" -C "$OPT"
+	echo "Done!"
+}
 
 if [ -x "$FF" ]; then
 				installed_version="$("$FF" --version | cut -d' ' -f3)"
@@ -14,13 +30,12 @@ if [ -x "$FF" ]; then
 				echo "Firefox installed: $installed_version"
 				echo "Firefox latest:    $remote_version"
 				if $(dpkg --compare-versions "$installed_version" "lt" "$remote_version"); then
-								echo "Downloading latest..."
-								wget -qO "$archive" "$url"
-
-								echo "Unpacking to $OPT_FF"
-								sudo tar xjf "$archive" -C "$OPT_FF"
-								echo "Done!"
+					download_ff
+					install_ff
 				else
 								echo "Latest already installed. Quitting."
 				fi
+else # installing for the first time
+	download_ff
+	install_ff
 fi
