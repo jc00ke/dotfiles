@@ -88,11 +88,14 @@ log "Setting up rtx"
 wget -qO - https://rtx.pub/gpg-key.pub | gpg --dearmor | sudo tee /etc/apt/keyrings/rtx-archive-keyring.gpg 1> /dev/null
 echo "deb [signed-by=/etc/apt/keyrings/rtx-archive-keyring.gpg arch=amd64] https://rtx.pub/deb stable main" | sudo tee /etc/apt/sources.list.d/rtx.list
 
-sudo apt update && sudo apt install 1password gh rtx -y
 
-# log "Installing Python deps for Neovim"
-# echo "See: https://github.com/liuchengxu/vim-clap/issues/556#issuecomment-712867766"
-# pip install neovim pyx
+log "Setting up signal"
+wget -O- https://updates.signal.org/desktop/apt/keys.asc | gpg --dearmor > signal-desktop-keyring.gpg
+cat signal-desktop-keyring.gpg | sudo tee /usr/share/keyrings/signal-desktop-keyring.gpg > /dev/null
+
+echo 'deb [arch=amd64 signed-by=/usr/share/keyrings/signal-desktop-keyring.gpg] https://updates.signal.org/desktop/apt xenial main' | sudo tee /etc/apt/sources.list.d/signal-xenial.list
+
+sudo apt update && sudo apt install 1password gh rtx signal-desktop-beta -y
 
 flatpak remote-add --if-not-exists flathub https://dl.flathub.org/repo/flathub.flatpakrepo
 flatpak install flathub org.gnome.Snapshot org.gnome.Loupe
