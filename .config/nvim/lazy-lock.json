@@ -28,7 +28,6 @@
   "onedarkpro.nvim": { "branch": "main", "commit": "c9d7e5f9a40e9a3aa578b40361577315cbbfdeea" },
   "persisted.nvim": { "branch": "main", "commit": "fc9f398393cc3bb0e4e81cb9f7c133cd2b21467f" },
   "plenary.nvim": { "branch": "master", "commit": "55d9fe89e33efd26f532ef20223e5f9430c8b0c0" },
-  "roc.vim": { "branch": "master", "commit": "a4b2edc029b349f05221249a6ab922d2787d2962" },
   "split-term.vim": { "branch": "master", "commit": "a4e28cab77ad07fc8a0ebb62a982768c02eb287c" },
   "splitjoin.vim": { "branch": "main", "commit": "9531bfb26257f0d06f7ea2b7ecb4f13095d430ab" },
   "telescope-fzf-native.nvim": { "branch": "main", "commit": "6c921ca12321edaa773e324ef64ea301a1d0da62" },
