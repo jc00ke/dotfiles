@@ -11,11 +11,6 @@ wm.window.border.size: 2
 wm.client.focused.color.indicator: color_blue               
 wm.client.focused_inactive.color.indicator: color_orange    
                                                             
-regolith.lockscreen.wallpaper.file:                         
-regolith.lockscreen.wallpaper.color.primary: color_blue     
-                                                            
 wm.bar.status_config: /home/jesse/.config/regolith3/i3status-rust/config.toml
                                                             
-regolith.wallpaper.file: /usr/share/desktop-base/futureprototype-theme/wallpaper-withlogo/gnome-background.xml
-regolith.lockscreen.wallpaper.file: /usr/share/desktop-base/futureprototype-theme/wallpaper-withlogo/gnome-background.xml
-regolith.look.path: /usr/share/regolith-look/ayu-dark
+regolith.look.path: /usr/share/regolith-look/lascaille
