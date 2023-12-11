@@ -1,0 +1,3 @@
+#!/bin/bash
+
+sudo apt install -y build-essential autoconf m4 libgl1-mesa-dev libglu1-mesa-dev libpng-dev libssh-dev unixodbc-dev xsltproc fop libxml2-utils libncurses-dev libwxgtk3.2-dev libwxgtk-webview3.2-dev libncurses-dev
