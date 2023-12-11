@@ -51,8 +51,7 @@ for_window {
 }
 
 ## Modify // Sound Settings // <> s ##
-bindsym $mod+s exec regolith-control-center sound
-# bindsym $mod+Shift+n exec nautilus
+bindsym $mod+s exec gnome-control-center sound
 
 # Microphone
 # This toggles the microphone mute/unmuted. An indicator in shown in i3status-rust bar when
