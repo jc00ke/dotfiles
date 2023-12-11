@@ -4,9 +4,14 @@ bindsym $mod+Ctrl+Shift+Return exec ff -P Music -no-remote --name="jesse.firefox
 bindsym $mod+Shift+Print exec grimshot save area - | swappy -f -
 bindsym Ctrl+Shift+backslash exec 1password
 bindsym Ctrl+Shift+space exec 1password --quick-access
-bindsym --no-warn $mod+plus exec "swaymsg scratchpad show"
 # https://github.com/marty-oehme/bemoj
 bindsym --no-warn $mod+period exec "bemoji -n"
+
+unbindsym $mod+$wm.binding.dec_gaps
+unbindsym $mod+$wm.binding.inc_gaps
+unbindsym --to-code $mod+$wm.binding.dec_gaps_big
+unbindsym --to-code $mod+$wm.binding.inc_gaps_big
+bindsym --no-warn $mod+plus exec "swaymsg scratchpad show"
 
 # wlprop helps here
 for_window {

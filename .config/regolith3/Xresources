@@ -1,11 +1,7 @@
 wm.bar.trayoutput: primary
 
-! 35_gaps defaulted inc_gaps_big and dec_gaps_big to Shift+p
-! respectively, which conflicted with my scratchpad mapping.
-! wm.binding.inc_gaps_big: "$alt+Shift+plus"                  
-! wm.binding.dec_gaps_big: "$alt+Shift+minus"                 
 ! wm.binding.scratchpad: plus                                 
-wm.binding.move_scratchpad: Shift+minus                     
+! wm.binding.move_scratchpad: Shift+minus                     
                                                             
 #include "solarized-dark-colors"                            
                                                             
