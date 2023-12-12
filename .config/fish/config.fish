@@ -1,44 +1,27 @@
 # Paths
 # =====
-function append_to_path
-  if not test -d $argv[1]
-    return
-  end
-  if not contains $argv[1] $PATH
-    set PATH $PATH $argv[1]
-  end
-end
-
-function prepend_to_path
-  if not test -d $argv[1]
-    return
-  end
-  if not contains $argv[1] $PATH
-    set PATH $argv[1] $PATH
-  end
-end
-
 set fish_config $HOME/.config/fish
 
 set -x TERM "xterm-256color"
 set -x TERMINAL "foot"
 set -x fish_greeting ''
 set -x EDITOR "nvim"
+set -x MANROFFOPT "-c"
 set -x MANPAGER "sh -c 'col -bx | bat -l man -p'"
 set -x ERL_AFLAGS "-kernel shell_history enabled"
 set -x XDG_SESSION_TYPE "wayland"
 set -x MOZ_ENABLE_WAYLAND "1"
 
-append_to_path "$HOME/src/bin"
-append_to_path "$HOME/.local/bin"
-append_to_path "$HOME/.config/yarn/global/node_modules/.bin"
-append_to_path "$HOME/.yarn/bin"
-append_to_path "$HOME/.git-fuzzy/bin"
-append_to_path "$HOME/.dotnet/tools"
-append_to_path "$HOME/projects/ratio/ratio-ops/bin"
-append_to_path "$HOME/.pulumi/bin"
-append_to_path "$HOME/.local/share/rtx/bin"
-append_to_path "$HOME/.fly/bin"
+fish_add_path "$HOME/src/bin"
+fish_add_path "$HOME/.local/bin"
+fish_add_path "$HOME/.config/yarn/global/node_modules/.bin"
+fish_add_path "$HOME/.yarn/bin"
+fish_add_path "$HOME/.git-fuzzy/bin"
+fish_add_path "$HOME/.dotnet/tools"
+fish_add_path "$HOME/projects/ratio/ratio-ops/bin"
+fish_add_path "$HOME/.pulumi/bin"
+fish_add_path "$HOME/.local/share/rtx/bin"
+fish_add_path "$HOME/.fly/bin"
 set PATH $PATH ".git/safe/../../bin"
 set FLYCTL_INSTALL "$HOME/.fly"
 
