@@ -6,6 +6,7 @@ bindsym Ctrl+Shift+backslash exec 1password
 bindsym Ctrl+Shift+space exec 1password --quick-access
 # https://github.com/marty-oehme/bemoj
 bindsym --no-warn $mod+period exec "bemoji -n"
+bindsym Ctrl+Shift+l exec "theme"
 
 unbindsym $mod+$wm.binding.dec_gaps
 unbindsym $mod+$wm.binding.inc_gaps
