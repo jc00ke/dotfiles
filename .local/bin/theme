@@ -1,0 +1,9 @@
+#!/bin/bash
+# https://github.com/lemnos/theme.sh
+
+theme_files="$(ls -p ~/.config/foot/theme-*.ini | grep -v current)"
+themes="$(echo "$theme_files" | xargs basename -a -s .ini | sed 's/theme-//')"
+
+chosen_theme="$(echo "$themes" | sort | ilia -p textlist)"
+chosen_theme_path="$(echo "$theme_files" | grep "$chosen_theme")"
+ln -sf "$chosen_theme_path" "$HOME/.config/foot/theme-current.ini"
