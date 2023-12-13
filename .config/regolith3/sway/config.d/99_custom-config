@@ -60,8 +60,7 @@ bindsym $mod+s exec gnome-control-center sound
 bindsym $mod+m              exec pactl set-source-mute @DEFAULT_SOURCE@ toggle
 bindsym Ctrl+XF86AudioMute  exec pactl set-source-mute @DEFAULT_SOURCE@ toggle
 
-input "1739:30383:DELL07E6:00_06CB:76AF_Touchpad" {
+input "type:touchpad" {
     natural_scroll enabled
     tap enabled
-    middle_emulation enabled
 }
