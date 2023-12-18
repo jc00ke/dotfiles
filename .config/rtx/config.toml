@@ -5,8 +5,8 @@ deno = "1.26.2"
 difftastic = "0.36.1"
 direnv = "2.32.2"
 duf = "0.8.1"
-elixir = "1.15.4-otp-25"
-erlang = "25.3.2.1"
+elixir = "1.15.7-otp-26"
+erlang = "26.1.2"
 fd = "8.7.0"
 fzf = "0.42.0"
 jless = "0.7.1"
@@ -28,3 +28,7 @@ eza = "0.15.1"
 node = "20.6.0"
 fx = "30.2.0"
 aws-vault = "7.2.0"
+
+[settings]
+always_keep_download = true
+always_keep_install = true
