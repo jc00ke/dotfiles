@@ -95,7 +95,7 @@ cat signal-desktop-keyring.gpg | sudo tee /usr/share/keyrings/signal-desktop-key
 
 echo 'deb [arch=amd64 signed-by=/usr/share/keyrings/signal-desktop-keyring.gpg] https://updates.signal.org/desktop/apt xenial main' | sudo tee /etc/apt/sources.list.d/signal-xenial.list
 
-sudo apt update && sudo apt install 1password gh rtx signal-desktop-beta -y
+sudo apt update && sudo apt install 1password 1password-cli gh rtx signal-desktop-beta -y
 
 flatpak remote-add --if-not-exists flathub https://dl.flathub.org/repo/flathub.flatpakrepo
 flatpak install flathub org.gnome.Snapshot org.gnome.Loupe
