@@ -9,6 +9,7 @@ set -x EDITOR "nvim"
 set -x MANROFFOPT "-c"
 set -x MANPAGER "sh -c 'col -bx | bat -l man -p'"
 set -x ERL_AFLAGS "-kernel shell_history enabled"
+set -x KERL_BUILD_DOCS "yes"
 set -x XDG_SESSION_TYPE "wayland"
 set -x MOZ_ENABLE_WAYLAND "1"
 
