@@ -5,10 +5,12 @@ cd "$HOME/Downloads"
 
 OPT="/opt"
 OPT_FF="$OPT/firefox"
-FF="$OPT_FF/firefox"
+FF_BIN="$OPT_FF/firefox"
 archive="firefox-setup.tar.bz2"
 trap "rm -vf $archive" EXIT
 url="https://download.mozilla.org/?product=firefox-latest&os=linux64&lang=en-US"
+remote_version="$(curl -Ls -w %{url_effective} -o /dev/null "$url" | grep -Eo "releases/.*/linux" | cut -d'/' -f2)"
+echo "Firefox latest:    $remote_version"
 
 function download_ff () {
 	if [ ! -e "$archive" ]; then
@@ -19,23 +21,27 @@ function download_ff () {
 }
 
 function install_ff () {
-	echo "Unpacking to $OPT_FF"
-	sudo tar xjf "$archive" -C "$OPT"
+	remote_version="$1"
+	opt_path="$OPT/firefox-$remote_version"
+	echo "Unpacking to $opt_path"
+	sudo mkdir -p "$opt_path"
+	sudo tar xjf "$archive" --strip-components 1 -C "$opt_path"
+	echo "Symlinking to $OPT_FF"
+	sudo unlink "$OPT_FF"
+	sudo ln -sf "$opt_path" "$OPT_FF"
 	echo "Done!"
 }
 
-if [ -x "$FF" ]; then
-				installed_version="$("$FF" --version | cut -d' ' -f3)"
-				remote_version="$(curl -Ls -w %{url_effective} -o /dev/null "$url" | grep -Eo "releases/.*/linux" | cut -d'/' -f2)"
+if [ -x "$FF_BIN" ]; then
+				installed_version="$("$FF_BIN" --version | cut -d' ' -f3)"
 				echo "Firefox installed: $installed_version"
-				echo "Firefox latest:    $remote_version"
 				if $(dpkg --compare-versions "$installed_version" "lt" "$remote_version"); then
 					download_ff
-					install_ff
+					install_ff "$remote_version"
 				else
 								echo "Latest already installed. Quitting."
 				fi
 else # installing for the first time
 	download_ff
-	install_ff
+	install_ff "$remote_version"
 fi
