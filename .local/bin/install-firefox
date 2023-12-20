@@ -27,7 +27,6 @@ function install_ff () {
 	sudo mkdir -p "$opt_path"
 	sudo tar xjf "$archive" --strip-components 1 -C "$opt_path"
 	echo "Symlinking to $OPT_FF"
-	sudo unlink "$OPT_FF"
 	sudo ln -sf "$opt_path" "$OPT_FF"
 	echo "Done!"
 }
