@@ -1,6 +1,7 @@
 vim.opt.relativenumber = true
 
 vim.opt.tabstop = 2
+vim.o.expandtab = true
 
 vim.o.splitright = true
 vim.o.splitbelow = true
@@ -74,6 +75,9 @@ keymap("n", "<leader>~", [[:s/\v<(.)(\w*)/\u\1\L\2/g<cr>]], opts)
 
 keymap("n", "<leader>o", [[o<Esc>0"_D]], opts)
 keymap("n", "<leader>O", [[O<Esc>0"_D]], opts)
+
+-- Toggle list for tab chars
+keymap("n", "<leader><tab><tab>", [[:set invlist <cr>]], opts)
 
 keymap("t", [[<S-Space>]], [[<Space>]], opts)
 keymap("t", [[<S-Enter>]], [[<Enter>]], opts)
