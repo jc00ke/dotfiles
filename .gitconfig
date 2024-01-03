@@ -37,7 +37,6 @@
 [core]
   excludesfile = ~/.gitignore
   autocrlf = input
-  pager = delta
 [color]
   ui = true
 [color "branch"]
@@ -59,8 +58,5 @@
   allowedSignersFile = ~/.ssh/allowed_signers
 [diff]
   external = difft
-  colorMoved = default
-[interactive]
-  diffFilter = delta --color-only
 [merge]
   conflictstyle = diff3
