@@ -50,9 +50,9 @@
 [commit]
   gpgsign = true
 [init]
-	defaultBranch = main
+  defaultBranch = main
 [gpg]
-	format = ssh
+  format = ssh
 [gpg "ssh"]
   program = /opt/1Password/op-ssh-sign
   allowedSignersFile = ~/.ssh/allowed_signers
