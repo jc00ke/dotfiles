@@ -21,7 +21,7 @@ fish_add_path "$HOME/.git-fuzzy/bin"
 fish_add_path "$HOME/.dotnet/tools"
 fish_add_path "$HOME/projects/ratio/ratio-ops/bin"
 fish_add_path "$HOME/.pulumi/bin"
-fish_add_path "$HOME/.local/share/rtx/bin"
+fish_add_path "$HOME/.local/share/mise/bin"
 fish_add_path "$HOME/.fly/bin"
 set PATH $PATH ".git/safe/../../bin"
 set FLYCTL_INSTALL "$HOME/.fly"
@@ -94,8 +94,8 @@ if test -f "$HOME/.config/op/plugins.sh"
   source "$HOME/.config/op/plugins.sh"
 end
 
-rtx activate fish | source
-rtx hook-env | source
-rtx exec -- direnv hook fish | source
-rtx exec -- starship init fish | source
-rtx exec -- zoxide init fish | source
+mise activate fish | source
+mise hook-env | source
+mise exec -- direnv hook fish | source
+mise exec -- starship init fish | source
+mise exec -- zoxide init fish | source

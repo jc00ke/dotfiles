@@ -28,7 +28,3 @@ eza = "0.15.1"
 node = "20.6.0"
 fx = "30.2.0"
 aws-vault = "7.2.0"
-
-[settings]
-always_keep_download = true
-always_keep_install = true
