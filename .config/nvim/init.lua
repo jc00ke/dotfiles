@@ -422,6 +422,8 @@ local servers = {
   -- rust_analyzer = {},
   -- tsserver = {},
 
+  denols = {
+  },
   lua_ls = {
     settings = {
       Lua = {
