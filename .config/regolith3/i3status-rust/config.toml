@@ -1,7 +1,10 @@
 icons_format = "{icon}"
 
 [theme]
-theme = "semi-native"
+theme = "slick"
+[theme.overrides]
+idle_bg = "#123456"
+idle_fg = "#abcdef"
 
 [icons]
 icons = "awesome4"
