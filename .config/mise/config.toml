@@ -1,7 +1,7 @@
 [tools]
 bat = "0.23.0"
 delta = "0.15.1"
-deno = "1.26.2"
+deno = "1.39.2"
 difftastic = "0.36.1"
 direnv = "2.32.2"
 duf = "0.8.1"
