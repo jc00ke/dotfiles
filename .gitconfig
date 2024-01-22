@@ -68,3 +68,5 @@
   cmd = difft "$LOCAL" "$REMOTE"
 [pager]
   difftool = true
+[pull]
+	rebase = true
