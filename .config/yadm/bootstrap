@@ -59,6 +59,10 @@ sudo apt install -y \
   regolith-look-ayu-dark \
   zlib1g-dev
 
+log "Setting up firefox"
+wget "https://ftp.mozilla.org/pub/firefox/releases/122.0/linux-x86_64/en-US/firefox-122.0.deb"
+sudo dpkg -i "firefox-122.0.deb"
+
 log "Updating the yadm repo origin URL"
 yadm remote set-url origin "git@github.com:jc00ke/dotfiles.git"
 
