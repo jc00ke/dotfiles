@@ -1,0 +1,12 @@
+#!/bin/bash
+
+# http://askubuntu.com/a/90219/128339
+
+kernelver=$(uname -r | sed -r 's/-[a-z]+//')
+dpkg -l linux-{image,headers}-"[0-9]*" | \
+  awk '/ii/{print $2}' | \
+  grep -ve $kernelver | \
+  xargs sudo apt-get purge -y
+
+# https://www.euperia.com/linux/you-may-need-to-re-run-your-boot-loader-grub/1456
+sudo update-grub
