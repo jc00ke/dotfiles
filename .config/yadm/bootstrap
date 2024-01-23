@@ -59,10 +59,6 @@ sudo apt install -y \
   regolith-look-ayu-dark \
   zlib1g-dev
 
-log "Setting up firefox"
-wget "https://ftp.mozilla.org/pub/firefox/releases/122.0/linux-x86_64/en-US/firefox-122.0.deb"
-sudo dpkg -i "firefox-122.0.deb"
-
 log "Updating the yadm repo origin URL"
 yadm remote set-url origin "git@github.com:jc00ke/dotfiles.git"
 
@@ -73,6 +69,24 @@ mkdir -p "$HOME/src"
 cd "$HOME" || exit
 
 source "$DIR/_install.sh"
+
+log "Setting up firefox"
+sudo install -d -m 0755 /etc/apt/keyrings
+wget -q https://packages.mozilla.org/apt/repo-signing-key.gpg -O- | sudo tee /etc/apt/keyrings/packages.mozilla.org.asc > /dev/null
+expected_fingerprint="35BAA0B33E9EB396F59CA838C0BA5CE6DC6315A3"
+actual_fingerprint="$(gpg -n -q --import --import-options import-show /etc/apt/keyrings/packages.mozilla.org.asc | awk '/pub/{getline; gsub(/^ +| +$/,""); print "\n"$0"\n"}')"
+if [ "$actual_fingerprint" != "$expected_fingerprint" ]; then
+  echo "Firefox fingerprint doesn't match!"
+  echo "Actual:   $actual_fingerprint"
+  echo "Expected: $expected_fingerprint"
+  exit 1
+fi
+echo "deb [signed-by=/etc/apt/keyrings/packages.mozilla.org.asc] https://packages.mozilla.org/apt mozilla main" | sudo tee -a /etc/apt/sources.list.d/mozilla.list > /dev/null
+echo '
+Package: *
+Pin: origin packages.mozilla.org
+Pin-Priority: 1000
+' | sudo tee /etc/apt/preferences.d/mozilla
 
 log "Setting up 1Password"
 curl -sS https://downloads.1password.com/linux/keys/1password.asc | sudo gpg --dearmor --output /usr/share/keyrings/1password-archive-keyring.gpg
@@ -99,7 +113,7 @@ cat signal-desktop-keyring.gpg | sudo tee /usr/share/keyrings/signal-desktop-key
 
 echo 'deb [arch=amd64 signed-by=/usr/share/keyrings/signal-desktop-keyring.gpg] https://updates.signal.org/desktop/apt xenial main' | sudo tee /etc/apt/sources.list.d/signal-xenial.list
 
-sudo apt update && sudo apt install 1password 1password-cli gh rtx signal-desktop-beta -y
+sudo apt update && sudo apt install firefox 1password 1password-cli gh rtx signal-desktop-beta -y
 
 flatpak remote-add --if-not-exists flathub https://dl.flathub.org/repo/flathub.flatpakrepo
 flatpak install flathub org.gnome.Snapshot org.gnome.Loupe
