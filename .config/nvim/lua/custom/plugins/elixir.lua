@@ -52,21 +52,21 @@ return {
 		local elixir = require("elixir")
 		local elixirls = require("elixir.elixirls")
 
-		elixir.setup {
+		elixir.setup({
 			credo = { enable = true },
 			elixirls = {
 				enable = true,
-				settings = elixirls.settings {
+				settings = elixirls.settings({
 					dialyzerEnabled = false,
 					enableTestLenses = false,
-				},
+				}),
 				on_attach = on_attach,
 				root_dir = function(fname)
 					return lspconfig.util.root_pattern("mix.exs", ".git", "main.exs")(fname) or vim.loop.os_homedir()
 				end,
-				tag = "v0.17.10"
-			}
-		}
+				tag = "v0.19.0",
+			},
+		})
 	end,
 	dependencies = {
 		"nvim-lua/plenary.nvim",
