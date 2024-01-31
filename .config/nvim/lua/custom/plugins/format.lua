@@ -20,6 +20,7 @@ return {
 			javascript = { { "deno_fmt", "prettierd", "prettier" } },
 			lua = { "stylua" },
 			python = { "isort", "black" },
+			terraform = { { "terraform_fmt" } },
 			typescript = { { "deno_fmt" } },
 		},
 		-- Set up format-on-save
@@ -28,6 +29,9 @@ return {
 		formatters = {
 			shfmt = {
 				prepend_args = { "-i", "2" },
+			},
+			terraform_fmt = {
+				command = "tofu",
 			},
 		},
 	},
