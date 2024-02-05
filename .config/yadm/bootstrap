@@ -76,7 +76,7 @@ log "Setting up firefox"
 sudo install -d -m 0755 /etc/apt/keyrings
 wget -q https://packages.mozilla.org/apt/repo-signing-key.gpg -O- | sudo tee /etc/apt/keyrings/packages.mozilla.org.asc > /dev/null
 expected_fingerprint="35BAA0B33E9EB396F59CA838C0BA5CE6DC6315A3"
-actual_fingerprint="$(gpg -n -q --import --import-options import-show /etc/apt/keyrings/packages.mozilla.org.asc | awk '/pub/{getline; gsub(/^ +| +$/,""); print "\n"$0"\n"}')"
+actual_fingerprint="$(gpg -n -q --import --import-options import-show /etc/apt/keyrings/packages.mozilla.org.asc | awk '/pub/{getline; gsub(/^ +| +$/,""); print $0}')"
 if [ "$actual_fingerprint" != "$expected_fingerprint" ]; then
   echo "Firefox fingerprint doesn't match!"
   echo "Actual:   $actual_fingerprint"
