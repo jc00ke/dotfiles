@@ -7,6 +7,9 @@ source "$DIR/_helpers.sh"
 echo "Swap stable/bookworm for testing in /etc/apt/sources.list"
 exit 1
 
+sudo apt update
+sudo apt upgrade
+
 echo "Disabling sleeping via dconf"
 dconf write /org/gnome/settings-daemon/plugins/power/sleep-inactive-battery-type "'nothing'"
 
