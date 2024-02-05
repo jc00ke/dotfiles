@@ -33,7 +33,6 @@ sudo apt install -y \
   gnome-calculator \
   gnome-clocks \
   gnome-weather \
-  grimshot \
   htop \
   imagemagick \
   inotify-tools \
