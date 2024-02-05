@@ -1,13 +1,13 @@
 icons_format = "{icon}"
 
 [theme]
-theme = "slick"
+theme = "solarized-dark"
 [theme.overrides]
 idle_bg = "#123456"
 idle_fg = "#abcdef"
 
 [icons]
-icons = "awesome4"
+icons = "material"
 [icons.overrides]
 bat = ["|E|", "|_|", "|=|", "|F|"]
 bat_charging = "|^| "
