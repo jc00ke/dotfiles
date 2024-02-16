@@ -20,11 +20,12 @@ return {
 			javascript = { { "deno_fmt", "prettierd", "prettier" } },
 			lua = { "stylua" },
 			python = { "isort", "black" },
+			sql = { "sqlfluff" },
 			terraform = { { "terraform_fmt" } },
 			typescript = { { "deno_fmt" } },
 		},
 		-- Set up format-on-save
-		format_on_save = { timeout_ms = 250, lsp_fallback = true },
+		format_on_save = { timeout_ms = 500, lsp_fallback = true },
 		-- Customize formatters
 		formatters = {
 			shfmt = {
