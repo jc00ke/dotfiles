@@ -6,7 +6,7 @@ vim.o.expandtab = true
 vim.o.splitright = true
 vim.o.splitbelow = true
 
-vim.keymap.set('n', '<leader>sr', require('telescope.builtin').resume, { desc = '[S]earch [R]esume' })
+vim.keymap.set("n", "<leader>sr", require("telescope.builtin").resume, { desc = "[S]earch [R]esume" })
 
 local keymap = vim.keymap.set
 local opts = { noremap = true, silent = true }
@@ -55,16 +55,16 @@ keymap("x", "K", ":move '<-2<cr>gv-gv", opts)
 keymap("x", "<A-j>", ":move '>+1<cr>gv-gv", opts)
 keymap("x", "<A-k>", ":move '<-2<cr>gv-gv", opts)
 
-keymap("n", "<C-p>", require('telescope.builtin').git_files, opts)
-keymap("n", "<C-P>", require('telescope.builtin').find_files, opts)
-keymap("n", "<C-b>", require('telescope.builtin').buffers, opts)
-keymap("n", "<leader>F", require('telescope.builtin').current_buffer_fuzzy_find, opts)
-keymap("n", "<C-_>", require('telescope.builtin').oldfiles, opts)
+keymap("n", "<C-p>", require("telescope.builtin").git_files, opts)
+keymap("n", "<C-P>", require("telescope.builtin").find_files, opts)
+keymap("n", "<C-b>", require("telescope.builtin").buffers, opts)
+keymap("n", "<leader>F", require("telescope.builtin").current_buffer_fuzzy_find, opts)
+keymap("n", "<C-_>", require("telescope.builtin").oldfiles, opts)
 
-keymap("n", "<leader>gc", require('telescope.builtin').git_commits, opts)
-keymap("n", "<leader>gb", require('telescope.builtin').git_branches, opts)
-keymap("n", "<leader>gs", require('telescope.builtin').git_status, opts)
-keymap("n", "<leader>gbc", require('telescope.builtin').git_bcommits, opts)
+keymap("n", "<leader>gc", require("telescope.builtin").git_commits, opts)
+keymap("n", "<leader>gb", require("telescope.builtin").git_branches, opts)
+keymap("n", "<leader>gs", require("telescope.builtin").git_status, opts)
+keymap("n", "<leader>gbc", require("telescope.builtin").git_bcommits, opts)
 
 keymap("n", "<leader>b", [[<cmd>GitBlameToggle<cr>]], opts)
 
