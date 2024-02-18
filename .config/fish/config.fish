@@ -86,6 +86,10 @@ end
 abbr -a fuck "oops"
 abbr -a yolo "oops"
 
+if test -x /Applications/Tailscale.app/Contents/MacOS/Tailscale
+  alias tailscale "/Applications/Tailscale.app/Contents/MacOS/Tailscale"
+end
+
 if test -x /opt/homebrew/bin/brew
   eval (/opt/homebrew/bin/brew shellenv)
   set -gx RUBY_YJIT_ENABLE 1
