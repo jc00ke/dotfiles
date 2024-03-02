@@ -31,6 +31,7 @@ steampipe = "0.21.7"
 stylua = "0.19.1"
 yq = "4.40.5"
 node = "latest"
+"cargo:rage" = "latest"
 
 [settings]
 experimental = true
