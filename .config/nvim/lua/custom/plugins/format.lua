@@ -18,6 +18,7 @@ return {
 		-- Define your formatters
 		formatters_by_ft = {
 			javascript = { { "deno_fmt", "prettierd", "prettier" } },
+			just = { "just" },
 			lua = { "stylua" },
 			python = { "isort", "black" },
 			sql = { "sqlfluff" },

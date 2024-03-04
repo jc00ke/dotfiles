@@ -8,6 +8,9 @@ return {
 					tfvars = "terraform",
 					tfstate = "json",
 				},
+				literal = {
+					Justfile = "just",
+				},
 			},
 		})
 	end,
