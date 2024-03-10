@@ -85,5 +85,5 @@ keymap("t", [[<S-Enter>]], [[<Enter>]], opts)
 vim.cmd([[au FileType elixir nnoremap !d o\|> dbg()<esc>]])
 
 -- somewhere in your config:
-vim.o.bg = "light"
+vim.o.bg = "dark"
 vim.cmd("colorscheme solarized")
