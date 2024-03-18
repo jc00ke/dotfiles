@@ -1,8 +1,12 @@
-[user]
-  name = Jesse Cooke
-  email = jesse@relativepath.io
-  signingkey = ssh-ed25519 AAAAC3NzaC1lZDI1NTE5AAAAIOB6m3RWpvewEgYMSRumUt4mKIMbG2OfutRxEF2Bdn7m
-[includeIf "gitdir:~/projects/ratio/"]
+[include]
+  path = ~/.gitconfig-rp.inc
+[includeIf "hasconfig:remote.*.url:rp-github/**"]
+  path = ~/.gitconfig-rp.inc
+[includeIf "hasconfig:remote.*.url:ratio-github/**"]
+  path = ~/.gitconfig-ratio.inc
+[includeIf "hasconfig:remote.*.url:*/RatioPBC/**"]
+  path = ~/.gitconfig-ratio.inc
+[includeIf "hasconfig:remote.*.url:*/OpenResearchLab/**"]
   path = ~/.gitconfig-ratio.inc
 [format]
   pretty="format:%C(yellow)%h%Creset %C(magenta bold)%aN%Creset%C(blue) %ad%Creset %s"
