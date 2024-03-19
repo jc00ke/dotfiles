@@ -70,7 +70,7 @@ keymap("n", "<leader>b", [[<cmd>GitBlameToggle<cr>]], opts)
 
 -- Y yank until the end of line
 keymap("n", "Y", "y$", opts)
-keymap("n", "BDA", [[<Cmd>%bd|e#<cr>]], opts)
+keymap("n", "BDA", [[<Cmd>%bd|e#|bd#<cr>]], opts)
 keymap("n", "<leader>~", [[:s/\v<(.)(\w*)/\u\1\L\2/g<cr>]], opts)
 
 keymap("n", "<leader>o", [[o<Esc>0"_D]], opts)
