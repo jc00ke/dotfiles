@@ -15,5 +15,11 @@ return {
       noremap = true,
       silent = true,
     },
-  }
+    {
+      "<leader>N",
+      "<cmd>NvimTreeFindFileToggle<cr>",
+      noremap = true,
+      silent = true,
+    },
+  },
 }
