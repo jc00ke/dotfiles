@@ -36,6 +36,8 @@ sqlite = "3.45.0"
 steampipe = "0.21.3"
 stylua = "0.19.1"
 yq = "4.40.5"
+usage = "latest"
+"cargo:i3status-rs" = "latest"
 
 [settings]
 experimental = true

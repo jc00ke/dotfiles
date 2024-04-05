@@ -7,10 +7,23 @@ idle_bg = "#123456"
 idle_fg = "#abcdef"
 
 [icons]
-icons = "material"
+icons = "awesome"
 [icons.overrides]
-bat = ["|E|", "|_|", "|=|", "|F|"]
-bat_charging = "|^| "
+bat = [
+    "\uf244", # fa-battery-empty
+    "\uf243", # fa-battery-quarter
+    "\uf242", # fa-battery-half
+    "\uf241", # fa-battery-three-quarters
+    "\uf240", # fa-battery-full
+]
+bat_charging = "\uf1e6" # fa-plug
+microphone = "\uf130" # fa-microphone
+microphone_muted = "\uf131" # fa-microphone-slash
+volume = [
+    "\uf026", # fa-volume-off
+    "\uf027", # fa-volume-down
+    "\uf028", # fa-volume-up
+]
 
 [[block]]
 block = "net"
