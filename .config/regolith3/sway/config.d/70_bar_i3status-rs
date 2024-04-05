@@ -1,0 +1,42 @@
+###############################################################################
+# i3 Bar
+###############################################################################
+
+# Toggle bar visibility
+## Modify // Toggle Bar // <> i ##
+# set_from_resource $wm.binding.bar_toggle wm.binding.bar_toggle i
+# # bindsym $mod+$wm.binding.bar_toggle bar mode toggle
+
+# set_from_resource $wm.bar.position wm.bar.position bottom
+# set_from_resource $wm.bar.font wm.bar.font monospace
+# set_from_resource $wm.bar.separatorchar wm.bar.separatorchar " "
+# set_from_resource $wm.bar.stripworkspacenumbers wm.bar.stripworkspacenumbers yes
+# set_from_resource $wm.bar.mode wm.bar.mode dock
+# set_from_resource $wm.bar.workspace_min_width wm.bar.workspace_min_width 36
+# set_from_resource $wm.bar.status_config wm.bar.status_config /etc/regolith/i3status-rust/config.toml
+
+# i3status config file. Override this for a custom status bar generator.
+# set_from_resource $wm.bar.status_command wm.bar.status_command i3status-rs $wm.bar.status_config
+#
+# The bar configuration
+# bar {
+#   position $wm.bar.position
+#   mode $wm.bar.mode
+#   font pango:$wm.bar.font
+#   separator_symbol $wm.bar.separatorchar
+#   status_command $wm.bar.status_command
+#   strip_workspace_numbers $wm.bar.stripworkspacenumbers
+#   workspace_min_width $wm.bar.workspace_min_width
+#
+#   colors {
+#       background $wm.bar.background.color
+#       statusline $wm.bar.statusline.color
+#       separator  $wm.bar.separator.color
+#
+# #                        BORDER  BACKGROUND TEXT
+#       focused_workspace  $wm.bar.workspace.focused.border.color      $wm.bar.workspace.focused.background.color   $wm.bar.workspace.focused.text.color
+#       active_workspace   $wm.bar.workspace.active.border.color       $wm.bar.workspace.active.background.color    $wm.bar.workspace.active.text.color
+#       inactive_workspace $wm.bar.workspace.inactive.border.color     $wm.bar.workspace.inactive.background.color  $wm.bar.workspace.inactive.text.color
+#       urgent_workspace   $wm.bar.workspace.urgent.border.color       $wm.bar.workspace.urgent.background.color    $wm.bar.workspace.urgent.text.color
+#   }
+# }
