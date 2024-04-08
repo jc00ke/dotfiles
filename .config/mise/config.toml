@@ -1,5 +1,5 @@
 [tools]
-rust = "1.75.0"
+rust = "1.77.1"
 "cargo:cargo-binstall" = "latest"
 "cargo:bat" = "latest"
 "cargo:difftastic" = "latest"
