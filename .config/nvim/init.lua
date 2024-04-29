@@ -443,7 +443,7 @@ local servers = {
       },
     },
   },
-  ruby_ls = {},
+  ruby_lsp = {},
   tailwindcss = {
     filetypes = { "html", "elixir", "eelixir", "heex" },
     init_options = {
