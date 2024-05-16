@@ -64,7 +64,7 @@ return {
 				root_dir = function(fname)
 					return lspconfig.util.root_pattern("mix.exs", ".git", "main.exs")(fname) or vim.loop.os_homedir()
 				end,
-				tag = "v0.20.0",
+				tag = "v0.21.1",
 			},
 		})
 	end,
