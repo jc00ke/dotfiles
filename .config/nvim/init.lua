@@ -287,10 +287,10 @@ vim.keymap.set("n", "<leader>fs", [[:botright terminal <cr>i]], { desc = "Open t
 vim.keymap.set("n", "<leader>fv", [[:vertical terminal <cr>i]], { desc = "Open terminal in vertical split" })
 vim.keymap.set("n", "<leader>ff", [[:tab terminal <cr>i]], { desc = "Open terminal in new tab" })
 vim.keymap.set(
-  "n",
-  "<leader>fp",
-  [[:tabnew|terminal postgres<cr>]],
-  { desc = "Open terminal in new tab and run Postgres" }
+	"n",
+	"<leader>fp",
+	[[:tabnew|terminal postgres<cr>]],
+	{ desc = "Open terminal in new tab and run Postgres" }
 )
 vim.keymap.set("t", "<esc>", [[<c-\><c-n>]])
 vim.keymap.set("t", "<c-o>", [[<c-\><c-n>]])
