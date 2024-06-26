@@ -22,9 +22,9 @@ fish_add_path "$HOME/.dotnet/tools"
 fish_add_path "$HOME/projects/ratio/ratio-ops/bin"
 fish_add_path "$HOME/.pulumi/bin"
 fish_add_path "$HOME/.local/share/mise/bin"
-fish_add_path "$HOME/.fly/bin"
 set PATH $PATH ".git/safe/../../bin"
 set FLYCTL_INSTALL "$HOME/.fly"
+fish_add_path "$FLYCTL_INSTALL/bin"
 
 # this function may be required
 function fish_title
