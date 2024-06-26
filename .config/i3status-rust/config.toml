@@ -7,7 +7,7 @@ idle_bg = "#123456"
 idle_fg = "#abcdef"
 
 [icons]
-icons = "awesome"
+icons = "awesome6"
 [icons.overrides]
 bat = [
     "\uf244", # fa-battery-empty
