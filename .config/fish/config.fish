@@ -108,3 +108,7 @@ mise hook-env | source
 mise exec -- direnv hook fish | source
 mise exec -- starship init fish | source
 mise exec -- zoxide init fish | source
+
+if command -v yazi > /dev/null
+  abbr -a yy "yazi"
+end

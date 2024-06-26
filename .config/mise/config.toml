@@ -40,6 +40,8 @@ steampipe = "0.22.2"
 stylua = "0.19.1"
 usage = "latest"
 yq = "4.40.5"
+"cargo:yazi-cli" = "latest"
+"cargo:yazi-fm" = "latest"
 
 [settings]
 experimental = true
