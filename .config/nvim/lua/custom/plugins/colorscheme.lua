@@ -1,14 +1,22 @@
 return {
 	{
-		'ishan9299/nvim-solarized-lua',
+		"ishan9299/nvim-solarized-lua",
 		priority = 999,
 		config = function()
-			vim.cmd.colorscheme 'solarized'
+			-- vim.cmd.colorscheme 'solarized'
 		end,
-		lazy = false
+		lazy = false,
 	},
 	{
 		"olimorris/onedarkpro.nvim",
-		priority = 1000 -- Ensure it loads first
-	}
+		priority = 1000, -- Ensure it loads first
+	},
+	{
+		"calind/selenized.nvim",
+		priority = 999,
+		config = function()
+			vim.cmd.colorscheme("selenized")
+		end,
+		lazy = false,
+	},
 }
