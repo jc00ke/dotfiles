@@ -1,0 +1,12 @@
+[Desktop Entry]
+Version=0.10.9
+Type=Application
+Name=LogSeq
+GenericName=Personal Knowledge Manager
+Comment=Personal Knowledge Manager.
+StartupNotify=true
+Exec=/home/jesse/.local/logseq.app/bin/LogSeq
+Icon=/home/jesse/.local/logseq.app/logseq.png
+Categories=Office;TextEditor;
+Keywords=logseq;
+MimeType=text/plain;inode/directory;
