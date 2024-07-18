@@ -62,7 +62,8 @@ return {
 				}),
 				on_attach = on_attach,
 				root_dir = function(fname)
-					return lspconfig.util.root_pattern("mix.exs", ".git", "main.exs")(fname) or vim.loop.os_homedir()
+					return lspconfig.util.root_pattern("mix.exs", ".git", "main.exs")(fname) or
+					vim.loop.os_homedir()
 				end,
 				tag = "v0.22.0",
 			},

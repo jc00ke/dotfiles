@@ -150,9 +150,9 @@ require("lazy").setup({
   -- Fuzzy Finder Algorithm which requires local dependencies to be built.
   -- Only load if `make` is available. Make sure you have the system
   -- requirements installed.
-  {
-    "natecraddock/telescope-zf-native.nvim",
-  },
+  -- {
+  --   "natecraddock/telescope-zf-native.nvim",
+  -- },
 
   {
     -- Highlight, edit, and navigate code
@@ -239,7 +239,7 @@ vim.api.nvim_create_autocmd("TextYankPost", {
   pattern = "*",
 })
 
-require("telescope").load_extension("zf-native")
+-- require("telescope").load_extension("zf-native")
 local telescopeConfig = require("telescope.config")
 
 -- Clone the default Telescope configuration
