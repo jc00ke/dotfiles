@@ -17,13 +17,14 @@ return {
 	opts = {
 		-- Define your formatters
 		formatters_by_ft = {
-			javascript = { { "deno_fmt", "prettierd", "prettier" } },
+			css = { "prettierd", "prettier", stop_after_first = true },
+			javascript = { "deno_fmt", "prettierd", "prettier", stop_after_first = true },
 			just = { "just" },
 			lua = { "stylua" },
 			python = { "isort", "black" },
 			sql = { "sqlfluff" },
-			terraform = { { "terraform_fmt" } },
-			typescript = { { "deno_fmt" } },
+			terraform = { "terraform_fmt" },
+			typescript = { "deno_fmt" },
 		},
 		-- Set up format-on-save
 		format_on_save = { timeout_ms = 500, lsp_fallback = true },
