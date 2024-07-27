@@ -18,6 +18,8 @@ return {
 		-- Define your formatters
 		formatters_by_ft = {
 			css = { "prettierd", "prettier", stop_after_first = true },
+			eelixir = { "mix", "rustywind" },
+			heex = { "mix", "rustywind" },
 			javascript = { "deno_fmt", "prettierd", "prettier", stop_after_first = true },
 			just = { "just" },
 			lua = { "stylua" },

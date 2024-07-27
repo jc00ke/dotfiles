@@ -43,6 +43,8 @@ yq = "4.40.5"
 "cargo:yazi-cli" = "latest"
 "cargo:yazi-fm" = "latest"
 tailwindcss = "latest"
+"cargo:rustywind" = "latest"
+"cargo:wl-screenrec" = "latest"
 
 [settings]
 experimental = true
