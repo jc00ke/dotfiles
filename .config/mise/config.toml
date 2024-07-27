@@ -44,7 +44,7 @@ yq = "4.40.5"
 "cargo:yazi-fm" = "latest"
 tailwindcss = "latest"
 "cargo:rustywind" = "latest"
-"cargo:wl-screenrec" = "latest"
+"cargo:wl-screenrec" ="{{ exec(command='mise-wl-screenrec') }}" 
 
 [settings]
 experimental = true

@@ -1,0 +1,14 @@
+#!/bin/bash
+
+case "$(uname -s)" in
+  Linux)
+    echo "latest"
+    ;;
+  Darwin)
+    echo ""
+    ;;
+  *)
+    echo "Unsupported platform"
+    exit 1
+    ;;
+esac
