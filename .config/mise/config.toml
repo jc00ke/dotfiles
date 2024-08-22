@@ -45,6 +45,7 @@ yq = "4.40.5"
 tailwindcss = "latest"
 "cargo:rustywind" = "latest"
 "cargo:wl-screenrec" ="{{ exec(command='mise-wl-screenrec') }}" 
+alejandra = "latest"
 
 [settings]
 experimental = true
