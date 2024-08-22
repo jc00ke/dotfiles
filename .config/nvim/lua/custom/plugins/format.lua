@@ -23,6 +23,7 @@ return {
 			javascript = { "deno_fmt", "prettierd", "prettier", stop_after_first = true },
 			just = { "just" },
 			lua = { "stylua" },
+			nix = { "alejandra", "nix_fmt", stop_after_first = true },
 			python = { "isort", "black" },
 			sql = { "sqlfluff" },
 			terraform = { "terraform_fmt" },
@@ -32,6 +33,9 @@ return {
 		format_on_save = { timeout_ms = 500, lsp_fallback = true },
 		-- Customize formatters
 		formatters = {
+			nix_fmt = {
+				command = "nix fmt",
+			},
 			shfmt = {
 				prepend_args = { "-i", "2" },
 			},
