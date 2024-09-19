@@ -1,0 +1,156 @@
+* {
+    border: none;
+    font-family: JetBrainsMono Nerd Font;
+    font-weight: 800;
+    font-size: 16px;
+    min-height: 0;
+}
+
+window#waybar {
+    background: rgba(0, 43, 54, 0.9);
+    margin: 0px;
+    padding: 0px;
+}
+
+tooltip {
+    background: rgba(0, 43, 54, 0.9);
+    border-radius: 6px;
+    border-width: 2px;
+    border-style: solid;
+    border-color: #586e75;
+    color: #839496;
+}
+
+#workspaces button {
+    border: none;
+    transition-duration: 0.3s;
+    background: none;
+    box-shadow: inherit;
+    text-shadow: inherit;
+    margin-top: -5px;
+    margin-bottom: -4px;
+}
+
+#workspaces button.active {
+    background: #2aa198;
+}
+
+#workspaces button.persistent {
+    color: #859900;
+}
+
+#workspaces button.empty {
+    color: #586e75;
+}
+
+#workspaces button:hover {
+    color: #268bd2;
+}
+
+#workspaces button.special {
+    color: #b58900;
+}
+
+#workspaces button.visible {
+    color: #cb4b16;
+}
+
+#workspaces button.urgent {
+    color: #dc322f;
+}
+
+#language,
+#custom-updates,
+#custom-weather,
+#window,
+#custom-playerctl,
+#clock,
+#battery,
+#pulseaudio,
+#network,
+#workspaces,
+#tray,
+#cava,
+#keyboard-state,
+#idle_inhibitor,
+#custom-power {
+    background: none;
+    padding: 0px 10px;
+    margin: 0px;
+    margin-top: 5px;
+}
+
+#tray {
+    margin-right: 4px;
+    margin-left: 4px;
+    color: #839496;
+    padding-left: 8px;
+    padding-right: 6px;
+}
+
+#workspaces {
+    margin-left: 4px;
+    padding-right: 4px;
+    padding-left: 0px;
+}
+
+#language {
+    background: rgba(0, 43, 54, 0.9);
+    color: #268bd2;
+    min-width: 24px;
+}
+
+#keyboard-state {
+    background: none;
+    color: #b58900;
+    border: none;
+}
+
+#window {
+    background: rgba(0, 43, 54, 0.9);
+    margin-left: 30px;
+    margin-right: 30px;
+}
+
+#custom-playerctl {
+    background: rgba(0, 43, 54, 0.9);
+    color: #b58900;
+}
+
+#clock {
+    color: #859900;
+}
+
+#network {
+    color: #839496;
+}
+
+#pulseaudio {
+    color: #cb4b16;
+}
+
+#pulseaudio.microphone {
+    color: #cb4b16;
+    margin-right: 4px;
+}
+
+#battery {
+    color: #839496;
+}
+
+#custom-weather {
+    color: #b58900;
+    margin-left: 4px;
+}
+
+#idle_inhibitor {
+    color: #839496;
+    min-width: 18px;
+}
+
+#custom-power {
+    color: #dc322f;
+    margin-left: 0px;
+    margin-right: 4px;
+    padding-right: 12px;
+}
