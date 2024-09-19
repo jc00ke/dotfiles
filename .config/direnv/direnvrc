@@ -1,5 +1,8 @@
+postgres_version() {
+  echo "$(postgres --version | awk '{split($3, a, "."); print a[1]}')"
+}
 layout_postgres() {
-  local pgversion="$(postgres --version | awk '{split($3, a, "."); print a[1]}')"
+  local pgversion="$(postgres_version)"
   export PGDATA="$(direnv_layout_dir)/postgres/$pgversion"
   export PGHOST="$PGDATA"
 
