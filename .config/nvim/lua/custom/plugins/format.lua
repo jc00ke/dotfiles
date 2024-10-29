@@ -20,6 +20,7 @@ return {
 			css = { "prettierd", "prettier", stop_after_first = true },
 			eelixir = { "mix", "rustywind" },
 			heex = { "mix", "rustywind" },
+			html = { "superhtml" },
 			javascript = { "deno_fmt", "prettierd", "prettier", stop_after_first = true },
 			just = { "just" },
 			lua = { "stylua" },
