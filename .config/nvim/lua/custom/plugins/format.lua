@@ -25,7 +25,7 @@ return {
 			lua = { "stylua" },
 			nix = { "alejandra", "nix_fmt", stop_after_first = true },
 			python = { "isort", "black" },
-			sql = { "sqlfluff" },
+			sql = { "sleek", "sqlfluff" },
 			terraform = { "terraform_fmt" },
 			typescript = { "deno_fmt" },
 		},
@@ -38,6 +38,9 @@ return {
 			},
 			shfmt = {
 				prepend_args = { "-i", "2" },
+			},
+			sleek = {
+				prepend_args = { "--uppercase", "true" },
 			},
 			terraform_fmt = {
 				command = "tofu",
