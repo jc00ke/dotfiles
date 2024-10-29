@@ -67,6 +67,7 @@ keymap("n", "<leader>gs", require("telescope.builtin").git_status, opts)
 keymap("n", "<leader>gbc", require("telescope.builtin").git_bcommits, opts)
 
 keymap("n", "<leader>b", [[<cmd>GitBlameToggle<cr>]], opts)
+keymap("n", "<leader>i", [[<cmd>IBLToggle<cr>]], opts)
 
 -- Y yank until the end of line
 keymap("n", "Y", "y$", opts)
@@ -83,7 +84,3 @@ keymap("t", [[<S-Space>]], [[<Space>]], opts)
 keymap("t", [[<S-Enter>]], [[<Enter>]], opts)
 
 vim.cmd([[au FileType elixir nnoremap !d o\|> dbg()<esc>]])
-
--- somewhere in your config:
--- vim.o.bg = "dark"
--- vim.cmd("colorscheme solarized")
