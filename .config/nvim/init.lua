@@ -527,6 +527,9 @@ mason_lspconfig.setup_handlers({
   end,
 })
 
+require("lspconfig").superhtml.setup({})
+-- require("lspconfig").superhtml.setup({ filetypes = { "superhtml" } })
+
 -- nvim-cmp setup
 local cmp = require("cmp")
 local luasnip = require("luasnip")
