@@ -9,7 +9,8 @@
     "reload_style_on_change": true,
     "height": 32,
     "modules-left": [
-        "hyprland/workspaces"
+        "hyprland/workspaces",
+        "river/tags"
     ],
     "modules-center": [
         "pulseaudio",
@@ -22,8 +23,27 @@
 	"battery",
         "custom/power"
     ],
+    "river/mode": {
+        "format": "Mode: {}"
+    },
+    "river/layout": {
+        "format": "Layout: {}",
+        "min-length": 4
+    },
+    "river/window": {
+        "format": "{}"
+    },
     "hyprland/window": {
         "format": "{}"
+    },
+    "river/tags": {
+      "set-tags": [
+        2147483649,
+        2147483650,
+        2147483652,
+        2147483656,
+        2147483664,
+      ]
     },
     "hyprland/workspaces": {
         "disable-scroll": false,

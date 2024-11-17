@@ -21,7 +21,8 @@ tooltip {
     color: #839496;
 }
 
-#workspaces button {
+#workspaces button,
+#tags button {
     border: none;
     transition-duration: 0.3s;
     background: none;
@@ -31,11 +32,13 @@ tooltip {
     margin-bottom: -4px;
 }
 
-#workspaces button.active {
-    background: #2aa198;
+#workspaces button.active,
+#tags button.focused {
+    background: #d33682;
 }
 
-#workspaces button.persistent {
+#workspaces button.persistent,
+#tags button.occupied {
     color: #859900;
 }
 
@@ -55,7 +58,8 @@ tooltip {
     color: #cb4b16;
 }
 
-#workspaces button.urgent {
+#workspaces button.urgent,
+#tags button.urgent {
     color: #dc322f;
 }
 
