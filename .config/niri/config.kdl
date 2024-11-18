@@ -97,6 +97,7 @@ input {
 
 output "LG Electronics LG SDQHD 208NTWG6P449" {
     scale 1.25
+    background-color "#073642"
 }
 
 // Settings that influence how windows are positioned and sized.
