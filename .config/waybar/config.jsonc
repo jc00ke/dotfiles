@@ -9,6 +9,7 @@
     "reload_style_on_change": true,
     "height": 32,
     "modules-left": [
+        "niri/workspaces",
         "hyprland/workspaces",
         "river/tags"
     ],
@@ -20,9 +21,18 @@
         "keyboard-state",
         "tray",
         "clock",
-	"battery",
+	      "battery",
         "custom/power"
     ],
+    "wlr/taskbar": {
+      // "all-outputs": true,
+      // "format": "{icon} {title} {short_state}",
+      "format": "{icon}",
+      "tooltip-format": "{title} | {app_id}",
+      "on-click": "activate",
+      "on-click-middle": "close",
+      "on-click-right": "fullscreen"
+    },
     "river/mode": {
         "format": "Mode: {}"
     },
@@ -36,13 +46,21 @@
     "hyprland/window": {
         "format": "{}"
     },
+    "niri/workspaces": {
+	"format": "{icon}",
+	"format-icons": {
+		// Icons by state
+		"active": "",
+		"default": ""
+	}
+    },
     "river/tags": {
       "set-tags": [
         2147483649,
         2147483650,
         2147483652,
         2147483656,
-        2147483664,
+        2147483664
       ]
     },
     "hyprland/workspaces": {
@@ -62,20 +80,20 @@
               "6": "6",
               "urgent": "",
               "default": "",
-              "magic": "",
+              "magic": ""
         },
         "persistent-workspaces": {
             "1": [],
             "2": [],
             "3": [],
             "4": [],
-            "5": [],
+            "5": []
         },
-        "sort-by-number": true,
+        "sort-by-number": true
     },
     "hyprland/language": {
         "format": "{}",
-        "format-en": "Eng",
+        "format-en": "Eng"
     },
     "keyboard-state": {
         "numlock": false,
@@ -103,7 +121,7 @@
     "clock": {
         "locale": "en_US.UTF-8",
         "timezone": "America/Los_Angeles",
-        "format": "{:L%Y-%m-%d %R %a}",
+        "format": "{:L%Y-%m-%d %R %a}"
     },
     "pulseaudio": {
         "format": "{icon} {volume}%",
@@ -126,7 +144,7 @@
     "custom/power": {
         "format": "⏻",
         "tooltip": false,
-        "on-click": "wlogout -b 5 --protocol layer-shell"
+        "on-click": "niri msg action quit"
     },
     "pulseaudio#microphone": {
         "format": "{format_source}",
@@ -136,14 +154,15 @@
         "on-click": "pamixer --default-source -t",
         "on-scroll-up": "pamixer --default-source -i 2",
         "on-scroll-down": "pamixer --default-source -d 2",
+        "on-click-middle": "pactl set-sink-mute @DEFAULT_SINK@ toggle",
         "scroll-step": 5
     },
     "battery": {
         "bat": "BAT0",
         "interval": 60,
         "states": {
-                   "warning": 20,
-                   "critical": 10
+          "warning": 20,
+          "critical": 10
         },
         "format": "{icon}",
         "format-icons": ["", "", "", "", ""],
