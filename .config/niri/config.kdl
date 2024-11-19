@@ -215,7 +215,6 @@ layout {
 // which may be more convenient to use.
 // See the binds section below for more spawn examples.
 // spawn-at-startup "alacritty" "-e" "fish"
-spawn-at-startup "waybar"
 spawn-at-startup "1password"
 spawn-at-startup "swaync"
 
@@ -299,6 +298,7 @@ binds {
     Super+N { spawn "sh" "-c" "swaync-client -t"; }
     Super+Shift+N { spawn "nautilus"; }
     Super+M { spawn "wpctl" "set-mute" "@DEFAULT_AUDIO_SOURCE@" "toggle"; }
+    Super+S { spawn "sh" "-c" "signal-desktop-beta --password-store='gnome-libsecret'"; }
 
     // You can also use a shell. Do this if you need pipes, multiple commands, etc.
     // Note: the entire command goes as a single argument in the end.
@@ -507,5 +507,6 @@ binds {
 }
 
 environment {
+    SIGNAL_PASSWORD_STORE "gnome-libsecret"
     ELECTRON_OZONE_PLATFORM_HINT "auto"
 }
