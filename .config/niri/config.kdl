@@ -299,6 +299,8 @@ binds {
     Super+Shift+N { spawn "nautilus"; }
     Super+M { spawn "wpctl" "set-mute" "@DEFAULT_AUDIO_SOURCE@" "toggle"; }
     Super+S { spawn "sh" "-c" "signal-desktop-beta --password-store='gnome-libsecret'"; }
+    Control+Shift+Backslash { spawn "sh" "-c" "1password --quick-access"; }
+    Super+Shift+1 { spawn "1password"; }
 
     // You can also use a shell. Do this if you need pipes, multiple commands, etc.
     // Note: the entire command goes as a single argument in the end.
