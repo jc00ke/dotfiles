@@ -292,8 +292,8 @@ binds {
     Mod+Return { spawn "foot"; }
     Mod+Shift+Return { spawn "firefox"; }
     Mod+Space { spawn "fuzzel"; }
-    Super+Shift+L { spawn "sh" "-c" "swaylock -C $HOME/.config/swaylock/config"; }
-    Super+Escape { spawn "sh" "-c" "swaylock -C $HOME/.config/swaylock/config"; }
+    Super+Shift+L { spawn "wlogout"; }
+    Super+Escape { spawn "my-swaylock"; }
     Super+Shift+A { spawn "sh" "-c" "grimshot save area - | swappy -f -"; }
 
     // You can also use a shell. Do this if you need pipes, multiple commands, etc.
