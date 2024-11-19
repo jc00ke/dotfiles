@@ -296,6 +296,9 @@ binds {
     Super+Shift+L { spawn "wlogout"; }
     Super+Escape { spawn "my-swaylock"; }
     Super+Shift+A { spawn "sh" "-c" "grimshot save area - | swappy -f -"; }
+    Super+N { spawn "sh" "-c" "swaync-client -t"; }
+    Super+Shift+N { spawn "nautilus"; }
+    Super+M { spawn "wpctl" "set-mute" "@DEFAULT_AUDIO_SOURCE@" "toggle"; }
 
     // You can also use a shell. Do this if you need pipes, multiple commands, etc.
     // Note: the entire command goes as a single argument in the end.
