@@ -1,6 +1,6 @@
 {
   "layer": "top",
-  "position": "bottom",
+  "position": "top",
   "mode": "dock",
   "exclusive": true,
   "passthrough": false,
@@ -14,14 +14,14 @@
     "river/tags"
   ],
   "modules-center": [
-    "pulseaudio",
-    "pulseaudio#microphone"
+    "clock"
   ],
   "modules-right": [
     "custom/notification",
     "keyboard-state",
     "tray",
-    "clock",
+    "pulseaudio",
+    "pulseaudio#microphone",
     "battery",
     "custom/power"
   ],
