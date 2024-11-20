@@ -14,7 +14,8 @@
     "river/tags"
   ],
   "modules-center": [
-    "clock"
+    "clock",
+    "privacy"
   ],
   "modules-right": [
     "custom/notification",
