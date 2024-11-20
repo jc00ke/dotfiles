@@ -1,3 +1,21 @@
+/* solarized */
+@define-color base03    #002b36;
+@define-color base02    #073642;
+@define-color base01    #586e75;
+@define-color base00    #657b83;
+@define-color base0     #839496;
+@define-color base1     #93a1a1;
+@define-color base2     #eee8d5;
+@define-color base3     #fdf6e3;
+@define-color yellow    #b58900;
+@define-color orange    #cb4b16;
+@define-color red       #dc322f;
+@define-color magenta   #d33682;
+@define-color violet    #6c71c4;
+@define-color blue      #268bd2;
+@define-color cyan      #2aa198;
+@define-color green     #859900;
+
 * {
   border: none;
   font-family: JetBrainsMono Nerd Font;
@@ -7,18 +25,18 @@
 }
 
 window#waybar {
-  background: rgba(0, 43, 54, 0.9);
+  background: @base03;
   margin: 0px;
   padding: 0px;
 }
 
 tooltip {
-  background: rgba(0, 43, 54, 0.9);
+  background: @base03;
   border-radius: 6px;
   border-width: 2px;
   border-style: solid;
-  border-color: #586e75;
-  color: #839496;
+  border-color: @base01;
+  color: @base01;
 }
 
 #workspaces button,
@@ -34,33 +52,33 @@ tooltip {
 
 #workspaces button.active,
 #tags button.focused {
-  background: #d33682;
+  background: @magenta;
 }
 
 #workspaces button.persistent,
 #tags button.occupied {
-  color: #859900;
+  color: @green;
 }
 
 #workspaces button.empty {
-  color: #586e75;
+  color: @base01;
 }
 
 #workspaces button:hover {
-  color: #268bd2;
+  color: @blue;
 }
 
 #workspaces button.special {
-  color: #b58900;
+  color: @yellow;
 }
 
 #workspaces button.visible {
-  color: #cb4b16;
+  color: @orange;
 }
 
 #workspaces button.urgent,
 #tags button.urgent {
-  color: #dc322f;
+  color: @red;
 }
 
 #language,
@@ -87,7 +105,7 @@ tooltip {
 #tray {
   margin-right: 4px;
   margin-left: 4px;
-  color: #839496;
+  color: @base01;
   padding-left: 8px;
   padding-right: 6px;
 }
@@ -100,13 +118,13 @@ tooltip {
 
 #language {
   background: rgba(0, 43, 54, 0.9);
-  color: #268bd2;
+  color: @blue;
   min-width: 24px;
 }
 
 #keyboard-state {
   background: none;
-  color: #b58900;
+  color: @yellow;
   border: none;
 }
 
@@ -118,42 +136,42 @@ tooltip {
 
 #custom-playerctl {
   background: rgba(0, 43, 54, 0.9);
-  color: #b58900;
+  color: @yellow;
 }
 
 #clock {
-  color: #859900;
+  color: @green;
 }
 
 #network {
-  color: #839496;
+  color: @base01;
 }
 
 #pulseaudio {
-  color: #cb4b16;
+  color: @orange;
 }
 
 #pulseaudio.microphone {
-  color: #cb4b16;
+  color: @orange;
   margin-right: 4px;
 }
 
 #battery {
-  color: #839496;
+  color: @base01;
 }
 
 #custom-weather {
-  color: #b58900;
+  color: @yellow;
   margin-left: 4px;
 }
 
 #idle_inhibitor {
-  color: #839496;
+  color: @base01;
   min-width: 18px;
 }
 
 #custom-power {
-  color: #dc322f;
+  color: @red;
   margin-left: 0px;
   margin-right: 4px;
   padding-right: 12px;
@@ -161,5 +179,13 @@ tooltip {
 
 #custom-notification {
   font-family: "NotoSansMono Nerd Font";
-  color: #cb4b16;
+  color: @orange;
+}
+
+#privacy-item {
+  color: @yellow;
+}
+
+#privacy-item.screenshare {
+  color: @red;
 }
