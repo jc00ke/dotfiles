@@ -291,6 +291,7 @@ binds {
     // Suggested binds for running programs: terminal, app launcher, screen locker.
     Mod+Return { spawn "foot"; }
     Mod+Shift+Return { spawn "firefox"; }
+    Mod+Ctrl+Shift+Return { spawn "firefox-music"; }
     Mod+Space { spawn "fuzzel"; }
     Ctrl+Shift+L { spawn "wlogout"; }
     Super+Escape { spawn "my-swaylock"; }
