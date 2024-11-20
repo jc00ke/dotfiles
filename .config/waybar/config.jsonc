@@ -14,13 +14,13 @@
     "river/tags"
   ],
   "modules-center": [
-    "clock",
-    "privacy"
+    "clock"
   ],
   "modules-right": [
     "custom/notification",
     "keyboard-state",
     "tray",
+    "privacy",
     "pulseaudio",
     "pulseaudio#microphone",
     "battery",

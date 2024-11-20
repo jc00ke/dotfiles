@@ -81,6 +81,8 @@ tooltip {
   color: @red;
 }
 
+#custom-notification,
+#privacy,
 #language,
 #custom-updates,
 #custom-weather,
