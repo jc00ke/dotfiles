@@ -8,7 +8,7 @@
 {
     "label" : "hibernate",
     "action" : "systemctl hibernate",
-    "text" : "Hibernate",
+    "text" : "Hibernate (H)",
     "keybind" : "h"
 }
 {
@@ -20,8 +20,8 @@
 {
     "label" : "shutdown",
     "action" : "systemctl poweroff",
-    "text" : "Shutdown (S)",
-    "keybind" : "s"
+    "text" : "Shutdown (Z)",
+    "keybind" : "z"
 }
 {
     "label" : "logout",
@@ -32,6 +32,6 @@
 {
     "label" : "suspend",
     "action" : "swaylock -f; sleep 0.2; systemctl suspend -i",
-    "text" : " Suspend (Z)",
-    "keybind" : "z"
+    "text" : " Suspend (S)",
+    "keybind" : "s"
 }
