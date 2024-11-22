@@ -41,10 +41,10 @@ shellspec = "0.28.1"
 shfmt = "3.7.0"
 sqlite = "3.45.0"
 steampipe = "0.22.2"
-stylua = "0.19.1"
 tailwindcss = "latest"
 usage = "1.0.0"
 yq = "4.40.5"
+stylua = "2.0.1"
 
 [settings]
 experimental = true
