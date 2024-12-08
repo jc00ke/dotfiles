@@ -1,5 +1,7 @@
 [include]
   path = ~/.gitconfig-rp.inc
+[includeIf "hasconfig:remote.*.url:*:jc00ke/**"]
+  path = ~/.gitconfig-rp.inc
 [includeIf "hasconfig:remote.*.url:*:RatioPBC/**"]
   path = ~/.gitconfig-ratio.inc
 [includeIf "hasconfig:remote.*.url:*:OpenResearchLab/**"]
