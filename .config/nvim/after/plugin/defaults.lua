@@ -6,12 +6,6 @@ vim.o.expandtab = true
 vim.o.splitright = true
 vim.o.splitbelow = true
 
-vim.wo.foldmethod = "expr"
-vim.wo.foldexpr = "v:lua.vim.treesitter.foldexpr()"
-vim.wo.foldcolumn = "1"
-vim.wo.foldnestmax = 3
-vim.wo.foldlevel = 99
-
 vim.keymap.set("n", "<leader>sr", require("telescope.builtin").resume, { desc = "[S]earch [R]esume" })
 
 local keymap = vim.keymap.set
