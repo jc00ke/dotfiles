@@ -58,7 +58,6 @@ sudo apt install -y \
   parallel \
   pkg-config \
   pspg \
-  regolith-look-ayu-dark \
   zlib1g-dev
 
 log "Updating the yadm repo origin URL"

@@ -1,5 +1,7 @@
 #!/bin/bash
 
+exit 0
+
 case "$(uname -s)" in
   Linux)
     echo "latest"
