@@ -34,11 +34,13 @@
     pkgs.fzf
     pkgs.jless
     pkgs.just
+    pkgs.nerd-fonts.jetbrains-mono
     pkgs.neovim
     pkgs.rage
     pkgs.ripgrep
     pkgs.rnr
     pkgs.rustywind
+    pkgs.sd
     pkgs.shellcheck
     pkgs.shfmt
     pkgs.shellspec
@@ -46,7 +48,9 @@
     pkgs.sqlite
     pkgs.starship
     pkgs.stylua
+    pkgs.swappy
     pkgs.tailwindcss
+    pkgs.tealdeer
     pkgs.xsv
     pkgs.yazi
     pkgs.yq-go
@@ -56,7 +60,7 @@
     # # overrides. You can do that directly here, just don't forget the
     # # parentheses. Maybe you want to install Nerd Fonts with a limited number of
     # # fonts?
-    # (pkgs.nerdfonts.override { fonts = [ "FantasqueSansMono" ]; })
+    # (pkgs.nerdfonts.override { fonts = [ "JetBrainsMono" ]; })
 
     # # You can also create simple shell scripts directly inside your
     # # configuration. For example, this adds a command 'my-hello' to your

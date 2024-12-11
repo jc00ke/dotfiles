@@ -2,7 +2,13 @@
 set -eox pipefail
 DIR="$(dirname "$(readlink -f "$0")")"
 
-source "$DIR/_helpers.sh"
+log() {
+  msg="$1"
+  echo "********************************************"
+  echo "$msg"
+  echo "********************************************"
+  echo ""
+}
 
 echo "Swap stable/bookworm for testing in /etc/apt/sources.list"
 exit 1
@@ -14,6 +20,7 @@ echo "Disabling sleeping via dconf"
 dconf write /org/gnome/settings-daemon/plugins/power/sleep-inactive-battery-type "'nothing'"
 
 sudo apt install -y \
+  apt-transport-https \
   autoconf \
   autopoint \
   bison \
@@ -22,9 +29,6 @@ sudo apt install -y \
   curl \
   exuberant-ctags \
   fish \
-  flatpak \
-  fonts-nerd-font-jetbrainsmono \
-  fonts-noto-color-emoji \
   git \
   git-doc \
   git-gui \
@@ -62,6 +66,17 @@ sudo apt install -y \
 
 log "Updating the yadm repo origin URL"
 yadm remote set-url origin "git@github.com:jc00ke/dotfiles.git"
+
+
+log "Install nix"
+sh <(curl -L https://nixos.org/nix/install) --no-daemon
+
+log "Install home-manager"
+nix-channel --add https://github.com/nix-community/home-manager/archive/master.tar.gz home-manager
+nix-channel --update
+nix-shell '<home-manager>' -A install
+
+home-manager switch
 
 chsh -s /usr/bin/fish
 
@@ -118,7 +133,12 @@ cat signal-desktop-keyring.gpg | sudo tee /usr/share/keyrings/signal-desktop-key
 
 echo 'deb [arch=amd64 signed-by=/usr/share/keyrings/signal-desktop-keyring.gpg] https://updates.signal.org/desktop/apt xenial main' | sudo tee /etc/apt/sources.list.d/signal-xenial.list
 
-sudo apt update && sudo apt install firefox 1password 1password-cli gh mise signal-desktop-beta -y
+log "Setting up Heroku"
 
-flatpak remote-add --if-not-exists flathub https://dl.flathub.org/repo/flathub.flatpakrepo
-flatpak install flathub org.gnome.Snapshot org.gnome.Loupe
+log "Add heroku repository to apt"
+echo "deb [arch=amd64 signed-by=/usr/share/keyrings/heroku-keyring.gpg] https://cli-assets.heroku.com/channels/stable/apt ./" > /etc/apt/sources.list.d/heroku.list
+
+log "Install heroku's release key for package verification"
+curl -s https://cli-assets.heroku.com/channels/stable/apt/release.key | gpg --dearmor | tee /usr/share/keyrings/heroku-keyring.gpg > /dev/null
+
+sudo apt update && sudo apt install firefox 1password 1password-cli gh mise signal-desktop-beta heroku -y
