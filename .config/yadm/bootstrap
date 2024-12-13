@@ -27,6 +27,32 @@ done
 sudo apt update
 sudo apt upgrade
 
+sudo apt remove \
+  firefox-esr \
+  aisleriot \
+  five-or-more \
+  four-in-a-row \
+  gnome-2048 \
+  gnome-chess \
+  hoichess \
+  gnome-klotski \
+  gnome-mines \
+  gnome-nibbles \
+  gnome-robots \
+  gnome-mahjong \
+  gnome-sudoku \
+  gnome-taquin \
+  gnome-tetravex \
+  hitori \
+  lightsoff \
+  libreoffice-calc \
+  libreoffice-draw \
+  libreoffice-impress \
+  libreoffice-writer \
+  quadrapassel \
+  swell-foop \
+  tali
+
 echo "Disabling sleeping via dconf"
 dconf write /org/gnome/settings-daemon/plugins/power/sleep-inactive-battery-type "'nothing'"
 
