@@ -11,7 +11,18 @@ log() {
 }
 
 echo "Swap stable/bookworm for testing in /etc/apt/sources.list"
-exit 1
+echo "Please enter 'testing' when you're done..."
+
+while true; do
+    # Read user input without displaying it
+    read -r input
+
+    # Check if input matches required string
+    if [ "$input" == "testing" ]; then
+        echo "Correct input received! Continuing..."
+        break
+    fi
+done
 
 sudo apt update
 sudo apt upgrade
