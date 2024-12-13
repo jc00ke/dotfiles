@@ -121,8 +121,6 @@ mkdir -p "$HOME/projects"
 mkdir -p "$HOME/src"
 cd "$HOME" || exit
 
-source "$DIR/_install.sh"
-
 log "Setting up firefox"
 sudo install -d -m 0755 /etc/apt/keyrings
 wget -q https://packages.mozilla.org/apt/repo-signing-key.gpg -O- | sudo tee /etc/apt/keyrings/packages.mozilla.org.asc > /dev/null
