@@ -1,10 +1,21 @@
-{ config, pkgs, ... }:
+{ config, pkgs, lib, ... }:
 
+# Home Manager needs a bit of information about you and the paths it should
+# manage.
+let
+ username = "jesse";
+in
 {
-  # Home Manager needs a bit of information about you and the paths it should
-  # manage.
-  home.username = "jesse";
-  home.homeDirectory = "/home/jesse";
+   home.username = username;
+   home.homeDirectory = let
+     homes = {
+       "x86_64-darwin" = "/Users/${username}";
+       "aarch64-darwin" = "/Users/${username}";
+       "x86_64-linux" = "/home/${username}";
+       "aarch64-linux" = "/home/${username}";
+     };
+   in
+     homes.${pkgs.stdenv.system} or (throw "Unsupported system: ${pkgs.stdenv.system}");
 
   # This value determines the Home Manager release that your configuration is
   # compatible with. This helps avoid breakage when a new Home Manager release
@@ -48,7 +59,6 @@
     pkgs.sqlite
     pkgs.starship
     pkgs.stylua
-    pkgs.swappy
     pkgs.tailwindcss
     pkgs.tealdeer
     pkgs.xsv
@@ -68,6 +78,9 @@
     # (pkgs.writeShellScriptBin "my-hello" ''
     #   echo "Hello, ${config.home.username}!"
     # '')
+  ] ++ lib.optionals pkgs.stdenv.isLinux [
+    pkgs.swappy
+  ] ++ lib.optionals pkgs.stdenv.isDarwin [
   ];
 
   # Home Manager is pretty good at managing dotfiles. The primary way to manage
