@@ -27,7 +27,7 @@ done
 sudo apt update
 sudo apt upgrade
 
-sudo apt remove \
+sudo apt remove -y \
   firefox-esr \
   aisleriot \
   five-or-more \
@@ -177,5 +177,4 @@ log "Install heroku's release key for package verification"
 curl -s https://cli-assets.heroku.com/channels/stable/apt/release.key | gpg --dearmor | tee /usr/share/keyrings/heroku-keyring.gpg > /dev/null
 
 sudo apt update && sudo apt install firefox 1password 1password-cli gh mise signal-desktop-beta heroku -y
-sudo apt autoremove
-sudo apt clean
+sudo apt autoremove -y
