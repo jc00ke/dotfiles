@@ -171,10 +171,10 @@ echo 'deb [arch=amd64 signed-by=/usr/share/keyrings/signal-desktop-keyring.gpg] 
 log "Setting up Heroku"
 
 log "Add heroku repository to apt"
-echo "deb [arch=amd64 signed-by=/usr/share/keyrings/heroku-keyring.gpg] https://cli-assets.heroku.com/channels/stable/apt ./" > /etc/apt/sources.list.d/heroku.list
+echo "deb [arch=amd64 signed-by=/usr/share/keyrings/heroku-keyring.gpg] https://cli-assets.heroku.com/channels/stable/apt ./" | sudo tee /etc/apt/sources.list.d/heroku.list
 
 log "Install heroku's release key for package verification"
-curl -s https://cli-assets.heroku.com/channels/stable/apt/release.key | gpg --dearmor | tee /usr/share/keyrings/heroku-keyring.gpg > /dev/null
+curl -s https://cli-assets.heroku.com/channels/stable/apt/release.key | gpg --dearmor | sudo tee /usr/share/keyrings/heroku-keyring.gpg > /dev/null
 
 sudo apt update && sudo apt install firefox 1password 1password-cli gh mise signal-desktop-beta heroku -y
 sudo apt autoremove -y
