@@ -1,6 +1,5 @@
 [tools]
 rust = "1.82.0"
-"cargo:wl-screenrec" ="{{ exec(command='mise-wl-screenrec') }}" 
 deno = "2.0.3"
 elixir = "1.17.2-otp-27"
 erlang = "27.0"
