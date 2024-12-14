@@ -39,7 +39,7 @@ sudo apt remove -y \
   gnome-mines \
   gnome-nibbles \
   gnome-robots \
-  gnome-mahjong \
+  gnome-mahjongg \
   gnome-sudoku \
   gnome-taquin \
   gnome-tetravex \
