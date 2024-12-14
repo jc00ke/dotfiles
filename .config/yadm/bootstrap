@@ -108,13 +108,6 @@ yadm remote set-url origin "git@github.com:jc00ke/dotfiles.git"
 log "Install nix"
 sh <(curl -L https://nixos.org/nix/install) --no-daemon
 
-log "Install home-manager"
-nix-channel --add https://github.com/nix-community/home-manager/archive/master.tar.gz home-manager
-nix-channel --update
-nix-shell '<home-manager>' -A install
-
-home-manager switch
-
 chsh -s /usr/bin/fish
 
 mkdir -p "$HOME/projects"
@@ -178,3 +171,8 @@ curl -s https://cli-assets.heroku.com/channels/stable/apt/release.key | gpg --de
 
 sudo apt update && sudo apt install firefox 1password 1password-cli gh mise signal-desktop-beta heroku -y
 sudo apt autoremove -y
+
+log "Install home-manager in a new terminal"
+echo "nix-channel --add https://github.com/nix-community/home-manager/archive/master.tar.gz home-manager"
+echo "nix-channel --update"
+echo "nix-shell '<home-manager>' -A install"
