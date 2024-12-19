@@ -1,8 +1,8 @@
 [tools]
 rust = "1.82.0"
 deno = "2.0.3"
-elixir = "1.17.2-otp-27"
-erlang = "27.0"
+elixir = "1.18.0"
+erlang = "27.2"
 lua = "5.4.6"
 node = "latest"
 python = "3.12.1"
