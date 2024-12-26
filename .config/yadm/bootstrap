@@ -63,6 +63,9 @@ sudo apt install -y \
   bison \
   build-essential \
   cmake \
+  clang \
+  clang-tidy \
+  clang-format \
   curl \
   exuberant-ctags \
   fish \
