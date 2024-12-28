@@ -43,6 +43,9 @@ keymap("n", "<leader>cl", [[:let @+=expand("%:p")<cr>]], { noremap = true }) -- 
 keymap("n", "<leader>fn", [[:let @"=expand("%")<cr>]], { noremap = true })   -- yank file name
 keymap("n", "<leader>cs", [[:let @+=expand("%")<cr>]], { noremap = true })   -- copy file name to clipboard
 
+keymap("n", "<M-j>", [[<cmd>cnext<cr>]], { noremap = true })
+keymap("n", "<M-k>", [[<cmd>cprev<cr>]], { noremap = true })
+
 -- Move text up and down
 keymap("v", "<A-j>", ":m .+1<cr>==", opts)
 keymap("v", "<A-k>", ":m .-2<cr>==", opts)
