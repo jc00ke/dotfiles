@@ -1,0 +1,6 @@
+[theme]
+name = "solarized-light"
+parent = "solarized-dark"
+
+[colors]
+Base = "#657b83" # base00: default foreground color

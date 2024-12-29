@@ -1,0 +1,12 @@
+[theme]
+name = "solarized-dark"
+
+[colors]
+AlertInfo = "#268bd2" # blue: alerting the user at an INFO level
+AlertWarn = "#cb4b16" # orange: alerting the user at a WARN level
+AlertError = "#dc322f" # red: alerting the user at an ERROR level
+Annotation = "#2aa198" # cyan: less-critical, supporting text
+Base = "#839496" # base0: default foreground color
+Guidance = "#6c71c4" # violet: instructing the user as help or context
+Important = "#b58900" # yellow: drawing the user’s attention to information
+Title = "#d33682" # magenta: titling a section or view
