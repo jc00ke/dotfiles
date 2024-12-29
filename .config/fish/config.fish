@@ -38,9 +38,9 @@ set -e fish_user_abbreviations
 
 abbr -a .. "cd .."
 abbr -a ... "cd ../.."
-abbr -a "u^" "sudo apt update; apt list --upgradable"
-abbr -a u! "sudo apt upgrade -y"
-abbr -a u- "sudo apt autoremove -y"
+abbr -a "u^" "sudo-rs apt update; apt list --upgradable"
+abbr -a u! "sudo-rs apt upgrade -y"
+abbr -a u- "sudo-rs apt autoremove -y"
 abbr -a b "bundle exec"
 abbr -a cat "bat"
 abbr -a cdr "cd .. and cd -"
