@@ -1,13 +1,13 @@
 [tools]
-rust = "1.82.0"
-deno = "2.0.3"
-elixir = "1.18.0"
+rust = "1.83.0"
+deno = "2.1.4"
+elixir = "1.18.1"
 erlang = "27.2"
-lua = "5.4.6"
+lua = "5.4.7"
 node = "latest"
-python = "3.12.1"
-ruby = "3.3.1"
-usage = "1.4.1"
+python = "3.13.1"
+ruby = "3.4.1"
+usage = "latest"
 
 [settings]
 experimental = true
