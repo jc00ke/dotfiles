@@ -3,14 +3,23 @@
 # Home Manager needs a bit of information about you and the paths it should
 # manage.
 let
- username = "jesse";
+  username = "jesse";
+  vgaOutput = builtins.readFile (pkgs.runCommand "gpu-check" {} ''
+   ${pkgs.pciutils}/bin/lspci > $out
+  '');
+  offloadWrapper = if builtins.match ".*VGA.*Intel.*" vgaOutput != null
+    then "intel"
+  else if builtins.match ".*VGA.*Radeon.*" vgaOutput != null
+    then "radeon"
+  else
+    null;
 in
 {
    # https://github.com/nix-community/nixGL?tab=readme-ov-file#nix-channel-recommended
    # nix-channel --add https://github.com/nix-community/nixGL/archive/main.tar.gz nixgl && nix-channel --update
    nixGL.packages = import <nixgl> { inherit pkgs; };
    nixGL.defaultWrapper = "mesa";
-   nixGL.offloadWrapper = "intel";
+   nixGL.offloadWrapper = offloadWrapper;
 
    home.username = username;
    home.homeDirectory = let
