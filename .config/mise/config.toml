@@ -1,7 +1,7 @@
 [tools]
 rust = "1.83.0"
 deno = "2.1.4"
-elixir = "1.18.1"
+elixir = "1.18.1-otp-27"
 erlang = "27.2"
 lua = "5.4.7"
 node = "latest"
