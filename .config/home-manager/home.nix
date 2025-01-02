@@ -6,6 +6,12 @@ let
  username = "jesse";
 in
 {
+   # https://github.com/nix-community/nixGL?tab=readme-ov-file#nix-channel-recommended
+   # nix-channel --add https://github.com/nix-community/nixGL/archive/main.tar.gz nixgl && nix-channel --update
+   nixGL.packages = import <nixgl> { inherit pkgs; };
+   nixGL.defaultWrapper = "mesa";
+   nixGL.offloadWrapper = "intel";
+
    home.username = username;
    home.homeDirectory = let
      homes = {
@@ -33,6 +39,7 @@ in
     # # "Hello, world!" when run.
     # pkgs.hello
     pkgs.aws-vault
+    pkgs.b3sum
     pkgs.bat
     pkgs.delta
     pkgs.direnv
@@ -122,4 +129,72 @@ in
 
   # Let Home Manager install and manage itself.
   programs.home-manager.enable = true;
+
+  # https://nix-community.github.io/home-manager/index.xhtml#sec-usage-gpu-non-nixos
+  programs.ghostty = {
+    enable = true;
+    package = config.lib.nixGL.wrap pkgs.ghostty;
+  };
+
+  # https://github.com/ghostty-org/ghostty/discussions/3763#discussioncomment-11699970
+  xdg.desktopEntries."com.mitchellh.ghostty" = {
+    name = "Ghostty";
+    type = "Application";
+    comment = "A terminal emulator";
+    exec = "ghostty";
+    icon = "com.mitchellh.ghostty";
+    terminal = false;
+    startupNotify = true;
+    categories = [ "System" "TerminalEmulator" ];
+    settings = {
+      Keywords = "terminal;tty;pty;";
+      X-GNOME-UsesNotifications = "true";
+      X-TerminalArgExec = "-e";
+      X-TerminalArgTitle = "--title=";
+      X-TerminalArgAppId = "--class=";
+      X-TerminalArgDir = "--working-directory=";
+      X-TerminalArgHold = "--wait-after-command";
+    };
+    actions = {
+      new-window = {
+        name = "New Window";
+        exec = "ghostty";
+      };
+    };
+  };
+
+  # https://discourse.nixos.org/t/apps-installed-via-home-manager-are-not-visible-within-gnome/48252/2
+  home.activation.copyDesktopFiles = lib.hm.dag.entryAfter ["installPackages"] ''
+    if [ "$XDG_CURRENT_DESKTOP" = "GNOME" ]; then
+
+      mkdir -p "${config.home.homeDirectory}/.local/share/applications"
+
+      if [ -d "${config.home.homeDirectory}/.local/share/applications/nix" ]; then
+        rm -rf "${config.home.homeDirectory}/.local/share/applications/nix"
+      fi
+
+      ln -sf "${config.home.homeDirectory}/.nix-profile/share/applications" \
+        ${config.home.homeDirectory}/.local/share/applications/nix
+
+      mkdir -p "${config.home.homeDirectory}/.local/share/icons"
+
+      if [ -d "${config.home.homeDirectory}/.local/share/icons/nix" ]; then
+        rm -rf "${config.home.homeDirectory}/.local/share/icons/nix"
+      fi
+
+      ln -sf "${config.home.homeDirectory}/.nix-profile/share/icons" \
+        ${config.home.homeDirectory}/.local/share/icons/nix
+
+    fi
+  '';
+
+  # https://wiki.nixos.org/wiki/GNOME
+  # https://hoverbear.org/blog/declarative-gnome-configuration-in-nixos/#setting-gnome-options
+  dconf.settings = {
+    "org/gnome/settings-daemon/plugins/media-keys/custom-keybindings/custom0" = {
+      "binding" = "<Super>Return";
+      "command" = "ghostty";
+      "name" = "Terminal";
+    };
+  };
 }
