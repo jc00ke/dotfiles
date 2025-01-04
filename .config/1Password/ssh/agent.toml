@@ -31,16 +31,16 @@
 
 [[ssh-keys]]
 # Private git signing key
-Item = "yxcgrl5laydm7bv525yd5e2wy4"
+item = "yxcgrl5laydm7bv525yd5e2wy4"
 
 [[ssh-keys]]
 # Private ssh auth key
-Item = "5zd33ziy6o6lfhipmzkmpqbkbi"
+item = "5zd33ziy6o6lfhipmzkmpqbkbi"
 
 [[ssh-keys]]
 # Ratio git signing key
-Item = "b3qazzniyh2gbmohqvzai4or3i"
+item = "b3qazzniyh2gbmohqvzai4or3i"
 
 [[ssh-keys]]
 # Ratio ssh auth key
-Item = "5p7b4msfv6vbwjxizdzvxqdhe4"
+item = "5p7b4msfv6vbwjxizdzvxqdhe4"
