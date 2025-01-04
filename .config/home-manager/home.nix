@@ -205,5 +205,8 @@ in
       "command" = "ghostty";
       "name" = "Terminal";
     };
+    "org/gnome/settings-daemon/plugins/media-keys/www" = {
+      "binding" = "['<Shift><Super>Return']";
+    };
   };
 }
