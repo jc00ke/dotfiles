@@ -106,7 +106,7 @@ sudo-rs apt install -y \
   zlib1g-dev
 
 log "Updating the yadm repo origin URL"
-yadm remote set-url origin "git@github.com:jc00ke/dotfiles.git"
+yadm remote set-url origin "rp-github:jc00ke/dotfiles.git"
 
 
 log "Install nix"
