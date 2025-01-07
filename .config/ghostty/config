@@ -1,1 +1,2 @@
-theme = Builtin Solarized Dark
+theme = Builtin Solarized Light
+window-decoration=false
