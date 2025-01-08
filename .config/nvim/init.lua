@@ -316,6 +316,7 @@ require("nvim-treesitter.configs").setup({
     "go",
     "heex",
     "hurl",
+    "just",
     "lua",
     "python",
     "rust",
