@@ -1,2 +1,6 @@
 theme = Builtin Solarized Light
-window-decoration=false
+
+keybind = ctrl+h=goto_split:left
+keybind = ctrl+l=goto_split:right
+keybind = ctrl+j=goto_split:bottom
+keybind = ctrl+k=goto_split:top
