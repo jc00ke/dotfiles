@@ -71,6 +71,7 @@ in
     pkgs.shellcheck
     pkgs.shfmt
     pkgs.shellspec
+    pkgs.sleek
     pkgs.srgn
     pkgs.sqlite
     pkgs.starship
