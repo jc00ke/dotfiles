@@ -20,6 +20,7 @@ return {
 		formatters_by_ft = {
 			css = { "prettierd", "prettier", stop_after_first = true },
 			eelixir = { "mix", "rustywind" },
+			go = { "goimports", "gofumpt" },
 			heex = { "mix", "rustywind" },
 			html = { "superhtml" },
 			javascript = { "deno_fmt", stop_after_first = true },
