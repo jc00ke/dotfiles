@@ -24,6 +24,7 @@ return {
 			heex = { "mix", "rustywind" },
 			html = { "superhtml" },
 			javascript = { "deno_fmt", stop_after_first = true },
+			json = { "deno_fmt" },
 			jsonc = { "deno_fmt" },
 			-- javascript = { "deno_fmt", "prettierd", "prettier", stop_after_first = true },
 			just = { "just" },
