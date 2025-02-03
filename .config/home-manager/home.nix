@@ -53,6 +53,7 @@ in
     pkgs.delta
     pkgs.direnv
     pkgs.difftastic
+    pkgs.duckdb
     pkgs.duf
     pkgs.eza
     pkgs.fastmod
@@ -78,7 +79,6 @@ in
     pkgs.stylua
     pkgs.tailwindcss
     pkgs.tealdeer
-    pkgs.xsv
     pkgs.yazi
     pkgs.yq-go
     pkgs.zoxide
