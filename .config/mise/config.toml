@@ -18,6 +18,7 @@ usage = "latest"
 "ubi:wilfred/difftastic" = { version = "latest", exe = "difft" }
 "asdf:mise-plugins/mise-eza" = "latest"
 "ubi:sharkdp/bat" = "latest"
+"aqua:neovim/neovim" = "latest"
 
 [settings]
 experimental = true
