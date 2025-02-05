@@ -6,8 +6,18 @@ erlang = "27.2"
 lua = "5.4.7"
 node = "latest"
 python = "3.13.1"
-ruby = "3.4.1"
 usage = "latest"
+
+"ubi:direnv/direnv" = "latest"
+"ubi:starship/starship" = "latest"
+"ubi:ajeetdsouza/zoxide" = "latest"
+"aqua:1password/cli" = "2.30.0"
+"aqua:atuinsh/atuin" = "latest"
+"aqua:BurntSushi/ripgrep" = "latest"
+"ubi:cli/cli" = { version = "latest", exe = "gh" }
+"ubi:wilfred/difftastic" = { version = "latest", exe = "difft" }
+"asdf:mise-plugins/mise-eza" = "latest"
+"ubi:sharkdp/bat" = "latest"
 
 [settings]
 experimental = true

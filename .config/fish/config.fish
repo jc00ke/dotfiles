@@ -103,9 +103,6 @@ if test -f "$HOME/.config/op/plugins.sh"
   source "$HOME/.config/op/plugins.sh"
 end
 
-set -gx ATUIN_NOBIND "true"
-atuin init fish | source
-
 # bind to ctrl-r in normal and insert mode, add any other bindings you want here too
 bind \cr _atuin_search
 bind -M insert \cr _atuin_search
@@ -115,6 +112,9 @@ mise hook-env | source
 mise exec -- direnv hook fish | source
 mise exec -- starship init fish | source
 mise exec -- zoxide init fish | source
+
+set -gx ATUIN_NOBIND "true"
+mise exec -- atuin init fish | source
 
 if command -v yazi > /dev/null
   abbr -a yy "yazi"

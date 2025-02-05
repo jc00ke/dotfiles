@@ -49,13 +49,9 @@ in
     # pkgs.hello
     pkgs.aws-vault
     pkgs.b3sum
-    pkgs.bat
     pkgs.delta
-    pkgs.direnv
-    pkgs.difftastic
     pkgs.duckdb
     pkgs.duf
-    pkgs.eza
     pkgs.fastmod
     pkgs.fd
     pkgs.fx
@@ -65,7 +61,6 @@ in
     pkgs.nerd-fonts.jetbrains-mono
     pkgs.neovim
     pkgs.rage
-    pkgs.ripgrep
     pkgs.rnr
     pkgs.rustywind
     pkgs.sd
@@ -75,13 +70,11 @@ in
     pkgs.sleek
     pkgs.srgn
     pkgs.sqlite
-    pkgs.starship
     pkgs.stylua
     pkgs.tailwindcss
     pkgs.tealdeer
     pkgs.yazi
     pkgs.yq-go
-    pkgs.zoxide
 
     # # It is sometimes useful to fine-tune packages, for example, by applying
     # # overrides. You can do that directly here, just don't forget the
