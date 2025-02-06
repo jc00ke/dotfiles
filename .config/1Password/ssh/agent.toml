@@ -44,3 +44,7 @@ item = "b3qazzniyh2gbmohqvzai4or3i"
 [[ssh-keys]]
 # Ratio ssh auth key
 item = "5p7b4msfv6vbwjxizdzvxqdhe4"
+
+[[ssh-keys]]
+# MO ssh auth key
+item = "MO SSH auth key"
