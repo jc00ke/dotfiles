@@ -7,7 +7,7 @@ set -x TERMINAL "foot"
 set -x fish_greeting ''
 set -x EDITOR "nvim"
 set -x MANROFFOPT "-c"
-set -x MANPAGER "sh -c 'col -bx | bat -l man -p'"
+set -x MANPAGER "sh -c 'sed -u -e \"s/\\x1B\[[0-9;]*m//g; s/.\\x08//g\" | bat -p -lman'"
 set -x ERL_AFLAGS "-kernel shell_history enabled"
 set -x KERL_BUILD_DOCS "yes"
 set -x XDG_SESSION_TYPE "wayland"
