@@ -11,7 +11,6 @@ usage = "latest"
 "ubi:direnv/direnv" = "latest"
 "ubi:starship/starship" = "latest"
 "ubi:ajeetdsouza/zoxide" = "latest"
-"aqua:1password/cli" = "2.30.0"
 "aqua:atuinsh/atuin" = "latest"
 "aqua:BurntSushi/ripgrep" = "latest"
 "ubi:cli/cli" = { version = "latest", exe = "gh" }
