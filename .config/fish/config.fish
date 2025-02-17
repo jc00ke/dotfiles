@@ -80,6 +80,8 @@ abbr -a open "xdg-open"
 abbr -a wgu "sudo wg-quick up (hostname)"
 abbr -a wgd "sudo wg-quick down (hostname)"
 
+abbr -a mr "mise run"
+
 function oops
   eval command sudo $history[1]
 end
