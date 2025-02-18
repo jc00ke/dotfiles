@@ -32,6 +32,7 @@ return {
 		log_level = vim.log.levels.DEBUG,
 		-- Define your formatters
 		formatters_by_ft = {
+			bash = { "shfmt" },
 			css = { "prettierd", "prettier", stop_after_first = true },
 			eelixir = { "mix", "rustywind" },
 			go = { "goimports", "gofumpt" },
@@ -45,6 +46,7 @@ return {
 			lua = { "stylua" },
 			nix = { "alejandra", "nix_fmt", stop_after_first = true },
 			python = { "isort", "black" },
+			sh = { "shfmt" },
 			sql = { "sleek", "sqlfluff" },
 			terraform = { "terraform_fmt" },
 			typescript = { "deno_fmt" },
