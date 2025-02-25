@@ -1,5 +1,5 @@
 [tools]
-rust = "1.83.0"
+rust = "1.85.0"
 deno = "2.1.4"
 elixir = "1.18.1-otp-27"
 erlang = "27.2"
