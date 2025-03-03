@@ -11,8 +11,6 @@
 	path = config-ratio.inc
 [format]
 	pretty="format:%C(yellow)%h%Creset %C(magenta bold)%aN%Creset%C(blue) %ad%Creset %s"
-; [push]
-;   default = current
 [branch]
 	autosetuprebase = always
 [alias]
@@ -61,16 +59,6 @@
 [gpg "ssh"]
 	program = /opt/1Password/op-ssh-sign
 	allowedSignersFile = ~/.ssh/allowed_signers
-; [diff]
-;   external = difft
-; [merge]
-;   conflictstyle = diff3
-; [diff]
-;   tool = difftastic
-; [difftool]
-;   prompt = false
-; [difftool "difftastic"]
-;   cmd = difft "$LOCAL" "$REMOTE"
 [pager]
 	difftool = true
 [pull]
