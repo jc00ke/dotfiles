@@ -1,14 +1,14 @@
 [include]
-	path = ~/.gitconfig-rp.inc
+	path = config-rp.inc
 [includeIf "hasconfig:remote.*.url:*:jc00ke/**"]
-	path = ~/.gitconfig-rp.inc
+	path = config-rp.inc
 [includeIf "hasconfig:remote.*.url:*:RatioPBC/**"]
-	path = ~/.gitconfig-ratio.inc
+	path = config-ratio.inc
 [includeIf "hasconfig:remote.*.url:*:OpenResearchLab/**"]
-	path = ~/.gitconfig-ratio.inc
+	path = config-ratio.inc
 ; include for all repositories inside $HOME/to/group
 [includeIf "gitdir:~/projects/ratio/"]
-	path = ~/.gitconfig-ratio.inc
+	path = config-ratio.inc
 [format]
 	pretty="format:%C(yellow)%h%Creset %C(magenta bold)%aN%Creset%C(blue) %ad%Creset %s"
 ; [push]
