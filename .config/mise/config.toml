@@ -43,6 +43,7 @@ usage = "latest"
 "ubi:avencera/rustywind" = "latest"
 "ubi:cli/cli" = { version = "latest", exe = "gh" }
 "ubi:tailwindlabs/tailwindcss" = "latest"
+"ubi:theseus-rs/rsql" = "latest"
 
 [settings]
 experimental = true
