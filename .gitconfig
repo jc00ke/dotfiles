@@ -1,66 +1,66 @@
 [include]
-  path = ~/.gitconfig-rp.inc
+	path = ~/.gitconfig-rp.inc
 [includeIf "hasconfig:remote.*.url:*:jc00ke/**"]
-  path = ~/.gitconfig-rp.inc
+	path = ~/.gitconfig-rp.inc
 [includeIf "hasconfig:remote.*.url:*:RatioPBC/**"]
-  path = ~/.gitconfig-ratio.inc
+	path = ~/.gitconfig-ratio.inc
 [includeIf "hasconfig:remote.*.url:*:OpenResearchLab/**"]
-  path = ~/.gitconfig-ratio.inc
+	path = ~/.gitconfig-ratio.inc
 ; include for all repositories inside $HOME/to/group
 [includeIf "gitdir:~/projects/ratio/"]
-  path = ~/.gitconfig-ratio.inc
+	path = ~/.gitconfig-ratio.inc
 [format]
-  pretty="format:%C(yellow)%h%Creset %C(magenta bold)%aN%Creset%C(blue) %ad%Creset %s"
+	pretty="format:%C(yellow)%h%Creset %C(magenta bold)%aN%Creset%C(blue) %ad%Creset %s"
 ; [push]
 ;   default = current
 [branch]
-  autosetuprebase = always
+	autosetuprebase = always
 [alias]
-  a = add
-  amend = commit --amend -C HEAD # amend to the last commit
-  authors = shortlog -s -n --all --no-merges
-  b = branch
-  c = commit
-  cl = clone
-  co = checkout
-  cp = cherry-pick
-  d = diff
-  fp = force-push
-  force-push = "push --force-with-lease"
-  m = merge
-  p = push --follow-tags
-  pr = pull-request # shorten up pull-request
-  pu = pull
-  r = reset
-  rewrite-last = rebase -i HEAD^ # rewrite last commit msg
-  rw = rewrite-last
-  ri = rebase --interactive --autosquash # interactive rebase
-  s = status
-  serve = daemon --verbose --export-all --base-path=.git --reuseaddr --strict-paths .git/
-  staged = diff --cached # diff the index against the previous commit
-  update-remotes = remote update --prune # update all remotes, pruning removed tracking branches
+	a = add
+	amend = commit --amend -C HEAD # amend to the last commit
+	authors = shortlog -s -n --all --no-merges
+	b = branch
+	c = commit
+	cl = clone
+	co = checkout
+	cp = cherry-pick
+	d = diff
+	fp = force-push
+	force-push = "push --force-with-lease"
+	m = merge
+	p = push --follow-tags
+	pr = pull-request # shorten up pull-request
+	pu = pull
+	r = reset
+	rewrite-last = rebase -i HEAD^ # rewrite last commit msg
+	rw = rewrite-last
+	ri = rebase --interactive --autosquash # interactive rebase
+	s = status
+	serve = daemon --verbose --export-all --base-path=.git --reuseaddr --strict-paths .git/
+	staged = diff --cached # diff the index against the previous commit
+	update-remotes = remote update --prune # update all remotes, pruning removed tracking branches
 [core]
-  excludesfile = ~/.gitignore
-  autocrlf = input
+	excludesfile = ~/.gitignore
+	autocrlf = input
 [color]
-  ui = true
+	ui = true
 [color "branch"]
-  current = cyan reverse
-  local = yellow
-  remote = green
+	current = cyan reverse
+	local = yellow
+	remote = green
 [color "status"]
-  added = yellow
-  changed = green
-  untracked = cyan
+	added = yellow
+	changed = green
+	untracked = cyan
 [commit]
-  gpgsign = true
+	gpgsign = true
 [init]
-  defaultBranch = main
+	defaultBranch = main
 [gpg]
-  format = ssh
+	format = ssh
 [gpg "ssh"]
-  program = /opt/1Password/op-ssh-sign
-  allowedSignersFile = ~/.ssh/allowed_signers
+	program = /opt/1Password/op-ssh-sign
+	allowedSignersFile = ~/.ssh/allowed_signers
 ; [diff]
 ;   external = difft
 ; [merge]
@@ -72,7 +72,7 @@
 ; [difftool "difftastic"]
 ;   cmd = difft "$LOCAL" "$REMOTE"
 [pager]
-  difftool = true
+	difftool = true
 [pull]
 	rebase = true
 
@@ -80,47 +80,47 @@
 ; clearly makes git better
 
 [column]
-        ui = auto
+	ui = auto
 [branch]
-        sort = -committerdate
+	sort = -committerdate
 [tag]
-        sort = version:refname
+	sort = version:refname
 [diff]
-        algorithm = histogram
-        colorMoved = plain
-        mnemonicPrefix = true
-        renames = true
+	algorithm = histogram
+	colorMoved = plain
+	mnemonicPrefix = true
+	renames = true
 [push]
-        default = simple
-        autoSetupRemote = true
-        followTags = true
+	default = simple
+	autoSetupRemote = true
+	followTags = true
 [fetch]
-        prune = true
-        pruneTags = true
-        all = true
+	prune = true
+	pruneTags = true
+	all = true
 
 # why the hell not?
 
 [help]
-        autocorrect = prompt
+	autocorrect = prompt
 [commit]
-        verbose = true
+	verbose = true
 [rerere]
-        enabled = true
-        autoupdate = true
+	enabled = true
+	autoupdate = true
 [rebase]
-        autoSquash = true
-        autoStash = true
-        updateRefs = true
+	autoSquash = true
+	autoStash = true
+	updateRefs = true
 
 # a matter of taste (uncomment if you dare)
 
 [core]
-        # fsmonitor = true
-        # untrackedCache = true
+	# fsmonitor = true
+	# untrackedCache = true
 [merge]
-        # (just 'diff3' if git version < 2.3)
-        conflictstyle = zdiff3 
+	# (just 'diff3' if git version < 2.3)
+	conflictstyle = zdiff3 
 [pull]
-        # rebase = true
+	# rebase = true
 
