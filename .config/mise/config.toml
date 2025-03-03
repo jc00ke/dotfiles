@@ -15,13 +15,11 @@ usage = "latest"
 "aqua:BurntSushi/ripgrep" = "latest"
 "aqua:JohnnyMorganz/StyLua" = { version = "latest", exe = "stylua" }
 "aqua:PaulJuliusMartinez/jless" = "latest"
-"aqua:Wilfred/difftastic" = { version = "latest", exe = "difft" }
 "aqua:ajeetdsouza/zoxide" = "latest"
 "aqua:antonmedv/fx" = "latest"
 "aqua:atuinsh/atuin" = "latest"
 "aqua:casey/just" = "latest"
 "aqua:chmln/sd" = "latest"
-"aqua:dandavison/delta" = "latest"
 "aqua:direnv/direnv" = "latest"
 "aqua:eza-community/eza" = "latest"
 "aqua:ismaelgv/rnr" = "latest"
