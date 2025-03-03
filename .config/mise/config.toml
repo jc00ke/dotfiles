@@ -1,23 +1,48 @@
 [tools]
-rust = "1.85.0"
 deno = "2.1.4"
+duckdb = "latest"
 elixir = "1.18.1-otp-27"
 erlang = "27.2"
+go = "1.24.0"
 lua = "5.4.7"
 node = "latest"
 python = "3.13.1"
+rust = "1.85.0"
+sqlite = "latest"
 usage = "latest"
 
-"ubi:direnv/direnv" = "latest"
-"ubi:starship/starship" = "latest"
-"ubi:ajeetdsouza/zoxide" = "latest"
-"aqua:atuinsh/atuin" = "latest"
+"aqua:99designs/aws-vault" = "latest"
 "aqua:BurntSushi/ripgrep" = "latest"
-"ubi:cli/cli" = { version = "latest", exe = "gh" }
-"ubi:wilfred/difftastic" = { version = "latest", exe = "difft" }
+"aqua:JohnnyMorganz/StyLua" = { version = "latest", exe = "stylua" }
+"aqua:PaulJuliusMartinez/jless" = "latest"
+"aqua:Wilfred/difftastic" = { version = "latest", exe = "difft" }
+"aqua:ajeetdsouza/zoxide" = "latest"
+"aqua:antonmedv/fx" = "latest"
+"aqua:atuinsh/atuin" = "latest"
+"aqua:casey/just" = "latest"
+"aqua:chmln/sd" = "latest"
+"aqua:dandavison/delta" = "latest"
+"aqua:direnv/direnv" = "latest"
+"aqua:eza-community/eza" = "latest"
+"aqua:ismaelgv/rnr" = "latest"
+"aqua:junegunn/fzf" = "latest"
+"aqua:koalaman/shellcheck" = "latest"
+"aqua:mikefarah/yq" = "latest"
+"aqua:muesli/duf" = "latest"
+"aqua:mvdan/sh" = "latest"
+"aqua:neovim/neovim" = "0.10.4"
+"aqua:sharkdp/bat" = "latest"
+"aqua:sharkdp/fd" = "latest"
+"aqua:shellspec/shellspec" = "latest"
+"aqua:starship/starship" = "latest"
+"aqua:sxyazi/yazi" = "latest"
+"aqua:tealdeer-rs/tealdeer" = "latest"
 "asdf:mise-plugins/mise-eza" = "latest"
-"ubi:sharkdp/bat" = "latest"
-"aqua:neovim/neovim" = "latest"
+"ubi:BLAKE3-team/BLAKE3" = { version = "latest", exe = "BLAKE3", rename_exe = "b3sum" }
+"ubi:FiloSottile/age" = "latest"
+"ubi:avencera/rustywind" = "latest"
+"ubi:cli/cli" = { version = "latest", exe = "gh" }
+"ubi:tailwindlabs/tailwindcss" = "latest"
 
 [settings]
 experimental = true

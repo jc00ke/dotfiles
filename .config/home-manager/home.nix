@@ -47,34 +47,7 @@ in
     # # Adds the 'hello' command to your environment. It prints a friendly
     # # "Hello, world!" when run.
     # pkgs.hello
-    pkgs.aws-vault
-    pkgs.b3sum
-    pkgs.delta
-    pkgs.duckdb
-    pkgs.duf
-    pkgs.fastmod
-    pkgs.fd
-    pkgs.fx
-    pkgs.fzf
-    pkgs.jless
-    pkgs.just
     pkgs.nerd-fonts.jetbrains-mono
-    pkgs.neovim
-    pkgs.rage
-    pkgs.rnr
-    pkgs.rustywind
-    pkgs.sd
-    pkgs.shellcheck
-    pkgs.shfmt
-    pkgs.shellspec
-    pkgs.sleek
-    pkgs.srgn
-    pkgs.sqlite
-    pkgs.stylua
-    pkgs.tailwindcss
-    pkgs.tealdeer
-    pkgs.yazi
-    pkgs.yq-go
 
     # # It is sometimes useful to fine-tune packages, for example, by applying
     # # overrides. You can do that directly here, just don't forget the
