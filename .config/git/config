@@ -1,3 +1,4 @@
+# vi: ft=gitconfig
 [include]
 	path = config-rp.inc
 [includeIf "hasconfig:remote.*.url:*:jc00ke/**"]
