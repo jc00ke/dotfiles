@@ -1,10 +1,10 @@
 return {
 	{
-		"ishan9299/nvim-solarized-lua",
-		priority = 999,
-		config = function()
-			vim.cmd.colorscheme("solarized")
-		end,
+		"Mofiqul/adwaita.nvim",
 		lazy = false,
+		priority = 1000,
+		config = function()
+			vim.cmd.colorscheme("adwaita")
+		end
 	},
 }

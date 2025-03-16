@@ -1,4 +1,5 @@
-theme = Builtin Solarized Light
+theme = Adwaita
+font-family = "0xProto"
 
 keybind = alt+shift+h=goto_split:left
 keybind = alt+shift+l=goto_split:right
