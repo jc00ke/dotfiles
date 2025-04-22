@@ -47,6 +47,7 @@ sudo-rs apt remove -y \
   hitori \
   lightsoff \
   libreoffice-calc \
+  libreoffice-common \
   libreoffice-draw \
   libreoffice-impress \
   libreoffice-writer \
