@@ -182,5 +182,6 @@ sudo-rs apt update && sudo-rs apt install firefox 1password 1password-cli gh mis
 
 log "Install home-manager in a new terminal"
 echo "nix-channel --add https://github.com/nix-community/home-manager/archive/master.tar.gz home-manager"
+echo "nix-channel --add https://github.com/nix-community/nixGL/archive/main.tar.gz nixgl"
 echo "nix-channel --update"
 echo "nix-shell '<home-manager>' -A install"
