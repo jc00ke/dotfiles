@@ -460,7 +460,7 @@ local servers = {
       },
     },
   },
-  ruby_lsp = {},
+  -- ruby_lsp = {},
   tailwindcss = {
     filetypes = { "html", "elixir", "eelixir", "heex" },
     init_options = {
