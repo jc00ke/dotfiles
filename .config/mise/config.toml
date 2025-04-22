@@ -1,7 +1,7 @@
 [tools]
 deno = "2.1.4"
 duckdb = "latest"
-elixir = "1.18.1-otp-27"
+elixir = "1.18.3-otp-27"
 erlang = "27.2"
 go = "1.24.0"
 lua = "5.4.7"
