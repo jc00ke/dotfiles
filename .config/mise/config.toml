@@ -41,6 +41,8 @@ usage = "latest"
 "ubi:cli/cli" = { version = "latest", exe = "gh" }
 "ubi:tailwindlabs/tailwindcss" = "latest"
 "ubi:theseus-rs/rsql" = "latest"
+cosign = "latest"
+"aqua:exercism/cli" = "latest"
 
 [settings]
 experimental = true
