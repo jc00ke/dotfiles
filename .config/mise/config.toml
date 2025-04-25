@@ -10,6 +10,7 @@ python = "3.13.1"
 rust = "1.85.0"
 sqlite = "latest"
 usage = "latest"
+zig = "latest"
 
 "aqua:99designs/aws-vault" = "latest"
 "aqua:BurntSushi/ripgrep" = "latest"
