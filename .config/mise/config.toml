@@ -47,3 +47,5 @@ cosign = "latest"
 
 [settings]
 experimental = true
+always_keep_download = true
+always_keep_install = true
