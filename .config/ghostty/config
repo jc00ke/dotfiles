@@ -6,3 +6,4 @@ keybind = alt+shift+h=goto_split:left
 keybind = alt+shift+l=goto_split:right
 keybind = alt+shift+j=goto_split:bottom
 keybind = alt+shift+k=goto_split:top
+keybind = shift+enter=text:\n
