@@ -42,6 +42,7 @@ zig = "latest"
 "ubi:cli/cli" = { version = "latest", exe = "gh" }
 "ubi:tailwindlabs/tailwindcss" = "latest"
 "ubi:theseus-rs/rsql" = "latest"
+"ubi:gitlab-org/cli" = { version = "latest", exe = "glab", provider = "gitlab" }
 cosign = "latest"
 "aqua:exercism/cli" = "latest"
 
