@@ -111,7 +111,6 @@ bind -M insert \cr _atuin_search
 
 mise activate fish | source
 mise hook-env | source
-mise exec -- direnv hook fish | source
 mise exec -- starship init fish | source
 mise exec -- zoxide init fish | source
 
