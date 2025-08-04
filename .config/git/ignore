@@ -63,7 +63,6 @@ scratch.txt
 ##########
 .elixir_ls/
 
-
 # Claude #
 ##########
 **/.claude/settings.local.json
