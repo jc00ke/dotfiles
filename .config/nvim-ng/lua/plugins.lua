@@ -22,14 +22,6 @@ return {
       },
     },
   },
-  -- Fuzzy Finder (files, lsp, etc)
-  {
-    "nvim-telescope/telescope.nvim",
-    version = "*",
-    dependencies = { "nvim-lua/plenary.nvim" },
-  },
-
-
   {
     -- Highlight, edit, and navigate code
     "nvim-treesitter/nvim-treesitter",
