@@ -40,7 +40,6 @@ require("lazy").setup("plugins")
 -- fidget?
 -- completion
 -- which-key
--- telescope
 
 -- [[ Highlight on yank ]]
 -- See `:help vim.highlight.on_yank()`

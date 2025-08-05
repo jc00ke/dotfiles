@@ -30,4 +30,6 @@ return {
     },
     build = ":TSUpdate",
   },
+
+  { "folke/which-key.nvim",  opts = {} },
 }
