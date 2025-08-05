@@ -32,4 +32,5 @@ return {
   },
 
   { "folke/which-key.nvim",  opts = {} },
+  { "j-hui/fidget.nvim",     opts = {}, tag = "legacy" },
 }

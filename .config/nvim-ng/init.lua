@@ -37,9 +37,7 @@ vim.opt.rtp:prepend(lazypath)
 require("lazy").setup("plugins")
 
 -- lspconfig
--- fidget?
 -- completion
--- which-key
 
 -- [[ Highlight on yank ]]
 -- See `:help vim.highlight.on_yank()`
