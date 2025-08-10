@@ -37,6 +37,7 @@ require("plugins.treesitter")
 require("plugins.adwaita")
 require("plugins.neogit")
 require("plugins.mini.clue")
+require("plugins.mini.comment")
 
 local map = vim.keymap.set
 map('n', "<leader>o", ":update<cr> :source<CR>", { desc = "Source the current file" })
