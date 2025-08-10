@@ -3,5 +3,6 @@ vim.pack.add({
 })
 
 require('mini.sessions').setup({
-  autoread = true
+  autoread = true,
+  directory = "mini-sessions"
 })
