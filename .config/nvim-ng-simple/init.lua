@@ -32,9 +32,11 @@ require("mason").setup()
 require("mini.pick").setup()
 require("mini.jump2d").setup()
 require("oil").setup()
+require("config.autocmd")
 require("config.lsp")
 require("plugins.treesitter")
 require("plugins.adwaita")
+require("plugins.vimtest")
 require("plugins.neogit")
 require("plugins.mini.clue")
 require("plugins.mini.comment")
@@ -45,6 +47,8 @@ local map = vim.keymap.set
 map('n', "<leader>o", ":update<cr> :source<CR>", { desc = "Source the current file" })
 map("i", "jj", "<esc>")
 map("i", "kk", "<esc>:update<cr>")
+map("n", "<leader>j", "gT", { desc = "Next tab" })
+map("n", "<leader>k", "gt", { desc = "Previous tab" })
 map("", "<space>", "<nop>", { silent = true })
 map('n', '<c-p>', ":Pick files<cr>", { desc = "Pick files" })
 map('n', '<leader>h', ":Pick help<cr>", { desc = "Pick help" })
@@ -65,3 +69,23 @@ map("t", "<esc>", [[<c-\><c-n>]])
 map("t", "<c-o>", [[<c-\><c-n>]])
 map('t', '', "")
 map('t', '', "")
+
+vim.filetype.add({
+  extension = {
+    env = "dotenv",
+    tfvars = "terraform-vars",
+    tf = "terraform",
+    tfstate = "json",
+    hujson = "jsonc",
+    hurl = "hurl"
+  },
+  filename = {
+    [".env"] = "dotenv",
+    ["Justfile"] = "just"
+  },
+  -- Detect and apply filetypes based on certain patterns of the filenames
+  pattern = {
+    -- INFO: Match filenames like - ".env.example", ".env.local" and so on
+    ["%.env%.[%w_.-]+"] = "dotenv",
+  },
+})
