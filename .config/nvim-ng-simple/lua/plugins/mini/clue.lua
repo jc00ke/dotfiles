@@ -6,11 +6,11 @@ local miniclue = require('mini.clue')
 miniclue.setup({
   triggers = {
     -- Leader triggers
-    { mode = 'n', keys = '<Leader>' },
-    { mode = 'x', keys = '<Leader>' },
+    { mode = 'n', keys = '<leader>' },
+    { mode = 'x', keys = '<leader>' },
 
     -- Built-in completion
-    { mode = 'i', keys = '<C-x>' },
+    { mode = 'i', keys = '<c-x>' },
 
     -- `g` key
     { mode = 'n', keys = 'g' },
@@ -25,11 +25,11 @@ miniclue.setup({
     -- Registers
     { mode = 'n', keys = '"' },
     { mode = 'x', keys = '"' },
-    { mode = 'i', keys = '<C-r>' },
-    { mode = 'c', keys = '<C-r>' },
+    { mode = 'i', keys = '<c-r>' },
+    { mode = 'c', keys = '<c-r>' },
 
     -- Window commands
-    { mode = 'n', keys = '<C-w>' },
+    { mode = 'n', keys = '<c-w>' },
 
     -- `z` key
     { mode = 'n', keys = 'z' },
