@@ -36,17 +36,29 @@ require("config.lsp")
 require("plugins.treesitter")
 require("plugins.adwaita")
 require("plugins.neogit")
+require("plugins.mini.clue")
 
 local map = vim.keymap.set
-map('n', "<leader>o", ":update<cr> :source<CR>")
+map('n', "<leader>o", ":update<cr> :source<CR>", { desc = "Source the current file" })
 map("i", "jj", "<esc>")
 map("i", "kk", "<esc>:update<cr>")
 map("", "<space>", "<nop>", { silent = true })
-map('n', '<c-p>', ":Pick files<CR>")
-map('n', '<leader>h', ":Pick help<CR>")
-map('n', '<leader>e', ":Oil<CR>")
-map('t', '', "")
-map('t', '', "")
+map('n', '<c-p>', ":Pick files<cr>", { desc = "[P]ick files" })
+map('n', '<leader>h', ":Pick help<cr>", { desc = "[P]ick help" })
+map('n', '<leader>e', ":Oil<cr>")
 map('n', '<leader>lf', vim.lsp.buf.format)
 map('n', '<leader>x', '<cmd>:.lua<cr>')
-
+-- [[ terminal keymaps ]]
+map("n", "<leader>fs", [[:botright terminal <cr>i]], { desc = "Open terminal in horizontal split" })
+map("n", "<leader>fv", [[:vertical terminal <cr>i]], { desc = "Open terminal in vertical split" })
+map("n", "<leader>ff", [[:tab terminal <cr>i]], { desc = "Open terminal in new tab" })
+map(
+  "n",
+  "<leader>fp",
+  [[:tabnew|terminal postgres<cr>]],
+  { desc = "Open terminal in new tab and run Postgres" }
+)
+map("t", "<esc>", [[<c-\><c-n>]])
+map("t", "<c-o>", [[<c-\><c-n>]])
+map('t', '', "")
+map('t', '', "")
