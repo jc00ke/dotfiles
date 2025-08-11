@@ -70,3 +70,7 @@ scratch.txt
 # Node #
 ########
 node_modules/
+
+# Neovim #
+##########
+Session.vim
