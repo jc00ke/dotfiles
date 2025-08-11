@@ -1,1 +1,0 @@
-return { "rcarriga/nvim-notify" }
