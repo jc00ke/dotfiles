@@ -5,9 +5,9 @@ vim.pack.add({
 
 require("blink.cmp").setup({
   fuzzy = {
-    implementation = "prefer_rust"
+    implementation = "prefer_rust",
+    prebuilt_binaries = {
+      force_version = version
+    }
   },
-  prebuilt_binaries = {
-    force_version = version
-  }
 })
