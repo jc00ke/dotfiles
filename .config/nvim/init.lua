@@ -52,8 +52,21 @@ map("i", "kk", "<esc>:update<cr>")
 map("n", "<leader>j", "gT", { desc = "Next tab" })
 map("n", "<leader>k", "gt", { desc = "Previous tab" })
 map("", "<space>", "<nop>", { silent = true })
+map("n", "gd", vim.lsp.buf.definition, { desc = "Go to definition" })
 map('n', '<c-p>', ":Pick files<cr>", { desc = "Pick files" })
+map('n', '<leader>a', ":Pick grep_live<cr>", { desc = "Grep files" })
+
+function GrepUnderCursor()
+  local word = vim.fn.expand("<cword>")
+  if word ~= "" then
+    require("mini.pick").builtin.grep({ pattern = word })
+  end
+end
+
+map('n', '<leader>A', GrepUnderCursor, { desc = "Grep for string under cursor" })
+map('n', '<leader>R', ":Pick resume<cr>", { desc = "Resume search" })
 map('n', '<leader>h', ":Pick help<cr>", { desc = "Pick help" })
+map('n', '<leader>d', ":Pick diagnostic<cr>", { desc = "Pick diagnostics" })
 map('n', '<leader>e', ":Oil<cr>", { desc = "Open Oil" })
 map('n', '<leader>lf', vim.lsp.buf.format, { desc = "[l]sp [f]ormat" })
 map('n', '<leader>x', '<cmd>:.lua<cr>')
