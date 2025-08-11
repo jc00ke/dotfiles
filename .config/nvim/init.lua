@@ -26,10 +26,8 @@ vim.pack.add({
   { src = "https://github.com/echasnovski/mini.pick" },
   { src = "https://github.com/echasnovski/mini.extra" },
   { src = "https://github.com/echasnovski/mini.jump2d" },
-  { src = "https://github.com/mason-org/mason.nvim" },
 })
 
-require("mason").setup()
 require("mini.pick").setup()
 require("mini.extra").setup()
 require("mini.jump2d").setup()
@@ -37,6 +35,7 @@ require("oil").setup()
 require("config.autocmd")
 require("config.lsp")
 require("plugins.blink")
+require("plugins.mason")
 require("plugins.treesitter")
 require("plugins.adwaita")
 require("plugins.vimtest")
