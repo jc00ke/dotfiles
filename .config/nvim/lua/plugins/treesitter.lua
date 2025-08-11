@@ -1,8 +1,8 @@
 vim.pack.add({
-  { src = "https://github.com/nvim-treesitter/nvim-treesitter", version = "main" },
+  { src = "https://github.com/nvim-treesitter/nvim-treesitter", version = "master" },
 })
 
-require("nvim-treesitter.config").setup({
+require("nvim-treesitter.configs").setup({
   ensure_installed = {
     "c",
     "cpp",
