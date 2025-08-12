@@ -2,7 +2,7 @@ vim.pack.add({
   { src = "https://github.com/echasnovski/mini.sessions" },
 })
 
-local current_dir = vim.fn.getcwd():gsub("%.", "__dot__"):gsub("/", "__"):gsub("\\\\", "__")
+local current_dir = vim.fn.getcwd():gsub("%.", "__dot__"):gsub("/", "__"):gsub("\\", "__"):gsub(":", "")
 
 require('mini.sessions').setup({
   autoread = true,
