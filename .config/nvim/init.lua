@@ -28,7 +28,9 @@ vim.pack.add({
   { src = "https://github.com/echasnovski/mini.jump2d" },
 })
 
-require("mini.pick").setup()
+local pick = require("mini.pick")
+pick.setup()
+vim.ui.select = pick.ui_select
 require("mini.extra").setup()
 require("mini.jump2d").setup()
 require("oil").setup()
