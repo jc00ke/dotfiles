@@ -10,6 +10,7 @@ require("mason-lspconfig").setup({
     "clangd",
     "gopls",
     "lua_ls",
-    "nextls"
+    "nextls",
+    "ruff"
   }
 })
