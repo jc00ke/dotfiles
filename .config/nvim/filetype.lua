@@ -9,7 +9,8 @@ vim.filetype.add({
   },
   filename = {
     [".env"] = "dotenv",
-    ["Justfile"] = "just"
+    ["Justfile"] = "just",
+    [".sqlfluff"] = "cfg",
   },
   -- Detect and apply filetypes based on certain patterns of the filenames
   pattern = {
