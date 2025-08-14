@@ -22,7 +22,6 @@ vim.opt.splitright = true
 vim.opt.splitbelow = true
 
 vim.pack.add({
-  { src = "https://github.com/stevearc/oil.nvim" },
   { src = "https://github.com/echasnovski/mini.pick" },
   { src = "https://github.com/echasnovski/mini.extra" },
   { src = "https://github.com/echasnovski/mini.jump2d" },
@@ -33,10 +32,10 @@ pick.setup()
 vim.ui.select = pick.ui_select
 require("mini.extra").setup()
 require("mini.jump2d").setup()
-require("oil").setup()
 require("config.autocmd")
 require("config.lsp")
 require("config.terminal")
+require("plugins.oil")
 require("plugins.blink")
 require("plugins.mason")
 require("plugins.treesitter")
