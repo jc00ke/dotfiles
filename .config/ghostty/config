@@ -1,9 +1,18 @@
 theme = Adwaita
 font-family = "0xProto"
 
-keybind = ctrl+shift+i=new_split:down
+macos-titlebar-proxy-icon = hidden
+macos-option-as-alt = true
+
+mouse-hide-while-typing = true
+confirm-close-surface = false
+
+keybind = cmd+t>s=new_split:down
+keybind = cmd+t>v=new_split:right
 keybind = alt+shift+h=goto_split:left
 keybind = alt+shift+l=goto_split:right
 keybind = alt+shift+j=goto_split:bottom
 keybind = alt+shift+k=goto_split:top
 keybind = shift+enter=text:\n
+keybind = cmd+t>r=reload_config
+keybind = cmd+t>e=equalize_splits
