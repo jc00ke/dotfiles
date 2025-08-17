@@ -28,7 +28,6 @@ zig = "latest"
 "aqua:mikefarah/yq" = "latest"
 "aqua:muesli/duf" = "latest"
 "aqua:mvdan/sh" = "latest"
-"aqua:neovim/neovim" = "nightly"
 "aqua:sharkdp/bat" = "latest"
 "aqua:sharkdp/fd" = "latest"
 "aqua:shellspec/shellspec" = "latest"
@@ -45,6 +44,7 @@ zig = "latest"
 "ubi:gitlab-org/cli" = { version = "latest", exe = "glab", provider = "gitlab" }
 cosign = "latest"
 "aqua:exercism/cli" = "latest"
+bob = "latest"
 
 [settings]
 experimental = true
