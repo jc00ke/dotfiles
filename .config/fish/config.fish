@@ -30,6 +30,7 @@ fish_add_path -aP "$HOME/.git-fuzzy/bin"
 fish_add_path -aP "$HOME/.mix/escripts"
 fish_add_path "$HOME/.fly/bin"
 fish_add_path ".git/safe/../../bin"
+fish_add_path "$HOME/.local/share/bob/nvim-bin"
 
 # abbreviations
 
