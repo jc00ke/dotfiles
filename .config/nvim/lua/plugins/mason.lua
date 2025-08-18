@@ -11,6 +11,7 @@ require("mason-lspconfig").setup({
     "gopls",
     "lua_ls",
     "nextls",
-    "ruff"
+    "ruff",
+    "fish_lsp"
   }
 })

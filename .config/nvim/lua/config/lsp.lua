@@ -11,7 +11,8 @@ vim.lsp.enable({
   'gopls',
   'lua_ls',
   'nextls',
-  'ruff'
+  'ruff',
+  'fish_lsp'
 })
 
 vim.api.nvim_create_autocmd('LspAttach', {
