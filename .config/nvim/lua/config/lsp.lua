@@ -12,7 +12,8 @@ vim.lsp.enable({
   'lua_ls',
   'nextls',
   'ruff',
-  'fish_lsp'
+  'fish_lsp',
+  'docker_language_server'
 })
 
 vim.api.nvim_create_autocmd('LspAttach', {
