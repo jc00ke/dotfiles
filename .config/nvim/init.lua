@@ -33,7 +33,6 @@ vim.ui.select = pick.ui_select
 require("mini.extra").setup()
 require("mini.jump2d").setup()
 require("config.autocmd")
-require("config.lsp")
 require("config.terminal")
 require("plugins.oil")
 require("plugins.blink")
@@ -46,6 +45,17 @@ require("plugins.mini.clue")
 require("plugins.mini.comment")
 require("plugins.mini.sessions")
 require("plugins.mini.statusline")
+
+vim.diagnostic.config({
+  -- Use the default configuration
+  -- virtual_lines = true
+
+  -- Alternatively, customize specific options
+  virtual_lines = {
+    -- Only show virtual line diagnostics for the current cursor line
+    current_line = true,
+  },
+})
 
 local map = vim.keymap.set
 map('n', "<leader>o", ":update<cr> :source<CR>", { desc = "Source the current file" })
