@@ -18,7 +18,7 @@ vim.keymap.set("n", "<leader>ss", function()
   sessions.select()
 end, { desc = "Select sessions" })
 
-vim.keymap.set("n", "<leader>so", function()
+vim.keymap.set("n", "<leader>sl", function()
   if vim.fn.filereadable(sessions_file) == 1 then
     sessions.read(current_dir, { force = true })
   end
