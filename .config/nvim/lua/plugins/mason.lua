@@ -8,9 +8,9 @@ require("mason").setup()
 require("mason-lspconfig").setup({
   ensure_installed = {
     "clangd",
+    "expert",
     "gopls",
     "lua_ls",
-    "nextls",
     "ruff",
     "fish_lsp",
     "docker_language_server"
