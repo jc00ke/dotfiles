@@ -13,6 +13,7 @@ require("mason-lspconfig").setup({
     "lua_ls",
     "ruff",
     "fish_lsp",
-    "docker_language_server"
+    "docker_language_server",
+    "prettier"
   }
 })
