@@ -17,3 +17,14 @@ require("mason-lspconfig").setup({
     "tailwindcss"
   }
 })
+
+local registry = require("mason-registry")
+
+for _, pkg_name in ipairs { "prettier" } do
+  local ok, pkg = pcall(registry.get_package, pkg_name)
+  if ok then
+    if not pkg:is_installed() then
+      pkg:install()
+    end
+  end
+end
