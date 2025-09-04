@@ -14,6 +14,6 @@ require("mason-lspconfig").setup({
     "ruff",
     "fish_lsp",
     "docker_language_server",
-    "prettier"
+    "tailwindcss"
   }
 })
