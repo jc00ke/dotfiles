@@ -45,6 +45,7 @@ require("plugins.mini.clue")
 require("plugins.mini.comment")
 require("plugins.mini.sessions")
 require("plugins.mini.statusline")
+require("plugins.surround")
 
 vim.diagnostic.config({
   -- Use the default configuration
