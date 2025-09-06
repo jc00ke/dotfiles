@@ -3,6 +3,10 @@
 # @fish-lsp-disable-next-line
 alias tailscale "/Applications/Tailscale.app/Contents/MacOS/Tailscale"
 
+set -x MIX_OS_DEPS_COMPILE_PARTITION_COUNT (
+  math (sysctl -n hw.physicalcpu) / 2
+)
+
 if test -x /opt/homebrew/bin/brew
     eval (/opt/homebrew/bin/brew shellenv)
     set -gx RUBY_YJIT_ENABLE 1
