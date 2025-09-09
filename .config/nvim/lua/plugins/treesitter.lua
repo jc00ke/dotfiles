@@ -16,7 +16,8 @@ require("nvim-treesitter.configs").setup({
     "javascript",
     "html",
     "python",
-    "rust"
+    "rust",
+    "go",
   },
   sync_install = false,
   highlight = { enable = true, disable = { "latex" } },
