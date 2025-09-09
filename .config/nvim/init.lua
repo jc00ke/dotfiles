@@ -47,6 +47,7 @@ require("plugins.mini.sessions")
 require("plugins.mini.statusline")
 require("plugins.surround")
 require("plugins.conform")
+require("plugins.trevj")
 
 vim.diagnostic.config({
   -- Use the default configuration
@@ -67,6 +68,7 @@ map("n", "<leader>j", "gT", { desc = "Next tab" })
 map("n", "<leader>k", "gt", { desc = "Previous tab" })
 map("", "<space>", "<nop>", { silent = true })
 map("n", "gd", vim.lsp.buf.definition, { desc = "Go to definition" })
+map("n", "<leader>ca", vim.lsp.buf.code_action, { desc = "Code actions" })
 map('n', '<c-p>', ":Pick files<cr>", { desc = "Pick files" })
 map('n', '<leader>a', ":Pick grep_live<cr>", { desc = "Grep files" })
 
