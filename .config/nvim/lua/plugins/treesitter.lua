@@ -13,6 +13,7 @@ require("nvim-treesitter.configs").setup({
     "elixir",
     "eex",
     "heex",
+    "go",
     "javascript",
     "html",
     "python",
