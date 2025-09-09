@@ -44,6 +44,7 @@ zig = "latest"
 "ubi:gitlab-org/cli" = { version = "latest", exe = "glab", provider = "gitlab" }
 cosign = "latest"
 "aqua:exercism/cli" = "latest"
+dmd = "nightly"
 
 [settings]
 experimental = true
