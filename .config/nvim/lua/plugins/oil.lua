@@ -7,5 +7,10 @@ require("oil").setup({
     ["<c-s>"] = { "actions.select", opts = { horizontal = true } },
     ["<c-v>"] = { "actions.select", opts = { vertical = true } },
     ["q"] = { "actions.close", mode = "n" },
+  },
+  git = {
+    rm = function(path)
+      return true
+    end
   }
 })
