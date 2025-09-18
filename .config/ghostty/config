@@ -1,4 +1,4 @@
-theme = Adwaita
+theme = Builtin Solarized Dark
 font-family = "0xProto"
 
 macos-titlebar-proxy-icon = hidden
