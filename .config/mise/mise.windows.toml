@@ -1,0 +1,9 @@
+[tools]
+rust = "1.89.0"
+
+"aqua:JohnnyMorganz/StyLua" = { version = "latest", exe = "stylua" }
+"aqua:ajeetdsouza/zoxide" = "latest"
+"aqua:shellspec/shellspec" = "latest"
+"aqua:starship/starship" = "latest"
+"ubi:cli/cli" = { version = "latest", exe = "gh" }
+"ubi:gitlab-org/cli" = { version = "latest", exe = "glab", provider = "gitlab" }

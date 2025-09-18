@@ -83,6 +83,7 @@ if test -f "$HOME/.config/op/plugins.sh"
 end
 
 if type -q mise
+    set -x MISE_ENV posix
     abbr -a mr "mise run"
     fish_add_path -aP "$HOME/.local/share/mise/bin"
     mise activate fish | source
