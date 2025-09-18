@@ -22,9 +22,9 @@ vim.opt.splitright = true
 vim.opt.splitbelow = true
 
 vim.pack.add({
-  { src = "https://github.com/echasnovski/mini.pick" },
-  { src = "https://github.com/echasnovski/mini.extra" },
-  { src = "https://github.com/echasnovski/mini.jump2d" },
+  { src = "https://github.com/nvim-mini/mini.pick" },
+  { src = "https://github.com/nvim-mini/mini.extra" },
+  { src = "https://github.com/nvim-mini/mini.jump2d" },
 })
 
 local pick = require("mini.pick")

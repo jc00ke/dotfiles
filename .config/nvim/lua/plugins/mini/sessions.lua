@@ -1,5 +1,5 @@
 vim.pack.add({
-  { src = "https://github.com/echasnovski/mini.sessions" },
+  { src = "https://github.com/nvim-mini/mini.sessions" },
 })
 
 local sessions_path = vim.fn.stdpath('state') .. "/sessions"

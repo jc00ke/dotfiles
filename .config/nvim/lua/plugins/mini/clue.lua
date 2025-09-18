@@ -1,5 +1,5 @@
 vim.pack.add({
-  { src = "https://github.com/echasnovski/mini.clue" },
+  { src = "https://github.com/nvim-mini/mini.clue" },
 })
 
 local miniclue = require('mini.clue')

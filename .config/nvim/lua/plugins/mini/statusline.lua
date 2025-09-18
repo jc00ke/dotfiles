@@ -1,8 +1,8 @@
 vim.pack.add({
-  { src = "https://github.com/echasnovski/mini.diff" },
-  { src = "https://github.com/echasnovski/mini-git" },
-  { src = "https://github.com/echasnovski/mini.icons" },
-  { src = "https://github.com/echasnovski/mini.statusline" },
+  { src = "https://github.com/nvim-mini/mini.diff" },
+  { src = "https://github.com/nvim-mini/mini-git" },
+  { src = "https://github.com/nvim-mini/mini.icons" },
+  { src = "https://github.com/nvim-mini/mini.statusline" },
 })
 
 require('mini.git').setup()
