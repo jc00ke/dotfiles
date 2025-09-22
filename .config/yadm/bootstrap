@@ -175,10 +175,13 @@ log "Install heroku's release key for package verification"
 curl -s https://cli-assets.heroku.com/channels/stable/apt/release.key | gpg --dearmor | sudo-rs tee /usr/share/keyrings/heroku-keyring.gpg > /dev/null
 
 log "Install tailscale"
-curl -fsSL https://pkgs.tailscale.com/stable/debian/bookworm.noarmor.gpg | sudo-rs tee /usr/share/keyrings/tailscale-archive-keyring.gpg >/dev/null
-curl -fsSL https://pkgs.tailscale.com/stable/debian/bookworm.tailscale-keyring.list | sudo-rs tee /etc/apt/sources.list.d/tailscale.list
+curl -fsSL https://pkgs.tailscale.com/stable/debian/sid.noarmor.gpg | sudo tee /usr/share/keyrings/tailscale-archive-keyring.gpg >/dev/null
+curl -fsSL https://pkgs.tailscale.com/stable/debian/sid.tailscale-keyring.list | sudo tee /etc/apt/sources.list.d/tailscale.list
 
-sudo-rs apt update && sudo-rs apt install firefox 1password 1password-cli gh mise signal-desktop-beta heroku tailscale -y
+sudo apt modernize-sources
+sudo rm /etc/apt/sources.list.d/*.bak
+
+sudo apt update && sudo apt install firefox 1password 1password-cli gh mise signal-desktop-beta heroku tailscale -y
 
 log "Install home-manager in a new terminal"
 echo "nix-channel --add https://github.com/nix-community/home-manager/archive/master.tar.gz home-manager"
