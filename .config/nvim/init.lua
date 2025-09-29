@@ -48,6 +48,7 @@ require("plugins.mini.statusline")
 require("plugins.surround")
 require("plugins.conform")
 require("plugins.trevj")
+require("plugins.typst-preview")
 
 vim.diagnostic.config({
   -- Use the default configuration
