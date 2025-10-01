@@ -80,3 +80,4 @@ Session.vim
 # MISE #
 ########
 mise.local.toml
+mise.*.local.toml
