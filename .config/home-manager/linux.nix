@@ -92,18 +92,18 @@ in
     };
     "org/gnome/settings-daemon/plugins/media-keys/custom-keybindings/custom1" = {
       "binding" = "<Shift><Super>w";
-      "command" = "swapshot -w";
-      "name" = "Swapshot Window";
+      "command" = "flatpak run be.alexandervanhee.gradia --screenshot=INTERACTIVE";
+      "name" = "Screenshot Window";
     };
     "org/gnome/settings-daemon/plugins/media-keys/custom-keybindings/custom2" = {
       "binding" = "<Shift><Super>f";
-      "command" = "swapshot -f";
-      "name" = "Swapshot Full Display";
+      "command" = "flatpak run be.alexandervanhee.gradia --screenshot=FULL";
+      "name" = "Screenshot Full Display";
     };
     "org/gnome/settings-daemon/plugins/media-keys/custom-keybindings/custom3" = {
       "binding" = "<Shift><Super>a";
-      "command" = "swapshot -a";
-      "name" = "Swapshot Area";
+      "command" = "flatpak run be.alexandervanhee.gradia --screenshot=INTERACTIVE";
+      "name" = "Screenshot Area";
     };
     "org/gnome/settings-daemon/plugins/media-keys/www" = {
       "binding" = "['<Shift><Super>Return']";
