@@ -5,18 +5,30 @@ vim.pack.add({
 })
 
 require("mason").setup()
-require("mason-lspconfig").setup({
+
+local ensure_installed = {
+  "clangd",
+  "expert",
+  "gopls",
+  "lua_ls",
+  "ruff",
+  "fish_lsp",
+  "docker_language_server",
+  "tailwindcss",
+  "tinymist",
+}
+
+if vim.fn.has('windows') == 1 then
   ensure_installed = {
-    "clangd",
-    "expert",
+    "docker_language_server",
     "gopls",
     "lua_ls",
     "ruff",
-    "fish_lsp",
-    "docker_language_server",
-    "tailwindcss",
-    "tinymist",
   }
+end
+
+require("mason-lspconfig").setup({
+  ensure_installed = ensure_installed
 })
 
 local registry = require("mason-registry")
