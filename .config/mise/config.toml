@@ -2,7 +2,6 @@
 experimental = true
 always_keep_download = true
 always_keep_install = true
-idiomatic_version_file_enable_tools = ["ruby"]
 
 [tasks."bob:install"]
 run = "cargo install --git https://github.com/MordechaiHadad/bob.git"
