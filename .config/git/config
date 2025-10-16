@@ -39,7 +39,6 @@
 	staged = diff --cached # diff the index against the previous commit
 	update-remotes = remote update --prune # update all remotes, pruning removed tracking branches
 [core]
-	excludesfile = ~/.gitignore
 	autocrlf = input
 [color]
 	ui = true
