@@ -16,7 +16,6 @@ zig = "latest"
 "aqua:BurntSushi/ripgrep" = "latest"
 "aqua:JohnnyMorganz/StyLua" = { version = "latest", exe = "stylua" }
 "aqua:PaulJuliusMartinez/jless" = "latest"
-"aqua:ajeetdsouza/zoxide" = "latest"
 "aqua:antonmedv/fx" = "latest"
 "aqua:atuinsh/atuin" = "latest"
 "aqua:casey/just" = "latest"
