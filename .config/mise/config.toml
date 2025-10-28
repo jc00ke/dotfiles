@@ -11,5 +11,9 @@ description = "Install bob from repo"
 run = "bob install nightly"
 description = "Install nightly neovim"
 
+[tasks."neovim:update:nightly"]
+run = "bob update nightly"
+description = "Update nightly neovim"
+
 [tools]
 "aqua:ajeetdsouza/zoxide" = "latest"
