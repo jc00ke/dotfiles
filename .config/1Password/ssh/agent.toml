@@ -48,3 +48,11 @@ item = "5p7b4msfv6vbwjxizdzvxqdhe4"
 [[ssh-keys]]
 # MO ssh auth key
 item = "MO SSH auth key"
+
+[[ssh-keys]]
+# NYHER ssh auth key
+item = "whfsawiy4pxpow5w7we3ggadmm"
+
+[[ssh-keys]]
+# NYHER git signing key
+item = "kkdgx4tsh2tzupy5sgza43q3mq"
