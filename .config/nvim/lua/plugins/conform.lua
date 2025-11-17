@@ -18,6 +18,18 @@ require('conform').setup({
     if vim.g.disable_autoformat or vim.b[bufnr].disable_autoformat then
       return
     end
+
+    -- Disable formatting for filetypes specified in environment variable
+    local disabled_filetypes = vim.env.CONFORM_DISABLE_FORMAT_FOR_FILETYPES
+    if disabled_filetypes then
+      local current_filetype = vim.bo[bufnr].filetype
+      for disabled_filetype in disabled_filetypes:gmatch("[^,]+") do
+        if disabled_filetype:match("^%s*(.-)%s*$") == current_filetype then
+          return
+        end
+      end
+    end
+
     return { timeout_ms = 500, lsp_format = "fallback" }
   end,
   -- Customize formatters
