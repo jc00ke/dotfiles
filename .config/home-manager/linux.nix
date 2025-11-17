@@ -15,9 +15,9 @@ in
 {
   # https://github.com/nix-community/nixGL?tab=readme-ov-file#nix-channel-recommended
   # nix-channel --add https://github.com/nix-community/nixGL/archive/main.tar.gz nixgl && nix-channel --update
-  nixGL.packages = import <nixgl> { inherit pkgs; };
-  nixGL.defaultWrapper = "mesa";
-  nixGL.offloadWrapper = offloadWrapper;
+  targets.genericLinux.nixGL.packages = import <nixgl> { inherit pkgs; };
+  targets.genericLinux.nixGL.defaultWrapper = "mesa";
+  targets.genericLinux.nixGL.offloadWrapper = offloadWrapper;
 
   home.packages = [
     pkgs.swappy
