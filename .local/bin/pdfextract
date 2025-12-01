@@ -1,18 +1,45 @@
 #!/bin/bash
 
-# from https://www.linuxjournal.com/content/tech-tip-extract-pages-pdf
-function pdfextract()
-{
-    # this function uses 3 arguments:
-    #     $1 is the first page of the range to extract
-    #     $2 is the last page of the range to extract
-    #     $3 is the input file
-    #     output file will be named "inputfile_pXX-pYY.pdf"
-    gs -sDEVICE=pdfwrite -dNOPAUSE -dBATCH -dSAFER \
-       -dFirstPage=${1} \
-       -dLastPage=${2} \
-       -sOutputFile=${3%.pdf}_p${1}-p${2}.pdf \
-       ${3}
+set -euo pipefail
+
+trap 'echo "Exit status $? at line $LINENO from: $BASH_COMMAND"' ERR
+
+Help=$(
+  cat <<-"HELP"
+ pdfextract — wraps GhostScript to extract pages from a PDF.
+
+ Usage:
+   pdfextract <first> <last> <input>
+
+ Options:
+   <first>   First page of the range to extract.
+   <last>    Last page of the range to extract.
+   <input>   Input file to read.
+   -h        Show this message.
+
+  Output file will be named <input>_p<first>-p<last>.pdf
+  From https://www.linuxjournal.com/content/tech-tip-extract-pages-pdf
+HELP
+)
+
+help() {
+  echo "$Help"
+}
+
+if [[ $# == 0 ]] || [[ "$1" == "-h" ]]; then
+  help
+  exit 1
+fi
+
+function pdfextract() {
+  filename="${3%.pdf}_p${1}-p${2}.pdf"
+
+  gs -sDEVICE=pdfwrite -dNOPAUSE -dBATCH -dSAFER \
+    -dFirstPage=${1} \
+    -dLastPage=${2} \
+    -sOutputFile="${filename}" \
+    ${3}
+  echo "Wrote $filename"
 }
 
 pdfextract $1 $2 $3
