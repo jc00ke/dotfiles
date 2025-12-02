@@ -9,7 +9,7 @@ require('conform').setup({
     just = { 'just' },
     sh = { 'shfmt' },
     sql = { 'sleek' },
-    terraform = { { 'terraform_fmt' } },
+    terraform = { 'terraform_fmt' },
     typescript = { 'deno_fmt' },
   },
 
