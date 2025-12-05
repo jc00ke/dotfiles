@@ -7,6 +7,8 @@ set -x MIX_OS_DEPS_COMPILE_PARTITION_COUNT (
   math (sysctl -n hw.physicalcpu) / 2
 )
 
+fish_add_path "$HOME/.mix/escripts"
+
 if test -x /opt/homebrew/bin/brew
     eval (/opt/homebrew/bin/brew shellenv)
     fish_add_path /opt/homebrew/bin/
