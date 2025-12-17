@@ -2,6 +2,14 @@ vim.pack.add({
   { src = "https://github.com/nvim-treesitter/nvim-treesitter", version = "master" },
 })
 
+
+vim.treesitter.query.add_predicate("is-mise?", function(_, _, bufnr, _)
+  ---@cast bufnr integer
+  local filepath = vim.api.nvim_buf_get_name(bufnr)
+  local filename = vim.fn.fnamemodify(filepath, ":t")
+  return string.match(filename, ".*mise.*%.toml$") ~= nil
+end, { force = true, all = false })
+
 require("nvim-treesitter.configs").setup({
   ensure_installed = {
     "c",
@@ -19,6 +27,9 @@ require("nvim-treesitter.configs").setup({
     "python",
     "rust",
     "go",
+    "toml",
+    "bash",
+    "kdl",
   },
   sync_install = false,
   highlight = { enable = true, disable = { "latex" } },
