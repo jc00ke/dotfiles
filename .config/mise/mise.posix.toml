@@ -33,13 +33,13 @@ zig = "latest"
 "aqua:sxyazi/yazi" = "latest"
 "aqua:tealdeer-rs/tealdeer" = "latest"
 "asdf:mise-plugins/mise-eza" = "latest"
-"ubi:BLAKE3-team/BLAKE3" = { version = "latest", exe = "BLAKE3", rename_exe = "b3sum" }
-"ubi:FiloSottile/age" = "latest"
-"ubi:avencera/rustywind" = "latest"
-"ubi:cli/cli" = { version = "latest", exe = "gh" }
-"ubi:tailwindlabs/tailwindcss" = "latest"
-"ubi:theseus-rs/rsql" = "latest"
-"ubi:gitlab-org/cli" = { version = "latest", exe = "glab", provider = "gitlab" }
+"github:BLAKE3-team/BLAKE3" = { version = "latest", exe = "BLAKE3", rename_exe = "b3sum" }
+"github:FiloSottile/age" = "latest"
+"github:avencera/rustywind" = "latest"
+"github:cli/cli" = { version = "latest", exe = "gh" }
+"github:tailwindlabs/tailwindcss" = "latest"
+"github:theseus-rs/rsql" = "latest"
+"gitlab:gitlab-org/cli" = { version = "latest", exe = "glab" }
 cosign = "latest"
 "aqua:exercism/cli" = "latest"
 dmd = "nightly"
