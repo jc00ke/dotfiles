@@ -1,4 +1,5 @@
 [tools]
+cosign = "latest"
 deno = "2.1.4"
 duckdb = "latest"
 elixir = "1.18.3-otp-27"
@@ -40,7 +41,5 @@ zig = "latest"
 "github:tailwindlabs/tailwindcss" = "latest"
 "github:theseus-rs/rsql" = "latest"
 "gitlab:gitlab-org/cli" = { version = "latest", exe = "glab" }
-cosign = "latest"
 "aqua:exercism/cli" = "latest"
-dmd = "nightly"
 
