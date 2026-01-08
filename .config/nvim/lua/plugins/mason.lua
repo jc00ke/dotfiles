@@ -35,7 +35,8 @@ local registry = require("mason-registry")
 
 local mason_pkgs = {
   "prettier",
-  "sleek"
+  "sleek",
+  "yamlfmt"
 }
 
 for _, pkg_name in ipairs(mason_pkgs) do

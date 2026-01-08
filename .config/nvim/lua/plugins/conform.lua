@@ -11,6 +11,7 @@ require('conform').setup({
     sql = { 'sleek' },
     terraform = { 'terraform_fmt' },
     typescript = { 'deno_fmt' },
+    yaml = { 'yamlfmt' },
   },
 
   -- Set up format-on-save
