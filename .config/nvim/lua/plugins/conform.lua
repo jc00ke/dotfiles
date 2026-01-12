@@ -6,12 +6,13 @@ require('conform').setup({
   -- Map of filetype to formatters
   formatters_by_ft = {
     javascript = { 'prettier' },
+    json = { "yq_json" },
     just = { 'just' },
     sh = { 'shfmt' },
     sql = { 'sleek' },
     terraform = { 'terraform_fmt' },
     typescript = { 'deno_fmt' },
-    yaml = { 'yamlfmt' },
+    yaml = { 'yq_yaml', 'yamlfmt' },
   },
 
   -- Set up format-on-save
@@ -44,6 +45,14 @@ require('conform').setup({
     },
     terraform_fmt = {
       command = 'tofu',
+    },
+    yq_json = {
+      command = "yq",
+      args = { "-p=json", "-o=json" },
+    },
+    yq_yaml = {
+      command = "yq",
+      args = { "-p=yaml", "-o=yaml" },
     },
   },
 })
