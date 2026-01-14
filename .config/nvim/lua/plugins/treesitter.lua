@@ -2,6 +2,10 @@ vim.pack.add({
   { src = "https://github.com/nvim-treesitter/nvim-treesitter", version = "master" },
 })
 
+if vim.fn.has('win32') == 1 then
+  require("nvim-treesitter.install").compilers = { "zig" }
+end
+
 
 vim.treesitter.query.add_predicate("is-mise?", function(_, _, bufnr, _)
   ---@cast bufnr integer
