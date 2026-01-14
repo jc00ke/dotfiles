@@ -9,5 +9,5 @@ zig = "0.15.2"
 "aqua:ajeetdsouza/zoxide" = "latest"
 "aqua:shellspec/shellspec" = "latest"
 "aqua:starship/starship" = "latest"
-"ubi:cli/cli" = { version = "latest", exe = "gh" }
-"ubi:gitlab-org/cli" = { version = "latest", exe = "glab", provider = "gitlab" }
+"github:cli/cli" = { version = "latest", exe = "gh" }
+"gitlab:gitlab-org/cli" = { version = "latest", exe = "glab" }
