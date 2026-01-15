@@ -70,7 +70,7 @@ map("n", "<leader>k", "gt", { desc = "Previous tab" })
 map("", "<space>", "<nop>", { silent = true })
 map("n", "gd", vim.lsp.buf.definition, { desc = "Go to definition" })
 map("n", "<leader>ca", vim.lsp.buf.code_action, { desc = "Code actions" })
-map('n', '<c-p>', ":Pick files<cr>", { desc = "Pick files" })
+map('n', '<c-p>', ":Pick files tool='fd'<cr>", { desc = "Pick files" })
 map('n', '<leader>a', ":Pick grep_live<cr>", { desc = "Grep files" })
 
 function GrepUnderCursor()
