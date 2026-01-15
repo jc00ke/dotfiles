@@ -17,3 +17,5 @@ description = "Update nightly neovim"
 
 [tools]
 "aqua:ajeetdsouza/zoxide" = "latest"
+"github:sharkdp/bat" = "latest"
+"github:sharkdp/fd" = "latest"
