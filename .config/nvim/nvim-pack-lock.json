@@ -65,6 +65,10 @@
       "rev": "7a089cb719adb7c2faa2a859038d69d58fcbee84",
       "src": "https://github.com/nvim-mini/mini.jump2d"
     },
+    "mini.notify": {
+      "rev": "29ec27f60bf4b63e447c851d9061c434d80795a6",
+      "src": "https://github.com/echasnovski/mini.notify"
+    },
     "mini.pick": {
       "rev": "b4351399db5043a781a32699a1bde60b747f711f",
       "src": "https://github.com/nvim-mini/mini.pick"
