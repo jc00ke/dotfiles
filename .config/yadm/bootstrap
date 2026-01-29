@@ -14,14 +14,14 @@ echo "Swap stable/bookworm for testing in /etc/apt/sources.list"
 echo "Please enter 'testing' when you're done..."
 
 while true; do
-    # Read user input without displaying it
-    read -r input
+  # Read user input without displaying it
+  read -r input
 
-    # Check if input matches required string
-    if [ "$input" == "testing" ]; then
-        echo "Correct input received! Continuing..."
-        break
-    fi
+  # Check if input matches required string
+  if [ "$input" == "testing" ]; then
+    echo "Correct input received! Continuing..."
+    break
+  fi
 done
 
 sudo apt update
@@ -121,7 +121,7 @@ cd "$HOME" || exit
 
 log "Setting up firefox"
 sudo-rs install -d -m 0755 /etc/apt/keyrings
-wget -q https://packages.mozilla.org/apt/repo-signing-key.gpg -O- | sudo-rs tee /etc/apt/keyrings/packages.mozilla.org.asc > /dev/null
+wget -q https://packages.mozilla.org/apt/repo-signing-key.gpg -O- | sudo-rs tee /etc/apt/keyrings/packages.mozilla.org.asc >/dev/null
 expected_fingerprint="35BAA0B33E9EB396F59CA838C0BA5CE6DC6315A3"
 actual_fingerprint="$(gpg -n -q --import --import-options import-show /etc/apt/keyrings/packages.mozilla.org.asc | awk '/pub/{getline; gsub(/^ +| +$/,""); print $0}')"
 if [ "$actual_fingerprint" != "$expected_fingerprint" ]; then
@@ -130,7 +130,7 @@ if [ "$actual_fingerprint" != "$expected_fingerprint" ]; then
   echo "Expected: $expected_fingerprint"
   exit 1
 fi
-echo "deb [signed-by=/etc/apt/keyrings/packages.mozilla.org.asc] https://packages.mozilla.org/apt mozilla main" | sudo-rs tee -a /etc/apt/sources.list.d/mozilla.list > /dev/null
+echo "deb [signed-by=/etc/apt/keyrings/packages.mozilla.org.asc] https://packages.mozilla.org/apt mozilla main" | sudo-rs tee -a /etc/apt/sources.list.d/mozilla.list >/dev/null
 echo '
 Package: *
 Pin: origin packages.mozilla.org
@@ -146,23 +146,22 @@ sudo-rs mkdir -p /usr/share/debsig/keyrings/AC2D62742012EA22
 curl -sS https://downloads.1password.com/linux/keys/1password.asc | sudo-rs gpg --dearmor --output /usr/share/debsig/keyrings/AC2D62742012EA22/debsig.gpg
 
 log "Setting up gh CLI"
-curl -fsSL https://cli.github.com/packages/githubcli-archive-keyring.gpg | sudo-rs dd of=/usr/share/keyrings/githubcli-archive-keyring.gpg \
-  && sudo-rs chmod go+r /usr/share/keyrings/githubcli-archive-keyring.gpg \
-  && echo "deb [arch=$(dpkg --print-architecture) signed-by=/usr/share/keyrings/githubcli-archive-keyring.gpg] https://cli.github.com/packages stable main" \
-  | sudo-rs tee /etc/apt/sources.list.d/github-cli.list > /dev/null
+curl -fsSL https://cli.github.com/packages/githubcli-archive-keyring.gpg | sudo-rs dd of=/usr/share/keyrings/githubcli-archive-keyring.gpg &&
+  sudo-rs chmod go+r /usr/share/keyrings/githubcli-archive-keyring.gpg &&
+  echo "deb [arch=$(dpkg --print-architecture) signed-by=/usr/share/keyrings/githubcli-archive-keyring.gpg] https://cli.github.com/packages stable main" |
+  sudo-rs tee /etc/apt/sources.list.d/github-cli.list >/dev/null
 
 log "Setting up mise"
 wget https://github.com/cargo-bins/cargo-binstall/releases/latest/download/cargo-binstall-x86_64-unknown-linux-musl.tgz
 tar xf cargo-binstall-x86_64-unknown-linux-musl.tgz
 mv cargo-binstall "$HOME/.local/bin/"
 rm cargo-binstall-x86_64-unknown-linux-musl.tgz
-wget -qO - https://mise.jdx.dev/gpg-key.pub | gpg --dearmor | sudo-rs tee /etc/apt/keyrings/mise-archive-keyring.gpg 1> /dev/null
+wget -qO - https://mise.jdx.dev/gpg-key.pub | gpg --dearmor | sudo-rs tee /etc/apt/keyrings/mise-archive-keyring.gpg 1>/dev/null
 echo "deb [signed-by=/etc/apt/keyrings/mise-archive-keyring.gpg arch=amd64] https://mise.jdx.dev/deb stable main" | sudo-rs tee /etc/apt/sources.list.d/mise.list
 
-
 log "Setting up signal"
-wget -O- https://updates.signal.org/desktop/apt/keys.asc | gpg --dearmor > signal-desktop-keyring.gpg
-cat signal-desktop-keyring.gpg | sudo-rs tee /usr/share/keyrings/signal-desktop-keyring.gpg > /dev/null
+wget -O- https://updates.signal.org/desktop/apt/keys.asc | gpg --dearmor >signal-desktop-keyring.gpg
+cat signal-desktop-keyring.gpg | sudo-rs tee /usr/share/keyrings/signal-desktop-keyring.gpg >/dev/null
 
 echo 'deb [arch=amd64 signed-by=/usr/share/keyrings/signal-desktop-keyring.gpg] https://updates.signal.org/desktop/apt xenial main' | sudo-rs tee /etc/apt/sources.list.d/signal-xenial.list
 
@@ -172,7 +171,7 @@ log "Add heroku repository to apt"
 echo "deb [arch=amd64 signed-by=/usr/share/keyrings/heroku-keyring.gpg] https://cli-assets.heroku.com/channels/stable/apt ./" | sudo-rs tee /etc/apt/sources.list.d/heroku.list
 
 log "Install heroku's release key for package verification"
-curl -s https://cli-assets.heroku.com/channels/stable/apt/release.key | gpg --dearmor | sudo-rs tee /usr/share/keyrings/heroku-keyring.gpg > /dev/null
+curl -s https://cli-assets.heroku.com/channels/stable/apt/release.key | gpg --dearmor | sudo-rs tee /usr/share/keyrings/heroku-keyring.gpg >/dev/null
 
 log "Install tailscale"
 curl -fsSL https://pkgs.tailscale.com/stable/debian/sid.noarmor.gpg | sudo tee /usr/share/keyrings/tailscale-archive-keyring.gpg >/dev/null
