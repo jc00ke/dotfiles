@@ -30,7 +30,6 @@ zig = "latest"
 "aqua:shellspec/shellspec" = "latest"
 "aqua:starship/starship" = "latest"
 "aqua:sxyazi/yazi" = "latest"
-"aqua:tealdeer-rs/tealdeer" = "latest"
 "asdf:mise-plugins/mise-eza" = "latest"
 "github:BLAKE3-team/BLAKE3" = { version = "latest", exe = "BLAKE3", rename_exe = "b3sum" }
 "github:FiloSottile/age" = "latest"

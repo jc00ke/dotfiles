@@ -104,11 +104,11 @@ sudo-rs apt install -y \
   parallel \
   pkg-config \
   pspg \
+  tealdeer \
   zlib1g-dev
 
 log "Updating the yadm repo origin URL"
 yadm remote set-url origin "rp-github:jc00ke/dotfiles.git"
-
 
 log "Install nix"
 sh <(curl -L https://nixos.org/nix/install) --no-daemon
