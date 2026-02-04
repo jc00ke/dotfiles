@@ -8,6 +8,7 @@ require('conform').setup({
     javascript = { 'prettier' },
     json = { "yq_json" },
     just = { 'just' },
+    markdown = { 'rumdl' },
     sh = { 'shfmt' },
     sql = { 'sleek' },
     terraform = { 'terraform_fmt' },
