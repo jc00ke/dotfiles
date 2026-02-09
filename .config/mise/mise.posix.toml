@@ -1,3 +1,6 @@
+[env]
+POSTGRES_EXTRA_CONFIGURE_OPTIONS = "--with-uuid=e2fs --with-openssl"
+
 [tools]
 cosign = "latest"
 deno = "2.1.4"
