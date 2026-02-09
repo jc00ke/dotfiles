@@ -1,2 +1,0 @@
-bind main R !git rebase -i %(commit)^
-bind diff R !git rebase -i %(commit)^
