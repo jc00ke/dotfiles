@@ -1,5 +1,5 @@
 theme = Adwaita
-font-family = "0xProto"
+font-family = "Maple Mono"
 
 macos-titlebar-proxy-icon = hidden
 macos-option-as-alt = true
