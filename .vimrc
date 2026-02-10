@@ -15,7 +15,7 @@ set nowrap
 set number
 set relativenumber
 set noswapfile
-set undofile
+set noundofile
 set incsearch
 set signcolumn=yes
 set splitright
