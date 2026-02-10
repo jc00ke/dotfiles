@@ -34,6 +34,60 @@ nnoremap <leader>j gT
 nnoremap <leader>k gt
 noremap <space> <nop>
 
+" Configure ripgrep as the grep program
+if executable('rg')
+  set grepprg=rg\ --vimgrep\ --smart-case
+  set grepformat=%f:%l:%c:%m
+endif
+
+" File and grep keymaps using fd and rg
+" <C-p> - Fuzzy file picker using fd
+nnoremap <C-p> :call FdFilePicker()<CR>
+
+" <leader>a - Live grep (opens quickfix with rg results)
+nnoremap <leader>a :call RipgrepPrompt()<CR>
+
+" <leader>A - Grep word under cursor
+nnoremap <leader>A :call RipgrepWordUnderCursor()<CR>
+
+" Function: fd file picker
+function! FdFilePicker()
+  let files = systemlist('fd --type f --hidden --exclude .git')
+  if v:shell_error
+    echo "fd not found or error occurred"
+    return
+  endif
+  if len(files) == 0
+    echo "No files found"
+    return
+  endif
+  " Use inputlist for simple selection
+  let choice = inputlist(['Select file:'] + map(copy(files), 'v:key + 1 . ". " . v:val'))
+  if choice > 0 && choice <= len(files)
+    execute 'edit' fnameescape(files[choice - 1])
+  endif
+endfunction
+
+" Function: ripgrep with prompt
+function! RipgrepPrompt()
+  let pattern = input('Grep for: ')
+  if pattern != ''
+    execute 'silent grep!' pattern
+    copen
+    redraw!
+  endif
+endfunction
+
+" Function: ripgrep word under cursor
+function! RipgrepWordUnderCursor()
+  let word = expand('<cword>')
+  if word != ''
+    execute 'silent grep!' shellescape(word)
+    copen
+    redraw!
+  endif
+endfunction
+
 " Terminal keymaps (Vim 8.1+ terminal support)
 if has('terminal')
   nnoremap <leader>fs :botright terminal<cr>
