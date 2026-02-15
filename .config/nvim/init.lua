@@ -102,3 +102,5 @@ map("t", "<c-o>", [[<c-\><c-n>]])
 map('t', '', "")
 map('t', '', "")
 map('v', '<C-r>', [["hy:%s/<C-r>h//gc<left><left><left>]], { noremap = true, desc = "Replace visually selected in file" })
+
+vim.lsp.enable('mdbook_lint')
