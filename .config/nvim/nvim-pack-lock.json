@@ -82,7 +82,7 @@
       "src": "https://github.com/nvim-mini/mini.statusline"
     },
     "neogit": {
-      "rev": "9104991a424f5e0891cbe1cb44f91ae22cef28a0",
+      "rev": "df323856553d4c5e5c41117606c63f628b24a3b0",
       "src": "https://github.com/NeogitOrg/neogit"
     },
     "neotest": {
