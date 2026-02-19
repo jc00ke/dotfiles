@@ -1,6 +1,3 @@
-[settings]
-windows_shim_mode = "hardlink"
-
 [tools]
 rust = "1.89.0"
 zig = "0.15.2"
