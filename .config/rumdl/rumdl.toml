@@ -1,2 +1,5 @@
 [global]
 line-length = 110
+
+[MD013]
+headings = false
