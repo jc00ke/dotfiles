@@ -14,6 +14,8 @@ local ensure_installed = {
   "ruff",
   "fish_lsp",
   "docker_language_server",
+  "oxfmt",
+  "oxlint",
   "tailwindcss",
   "tinymist",
 }

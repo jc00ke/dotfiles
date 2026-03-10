@@ -5,14 +5,14 @@ vim.pack.add({
 require('conform').setup({
   -- Map of filetype to formatters
   formatters_by_ft = {
-    javascript = { 'prettier' },
-    json = { "yq_json" },
+    javascript = { 'oxfmt' },
+    json = { "oxfmt" },
     just = { 'just' },
     markdown = { 'rumdl' },
     sh = { 'shfmt' },
     sql = { 'sleek' },
     terraform = { 'terraform_fmt' },
-    typescript = { 'deno_fmt' },
+    typescript = { 'oxfmt' },
     yaml = { 'yq_yaml', 'yamlfmt' },
   },
 
@@ -46,10 +46,6 @@ require('conform').setup({
     },
     terraform_fmt = {
       command = 'tofu',
-    },
-    yq_json = {
-      command = "yq",
-      args = { "-p=json", "-o=json" },
     },
     yq_yaml = {
       command = "yq",
