@@ -177,10 +177,16 @@ log "Install tailscale"
 curl -fsSL https://pkgs.tailscale.com/stable/debian/sid.noarmor.gpg | sudo tee /usr/share/keyrings/tailscale-archive-keyring.gpg >/dev/null
 curl -fsSL https://pkgs.tailscale.com/stable/debian/sid.tailscale-keyring.list | sudo tee /etc/apt/sources.list.d/tailscale.list
 
-sudo apt modernize-sources
-sudo rm /etc/apt/sources.list.d/*.bak
+log "Install ghostty"
+curl -fsSL https://debian.griffo.io/EA0F721D231FDD3A0A17B9AC7808B4DD62C41256.asc |
+  sudo-rs gpg --dearmor -o /usr/share/keyrings/debian.griffo.io.gpg
 
-sudo apt update && sudo apt install firefox 1password 1password-cli gh mise signal-desktop-beta heroku tailscale -y
+echo "deb [signed-by=/usr/share/keyrings/debian.griffo.io.gpg] https://debian.griffo.io/apt $(lsb_release -sc) main" | sudo-rs tee /etc/apt/sources.list.d/debian.griffo.io.list
+
+sudo-rs apt modernize-sources
+sudo-rs rm /etc/apt/sources.list.d/*.bak
+
+sudo-rs apt update && sudo-rs apt install firefox 1password 1password-cli gh mise signal-desktop-beta heroku tailscale ghostty -y
 
 log "Install home-manager in a new terminal"
 echo "nix-channel --add https://github.com/nix-community/home-manager/archive/master.tar.gz home-manager"
