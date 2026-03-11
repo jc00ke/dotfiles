@@ -185,8 +185,8 @@ log "Install heroku's release key for package verification"
 curl -s https://cli-assets.heroku.com/channels/stable/apt/release.key | gpg --dearmor | sudo-rs tee /usr/share/keyrings/heroku-keyring.gpg >/dev/null
 
 log "Install tailscale"
-curl -fsSL https://pkgs.tailscale.com/stable/debian/sid.noarmor.gpg | sudo tee /usr/share/keyrings/tailscale-archive-keyring.gpg >/dev/null
-curl -fsSL https://pkgs.tailscale.com/stable/debian/sid.tailscale-keyring.list | sudo tee /etc/apt/sources.list.d/tailscale.list
+curl -fsSL https://pkgs.tailscale.com/stable/debian/sid.noarmor.gpg | sudo-rs tee /usr/share/keyrings/tailscale-archive-keyring.gpg >/dev/null
+curl -fsSL https://pkgs.tailscale.com/stable/debian/sid.tailscale-keyring.list | sudo-rs tee /etc/apt/sources.list.d/tailscale.list
 
 log "Install ghostty"
 curl -fsSL https://debian.griffo.io/EA0F721D231FDD3A0A17B9AC7808B4DD62C41256.asc |
