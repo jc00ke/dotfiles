@@ -25,6 +25,8 @@ if vim.fn.has('windows') == 1 then
     "docker_language_server",
     "gopls",
     "lua_ls",
+    "oxfmt",
+    "oxlint",
     "ruff",
   }
 end
