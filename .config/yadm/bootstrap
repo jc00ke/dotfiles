@@ -10,6 +10,17 @@ log() {
   echo ""
 }
 
+write-keybinding() {
+  local index="$1"
+  local name="$2"
+  local command="$3"
+  local binding="$4"
+  local path="/org/gnome/settings-daemon/plugins/media-keys/custom-keybindings/custom${index}"
+  dconf write "$path/name" "'$name'" &&
+    dconf write "$path/command" "'$command'" &&
+    dconf write "$path/binding" "'$binding'"
+}
+
 echo "Swap stable/bookworm for testing in /etc/apt/sources.list"
 echo "Please enter 'testing' when you're done..."
 
@@ -187,6 +198,11 @@ sudo-rs apt modernize-sources
 sudo-rs rm /etc/apt/sources.list.d/*.bak
 
 sudo-rs apt update && sudo-rs apt install firefox 1password 1password-cli gh mise signal-desktop-beta heroku tailscale ghostty -y
+
+write-keybinding 0 "Terminal" "ghostty" "<Super>Return"
+write-keybinding 1 "Screenshot window" "flatpak run be.alexandervanhee.gradia --screenshot=INTERACTIVE" "<Shift><Super>w"
+write-keybinding 2 "Screenshot Full Display" "flatpak run be.alexandervanhee.gradia --screenshot=FULL" "<Shift><Super>f"
+write-keybinding 3 "Screenshot Area" "flatpak run be.alexandervanhee.gradia --screenshot=INTERACTIVE" "<Shift><Super>a"
 
 log "Install home-manager in a new terminal"
 echo "nix-channel --add https://github.com/nix-community/home-manager/archive/master.tar.gz home-manager"
