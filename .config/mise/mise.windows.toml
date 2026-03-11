@@ -1,7 +1,5 @@
 [tools]
 python = "3.13.1"
-rust = "1.89.0"
-zig = "0.15.2"
 
 "aqua:JohnnyMorganz/StyLua" = { version = "latest", exe = "stylua" }
 "aqua:ajeetdsouza/zoxide" = "latest"
