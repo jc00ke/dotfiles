@@ -3,7 +3,7 @@ set -eox pipefail
 DIR="$(dirname "$(readlink -f "$0")")"
 
 log() {
-  msg="$1"
+  local msg="$1"
   echo "********************************************"
   echo "$msg"
   echo "********************************************"
