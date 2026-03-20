@@ -23,16 +23,6 @@ vim.opt.splitbelow = true
 
 require("config.autocmd")
 require("config.terminal")
-require("plugins.oil")
-require("plugins.blink")
-require("plugins.treesitter")
-require("plugins.adwaita")
-require("plugins.vimtest")
-require("plugins.neogit")
-require("plugins.surround")
-require("plugins.conform")
-require("plugins.trevj")
-require("plugins.typst-preview")
 
 vim.diagnostic.config({
   -- Use the default configuration
