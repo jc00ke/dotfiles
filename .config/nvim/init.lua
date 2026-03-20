@@ -21,30 +21,14 @@ vim.opt.signcolumn = "yes"
 vim.opt.splitright = true
 vim.opt.splitbelow = true
 
-vim.pack.add({
-  { src = "https://github.com/nvim-mini/mini.pick" },
-  { src = "https://github.com/nvim-mini/mini.extra" },
-  { src = "https://github.com/nvim-mini/mini.jump2d" },
-})
-
-local pick = require("mini.pick")
-pick.setup()
-vim.ui.select = pick.ui_select
-require("mini.extra").setup()
-require("mini.jump2d").setup()
 require("config.autocmd")
 require("config.terminal")
 require("plugins.oil")
 require("plugins.blink")
-require("plugins.mason")
 require("plugins.treesitter")
 require("plugins.adwaita")
 require("plugins.vimtest")
 require("plugins.neogit")
-require("plugins.mini.clue")
-require("plugins.mini.comment")
-require("plugins.mini.sessions")
-require("plugins.mini.statusline")
 require("plugins.surround")
 require("plugins.conform")
 require("plugins.trevj")
