@@ -91,6 +91,10 @@ if type -q mise
     mise exec -- starship init fish | source
     mise exec -- zoxide init fish | source
 
+    if type -q fnox
+        fnox activate fish | source
+    end
+
     if type -q atuin
         # bind to ctrl-r in normal and insert mode, add any other bindings you want here too
         bind \cr _atuin_search
