@@ -1,5 +1,5 @@
 vim.pack.add({
-  { src = "https://github.com/nvim-treesitter/nvim-treesitter", version = "master" },
+  { src = "https://github.com/nvim-treesitter/nvim-treesitter" },
 })
 
 if vim.fn.has('win32') == 1 then
@@ -14,7 +14,7 @@ vim.treesitter.query.add_predicate("is-mise?", function(_, _, bufnr, _)
   return string.match(filename, ".*mise.*%.toml$") ~= nil
 end, { force = true, all = false })
 
-require("nvim-treesitter.configs").setup({
+require("nvim-treesitter").setup({
   ensure_installed = {
     "c",
     "cpp",
