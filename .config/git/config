@@ -38,6 +38,11 @@
 	serve = daemon --verbose --export-all --base-path=.git --reuseaddr --strict-paths .git/
 	staged = diff --cached # diff the index against the previous commit
 	update-remotes = remote update --prune # update all remotes, pruning removed tracking branches
+  before-what-changes-most = "! git log --format=format: --name-only --since='1 year ago' | sort | uniq -c | sort -nr | head -20"
+  before-who-built-this = "shortlog -sn --no-merges"
+  before-where-do-bugs-cluster = "! git log -i -E --grep='fix|bug|broken' --name-only --format='' | sort | uniq -c | sort -nr | head -20"
+  before-is-this-project-growing-or-dying = "! git log --format='%ad' --date=format:'%Y-%m' | sort | uniq -c"
+  before-how-often-are-we-firefighting = "! git log --oneline --since='1 year ago' | grep -iE 'revert|hotfix|emergency|rollback'"
 [core]
 	autocrlf = input
 [color]
