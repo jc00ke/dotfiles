@@ -26,6 +26,6 @@ stylua = "latest"
 usage = "latest"
 yq = "latest"
 
-"aqua:mvdan/sh" = "latest"
 "cargo:b3sum" = "latest"
+"github:mvdan/sh" = "latest"
 "github:tailwindlabs/tailwindcss" = "latest"

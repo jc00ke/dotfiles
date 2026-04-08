@@ -1,9 +1,9 @@
 [tools]
 python = "3.13.1"
 
-"aqua:JohnnyMorganz/StyLua" = { version = "latest", exe = "stylua" }
-"aqua:ajeetdsouza/zoxide" = "latest"
-"aqua:shellspec/shellspec" = "latest"
-"aqua:starship/starship" = "latest"
+"github:JohnnyMorganz/StyLua" = { version = "latest", exe = "stylua" }
+"github:ajeetdsouza/zoxide" = "latest"
+"github:shellspec/shellspec" = "latest"
+"github:starship/starship" = "latest"
 "github:cli/cli" = { version = "latest", exe = "gh" }
 "gitlab:gitlab-org/cli" = { version = "latest", exe = "glab" }
