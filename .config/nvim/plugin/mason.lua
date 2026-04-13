@@ -18,6 +18,7 @@ local ensure_installed = {
   "oxlint",
   "tailwindcss",
   "tinymist",
+  "ty",
 }
 
 if vim.fn.has('windows') == 1 then
