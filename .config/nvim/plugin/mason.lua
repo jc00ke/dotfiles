@@ -39,7 +39,6 @@ require("mason-lspconfig").setup({
 local registry = require("mason-registry")
 
 local mason_pkgs = {
-  "prettier",
   "rumdl",
   "sleek",
   "yamlfmt",
