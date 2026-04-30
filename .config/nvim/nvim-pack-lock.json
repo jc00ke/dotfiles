@@ -13,7 +13,7 @@
       "src": "https://github.com/Mofiqul/adwaita.nvim"
     },
     "alabaster.nvim": {
-      "rev": "ae0c5f41c70b576f0678319e57fe47b2b288d2fc",
+      "rev": "b902c73fabefc13583bfc0c18b28950ea8f6244f",
       "src": "https://github.com/p00f/alabaster.nvim"
     },
     "blink.cmp": {
@@ -22,15 +22,15 @@
       "version": "'v1.6.0'"
     },
     "conform.nvim": {
-      "rev": "086a40dc7ed8242c03be9f47fbcee68699cc2395",
+      "rev": "dca1a190aa85f9065979ef35802fb77131911106",
       "src": "https://github.com/stevearc/conform.nvim"
     },
     "mason-lspconfig.nvim": {
-      "rev": "25f609e7fca78af7cede4f9fa3af8a94b1c4950b",
+      "rev": "0c2823e0418f3d9230ff8b201c976e84de1cb401",
       "src": "https://github.com/mason-org/mason-lspconfig.nvim"
     },
     "mason.nvim": {
-      "rev": "b03fb0f20bc1d43daf558cda981a2be22e73ac42",
+      "rev": "cb8445f8ce85d957416c106b780efd51c6298f89",
       "src": "https://github.com/mason-org/mason.nvim"
     },
     "mini-git": {
@@ -42,7 +42,7 @@
       "src": "https://github.com/echasnovski/mini.base16"
     },
     "mini.clue": {
-      "rev": "f8a11789cf34a7bae396dc0f828d06cdb5066793",
+      "rev": "43bd6cf1c3ccdea46d403c32dbc4629fa6afa09d",
       "src": "https://github.com/nvim-mini/mini.clue"
     },
     "mini.comment": {
@@ -54,11 +54,11 @@
       "src": "https://github.com/nvim-mini/mini.diff"
     },
     "mini.extra": {
-      "rev": "ca1932c95c6e757c06d2cc133b87835a01d909dd",
+      "rev": "bc4e872500fd6d2ce252604e0ffa100f64f02280",
       "src": "https://github.com/nvim-mini/mini.extra"
     },
     "mini.icons": {
-      "rev": "7fdae2443a0e2910015ca39ad74b50524ee682d3",
+      "rev": "bac6317300e205335df425296570d84322730067",
       "src": "https://github.com/nvim-mini/mini.icons"
     },
     "mini.jump2d": {
@@ -66,15 +66,15 @@
       "src": "https://github.com/nvim-mini/mini.jump2d"
     },
     "mini.notify": {
-      "rev": "32d3544b9368c76c562f22027ab25b750647fdf1",
+      "rev": "9e68ab0a54f90567b4fec2de22c851dba8480439",
       "src": "https://github.com/echasnovski/mini.notify"
     },
     "mini.pick": {
-      "rev": "fd7e7efadddcec3f3d7f3b363a99aa44e7286c65",
+      "rev": "437d44eb57312f23e6b931704694fc294922cd88",
       "src": "https://github.com/nvim-mini/mini.pick"
     },
     "mini.sessions": {
-      "rev": "2e419949f6846871b3b87bcd7c418b0d1f0ad68a",
+      "rev": "c96a1d1284b37ba2431092981a9d58f8c71a4fc3",
       "src": "https://github.com/nvim-mini/mini.sessions"
     },
     "mini.statusline": {
@@ -82,7 +82,7 @@
       "src": "https://github.com/nvim-mini/mini.statusline"
     },
     "neogit": {
-      "rev": "5a7fca171e3ad07380745d573d791e95268b8f3f",
+      "rev": "88000e7e60177558d1b428a0d561c92e5d81341e",
       "src": "https://github.com/NeogitOrg/neogit"
     },
     "neotest": {
@@ -90,11 +90,11 @@
       "src": "https://github.com/nvim-neotest/neotest"
     },
     "neotest-golang": {
-      "rev": "48634bebbfa1fe63ed50f170916112c538d8e70d",
+      "rev": "84c1f3be59f85a2f5bbb9290040077bc8a68a00c",
       "src": "https://github.com/fredrikaverpil/neotest-golang"
     },
     "nvim-lspconfig": {
-      "rev": "a776085e04f7b15d0b59fae2244df07d98360ab4",
+      "rev": "f7e89f3d19fb436e1fbeff3bf4291eef35da94e3",
       "src": "https://github.com/neovim/nvim-lspconfig"
     },
     "nvim-nio": {
@@ -118,11 +118,11 @@
       "src": "https://github.com/stevearc/oil.nvim"
     },
     "plenary.nvim": {
-      "rev": "b9fd5226c2f76c951fc8ed5923d85e4de065e509",
+      "rev": "74b06c6c75e4eeb3108ec01852001636d85a932b",
       "src": "https://github.com/nvim-lua/plenary.nvim"
     },
     "solarized-osaka.nvim": {
-      "rev": "f0c2f0ba0bd56108d53c9bfae4bb28ff6c67bbdb",
+      "rev": "a261ee90fb3e5e82660567e4874d384e996afa4f",
       "src": "https://github.com/craftzdog/solarized-osaka.nvim"
     },
     "typst-preview.nvim": {
@@ -130,7 +130,7 @@
       "src": "https://github.com/chomosuke/typst-preview.nvim"
     },
     "vim-test": {
-      "rev": "6eb2e5e7b32c321d373d2954199f4510be804713",
+      "rev": "bc0e94059de40641d163516a83c63bc45c716acf",
       "src": "https://github.com/vim-test/vim-test"
     }
   }
