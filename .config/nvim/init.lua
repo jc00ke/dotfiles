@@ -37,6 +37,7 @@ vim.diagnostic.config({
 
 local map = vim.keymap.set
 map('n', "<leader>o", ":update<cr> :source<CR>", { desc = "Source the current file" })
+map('n', "<leader>pu", ":lua vim.pack.update()<CR>", { desc = "Updates plugins" })
 map("i", "jj", "<esc>")
 map("i", "kk", "<esc>:update<cr>")
 map("n", "<leader>j", "gT", { desc = "Next tab" })
