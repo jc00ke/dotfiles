@@ -14,8 +14,10 @@ vim.treesitter.query.add_predicate("is-mise?", function(_, _, bufnr, _)
   return string.match(filename, ".*mise.*%.toml$") ~= nil
 end, { force = true, all = false })
 
-require("nvim-treesitter").setup({
-  ensure_installed = {
+local ts = require("nvim-treesitter")
+
+ts.install(
+  {
     "c",
     "cpp",
     "lua",
@@ -34,8 +36,12 @@ require("nvim-treesitter").setup({
     "toml",
     "bash",
     "kdl",
-  },
-  sync_install = false,
+    "markdown",
+    "markdown_inline"
+  }
+)
+
+ts.setup({
   highlight = { enable = true, disable = { "latex" } },
   indent = { enable = true, disable = { "python" } },
 })
