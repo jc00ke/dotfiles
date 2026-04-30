@@ -31,6 +31,7 @@ vim.api.nvim_create_autocmd('LspAttach', {
     end
 
     if client:supports_method("textDocument/completion") then
+      vim.cmd [[set completeopt+=menuone,noselect,popup]]
       -- Enable native LSP completion for this client + buffer
       vim.lsp.completion.enable(true, client.id, args.buf, {
         autotrigger = true, -- auto-show menu as you type (recommended)
