@@ -12,6 +12,7 @@ require('conform').setup({
     sh = { 'shfmt' },
     sql = { 'sleek' },
     terraform = { 'terraform_fmt' },
+    toml = { "oxfmt" },
     typescript = { 'oxfmt' },
     yaml = { 'yq_yaml', 'yamlfmt' },
   },
