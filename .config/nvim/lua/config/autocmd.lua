@@ -65,7 +65,7 @@ function ToggleAutoRefresh()
   end
 end
 
-vim.keymap.set('n', '<leader>ar', ToggleAutoRefresh, {
+vim.keymap.set('n', '<leader>tar', ToggleAutoRefresh, {
   noremap = true,
   silent = false,
   desc = "Toggle auto refresh of files"
