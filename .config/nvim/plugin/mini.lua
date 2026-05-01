@@ -9,6 +9,8 @@ vim.pack.add({
   { src = "https://github.com/nvim-mini/mini.extra" },
   { src = "https://github.com/nvim-mini/mini.jump2d" },
   { src = "https://github.com/nvim-mini/mini.sessions" },
+  { src = "https://github.com/nvim-mini/mini.snippets" },
+  { src = "https://github.com/nvim-mini/mini.completion" },
 })
 
 local pick = require("mini.pick")
@@ -22,9 +24,9 @@ require('mini.git').setup()
 require('mini.diff').setup()
 require('mini.icons').setup()
 require('mini.statusline').setup()
+require('mini.snippets').setup()
+require('mini.completion').setup()
 
--- clue
---
 local miniclue = require('mini.clue')
 miniclue.setup({
   triggers = {

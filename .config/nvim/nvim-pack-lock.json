@@ -49,6 +49,10 @@
       "rev": "8e5ff3ed3cc0e8f216617aae01020c00c20f7a87",
       "src": "https://github.com/nvim-mini/mini.comment"
     },
+    "mini.completion": {
+      "rev": "667d94669be66043123cac44e7c5d65a31657732",
+      "src": "https://github.com/nvim-mini/mini.completion"
+    },
     "mini.diff": {
       "rev": "ab11575a6c147ecfba894d676d0c93e855021d34",
       "src": "https://github.com/nvim-mini/mini.diff"
@@ -76,6 +80,10 @@
     "mini.sessions": {
       "rev": "c96a1d1284b37ba2431092981a9d58f8c71a4fc3",
       "src": "https://github.com/nvim-mini/mini.sessions"
+    },
+    "mini.snippets": {
+      "rev": "8e3acd41bd7ee8f89967c83bacc93871b98a14aa",
+      "src": "https://github.com/nvim-mini/mini.snippets"
     },
     "mini.statusline": {
       "rev": "b456bfe845e475e9cec065b7a9a1ef657ad2f41b",
