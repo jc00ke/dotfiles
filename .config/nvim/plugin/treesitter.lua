@@ -1,5 +1,5 @@
 vim.pack.add({
-  { src = "https://github.com/nvim-treesitter/nvim-treesitter" },
+  { src = "https://github.com/nvim-treesitter/nvim-treesitter", version = "main" },
 })
 
 if vim.fn.has('win32') == 1 then
