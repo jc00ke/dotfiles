@@ -54,7 +54,7 @@
       "src": "https://github.com/nvim-mini/mini.completion"
     },
     "mini.diff": {
-      "rev": "ab11575a6c147ecfba894d676d0c93e855021d34",
+      "rev": "0ee0459152b141c0e1b0931eb6949105be4850a9",
       "src": "https://github.com/nvim-mini/mini.diff"
     },
     "mini.extra": {
@@ -90,11 +90,11 @@
       "src": "https://github.com/nvim-mini/mini.statusline"
     },
     "neogit": {
-      "rev": "88000e7e60177558d1b428a0d561c92e5d81341e",
+      "rev": "e74dfb42c04b493031f323aec8fa5f28b0427b9e",
       "src": "https://github.com/NeogitOrg/neogit"
     },
     "neotest": {
-      "rev": "fd0b7986dd0ae04e38ec7dc0c78a432e3820839c",
+      "rev": "ad991822b7076b1d940b33a9d6d0d30416d5df81",
       "src": "https://github.com/nvim-neotest/neotest"
     },
     "neotest-golang": {
@@ -110,7 +110,7 @@
       "src": "https://github.com/nvim-neotest/nvim-nio"
     },
     "nvim-surround": {
-      "rev": "9291040de8cd8a4439eb64c441e8d5d2bf884a5a",
+      "rev": "2e93e154de9ff326def6480a4358bfc149d5da2c",
       "src": "https://github.com/kylechui/nvim-surround"
     },
     "nvim-treesitter": {
@@ -139,7 +139,7 @@
       "src": "https://github.com/chomosuke/typst-preview.nvim"
     },
     "vim-test": {
-      "rev": "bc0e94059de40641d163516a83c63bc45c716acf",
+      "rev": "e312c0ef80c514cb0d516e2646d609bb920d8c02",
       "src": "https://github.com/vim-test/vim-test"
     }
   }
