@@ -1,25 +1,26 @@
-vim.g.mapleader = ","
 vim.g.maplocalleader = "\\"
 
-vim.opt.winborder = "rounded"
-vim.opt.hlsearch = false
-vim.cmd([[set mouse=]])
-vim.opt.tabstop = 2
-vim.opt.expandtab = true
+vim.opt.completeopt = { 'menuone', 'noselect', 'popup' }
 vim.opt.cursorcolumn = false
+vim.opt.expandtab = true
+vim.opt.hlsearch = false
 vim.opt.ignorecase = true
-vim.opt.shiftwidth = 2
-vim.opt.smartindent = true
-vim.opt.wrap = false
+vim.opt.incsearch = true
+vim.opt.mouse = "nv"
 vim.opt.number = true
+vim.opt.pumheight = 10
 vim.opt.relativenumber = true
+vim.opt.shiftwidth = 2
+vim.opt.signcolumn = "yes"
+vim.opt.smartindent = true
+vim.opt.splitbelow = true
+vim.opt.splitright = true
 vim.opt.swapfile = false
+vim.opt.tabstop = 2
 vim.opt.termguicolors = true
 vim.opt.undofile = true
-vim.opt.incsearch = true
-vim.opt.signcolumn = "yes"
-vim.opt.splitright = true
-vim.opt.splitbelow = true
+vim.opt.winborder = "rounded"
+vim.opt.wrap = false
 
 require("config.autocmd")
 require("config.terminal")
