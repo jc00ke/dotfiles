@@ -1,3 +1,4 @@
+vim.g.mapleader = ","
 vim.g.maplocalleader = "\\"
 
 vim.opt.completeopt = { 'menuone', 'noselect', 'popup' }
