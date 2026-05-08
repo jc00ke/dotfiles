@@ -26,11 +26,11 @@
       "src": "https://github.com/stevearc/conform.nvim"
     },
     "mason-lspconfig.nvim": {
-      "rev": "0c2823e0418f3d9230ff8b201c976e84de1cb401",
+      "rev": "51feb0ada33d18f3c5c71ffb46005dbf8b33bef4",
       "src": "https://github.com/mason-org/mason-lspconfig.nvim"
     },
     "mason.nvim": {
-      "rev": "cb8445f8ce85d957416c106b780efd51c6298f89",
+      "rev": "e54f5bf5f12c560da31c17eee5b3e1bd369f3ff9",
       "src": "https://github.com/mason-org/mason.nvim"
     },
     "mini-git": {
@@ -90,7 +90,7 @@
       "src": "https://github.com/nvim-mini/mini.statusline"
     },
     "neogit": {
-      "rev": "e74dfb42c04b493031f323aec8fa5f28b0427b9e",
+      "rev": "395ac481e197784e410b59b987fadaf9e7481df1",
       "src": "https://github.com/NeogitOrg/neogit"
     },
     "neotest": {
@@ -102,7 +102,7 @@
       "src": "https://github.com/fredrikaverpil/neotest-golang"
     },
     "nvim-lspconfig": {
-      "rev": "31026a13eefb20681124706a79fc1df6bf11ab27",
+      "rev": "451d4ef9abd4f0f08e379ef0d55d1c391b6125a7",
       "src": "https://github.com/neovim/nvim-lspconfig"
     },
     "nvim-nio": {
@@ -131,7 +131,7 @@
       "src": "https://github.com/nvim-lua/plenary.nvim"
     },
     "solarized-osaka.nvim": {
-      "rev": "a261ee90fb3e5e82660567e4874d384e996afa4f",
+      "rev": "f675d9a5c58f3b0d6158d665a623f81a62e7bdaf",
       "src": "https://github.com/craftzdog/solarized-osaka.nvim"
     },
     "typst-preview.nvim": {
@@ -139,7 +139,7 @@
       "src": "https://github.com/chomosuke/typst-preview.nvim"
     },
     "vim-test": {
-      "rev": "e312c0ef80c514cb0d516e2646d609bb920d8c02",
+      "rev": "7062b50979a28e804081f0e82b7321184ec1c20b",
       "src": "https://github.com/vim-test/vim-test"
     }
   }
