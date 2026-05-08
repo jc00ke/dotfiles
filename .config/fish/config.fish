@@ -107,3 +107,6 @@ end
 if type -q yazi
     abbr -a yy yazi
 end
+
+# dbt fusion aliases
+alias dbtf="$HOME/.local/bin/dbt"
