@@ -46,7 +46,7 @@
       "src": "https://github.com/nvim-mini/mini.clue"
     },
     "mini.comment": {
-      "rev": "8e5ff3ed3cc0e8f216617aae01020c00c20f7a87",
+      "rev": "bd086159fd7dd05ec3f86acf7729f130c3ce9673",
       "src": "https://github.com/nvim-mini/mini.comment"
     },
     "mini.completion": {
@@ -74,11 +74,11 @@
       "src": "https://github.com/echasnovski/mini.notify"
     },
     "mini.pick": {
-      "rev": "437d44eb57312f23e6b931704694fc294922cd88",
+      "rev": "308f16fa39165865ec8d7e0e3e6fb031aa6105a0",
       "src": "https://github.com/nvim-mini/mini.pick"
     },
     "mini.sessions": {
-      "rev": "c96a1d1284b37ba2431092981a9d58f8c71a4fc3",
+      "rev": "40789b9982718eb897636cce08630a943514f88a",
       "src": "https://github.com/nvim-mini/mini.sessions"
     },
     "mini.snippets": {
