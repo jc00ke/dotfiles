@@ -30,6 +30,7 @@ ts.install(
     "go",
     "javascript",
     "html",
+    "powershell",
     "python",
     "rust",
     "go",
