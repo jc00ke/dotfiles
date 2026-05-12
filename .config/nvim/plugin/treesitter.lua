@@ -47,6 +47,16 @@ ts.setup({
   indent = { enable = true, disable = { "python" } },
 })
 
+vim.api.nvim_create_autocmd('FileType', {
+  group = vim.api.nvim_create_augroup('my.treesitter-start', { clear = true }),
+  callback = function(args)
+    if vim.bo[args.buf].filetype == 'latex' then return end
+    local ft = vim.bo[args.buf].filetype
+    local lang = vim.treesitter.language.get_lang(ft) or ft
+    pcall(vim.treesitter.start, args.buf, lang)
+  end,
+})
+
 vim.api.nvim_create_autocmd('PackChanged', {
   desc = 'Handle nvim-treesitter updates',
   group = vim.api.nvim_create_augroup('my.nvim-treesitter-pack-changed-update-handler', { clear = true }),
