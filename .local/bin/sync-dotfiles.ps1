@@ -41,5 +41,6 @@ SyncMyFiles -SourcePath "$DotFilesPath\.config\nvim" -DestinationPath "$env:LOCA
 SyncMyFiles -SourcePath "$DotFilesPath\.config\mise" -DestinationPath "$HOME\.config\mise"
 SyncMyFiles -SourcePath "$DotFilesPath\.config\1Password" -DestinationPath "$env:LOCALAPPDATA\1Password\config\"
 SyncMyFiles -SourcePath "$DotFilesPath\_curlrc" -DestinationPath "$HOME\_curlrc"
+SyncMyFiles -SourcePath "$DotFilesPath\.config\powershell" -DestinationPath "$HOME\Documents\PowerShell"
 
 Set-Location -Path $HOME
