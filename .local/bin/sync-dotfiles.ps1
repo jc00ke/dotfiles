@@ -40,7 +40,7 @@ function SyncMyFiles {
 SyncMyFiles -SourcePath "$DotFilesPath\.config\nvim" -DestinationPath "$env:LOCALAPPDATA\nvim"
 SyncMyFiles -SourcePath "$DotFilesPath\.config\mise" -DestinationPath "$HOME\.config\mise"
 SyncMyFiles -SourcePath "$DotFilesPath\.config\1Password" -DestinationPath "$env:LOCALAPPDATA\1Password\config\"
-SyncMyFiles -SourcePath "$DotFilesPath\_curlrc" -DestinationPath "$HOME\_curlrc"
 SyncMyFiles -SourcePath "$DotFilesPath\.config\powershell" -DestinationPath "$HOME\Documents\PowerShell"
+Copy-Item -Path "$DotFilesPath\_curlrc" -Destination "$HOME\_curlrc"
 
 Set-Location -Path $HOME
