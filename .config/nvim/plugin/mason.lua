@@ -24,7 +24,6 @@ local ensure_installed = {
 if vim.fn.has('windows') == 1 then
   ensure_installed = {
     "docker_language_server",
-    "gopls",
     "lua_ls",
     "oxfmt",
     "oxlint",
@@ -41,8 +40,6 @@ local registry = require("mason-registry")
 local mason_pkgs = {
   "rumdl",
   "sleek",
-  "yamlfmt",
-  "yq",
 }
 
 for _, pkg_name in ipairs(mason_pkgs) do

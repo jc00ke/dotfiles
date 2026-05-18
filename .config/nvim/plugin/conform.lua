@@ -14,7 +14,7 @@ require('conform').setup({
     terraform = { 'terraform_fmt' },
     toml = { "oxfmt" },
     typescript = { 'oxfmt' },
-    yaml = { 'yq_yaml', 'yamlfmt' },
+    yaml = { 'oxfmt' },
   },
 
   -- Set up format-on-save
