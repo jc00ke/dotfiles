@@ -39,7 +39,7 @@ require('conform').setup({
       end
     end
 
-    return { timeout_ms = 1500, lsp_format = "fallback" }
+    return { timeout_ms = 2500, lsp_format = "fallback" }
   end,
   -- Customize formatters
   formatters = {
