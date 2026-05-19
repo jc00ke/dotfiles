@@ -48,10 +48,6 @@ require('conform').setup({
     terraform_fmt = {
       command = 'tofu',
     },
-    yq_yaml = {
-      command = "yq",
-      args = { "-p=yaml", "-o=yaml" },
-    },
   },
 })
 
