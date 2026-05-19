@@ -9,6 +9,7 @@ require('conform').setup({
     json = { "oxfmt" },
     just = { 'just' },
     markdown = { 'rumdl' },
+    ps1 = { "ps1" },
     sh = { 'shfmt' },
     sql = { 'sleek' },
     terraform = { 'terraform_fmt' },
@@ -19,6 +20,9 @@ require('conform').setup({
 
   -- Set up format-on-save
   format_on_save = function(bufnr)
+    -- if vim.bo.filetype == "ps1" then
+    --   return
+    -- end
     -- Disable with a global or buffer-local variable
     if vim.g.disable_autoformat or vim.b[bufnr].disable_autoformat then
       return
@@ -35,10 +39,24 @@ require('conform').setup({
       end
     end
 
-    return { timeout_ms = 500, lsp_format = "fallback" }
+    return { timeout_ms = 1500, lsp_format = "fallback" }
   end,
   -- Customize formatters
   formatters = {
+    ps1 = {
+      command = "pwsh",
+      args = {
+        "-NoLogo",
+        "-NoProfile",
+        "-NonInteractive",
+        "-Command",
+        "(Invoke-Formatter ($input | Out-String)).Trim()",
+      },
+      stdin = true,
+      condition = function(_, _)
+        return vim.fn.executable("pwsh") == 1
+      end,
+    },
     shfmt = {
       prepend_args = { '-i', '2' },
     },
