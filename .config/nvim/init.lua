@@ -66,20 +66,6 @@ map('n', '<leader>d', ":Pick diagnostic<cr>", { desc = "Pick diagnostics" })
 map('n', '<leader>e', ":Oil<cr>", { desc = "Open Oil" })
 map('n', '<leader>lf', vim.lsp.buf.format, { desc = "[l]sp [f]ormat" })
 map('n', '<leader>x', '<cmd>:.lua<cr>')
--- [[ terminal keymaps ]]
-map("n", "<leader>fs", [[:botright terminal <cr>i]], { desc = "Open terminal in horizontal split" })
-map("n", "<leader>fv", [[:vertical terminal <cr>i]], { desc = "Open terminal in vertical split" })
-map("n", "<leader>ff", [[:tab terminal <cr>i]], { desc = "Open terminal in new tab" })
-map(
-  "n",
-  "<leader>fp",
-  [[:tabnew|terminal postgres<cr>]],
-  { desc = "Open terminal in new tab and run Postgres" }
-)
-map("t", "<esc>", [[<c-\><c-n>]])
-map("t", "<c-o>", [[<c-\><c-n>]])
-map('t', '', "")
-map('t', '', "")
 map('v', '<C-r>', [["hy:%s/<C-r>h//gc<left><left><left>]], { noremap = true, desc = "Replace visually selected in file" })
 
 vim.lsp.enable('mdbook_lint')
