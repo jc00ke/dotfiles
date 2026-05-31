@@ -3,6 +3,9 @@ experimental = true
 always_keep_download = true
 always_keep_install = true
 
+[settings.github]
+credential_command = 'op read "op://Private/GitHub/Tokens/mise-RO"'
+
 [tools]
 "aqua:ajeetdsouza/zoxide" = "latest"
 "github:sharkdp/bat" = "latest"
