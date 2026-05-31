@@ -2,6 +2,7 @@
 experimental = true
 always_keep_download = true
 always_keep_install = true
+minimum_release_age = "7d"
 
 [settings.github]
 credential_command = 'op read "op://Private/GitHub/Tokens/mise-RO"'
