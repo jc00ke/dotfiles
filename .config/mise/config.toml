@@ -3,18 +3,6 @@ experimental = true
 always_keep_download = true
 always_keep_install = true
 
-[tasks."bob:install"]
-run = "cargo install --git https://github.com/MordechaiHadad/bob.git"
-description = "Install bob from repo"
-
-[tasks."neovim:install:nightly"]
-run = "bob install nightly"
-description = "Install nightly neovim"
-
-[tasks."neovim:update:nightly"]
-run = "bob update nightly"
-description = "Update nightly neovim"
-
 [tools]
 "aqua:ajeetdsouza/zoxide" = "latest"
 "github:sharkdp/bat" = "latest"
