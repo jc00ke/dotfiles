@@ -5,7 +5,7 @@ always_keep_install = true
 minimum_release_age = "7d"
 
 [settings.github]
-credential_command = 'op read "op://Private/GitHub/Tokens/mise-RO"'
+credential_command = 'op read --account my.1password.com "op://Private/GitHub/Tokens/mise-RO"'
 
 [tools]
 "aqua:ajeetdsouza/zoxide" = "latest"
