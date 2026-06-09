@@ -1,11 +1,11 @@
 {
+  "env": {
+    "CLAUDE_CODE_ENABLE_TELEMETRY": "0",
+    "DISABLE_TELEMETRY": "true"
+  },
   "model": "opus[1m]",
   "alwaysThinkingEnabled": false,
   "effortLevel": "medium",
   "theme": "light",
-  "editorMode": "vim",
-  "env": {
-    "CLAUDE_CODE_ENABLE_TELEMETRY": "0",
-    "DISABLE_TELEMETRY": true
-  }
+  "editorMode": "vim"
 }
