@@ -63,6 +63,8 @@ map('n', '<leader>A', GrepUnderCursor, { desc = "Grep for string under cursor" }
 map('n', '<leader>R', ":Pick resume<cr>", { desc = "Resume search" })
 map('n', '<leader>h', ":Pick help<cr>", { desc = "Pick help" })
 map('n', '<leader>d', ":Pick diagnostic<cr>", { desc = "Pick diagnostics" })
+map('n', '<leader>do', vim.diagnostic.open_float, { desc = "Open diagnostics in floating window." })
+map('n', '<leader>dll', vim.diagnostic.setloclist, { desc = "Add buffer diagnostics to the location list." })
 map('n', '<leader>e', ":Oil<cr>", { desc = "Open Oil" })
 map('n', '<leader>lf', vim.lsp.buf.format, { desc = "[l]sp [f]ormat" })
 map('n', '<leader>x', '<cmd>:.lua<cr>')
