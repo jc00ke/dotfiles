@@ -26,17 +26,6 @@ vim.opt.wrap = false
 require("config.autocmd")
 require("config.terminal")
 
-vim.diagnostic.config({
-  -- Use the default configuration
-  -- virtual_lines = true
-
-  -- Alternatively, customize specific options
-  virtual_lines = {
-    -- Only show virtual line diagnostics for the current cursor line
-    current_line = true,
-  },
-})
-
 local map = vim.keymap.set
 map('n', "<leader>o", ":update<cr> :source<CR>", { desc = "Source the current file" })
 map('n', "<leader>pu", ":lua vim.pack.update(nil, { target = 'lockfile', force = true })<CR>",
@@ -59,16 +48,38 @@ function GrepUnderCursor()
   end
 end
 
+vim.diagnostic.config({
+  -- Use the default configuration
+  -- virtual_lines = true
+
+  -- Alternatively, customize specific options
+  virtual_lines = {
+    -- Only show virtual line diagnostics for the current cursor line
+    current_line = true,
+  },
+})
 map('n', '<leader>A', GrepUnderCursor, { desc = "Grep for string under cursor" })
 map('n', '<leader>R', ":Pick resume<cr>", { desc = "Resume search" })
 map('n', '<leader>h', ":Pick help<cr>", { desc = "Pick help" })
-map('n', '<leader>d', ":Pick diagnostic<cr>", { desc = "Pick diagnostics" })
-map('n', '<leader>do', vim.diagnostic.open_float, { desc = "Open diagnostics in floating window." })
-map('n', '<leader>dll', vim.diagnostic.setloclist, { desc = "Add buffer diagnostics to the location list." })
 map('n', '<leader>e', ":Oil<cr>", { desc = "Open Oil" })
 map('n', '<leader>lf', vim.lsp.buf.format, { desc = "[l]sp [f]ormat" })
 map('n', '<leader>x', '<cmd>:.lua<cr>')
 map('v', '<C-r>', [["hy:%s/<C-r>h//gc<left><left><left>]], { noremap = true, desc = "Replace visually selected in file" })
+
+map('n', '<leader>dP', ":Pick diagnostic<cr>", { desc = "Diagnostics: pick" })
+map('n', '<leader>do', vim.diagnostic.open_float, { desc = "Diagnostics: open floating window" })
+map('n', '<leader>dl', vim.diagnostic.setloclist, { desc = "Diagnostics: put in location list" })
+map('n', '<leader>dn', function()
+  vim.diagnostic.jump({ count = 1, float = true })
+end, { desc = 'Diagnostics: next' })
+
+vim.keymap.set('n', '<leader>dp', function()
+  vim.diagnostic.jump({ count = -1, float = true })
+end, { desc = 'Diagnostics: previous' })
+
+map('n', '<leader>de', function()
+  vim.diagnostic.jump({ count = 1, severity = vim.diagnostic.severity.ERROR, float = true })
+end, { desc = 'Diagnostics: next error' })
 
 vim.lsp.enable('mdbook_lint')
 require('vim._core.ui2').enable()
