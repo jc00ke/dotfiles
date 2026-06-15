@@ -25,7 +25,6 @@ sqlite = "latest"
 starship = "latest"
 stylua = "latest"
 usage = "latest"
-yq = "latest"
 
 "cargo:b3sum" = "latest"
 "github:mvdan/sh" = "latest"
