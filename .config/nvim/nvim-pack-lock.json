@@ -9,7 +9,7 @@
       "src": "https://github.com/Tsuzat/NeoSolarized.nvim"
     },
     "adwaita.nvim": {
-      "rev": "93f3bed009f7fc4c57f8d710880b6cab9e0b0d15",
+      "rev": "c607954f7b2cf56b24e921db0dab4749f3430a22",
       "src": "https://github.com/Mofiqul/adwaita.nvim"
     },
     "alabaster.nvim": {
@@ -26,71 +26,71 @@
       "src": "https://github.com/stevearc/conform.nvim"
     },
     "mason-lspconfig.nvim": {
-      "rev": "0a695750d747db1e7e70bcf0267ef8951c95fc83",
+      "rev": "47059d71b42d74b0a1e9f61c1d99d301039c3b5b",
       "src": "https://github.com/mason-org/mason-lspconfig.nvim"
     },
     "mason.nvim": {
-      "rev": "16ba83bfc8a25f52bb545134f5bee082b195c460",
+      "rev": "2a6940af80375532e5e9e7c1f2fc6319a1b7a69d",
       "src": "https://github.com/mason-org/mason.nvim"
     },
     "mini-git": {
-      "rev": "7c81d173462042cd3a3571643bce03a6c255fd41",
+      "rev": "96db7676696e53add56726e9e80f92dff9f63d17",
       "src": "https://github.com/nvim-mini/mini-git"
     },
     "mini.base16": {
-      "rev": "772f224c5e9527d7c9a843081600c401617c545f",
+      "rev": "ea3a5ea66eec5e154a1699fdae7f66b50a2a9b00",
       "src": "https://github.com/echasnovski/mini.base16"
     },
     "mini.clue": {
-      "rev": "0e37cddd6307eb40248e4226be65304e85df1d18",
+      "rev": "10c1f25158551befb5218e60a0128e4b4ac0fb06",
       "src": "https://github.com/nvim-mini/mini.clue"
     },
     "mini.comment": {
-      "rev": "fc87ba6554f182161d9a4bab5017c575571f000f",
+      "rev": "4677392f091e8b5c18d4b535130220a6d1da4aca",
       "src": "https://github.com/nvim-mini/mini.comment"
     },
     "mini.completion": {
-      "rev": "04abe6fc7860858785ba63c435d76bf5b8b64b5f",
+      "rev": "7c486f877f25bb44d5f6c058c9f4582acc8520e3",
       "src": "https://github.com/nvim-mini/mini.completion"
     },
     "mini.diff": {
-      "rev": "5af2b6be4a4beb673f3196a414f6fd932bbedd48",
+      "rev": "0743d26bd858ebe32efcf5c86a91a422a000f273",
       "src": "https://github.com/nvim-mini/mini.diff"
     },
     "mini.extra": {
-      "rev": "ffb7b3a726e059b011b3655f26e61ec6f7cf5b84",
+      "rev": "e5ecf197f8954d002cb9e85b3715851e2c8d3cd5",
       "src": "https://github.com/nvim-mini/mini.extra"
     },
     "mini.icons": {
-      "rev": "520995f1d75da0e4cc901ee95080b1ff2bc46b94",
+      "rev": "e56797f90192d81f1fda02e662fc3e8e3d775027",
       "src": "https://github.com/nvim-mini/mini.icons"
     },
     "mini.jump2d": {
-      "rev": "1661829512c9cfa9cc641f49836de16b49adb497",
+      "rev": "f97308eb6c3de72a35b64b87ced85501dce8000c",
       "src": "https://github.com/nvim-mini/mini.jump2d"
     },
     "mini.notify": {
-      "rev": "7e75de73c60590e3f35d5cecd5677a68a437fc54",
+      "rev": "821db7d464f7a9bb8666b4ba3be7d2ed637cfcfc",
       "src": "https://github.com/echasnovski/mini.notify"
     },
     "mini.pick": {
-      "rev": "26f94e9c84f529d713de00b900c0a307ca260f35",
+      "rev": "8c1f75f8ddd8c9f75d07ed2ab5718d2c3cb65a66",
       "src": "https://github.com/nvim-mini/mini.pick"
     },
     "mini.sessions": {
-      "rev": "e59286b20fbf61171039ddfebc736cf9562e75d5",
+      "rev": "7cb2945ccc11323b7ca19796eb42618493e1dc12",
       "src": "https://github.com/nvim-mini/mini.sessions"
     },
     "mini.snippets": {
-      "rev": "9a08aa14e02abb790c823a622d7d6c736cbbe65a",
+      "rev": "cf5607c66571d130663fd20761d7cbebdbbf713d",
       "src": "https://github.com/nvim-mini/mini.snippets"
     },
     "mini.statusline": {
-      "rev": "7091f554d7d26b5d55f4c937634da53ba277a44a",
+      "rev": "6a136236ec93090c820c1d2a6139aa053b2199c9",
       "src": "https://github.com/nvim-mini/mini.statusline"
     },
     "neogit": {
-      "rev": "99326a1310fb2d616b455d2fd16d01bf00682f06",
+      "rev": "43ea1a0854052e583f647e0b35879f0158a70a78",
       "src": "https://github.com/NeogitOrg/neogit"
     },
     "neotest": {
@@ -98,11 +98,11 @@
       "src": "https://github.com/nvim-neotest/neotest"
     },
     "neotest-golang": {
-      "rev": "f0ba097d4af098c036aac24cd647480d0d301ad2",
+      "rev": "542cbaf37f1233a2723ccd64ce8ed7e3acbd192b",
       "src": "https://github.com/fredrikaverpil/neotest-golang"
     },
     "nvim-lspconfig": {
-      "rev": "9573948c38bfabeec353ae7dd7d3ffec4c506a6b",
+      "rev": "3371bf298c1f56efc26771ee961f461176958fb5",
       "src": "https://github.com/neovim/nvim-lspconfig"
     },
     "nvim-nio": {
@@ -110,7 +110,7 @@
       "src": "https://github.com/nvim-neotest/nvim-nio"
     },
     "nvim-surround": {
-      "rev": "2e93e154de9ff326def6480a4358bfc149d5da2c",
+      "rev": "8b47db616ef658b8fc27e61db2896aa2f40134de",
       "src": "https://github.com/kylechui/nvim-surround"
     },
     "nvim-treesitter": {
@@ -123,7 +123,7 @@
       "src": "https://github.com/AckslD/nvim-trevJ.lua"
     },
     "oil.nvim": {
-      "rev": "b91ee5a77a6a9605d9c1aaf4fda74b66082c8297",
+      "rev": "b73018b75affd13fa38e2fc94ef753b465f770d7",
       "src": "https://github.com/stevearc/oil.nvim"
     },
     "plenary.nvim": {
@@ -139,7 +139,7 @@
       "src": "https://github.com/chomosuke/typst-preview.nvim"
     },
     "vim-test": {
-      "rev": "d29ec9976fd6b684488c908e6c7c72a3a7a0cb7f",
+      "rev": "2676d84c6901e484df00b5d728bd6a345d47ee12",
       "src": "https://github.com/vim-test/vim-test"
     }
   }
