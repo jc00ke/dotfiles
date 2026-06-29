@@ -7,6 +7,7 @@ vim.pack.add({
 require("mason").setup()
 
 local ensure_installed = {
+  "bashls",
   "clangd",
   "expert",
   "gopls",
