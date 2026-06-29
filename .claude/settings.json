@@ -5,7 +5,7 @@
   },
   "model": "opus[1m]",
   "alwaysThinkingEnabled": false,
-  "effortLevel": "medium",
+  "effortLevel": "high",
   "theme": "light",
   "editorMode": "vim"
 }
