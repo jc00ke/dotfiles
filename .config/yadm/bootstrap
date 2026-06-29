@@ -81,6 +81,7 @@ sudo-rs apt install -y \
   clang-format \
   curl \
   exuberant-ctags \
+  extrepo \
   fish \
   git \
   git-doc \
@@ -153,42 +154,18 @@ curl -sS https://downloads.1password.com/linux/debian/debsig/1password.pol | sud
 sudo-rs mkdir -p /usr/share/debsig/keyrings/AC2D62742012EA22
 curl -sS https://downloads.1password.com/linux/keys/1password.asc | sudo-rs gpg --dearmor --output /usr/share/debsig/keyrings/AC2D62742012EA22/debsig.gpg
 
-log "Setting up gh CLI"
-curl -fsSL https://cli.github.com/packages/githubcli-archive-keyring.gpg | sudo-rs dd of=/usr/share/keyrings/githubcli-archive-keyring.gpg &&
-  sudo-rs chmod go+r /usr/share/keyrings/githubcli-archive-keyring.gpg &&
-  echo "deb [arch=$(dpkg --print-architecture) signed-by=/usr/share/keyrings/githubcli-archive-keyring.gpg] https://cli.github.com/packages stable main" |
-  sudo-rs tee /etc/apt/sources.list.d/github-cli.list >/dev/null
-
-log "Setting up mise"
-wget https://github.com/cargo-bins/cargo-binstall/releases/latest/download/cargo-binstall-x86_64-unknown-linux-musl.tgz
-tar xf cargo-binstall-x86_64-unknown-linux-musl.tgz
-mv cargo-binstall "$HOME/.local/bin/"
-rm cargo-binstall-x86_64-unknown-linux-musl.tgz
-wget -qO - https://mise.jdx.dev/gpg-key.pub | gpg --dearmor | sudo-rs tee /etc/apt/keyrings/mise-archive-keyring.gpg 1>/dev/null
-echo "deb [signed-by=/etc/apt/keyrings/mise-archive-keyring.gpg arch=amd64] https://mise.jdx.dev/deb stable main" | sudo-rs tee /etc/apt/sources.list.d/mise.list
-
-log "Setting up signal"
-wget -O- https://updates.signal.org/desktop/apt/keys.asc | gpg --dearmor >signal-desktop-keyring.gpg
-cat signal-desktop-keyring.gpg | sudo-rs tee /usr/share/keyrings/signal-desktop-keyring.gpg >/dev/null
-
-echo 'deb [arch=amd64 signed-by=/usr/share/keyrings/signal-desktop-keyring.gpg] https://updates.signal.org/desktop/apt xenial main' | sudo-rs tee /etc/apt/sources.list.d/signal-xenial.list
+sudo extrepo enable github-cli mise signal tailscale
 
 log "Setting up Heroku"
 
 log "Add heroku repository to apt"
 echo "deb [arch=amd64 signed-by=/usr/share/keyrings/heroku-keyring.gpg] https://cli-assets.heroku.com/channels/stable/apt ./" | sudo-rs tee /etc/apt/sources.list.d/heroku.list
-
 log "Install heroku's release key for package verification"
 curl -s https://cli-assets.heroku.com/channels/stable/apt/release.key | gpg --dearmor | sudo-rs tee /usr/share/keyrings/heroku-keyring.gpg >/dev/null
-
-log "Install tailscale"
-curl -fsSL https://pkgs.tailscale.com/stable/debian/sid.noarmor.gpg | sudo-rs tee /usr/share/keyrings/tailscale-archive-keyring.gpg >/dev/null
-curl -fsSL https://pkgs.tailscale.com/stable/debian/sid.tailscale-keyring.list | sudo-rs tee /etc/apt/sources.list.d/tailscale.list
 
 log "Install ghostty"
 curl -fsSL https://debian.griffo.io/EA0F721D231FDD3A0A17B9AC7808B4DD62C41256.asc |
   sudo-rs gpg --dearmor -o /usr/share/keyrings/debian.griffo.io.gpg
-
 echo "deb [signed-by=/usr/share/keyrings/debian.griffo.io.gpg] https://debian.griffo.io/apt $(lsb_release -sc) main" | sudo-rs tee /etc/apt/sources.list.d/debian.griffo.io.list
 
 sudo-rs apt modernize-sources
