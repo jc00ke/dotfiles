@@ -83,3 +83,8 @@ end, { desc = 'Diagnostics: next error' })
 
 vim.lsp.enable('mdbook_lint')
 require('vim._core.ui2').enable()
+
+vim.api.nvim_create_user_command('R', function(opts)
+  vim.cmd('new | setlocal buftype=nofile bufhidden=hide noswapfile')
+  vim.cmd('r !' .. opts.args)
+end, { nargs = '*', complete = 'shellcmd' })
