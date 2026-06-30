@@ -183,7 +183,7 @@ checksum = "sha256:2aba634fab91b3cb3f88cb7a75a9539b47ef240a76f4d4ff8d1e48821c8cc
 url = "https://github.com/duckdb/duckdb/releases/download/v1.5.3/duckdb_cli-windows-amd64.zip"
 
 [[tools.elixir]]
-version = "1.19.5-otp-28"
+version = "1.20.0-otp-29"
 backend = "core:elixir"
 
 [[tools.erlang]]
@@ -434,7 +434,7 @@ checksum = "sha256:20d2ceafb4ed41b96b879010927b28bc92a5be57a7c1801ce365a9ca51d32
 url = "https://dl.google.com/go/go1.26.3.windows-amd64.zip"
 
 [[tools.lua]]
-version = "5.4.7"
+version = "5.5.0"
 backend = "asdf:lua"
 
 [[tools.node]]
@@ -626,8 +626,11 @@ url = "https://github.com/shellspec/shellspec/archive/refs/tags/0.28.1.tar.gz"
 url = "https://github.com/shellspec/shellspec/archive/refs/tags/0.28.1.tar.gz"
 
 [[tools.sqlite]]
-version = "3.53.2"
+version = "3.53.3"
 backend = "asdf:sqlite"
+
+[tools.sqlite.options]
+channel = "conda-forge"
 
 [[tools.starship]]
 version = "1.25.1"
