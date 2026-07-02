@@ -24,6 +24,7 @@ set -x KERL_BUILD_DOCS yes
 
 fish_add_path -aP "$HOME/src/bin"
 fish_add_path -aP "$HOME/.local/bin"
+fish_add_path -aP "$HOME/.cargo/bin"
 fish_add_path -aP "$HOME/.config/yarn/global/node_modules/.bin"
 fish_add_path -aP "$HOME/.yarn/bin"
 fish_add_path -aP "$HOME/.git-fuzzy/bin"
