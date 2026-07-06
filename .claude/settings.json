@@ -4,6 +4,9 @@
     "DISABLE_TELEMETRY": "true"
   },
   "model": "opus[1m]",
+  "enabledPlugins": {
+    "gopls-lsp@claude-plugins-official": true
+  },
   "alwaysThinkingEnabled": false,
   "effortLevel": "high",
   "theme": "light",
