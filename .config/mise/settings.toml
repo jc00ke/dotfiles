@@ -1,2 +1,3 @@
 always_keep_download = true
 always_keep_install = true
+auto_install = false
