@@ -11,6 +11,7 @@ vim.pack.add({
   { src = "https://github.com/nvim-mini/mini.sessions" },
   { src = "https://github.com/nvim-mini/mini.snippets" },
   { src = "https://github.com/nvim-mini/mini.completion" },
+  { src = "https://github.com/nvim-mini/mini.surround" },
 })
 
 local pick = require("mini.pick")
@@ -26,6 +27,7 @@ require('mini.icons').setup()
 require('mini.statusline').setup()
 require('mini.snippets').setup()
 require('mini.completion').setup()
+require('mini.surround').setup()
 
 local miniclue = require('mini.clue')
 miniclue.setup({
