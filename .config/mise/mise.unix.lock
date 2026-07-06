@@ -186,6 +186,34 @@ url = "https://github.com/duckdb/duckdb/releases/download/v1.5.3/duckdb_cli-wind
 version = "1.20.0-otp-29"
 backend = "core:elixir"
 
+[tools.elixir."platforms.linux-arm64"]
+checksum = "sha256:eb04bbe0748cfc1414081a005c711a102d0b3f551ff96cc8cff81b0e7d468f19"
+url = "https://builds.hex.pm/builds/elixir/v1.20.0-otp-29.zip"
+
+[tools.elixir."platforms.linux-arm64-musl"]
+checksum = "sha256:eb04bbe0748cfc1414081a005c711a102d0b3f551ff96cc8cff81b0e7d468f19"
+url = "https://builds.hex.pm/builds/elixir/v1.20.0-otp-29.zip"
+
+[tools.elixir."platforms.linux-x64"]
+checksum = "blake3:948b0442f75a4bcb3bf2988323ef0930c7d1c61de2aabaa02fb27ce63f06a858"
+url = "https://builds.hex.pm/builds/elixir/v1.20.0-otp-29.zip"
+
+[tools.elixir."platforms.linux-x64-musl"]
+checksum = "sha256:eb04bbe0748cfc1414081a005c711a102d0b3f551ff96cc8cff81b0e7d468f19"
+url = "https://builds.hex.pm/builds/elixir/v1.20.0-otp-29.zip"
+
+[tools.elixir."platforms.macos-arm64"]
+checksum = "sha256:eb04bbe0748cfc1414081a005c711a102d0b3f551ff96cc8cff81b0e7d468f19"
+url = "https://builds.hex.pm/builds/elixir/v1.20.0-otp-29.zip"
+
+[tools.elixir."platforms.macos-x64"]
+checksum = "sha256:eb04bbe0748cfc1414081a005c711a102d0b3f551ff96cc8cff81b0e7d468f19"
+url = "https://builds.hex.pm/builds/elixir/v1.20.0-otp-29.zip"
+
+[tools.elixir."platforms.windows-x64"]
+checksum = "sha256:eb04bbe0748cfc1414081a005c711a102d0b3f551ff96cc8cff81b0e7d468f19"
+url = "https://builds.hex.pm/builds/elixir/v1.20.0-otp-29.zip"
+
 [[tools.erlang]]
 version = "29.0"
 backend = "core:erlang"
