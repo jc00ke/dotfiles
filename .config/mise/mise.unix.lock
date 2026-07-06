@@ -657,9 +657,6 @@ url = "https://github.com/shellspec/shellspec/archive/refs/tags/0.28.1.tar.gz"
 version = "3.53.3"
 backend = "asdf:sqlite"
 
-[tools.sqlite.options]
-channel = "conda-forge"
-
 [[tools.starship]]
 version = "1.25.1"
 backend = "aqua:starship/starship"
