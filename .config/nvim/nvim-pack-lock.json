@@ -113,6 +113,10 @@
       "rev": "21f5324bfac14e22ba26553caf69ec76ae8a7662",
       "src": "https://github.com/nvim-neotest/nvim-nio"
     },
+    "nvim-surround": {
+      "rev": "8b47db616ef658b8fc27e61db2896aa2f40134de",
+      "src": "https://github.com/kylechui/nvim-surround"
+    },
     "nvim-treesitter": {
       "rev": "4916d6592ede8c07973490d9322f187e07dfefac",
       "src": "https://github.com/nvim-treesitter/nvim-treesitter",
@@ -129,6 +133,10 @@
     "plenary.nvim": {
       "rev": "74b06c6c75e4eeb3108ec01852001636d85a932b",
       "src": "https://github.com/nvim-lua/plenary.nvim"
+    },
+    "radix.nvim": {
+      "rev": "1463158b6ecd2b194c1f213a4dea2688cb9b51c9",
+      "src": "https://github.com/rockorager/radix.nvim"
     },
     "solarized-osaka.nvim": {
       "rev": "f675d9a5c58f3b0d6158d665a623f81a62e7bdaf",
