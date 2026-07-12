@@ -110,6 +110,31 @@ checksum = "sha256:b2816e506390a89941c63c9187d58a3cc10e9a55f2ef0685f9ea0eccaf7c9
 url = "https://github.com/sharkdp/fd/releases/download/v10.4.2/fd-v10.4.2-x86_64-pc-windows-msvc.zip"
 url_api = "https://api.github.com/repos/sharkdp/fd/releases/assets/370661516"
 
+[[tools.lua]]
+version = "5.4.8"
+backend = "asdf:lua"
+
+[tools.lua."platforms.linux-arm64"]
+url = "https://www.lua.org/ftp/lua-5.4.8.tar.gz"
+
+[tools.lua."platforms.linux-arm64-musl"]
+url = "https://www.lua.org/ftp/lua-5.4.8.tar.gz"
+
+[tools.lua."platforms.linux-x64"]
+url = "https://www.lua.org/ftp/lua-5.4.8.tar.gz"
+
+[tools.lua."platforms.linux-x64-musl"]
+url = "https://www.lua.org/ftp/lua-5.4.8.tar.gz"
+
+[tools.lua."platforms.macos-arm64"]
+url = "https://www.lua.org/ftp/lua-5.4.8.tar.gz"
+
+[tools.lua."platforms.macos-x64"]
+url = "https://www.lua.org/ftp/lua-5.4.8.tar.gz"
+
+[tools.lua."platforms.windows-x64"]
+url = "https://www.lua.org/ftp/lua-5.4.8.tar.gz"
+
 [[tools.neovim]]
 version = "0.12.3"
 backend = "vfox:mise-plugins/vfox-neovim"
