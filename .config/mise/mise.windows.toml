@@ -2,8 +2,8 @@
 python = "3.13.1"
 
 "github:JohnnyMorganz/StyLua" = { version = "latest", exe = "stylua" }
-zoxide = "latest"
-"github:shellspec/shellspec" = "latest"
-starship = "latest"
 "github:cli/cli" = { version = "latest", exe = "gh" }
+"github:shellspec/shellspec" = "latest"
 "gitlab:gitlab-org/cli" = { version = "latest", exe = "glab" }
+starship = "latest"
+zoxide = "latest"
