@@ -89,3 +89,17 @@ vim.api.nvim_create_user_command('R', function(opts)
   vim.cmd('new | setlocal buftype=nofile bufhidden=hide noswapfile')
   vim.cmd('r !' .. opts.args)
 end, { nargs = '*', complete = 'shellcmd' })
+
+
+local function create_scratch_buffer()
+  -- Create an unlisted, scratch buffer
+  local buf = vim.api.nvim_create_buf(false, true)
+  -- Prevent Neovim from asking to save changes on exit
+  vim.api.nvim_set_option_value("buftype", "nofile", { buf = buf })
+  vim.api.nvim_set_option_value("bufhidden", "hide", { buf = buf })
+  vim.api.nvim_set_option_value("swapfile", false, { buf = buf })
+  -- Open the buffer in the current window
+  vim.api.nvim_set_current_buf(buf)
+end
+
+map("n", "<leader>bs", create_scratch_buffer, { desc = "Toggle Scratch Buffer" })
