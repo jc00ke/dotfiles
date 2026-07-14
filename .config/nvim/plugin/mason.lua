@@ -25,7 +25,6 @@ local ensure_installed = {
 
 if vim.fn.has('win32') == 1 then
   ensure_installed = {
-    "docker_language_server",
     "lua_ls",
     "oxfmt",
     "oxlint",
