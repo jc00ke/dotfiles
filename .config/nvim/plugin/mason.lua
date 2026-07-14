@@ -17,6 +17,7 @@ local ensure_installed = {
   "docker_language_server",
   "oxfmt",
   "oxlint",
+  "rumdl",
   "tailwindcss",
   "tinymist",
   "ty",
@@ -29,6 +30,7 @@ if vim.fn.has('windows') == 1 then
     "oxfmt",
     "oxlint",
     "ruff",
+    "rumdl",
   }
 end
 
@@ -39,7 +41,6 @@ require("mason-lspconfig").setup({
 local registry = require("mason-registry")
 
 local mason_pkgs = {
-  "rumdl",
   "sleek",
 }
 
