@@ -5,7 +5,8 @@
   },
   "model": "opus[1m]",
   "enabledPlugins": {
-    "gopls-lsp@claude-plugins-official": true
+    "gopls-lsp@claude-plugins-official": true,
+    "lua-lsp@claude-plugins-official": true
   },
   "alwaysThinkingEnabled": false,
   "effortLevel": "high",
