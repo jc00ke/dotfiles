@@ -23,7 +23,7 @@ local ensure_installed = {
   "ty",
 }
 
-if vim.fn.has('windows') == 1 then
+if vim.fn.has('win32') == 1 then
   ensure_installed = {
     "docker_language_server",
     "lua_ls",
