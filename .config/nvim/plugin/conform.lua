@@ -8,7 +8,6 @@ require('conform').setup({
     javascript = { 'oxfmt' },
     json = { "oxfmt" },
     just = { 'just' },
-    markdown = { 'rumdl' },
     ps1 = { "ps1" },
     sh = { 'shfmt' },
     sql = { 'sleek' },
