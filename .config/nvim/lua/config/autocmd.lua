@@ -71,3 +71,42 @@ vim.keymap.set('n', '<leader>tar', ToggleAutoRefresh, {
   silent = false,
   desc = "Toggle auto refresh of files"
 })
+
+
+-- Helper function to dim a hex color string by a percentage
+local function dim_hex_color(hex, percent)
+  if not hex or hex == "None" then return nil end
+  local r = tonumber(hex:sub(2, 3), 16)
+  local g = tonumber(hex:sub(4, 5), 16)
+  local b = tonumber(hex:sub(6, 7), 16)
+
+  r = math.max(0, math.floor(r * (1 - percent)))
+  g = math.max(0, math.floor(g * (1 - percent)))
+  b = math.max(0, math.floor(b * (1 - percent)))
+
+  return string.format("#%02x%02x%02x", r, g, b)
+end
+
+-- Universal hook that runs for ANY colorscheme
+vim.api.nvim_create_autocmd("ColorScheme", {
+  pattern = "*", -- Matches everything
+  callback = function()
+    -- Fetch the global highlight data for the 'Normal' window
+    local normal_hl = vim.api.nvim_get_hl(0, { name = "Normal" })
+    local bg_int = normal_hl.bg
+
+    if bg_int then
+      -- Convert the internal color integer into a standard Hex string
+      local current_bg = string.format("#%06x", bg_int)
+
+      -- Dim the background color by 9% (tweak this fraction as preferred)
+      local dimmed_bg = dim_hex_color(current_bg, 0.09)
+
+      -- Set the global highlight for inactive windows dynamically
+      vim.api.nvim_set_hl(0, "NormalNC", {
+        bg = dimmed_bg,
+        fg = normal_hl.fg -- Preserve text visibility by keeping foreground identical
+      })
+    end
+  end,
+})
