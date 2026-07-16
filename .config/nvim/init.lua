@@ -103,3 +103,20 @@ local function create_scratch_buffer()
 end
 
 map("n", "<leader>bs", create_scratch_buffer, { desc = "Toggle Scratch Buffer" })
+
+
+-- Custom function to toggle window zoom
+local function toggle_zoom()
+  if vim.t.zoomed then
+    -- Restore the previous window layout
+    vim.cmd("wincmd =")
+    vim.t.zoomed = false
+  else
+    -- Maximize the current window
+    vim.cmd("wincmd _ | wincmd |")
+    vim.t.zoomed = true
+  end
+end
+
+-- Bind the toggle function to a single key (e.g., F3)
+map('n', '_', toggle_zoom, { desc = 'Toggle window zoom' })
