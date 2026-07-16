@@ -99,8 +99,8 @@ vim.api.nvim_create_autocmd("ColorScheme", {
       -- Convert the internal color integer into a standard Hex string
       local current_bg = string.format("#%06x", bg_int)
 
-      -- Dim the background color by 9% (tweak this fraction as preferred)
-      local dimmed_bg = dim_hex_color(current_bg, 0.09)
+      -- Dim the background color by 6% (tweak this fraction as preferred)
+      local dimmed_bg = dim_hex_color(current_bg, 0.06)
 
       -- Set the global highlight for inactive windows dynamically
       vim.api.nvim_set_hl(0, "NormalNC", {
