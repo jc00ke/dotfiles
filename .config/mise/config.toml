@@ -12,5 +12,5 @@ credential_command = 'op read --account my.1password.com "op://Private/GitHub/To
 "aqua:ajeetdsouza/zoxide" = "latest"
 "github:sharkdp/bat" = "latest"
 "github:sharkdp/fd" = "latest"
-neovim = "0.12.3"
+neovim = "0.12.4"
 tree-sitter = "latest"
