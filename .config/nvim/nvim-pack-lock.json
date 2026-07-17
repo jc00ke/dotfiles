@@ -90,15 +90,15 @@
       "src": "https://github.com/nvim-mini/mini.statusline"
     },
     "mini.surround": {
-      "rev": "c30ec60393b256427512c6996a2b37d9cbcbb66a",
+      "rev": "8d5d0c5aa92449368ac251e85451d79d8f69d296",
       "src": "https://github.com/nvim-mini/mini.surround"
     },
     "neogit": {
-      "rev": "a0847c4bea5a5f92a36e3f3bf7da99d7d685d3ac",
+      "rev": "f8674ec894315c02449b61c9de9a116c5aafeb90",
       "src": "https://github.com/NeogitOrg/neogit"
     },
     "neotest": {
-      "rev": "504944bd70ef575315bc72a6aa633ef6ea0a4913",
+      "rev": "4e2cd42c4252ee9d2435571d9adcdbc1d47931fe",
       "src": "https://github.com/nvim-neotest/neotest"
     },
     "neotest-golang": {
@@ -106,11 +106,11 @@
       "src": "https://github.com/fredrikaverpil/neotest-golang"
     },
     "nvim-lspconfig": {
-      "rev": "d5b6e3db4c17b0146f63a2fc47e2027a754b2cb1",
+      "rev": "b386c50cd7816f8c8a2b13b298a218af1f5a75c6",
       "src": "https://github.com/neovim/nvim-lspconfig"
     },
     "nvim-nio": {
-      "rev": "21f5324bfac14e22ba26553caf69ec76ae8a7662",
+      "rev": "edcc181a875301dd21840189aa2f2f9ad69fc172",
       "src": "https://github.com/nvim-neotest/nvim-nio"
     },
     "nvim-surround": {
