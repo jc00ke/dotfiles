@@ -39,6 +39,10 @@ checksum = "sha256:f465ae548f8754c8e7edbc60b45fbf58c92bfe123db83d790252d6810fa5d
 url = "https://github.com/ajeetdsouza/zoxide/releases/download/v0.10.0/zoxide-0.10.0-x86_64-pc-windows-msvc.zip"
 url_api = "https://api.github.com/repos/ajeetdsouza/zoxide/releases/assets/466316769"
 
+[[tools.eza]]
+version = "0.23.5"
+backend = "asdf:eza"
+
 [[tools."github:sharkdp/bat"]]
 version = "0.26.1"
 backend = "github:sharkdp/bat"
