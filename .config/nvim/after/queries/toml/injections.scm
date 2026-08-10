@@ -1,7 +1,7 @@
 ; extends
 
 (pair
-  (bare_key) @key (#eq? @key "run")
+  (bare_key) @key (#any-of? @key "run" "run_windows")
   (string) @injection.content @injection.language
 
   (#is-mise?)
@@ -11,7 +11,7 @@
 )
 
 (pair
-  (bare_key) @key (#eq? @key "run")
+  (bare_key) @key (#any-of? @key "run" "run_windows")
   (string) @injection.content @injection.language
 
   (#is-mise?)
@@ -21,7 +21,7 @@
 )
 
 (pair
-  (bare_key) @key (#eq? @key "run")
+  (bare_key) @key (#any-of? @key "run" "run_windows")
   (string) @injection.content
 
   (#is-mise?)
@@ -32,7 +32,7 @@
 )
 
 (pair
-  (bare_key) @key (#eq? @key "run")
+  (bare_key) @key (#any-of? @key "run" "run_windows")
   (string) @injection.content
 
   (#is-mise?)
