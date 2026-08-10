@@ -7,6 +7,11 @@ if vim.fn.has('win32') == 1 then
 end
 
 
+-- Shebang interpreter names that differ from the treesitter parser name, so
+-- that injections extracting the interpreter from a shebang (e.g. mise `run`
+-- scripts starting with `#!/usr/bin/env pwsh`) resolve to a real parser.
+vim.treesitter.language.register("powershell", { "pwsh", "powershell" })
+
 vim.treesitter.query.add_predicate("is-mise?", function(_, _, bufnr, _)
   ---@cast bufnr integer
   local filepath = vim.api.nvim_buf_get_name(bufnr)
