@@ -8,14 +8,6 @@
       "rev": "3c55ad358c062aa4879950c4f83b4deeac6b72df",
       "src": "https://github.com/Tsuzat/NeoSolarized.nvim"
     },
-    "adwaita.nvim": {
-      "rev": "c607954f7b2cf56b24e921db0dab4749f3430a22",
-      "src": "https://github.com/Mofiqul/adwaita.nvim"
-    },
-    "alabaster.nvim": {
-      "rev": "b902c73fabefc13583bfc0c18b28950ea8f6244f",
-      "src": "https://github.com/p00f/alabaster.nvim"
-    },
     "blink.cmp": {
       "rev": "bae4bae0eedd1fa55f34b685862e94a222d5c6f8",
       "src": "https://github.com/Saghen/blink.cmp",
@@ -133,10 +125,6 @@
     "plenary.nvim": {
       "rev": "74b06c6c75e4eeb3108ec01852001636d85a932b",
       "src": "https://github.com/nvim-lua/plenary.nvim"
-    },
-    "radix.nvim": {
-      "rev": "5cef5728356d03bd82247e15896404e01a6985ef",
-      "src": "https://github.com/rockorager/radix.nvim"
     },
     "solarized-osaka.nvim": {
       "rev": "f675d9a5c58f3b0d6158d665a623f81a62e7bdaf",
