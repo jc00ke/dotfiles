@@ -220,3 +220,42 @@ checksum = "sha256:9d836a8c405ed50cea6b3410905576de3bff2b42ca12edc1e825ec86fe918
 url = "https://github.com/tree-sitter/tree-sitter/releases/download/v0.26.11/tree-sitter-windows-x64.gz"
 url_api = "https://api.github.com/repos/tree-sitter/tree-sitter/releases/assets/474307013"
 provenance = "github-attestations"
+
+[[tools.usage]]
+version = "6.3.0"
+backend = "aqua:jdx/usage"
+
+[tools.usage."platforms.linux-arm64"]
+checksum = "sha256:7e4a2ba8ad9c84393dc9921651fc95666e9b4c216c2f21cc89d01b6931e8e91b"
+url = "https://github.com/jdx/usage/releases/download/v6.3.0/usage-aarch64-unknown-linux-gnu.tar.gz"
+url_api = "https://api.github.com/repos/jdx/usage/releases/assets/527584062"
+
+[tools.usage."platforms.linux-arm64-musl"]
+checksum = "sha256:6b2650f1d481f374e5c58bbebfa9dd2c45281272d8556e089af4624617b64554"
+url = "https://github.com/jdx/usage/releases/download/v6.3.0/usage-aarch64-unknown-linux-musl.tar.gz"
+url_api = "https://api.github.com/repos/jdx/usage/releases/assets/527584046"
+
+[tools.usage."platforms.linux-x64"]
+checksum = "sha256:c128761c9174d31cba827bff5d6504239bbdedfb2d86c603da6cfde8ad0a8ba8"
+url = "https://github.com/jdx/usage/releases/download/v6.3.0/usage-x86_64-unknown-linux-gnu.tar.gz"
+url_api = "https://api.github.com/repos/jdx/usage/releases/assets/527583543"
+
+[tools.usage."platforms.linux-x64-musl"]
+checksum = "sha256:2688459eb8da13090052e819b5d54c92652e68d03003d7fb9b5f0facc1ca558b"
+url = "https://github.com/jdx/usage/releases/download/v6.3.0/usage-x86_64-unknown-linux-musl.tar.gz"
+url_api = "https://api.github.com/repos/jdx/usage/releases/assets/527584253"
+
+[tools.usage."platforms.macos-arm64"]
+checksum = "sha256:227b2c1d7f6f5f202af89b61769985c085f99a2bbce6b8a062d3665f4be9d79d"
+url = "https://github.com/jdx/usage/releases/download/v6.3.0/usage-universal-apple-darwin.tar.gz"
+url_api = "https://api.github.com/repos/jdx/usage/releases/assets/527593353"
+
+[tools.usage."platforms.macos-x64"]
+checksum = "sha256:227b2c1d7f6f5f202af89b61769985c085f99a2bbce6b8a062d3665f4be9d79d"
+url = "https://github.com/jdx/usage/releases/download/v6.3.0/usage-universal-apple-darwin.tar.gz"
+url_api = "https://api.github.com/repos/jdx/usage/releases/assets/527593353"
+
+[tools.usage."platforms.windows-x64"]
+checksum = "sha256:eac428b07f2b6651887e9cff5bdc8ef3e104f8cdd30fcc9880a02168118997bf"
+url = "https://github.com/jdx/usage/releases/download/v6.3.0/usage-x86_64-pc-windows-msvc.zip"
+url_api = "https://api.github.com/repos/jdx/usage/releases/assets/527586936"
