@@ -25,31 +25,15 @@ vim.opt.wrap = false
 
 require("config.autocmd")
 require("config.terminal")
-
-function PackList()
-  local plugins = vim.pack.get(nil, { info = false })
-  table.sort(plugins, function(p1, p2)
-    return p2.spec.name > p1.spec.name
-  end)
-
-  local qf_items = {}
-  for _, plugin in ipairs(plugins) do
-    table.insert(qf_items, {
-      filename = plugin.spec.name,
-      text = "active: " .. tostring(plugin.active) .. ", version: " .. (plugin.spec.version or "-"),
-    })
-  end
-
-  vim.fn.setqflist({}, 'r', { title = 'Plugins', items = qf_items })
-  vim.cmd('copen')
-end
+require("pack")
 
 local map = vim.keymap.set
 map('n', "<leader>o", ":update<cr> :source<CR>", { desc = "Source the current file" })
-map('n', "<leader>pu", ":lua vim.pack.update(nil, { target = 'lockfile', force = true })<CR>",
-  { desc = "Updates plugins to lockfile" })
-map('n', "<leader>pU", ":lua vim.pack.update()<CR>", { desc = "Updates plugins" })
-map('n', "<leader>pl", PackList, { desc = "List plugins" })
+map('n', "<leader>pu", ":PackUpdate<CR>", { desc = "Updates plugins to lockfile" })
+map('n', "<leader>pU", ":PackUpdate!<CR>", { desc = "Updates plugins" })
+map('n', "<leader>pc", ":PackClean<CR>", { desc = "Clean plugins" })
+map('n', "<leader>pl", ":PackList<CR>", { desc = "List plugins" })
+
 map("i", "jj", "<esc>")
 map("i", "kk", "<esc>:update<cr>")
 map("n", "<leader>j", "gT", { desc = "Next tab" })
