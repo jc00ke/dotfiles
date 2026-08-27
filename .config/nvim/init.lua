@@ -1,4 +1,8 @@
 -- inspiration and resources
+-- https://echasnovski.com/blog/2026-03-13-a-guide-to-vim-pack.html
+-- lazy loading
+-- - https://nvim-mini.org/mini.nvim/doc/mini-misc.html#minimisc.safely
+-- - https://echasnovski.com/blog/2026-03-13-a-guide-to-vim-pack.html#lazy-loading
 -- https://github.com/franciscopower/.dotfiles/tree/main/nvim
 
 vim.g.mapleader = ","
