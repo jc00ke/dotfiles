@@ -1,3 +1,6 @@
+-- inspiration and resources
+-- https://github.com/franciscopower/.dotfiles/tree/main/nvim
+
 vim.g.mapleader = ","
 vim.g.maplocalleader = "\\"
 
