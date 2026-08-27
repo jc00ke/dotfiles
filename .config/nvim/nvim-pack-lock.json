@@ -4,21 +4,12 @@
       "rev": "1900f89dc17c603eec29960f57c00bd9ae696495",
       "src": "https://github.com/antoinemadec/FixCursorHold.nvim"
     },
-    "NeoSolarized.nvim": {
-      "rev": "3c55ad358c062aa4879950c4f83b4deeac6b72df",
-      "src": "https://github.com/Tsuzat/NeoSolarized.nvim"
-    },
-    "blink.cmp": {
-      "rev": "bae4bae0eedd1fa55f34b685862e94a222d5c6f8",
-      "src": "https://github.com/Saghen/blink.cmp",
-      "version": "'v1.6.0'"
-    },
     "conform.nvim": {
       "rev": "016802de402556da54c36bd7359b441266b01cdd",
       "src": "https://github.com/stevearc/conform.nvim"
     },
     "mason-lspconfig.nvim": {
-      "rev": "9d28935aa95fa6c1dc7c4d6747f101a72a8a4bec",
+      "rev": "1b621470c01bd8190bb32a290d21575d3e6470c5",
       "src": "https://github.com/mason-org/mason-lspconfig.nvim"
     },
     "mason.nvim": {
@@ -28,10 +19,6 @@
     "mini-git": {
       "rev": "62aa54f41c50181dceff90b55f989efe69ad198c",
       "src": "https://github.com/nvim-mini/mini-git"
-    },
-    "mini.base16": {
-      "rev": "d5f7b0db4559eb14c1c6c9e88aae95b9a79df408",
-      "src": "https://github.com/echasnovski/mini.base16"
     },
     "mini.clue": {
       "rev": "4d506660e7030a15748ab073bebfe3ed03884000",
@@ -61,12 +48,8 @@
       "rev": "861123628b5ef905982080d726de683383bfcc22",
       "src": "https://github.com/nvim-mini/mini.jump2d"
     },
-    "mini.notify": {
-      "rev": "13df5edffc3e27937b166a0f25a8329b46e15a4e",
-      "src": "https://github.com/echasnovski/mini.notify"
-    },
     "mini.pick": {
-      "rev": "04e73ab07222508361095bb6e27621b315e6b9f1",
+      "rev": "b27dc13b3d6dafc10e868b6ddc682cc4f047f4d1",
       "src": "https://github.com/nvim-mini/mini.pick"
     },
     "mini.sessions": {
@@ -104,10 +87,6 @@
     "nvim-nio": {
       "rev": "edcc181a875301dd21840189aa2f2f9ad69fc172",
       "src": "https://github.com/nvim-neotest/nvim-nio"
-    },
-    "nvim-surround": {
-      "rev": "8b47db616ef658b8fc27e61db2896aa2f40134de",
-      "src": "https://github.com/kylechui/nvim-surround"
     },
     "nvim-treesitter": {
       "rev": "8b98b4470eb326f1c7b50dae79f8c963568e5720",
