@@ -87,11 +87,11 @@ if type -q mise
     abbr -a mr "mise run"
     fish_add_path -aP "$HOME/.local/share/mise/bin"
     mise activate fish | source
-    mise hook-env | source
-    mise exec -- starship init fish | source
-    mise exec -- zoxide init fish | source
+    starship init fish | source
+    zoxide init fish | source
 
     if type -q fnox
+        # @fish-lsp-disable-next-line 7001
         fnox activate fish | source
     end
 
@@ -100,7 +100,7 @@ if type -q mise
         bind \cr _atuin_search
         bind -M insert \cr _atuin_search
         set -gx ATUIN_NOBIND true
-        mise exec -- atuin init fish | source
+        atuin init fish | source
     end
 end
 
