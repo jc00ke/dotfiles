@@ -4,4 +4,4 @@
 "github:sharkdp/fd" = "latest"
 neovim = "0.12.5"
 tree-sitter = "latest"
-usage = "6.8.0"
+usage = "latest"
