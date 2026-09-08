@@ -1,3 +1,13 @@
 always_keep_download = true
 always_keep_install = true
 auto_install = false
+experimental = true
+lockfile = true
+minimum_release_age = "7d"
+minimum_release_age_excludes = ["fnox", "usage", "tree-sitter"]
+
+[settings.github]
+credential_command = 'op read --account my.1password.com "op://Private/GitHub/Tokens/mise-RO"'
+
+[settings.cargo]
+binstall = true
