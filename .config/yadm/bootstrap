@@ -169,13 +169,17 @@ sudo-rs rm /etc/apt/sources.list.d/*.bak
 sudo-rs apt update && sudo-rs apt install \
   1password \
   1password-cli \
-  eza \
   firefox \
   gh \
-  ghostty \
   mise \
   signal-desktop-beta \
   tailscale \
+  -y
+
+log "From griffo-free repo"
+sudo-rs apt install \
+  eza \
+  ghostty \
   -y
 
 write-keybinding 0 "Terminal" "ghostty" "<Super>Return"
