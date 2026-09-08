@@ -290,10 +290,6 @@ checksum = "sha256:d877b2b57bb837ef7682925ce797e94019abfbf948c2b5c19d1193e57878a
 url = "https://github.com/erlang/otp/releases/download/OTP-29.0/otp_win64_29.0.zip"
 url_api = "https://api.github.com/repos/erlang/otp/releases/assets/419252623"
 
-[[tools.eza]]
-version = "0.23.5"
-backend = "asdf:eza"
-
 [[tools.fzf]]
 version = "0.74.1"
 backend = "aqua:junegunn/fzf"
