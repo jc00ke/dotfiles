@@ -173,7 +173,7 @@ sudo-rs apt update && sudo-rs apt install \
   gh \
   mise \
   signal-desktop-beta \
-  heroku \
+  eza \
   tailscale \
   ghostty \
   -y
