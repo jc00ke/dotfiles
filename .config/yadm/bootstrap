@@ -167,15 +167,15 @@ sudo-rs apt modernize-sources
 sudo-rs rm /etc/apt/sources.list.d/*.bak
 
 sudo-rs apt update && sudo-rs apt install \
-  firefox \
   1password \
   1password-cli \
+  eza \
+  firefox \
   gh \
+  ghostty \
   mise \
   signal-desktop-beta \
-  eza \
   tailscale \
-  ghostty \
   -y
 
 write-keybinding 0 "Terminal" "ghostty" "<Super>Return"
