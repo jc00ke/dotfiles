@@ -156,13 +156,6 @@ curl -sS https://downloads.1password.com/linux/keys/1password.asc | sudo-rs gpg 
 
 sudo extrepo enable github-cli mise signal tailscale griffo-free
 
-log "Setting up Heroku"
-
-log "Add heroku repository to apt"
-echo "deb [arch=amd64 signed-by=/usr/share/keyrings/heroku-keyring.gpg] https://cli-assets.heroku.com/channels/stable/apt ./" | sudo-rs tee /etc/apt/sources.list.d/heroku.list
-log "Install heroku's release key for package verification"
-curl -s https://cli-assets.heroku.com/channels/stable/apt/release.key | gpg --dearmor | sudo-rs tee /usr/share/keyrings/heroku-keyring.gpg >/dev/null
-
 sudo-rs apt modernize-sources
 sudo-rs rm /etc/apt/sources.list.d/*.bak
 
