@@ -24,6 +24,5 @@ sqlite = "latest"
 starship = "latest"
 stylua = "latest"
 
-"cargo:b3sum" = "latest"
 "github:mvdan/sh" = "latest"
 "github:tailwindlabs/tailwindcss" = "latest"
