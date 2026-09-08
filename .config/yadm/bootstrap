@@ -166,7 +166,17 @@ curl -s https://cli-assets.heroku.com/channels/stable/apt/release.key | gpg --de
 sudo-rs apt modernize-sources
 sudo-rs rm /etc/apt/sources.list.d/*.bak
 
-sudo-rs apt update && sudo-rs apt install firefox 1password 1password-cli gh mise signal-desktop-beta heroku tailscale ghostty -y
+sudo-rs apt update && sudo-rs apt install \
+  firefox \
+  1password \
+  1password-cli \
+  gh \
+  mise \
+  signal-desktop-beta \
+  heroku \
+  tailscale \
+  ghostty \
+  -y
 
 write-keybinding 0 "Terminal" "ghostty" "<Super>Return"
 write-keybinding 1 "Screenshot window" "flatpak run be.alexandervanhee.gradia --screenshot=INTERACTIVE" "<Shift><Super>w"
