@@ -126,10 +126,6 @@ url = "https://github.com/cargo-bins/cargo-binstall/releases/download/v1.21.1/ca
 url_api = "https://api.github.com/repos/cargo-bins/cargo-binstall/releases/assets/489425215"
 provenance = "github-attestations"
 
-[[tools."cargo:b3sum"]]
-version = "1.8.5"
-backend = "cargo:b3sum"
-
 [[tools.cosign]]
 version = "3.1.2"
 backend = "aqua:sigstore/cosign"
@@ -714,30 +710,37 @@ version = "0.28.1"
 backend = "aqua:shellspec/shellspec"
 
 [tools.shellspec."platforms.linux-arm64"]
+checksum = "sha256:400d835466429a5fe6c77a62775a9173729d61dd43e05dfa893e8cf6cb511783"
 url = "https://github.com/shellspec/shellspec/archive/refs/tags/0.28.1.tar.gz"
 url_api = "https://api.github.com/repos/shellspec/shellspec/tarball/0.28.1"
 
 [tools.shellspec."platforms.linux-arm64-musl"]
+checksum = "sha256:400d835466429a5fe6c77a62775a9173729d61dd43e05dfa893e8cf6cb511783"
 url = "https://github.com/shellspec/shellspec/archive/refs/tags/0.28.1.tar.gz"
 url_api = "https://api.github.com/repos/shellspec/shellspec/tarball/0.28.1"
 
 [tools.shellspec."platforms.linux-x64"]
+checksum = "sha256:400d835466429a5fe6c77a62775a9173729d61dd43e05dfa893e8cf6cb511783"
 url = "https://github.com/shellspec/shellspec/archive/refs/tags/0.28.1.tar.gz"
 url_api = "https://api.github.com/repos/shellspec/shellspec/tarball/0.28.1"
 
 [tools.shellspec."platforms.linux-x64-musl"]
+checksum = "sha256:400d835466429a5fe6c77a62775a9173729d61dd43e05dfa893e8cf6cb511783"
 url = "https://github.com/shellspec/shellspec/archive/refs/tags/0.28.1.tar.gz"
 url_api = "https://api.github.com/repos/shellspec/shellspec/tarball/0.28.1"
 
 [tools.shellspec."platforms.macos-arm64"]
+checksum = "sha256:400d835466429a5fe6c77a62775a9173729d61dd43e05dfa893e8cf6cb511783"
 url = "https://github.com/shellspec/shellspec/archive/refs/tags/0.28.1.tar.gz"
 url_api = "https://api.github.com/repos/shellspec/shellspec/tarball/0.28.1"
 
 [tools.shellspec."platforms.macos-x64"]
+checksum = "sha256:400d835466429a5fe6c77a62775a9173729d61dd43e05dfa893e8cf6cb511783"
 url = "https://github.com/shellspec/shellspec/archive/refs/tags/0.28.1.tar.gz"
 url_api = "https://api.github.com/repos/shellspec/shellspec/tarball/0.28.1"
 
 [tools.shellspec."platforms.windows-x64"]
+checksum = "sha256:400d835466429a5fe6c77a62775a9173729d61dd43e05dfa893e8cf6cb511783"
 url = "https://github.com/shellspec/shellspec/archive/refs/tags/0.28.1.tar.gz"
 url_api = "https://api.github.com/repos/shellspec/shellspec/tarball/0.28.1"
 
