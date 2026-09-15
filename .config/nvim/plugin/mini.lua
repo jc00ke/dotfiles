@@ -3,6 +3,7 @@ vim.pack.add({
   { src = "https://github.com/nvim-mini/mini-git" },
   { src = "https://github.com/nvim-mini/mini.icons" },
   { src = "https://github.com/nvim-mini/mini.statusline" },
+  { src = "https://github.com/nvim-mini/mini.statuscolumn" },
   { src = "https://github.com/nvim-mini/mini.clue" },
   { src = "https://github.com/nvim-mini/mini.comment" },
   { src = "https://github.com/nvim-mini/mini.pick" },
@@ -25,6 +26,7 @@ require('mini.git').setup()
 require('mini.diff').setup()
 require('mini.icons').setup()
 require('mini.statusline').setup()
+require('mini.statuscolumn').setup()
 require('mini.snippets').setup()
 require('mini.completion').setup()
 require('mini.surround').setup()

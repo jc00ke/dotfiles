@@ -60,6 +60,10 @@
       "rev": "050638170639ceb7bef4e804507cbf209e565b2c",
       "src": "https://github.com/nvim-mini/mini.snippets"
     },
+    "mini.statuscolumn": {
+      "rev": "1ef647472b8d635071cee2cee26bf809cf3d3965",
+      "src": "https://github.com/nvim-mini/mini.statuscolumn"
+    },
     "mini.statusline": {
       "rev": "127997ebef7ef632161203b960c5ef9d158f4810",
       "src": "https://github.com/nvim-mini/mini.statusline"
