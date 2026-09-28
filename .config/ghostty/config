@@ -1,5 +1,5 @@
 theme = Catppuccin Latte
-font-family = 0xProto
+font-family = Atkinson Hyperlegible Mono
 font-size = 14
 
 macos-titlebar-proxy-icon = hidden
