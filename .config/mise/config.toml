@@ -1,7 +1,8 @@
 [tools]
 "aqua:ajeetdsouza/zoxide" = "latest"
+fnox = { version = "latest", workflow = "release.yml" }
 "github:sharkdp/bat" = "latest"
 "github:sharkdp/fd" = "latest"
-neovim = "0.12.5"
+neovim = "latest"
 tree-sitter = "latest"
 usage = "latest"
