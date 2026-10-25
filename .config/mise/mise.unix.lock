@@ -247,19 +247,26 @@ url = "https://builds.hex.pm/builds/elixir/v1.20.0-otp-29.zip"
 version = "29.0.5"
 backend = "core:erlang"
 
+[tools.erlang.options]
+precompiled_os = "ubuntu-24.04"
+
 [tools.erlang."platforms.linux-arm64"]
 checksum = "sha256:86f6f40d4638852b0383235b02a70d8450184e441e83a06a108bf8e5bf1b2e04"
 url = "https://github.com/erlang/otp/releases/download/OTP-29.0.5/otp_src_29.0.5.tar.gz"
 url_api = "https://api.github.com/repos/erlang/otp/releases/assets/501327246"
 install = "source"
 
-[tools.erlang."platforms.linux-arm64-musl"]
+[tools.erlang."platforms.linux-x64"]
 checksum = "sha256:86f6f40d4638852b0383235b02a70d8450184e441e83a06a108bf8e5bf1b2e04"
 url = "https://github.com/erlang/otp/releases/download/OTP-29.0.5/otp_src_29.0.5.tar.gz"
 url_api = "https://api.github.com/repos/erlang/otp/releases/assets/501327246"
 install = "source"
 
-[tools.erlang."platforms.linux-x64"]
+[[tools.erlang]]
+version = "29.0.5"
+backend = "core:erlang"
+
+[tools.erlang."platforms.linux-arm64-musl"]
 checksum = "sha256:86f6f40d4638852b0383235b02a70d8450184e441e83a06a108bf8e5bf1b2e04"
 url = "https://github.com/erlang/otp/releases/download/OTP-29.0.5/otp_src_29.0.5.tar.gz"
 url_api = "https://api.github.com/repos/erlang/otp/releases/assets/501327246"
@@ -285,25 +292,6 @@ url_api = "https://api.github.com/repos/erlef/otp_builds/releases/assets/5012615
 checksum = "sha256:8bd0be5f6a1bd866bf8b8955c35d0cb4de7c7c935da29f351b599e0b5ed92409"
 url = "https://github.com/erlang/otp/releases/download/OTP-29.0.5/otp_win64_29.0.5.zip"
 url_api = "https://api.github.com/repos/erlang/otp/releases/assets/501281670"
-
-[[tools.erlang]]
-version = "29.0.5"
-backend = "core:erlang"
-
-[tools.erlang.options]
-precompiled_os = "ubuntu-24.04"
-
-[tools.erlang."platforms.linux-arm64"]
-checksum = "sha256:86f6f40d4638852b0383235b02a70d8450184e441e83a06a108bf8e5bf1b2e04"
-url = "https://github.com/erlang/otp/releases/download/OTP-29.0.5/otp_src_29.0.5.tar.gz"
-url_api = "https://api.github.com/repos/erlang/otp/releases/assets/501327246"
-install = "source"
-
-[tools.erlang."platforms.linux-x64"]
-checksum = "sha256:86f6f40d4638852b0383235b02a70d8450184e441e83a06a108bf8e5bf1b2e04"
-url = "https://github.com/erlang/otp/releases/download/OTP-29.0.5/otp_src_29.0.5.tar.gz"
-url_api = "https://api.github.com/repos/erlang/otp/releases/assets/501327246"
-install = "source"
 
 [[tools.fzf]]
 version = "0.74.1"
@@ -541,7 +529,35 @@ url = "https://dl.google.com/go/go1.26.3.windows-amd64.zip"
 
 [[tools.lua]]
 version = "5.5.0"
-backend = "asdf:lua"
+backend = "vfox:jdx/vfox-lua"
+
+[tools.lua."platforms.linux-arm64"]
+checksum = "sha256:57ccc32bbbd005cab75bcc52444052535af691789dba2b9016d5c50640d68b3d"
+url = "https://www.lua.org/ftp/lua-5.5.0.tar.gz"
+
+[tools.lua."platforms.linux-arm64-musl"]
+checksum = "sha256:57ccc32bbbd005cab75bcc52444052535af691789dba2b9016d5c50640d68b3d"
+url = "https://www.lua.org/ftp/lua-5.5.0.tar.gz"
+
+[tools.lua."platforms.linux-x64"]
+checksum = "sha256:57ccc32bbbd005cab75bcc52444052535af691789dba2b9016d5c50640d68b3d"
+url = "https://www.lua.org/ftp/lua-5.5.0.tar.gz"
+
+[tools.lua."platforms.linux-x64-musl"]
+checksum = "sha256:57ccc32bbbd005cab75bcc52444052535af691789dba2b9016d5c50640d68b3d"
+url = "https://www.lua.org/ftp/lua-5.5.0.tar.gz"
+
+[tools.lua."platforms.macos-arm64"]
+checksum = "sha256:57ccc32bbbd005cab75bcc52444052535af691789dba2b9016d5c50640d68b3d"
+url = "https://www.lua.org/ftp/lua-5.5.0.tar.gz"
+
+[tools.lua."platforms.macos-x64"]
+checksum = "sha256:57ccc32bbbd005cab75bcc52444052535af691789dba2b9016d5c50640d68b3d"
+url = "https://www.lua.org/ftp/lua-5.5.0.tar.gz"
+
+[tools.lua."platforms.windows-x64"]
+checksum = "sha256:57ccc32bbbd005cab75bcc52444052535af691789dba2b9016d5c50640d68b3d"
+url = "https://www.lua.org/ftp/lua-5.5.0.tar.gz"
 
 [[tools.node]]
 version = "26.5.0"
@@ -762,10 +778,6 @@ url_api = "https://api.github.com/repos/shellspec/shellspec/tarball/0.28.1"
 checksum = "sha256:400d835466429a5fe6c77a62775a9173729d61dd43e05dfa893e8cf6cb511783"
 url = "https://github.com/shellspec/shellspec/archive/refs/tags/0.28.1.tar.gz"
 url_api = "https://api.github.com/repos/shellspec/shellspec/tarball/0.28.1"
-
-[[tools.sqlite]]
-version = "3.53.4"
-backend = "asdf:sqlite"
 
 [[tools.starship]]
 version = "1.26.0"

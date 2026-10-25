@@ -20,7 +20,6 @@ python = "3.14.5"
 ripgrep = "latest"
 shellcheck = "latest"
 shellspec = "latest"
-sqlite = "latest"
 starship = "latest"
 stylua = "latest"
 
