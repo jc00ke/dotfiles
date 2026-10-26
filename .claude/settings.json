@@ -15,6 +15,9 @@
       "effortLevel": "high"
     }
   },
+  "permissions": {
+    "defaultMode": "manual"
+  },
   "theme": "light",
   "editorMode": "vim"
 }
