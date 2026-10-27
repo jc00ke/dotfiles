@@ -52,6 +52,12 @@ map('n', '<c-p>', ":Pick files tool='fd'<cr>", { desc = "Pick files" })
 map('n', '<leader>a', ":Pick grep_live<cr>", { desc = "Grep files" })
 map("n", '<leader>"', 'ciw""<Esc>P', { desc = "Double quote word" })
 
+function OpenCurrentDir()
+  vim.ui.open(vim.fn.expand("%:p:h"))
+end
+
+map('n', "<leader>O", OpenCurrentDir, { desc = "Open the current dir" })
+
 function GrepUnderCursor()
   local word = vim.fn.expand("<cword>")
   if word ~= "" then
