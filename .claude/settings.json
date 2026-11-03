@@ -3,6 +3,9 @@
     "CLAUDE_CODE_ENABLE_TELEMETRY": "0",
     "DISABLE_TELEMETRY": "true"
   },
+  "permissions": {
+    "defaultMode": "default"
+  },
   "enabledPlugins": {
     "gopls-lsp@claude-plugins-official": true,
     "lua-lsp@claude-plugins-official": true,
@@ -14,9 +17,6 @@
     "claude-opus-5-5": {
       "effortLevel": "high"
     }
-  },
-  "permissions": {
-    "defaultMode": "manual"
   },
   "theme": "light",
   "editorMode": "vim"
