@@ -48,7 +48,7 @@ vim.api.nvim_create_autocmd('LspAttach', {
 vim.g.auto_refresh_enabled = false
 
 -- Function to toggle the behavior
-function ToggleAutoRefresh()
+local function ToggleAutoRefresh()
   if vim.g.auto_refresh_enabled then
     vim.api.nvim_clear_autocmds({ group = "AutoRefresh" })
     vim.g.auto_refresh_enabled = false
@@ -66,8 +66,6 @@ function ToggleAutoRefresh()
   end
 end
 
-vim.keymap.set('n', '<leader>tar', ToggleAutoRefresh, {
-  noremap = true,
-  silent = false,
-  desc = "Toggle auto refresh of files"
+vim.api.nvim_create_user_command("AutoRefreshToggle", ToggleAutoRefresh, {
+  desc = "Toggle auto refresh of files",
 })
