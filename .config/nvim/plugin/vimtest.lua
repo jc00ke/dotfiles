@@ -2,7 +2,7 @@ vim.pack.add({
   { src = "https://github.com/vim-test/vim-test" },
 })
 
-vim.keymap.set("n", "<leader>tt", "<cmd>TestNearest<cr>", { desc = "Run nearest test" })
+vim.keymap.set("n", "<leader>tn", "<cmd>TestNearest<cr>", { desc = "Run nearest test" })
 vim.keymap.set("n", "<leader>tl", "<cmd>TestLast<cr>", { desc = "Run last test" })
 vim.keymap.set("n", "<leader>T", "<cmd>TestFile<cr>", { desc = "Run all tests in the file" })
 vim.keymap.set("n", "<leader>ta", "<cmd>TestSuite<cr>", { desc = "Run all tests" })
