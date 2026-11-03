@@ -1,0 +1,19 @@
+#!/usr/bin/env bash
+set -eou pipefail
+
+log() {
+  local msg="$1"
+  echo ""
+  echo "********************************************"
+  echo "$msg"
+  echo "********************************************"
+  echo ""
+}
+
+codename="$(cat /etc/os-release | grep VERSION_CODENAME | cut -d'=' -f2)"
+log "Downloading ghostty for ${codename}"
+gh release download -R dariogriffo/ghostty-debian --pattern "ghostty_*${codename}_amd64.deb" --skip-existing
+log "Installing ghostty for ${codename}"
+sudo-rs dpkg -i ghostty*.deb
+log "Removing .deb"
+rm ghostty*.deb
