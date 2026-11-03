@@ -254,19 +254,15 @@ version = "29.0.5"
 backend = "core:erlang"
 
 [tools.erlang.options]
-precompiled_os = "ubuntu-24.04"
+precompiled_os = "ubuntu-26.04"
 
 [tools.erlang."platforms.linux-arm64"]
-checksum = "sha256:86f6f40d4638852b0383235b02a70d8450184e441e83a06a108bf8e5bf1b2e04"
-url = "https://github.com/erlang/otp/releases/download/OTP-29.0.5/otp_src_29.0.5.tar.gz"
-url_api = "https://api.github.com/repos/erlang/otp/releases/assets/501327246"
-install = "source"
+checksum = "sha256:469d6af236e08ca4ae8abfdc8f6e6ebbc44e3bcf9a11edac01bcfdc6fe257b67"
+url = "https://builds.hex.pm/builds/otp/arm64/ubuntu-26.04/OTP-29.0.5.tar.gz"
 
 [tools.erlang."platforms.linux-x64"]
-checksum = "sha256:86f6f40d4638852b0383235b02a70d8450184e441e83a06a108bf8e5bf1b2e04"
-url = "https://github.com/erlang/otp/releases/download/OTP-29.0.5/otp_src_29.0.5.tar.gz"
-url_api = "https://api.github.com/repos/erlang/otp/releases/assets/501327246"
-install = "source"
+checksum = "sha256:dc9df891f95cdd03e78e16d4c57ecb9ba96b3d2cbaa730d9e96f6829fde442aa"
+url = "https://builds.hex.pm/builds/otp/amd64/ubuntu-26.04/OTP-29.0.5.tar.gz"
 
 [[tools.erlang]]
 version = "29.0.5"
@@ -535,35 +531,7 @@ url = "https://dl.google.com/go/go1.26.3.windows-amd64.zip"
 
 [[tools.lua]]
 version = "5.5.0"
-backend = "vfox:jdx/vfox-lua"
-
-[tools.lua."platforms.linux-arm64"]
-checksum = "sha256:57ccc32bbbd005cab75bcc52444052535af691789dba2b9016d5c50640d68b3d"
-url = "https://www.lua.org/ftp/lua-5.5.0.tar.gz"
-
-[tools.lua."platforms.linux-arm64-musl"]
-checksum = "sha256:57ccc32bbbd005cab75bcc52444052535af691789dba2b9016d5c50640d68b3d"
-url = "https://www.lua.org/ftp/lua-5.5.0.tar.gz"
-
-[tools.lua."platforms.linux-x64"]
-checksum = "sha256:57ccc32bbbd005cab75bcc52444052535af691789dba2b9016d5c50640d68b3d"
-url = "https://www.lua.org/ftp/lua-5.5.0.tar.gz"
-
-[tools.lua."platforms.linux-x64-musl"]
-checksum = "sha256:57ccc32bbbd005cab75bcc52444052535af691789dba2b9016d5c50640d68b3d"
-url = "https://www.lua.org/ftp/lua-5.5.0.tar.gz"
-
-[tools.lua."platforms.macos-arm64"]
-checksum = "sha256:57ccc32bbbd005cab75bcc52444052535af691789dba2b9016d5c50640d68b3d"
-url = "https://www.lua.org/ftp/lua-5.5.0.tar.gz"
-
-[tools.lua."platforms.macos-x64"]
-checksum = "sha256:57ccc32bbbd005cab75bcc52444052535af691789dba2b9016d5c50640d68b3d"
-url = "https://www.lua.org/ftp/lua-5.5.0.tar.gz"
-
-[tools.lua."platforms.windows-x64"]
-checksum = "sha256:57ccc32bbbd005cab75bcc52444052535af691789dba2b9016d5c50640d68b3d"
-url = "https://www.lua.org/ftp/lua-5.5.0.tar.gz"
+backend = "asdf:lua"
 
 [[tools.node]]
 version = "26.5.0"
