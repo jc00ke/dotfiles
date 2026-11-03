@@ -1,9 +1,9 @@
 #!/bin/env bash
 set -eox pipefail
-DIR="$(dirname "$(readlink -f "$0")")"
 
 log() {
   local msg="$1"
+  echo ""
   echo "********************************************"
   echo "$msg"
   echo "********************************************"
