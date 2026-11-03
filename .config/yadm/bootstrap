@@ -182,8 +182,12 @@ sudo-rs apt update && sudo-rs apt install \
 log "From griffo-free repo"
 sudo-rs apt install \
   eza \
-  ghostty \
   -y
+
+codename="$(cat /etc/os-release | grep VERSION_CODENAME | cut -d'=' -f2)"
+gh release download -R dariogriffo/ghostty-debian --pattern "ghostty_*${codename}_amd64.deb"
+sudo-rs dpk -i ghostty*.deb
+rm ghostty*.deb
 
 write-keybinding 0 "Terminal" "ghostty" "<Super>Return"
 write-keybinding 1 "Screenshot window" "flatpak run be.alexandervanhee.gradia --screenshot=INTERACTIVE" "<Shift><Super>w"
