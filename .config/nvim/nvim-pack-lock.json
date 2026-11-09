@@ -17,7 +17,7 @@
       "src": "https://github.com/hat0uma/csvview.nvim"
     },
     "mason-lspconfig.nvim": {
-      "rev": "a338f44149f5673882c32629697d67b0c0547aec",
+      "rev": "55eceab8975036ac43a4176cbfe0d4bf1ddae93f",
       "src": "https://github.com/mason-org/mason-lspconfig.nvim"
     },
     "mason.nvim": {
@@ -29,7 +29,7 @@
       "src": "https://github.com/nvim-mini/mini-git"
     },
     "mini.clue": {
-      "rev": "79974f485028a3212f5a3f23b0095f8d0ae6f494",
+      "rev": "57f1f9542e8f7f0c3325825359939410940c55fc",
       "src": "https://github.com/nvim-mini/mini.clue"
     },
     "mini.comment": {
@@ -37,7 +37,7 @@
       "src": "https://github.com/nvim-mini/mini.comment"
     },
     "mini.completion": {
-      "rev": "ace27587795b84ae6a83b9bc7ff63aec0eebc252",
+      "rev": "cda8669fb9a7fd681016f43dddcc2a635f8b645d",
       "src": "https://github.com/nvim-mini/mini.completion"
     },
     "mini.diff": {
@@ -45,7 +45,7 @@
       "src": "https://github.com/nvim-mini/mini.diff"
     },
     "mini.extra": {
-      "rev": "6cbc59d875a9768819091d0a56223205022cbe72",
+      "rev": "71f1f63dfcc206251259a3d4789e3cdc51630606",
       "src": "https://github.com/nvim-mini/mini.extra"
     },
     "mini.icons": {
@@ -57,7 +57,7 @@
       "src": "https://github.com/nvim-mini/mini.jump2d"
     },
     "mini.pick": {
-      "rev": "32ead2c8016a68487de87f23d604135843b0196d",
+      "rev": "f1216d764d0c2772e88d4e1a0cef3082f5b498e1",
       "src": "https://github.com/nvim-mini/mini.pick"
     },
     "mini.sessions": {
@@ -81,7 +81,7 @@
       "src": "https://github.com/nvim-mini/mini.surround"
     },
     "neogit": {
-      "rev": "832a2db084ac25c2801fd73a3fab58f3c82ed2ec",
+      "rev": "ba2f33b64b996ff5530c4c45a3c432fb63aaa95b",
       "src": "https://github.com/NeogitOrg/neogit"
     },
     "neotest": {
@@ -93,7 +93,7 @@
       "src": "https://github.com/fredrikaverpil/neotest-golang"
     },
     "nvim-lspconfig": {
-      "rev": "77b7432d4770d23b277d37923e5a08a442d8bb07",
+      "rev": "993d048db0d83d8e8ba3f9cb376456321acdcce3",
       "src": "https://github.com/neovim/nvim-lspconfig"
     },
     "nvim-nio": {
@@ -101,7 +101,7 @@
       "src": "https://github.com/nvim-neotest/nvim-nio"
     },
     "nvim-treesitter": {
-      "rev": "a2f694478be07f89c2d03cc17858a8745a400c4b",
+      "rev": "19bdfc04f40ed2ccb3340591d125f759b0406875",
       "src": "https://github.com/nvim-treesitter/nvim-treesitter",
       "version": "'main'"
     },
@@ -130,7 +130,7 @@
       "src": "https://github.com/chomosuke/typst-preview.nvim"
     },
     "vim-test": {
-      "rev": "f7cab8f327c838b129476792619aa6180847469f",
+      "rev": "4c6ba11524388562f2ad3636dc02cd479204aaff",
       "src": "https://github.com/vim-test/vim-test"
     }
   }
