@@ -17,6 +17,8 @@ vim.pack.add({
 
 local pick = require("mini.pick")
 pick.setup()
+local extra = require("mini.extra")
+extra.setup()
 vim.ui.select = pick.ui_select
 
 require('mini.comment').setup()
@@ -109,3 +111,9 @@ vim.api.nvim_create_autocmd('VimLeavePre', {
     sessions.write(current_dir, { force = true })
   end,
 })
+
+-- extra
+--
+vim.keymap.set("n", "<leader>ds", function()
+  extra.pickers.lsp({ scope = 'document_symbol' })
+end, { desc = "LSP document symbols" })
