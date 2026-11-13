@@ -12,6 +12,7 @@ vim.opt.completeopt = { 'menuone', 'noselect', 'popup' }
 vim.opt.cursorcolumn = false
 vim.opt.expandtab = true
 vim.opt.hlsearch = false
+vim.opt.smartcase = true
 vim.opt.ignorecase = true
 vim.opt.incsearch = true
 vim.opt.mouse = "nv"
