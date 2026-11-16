@@ -49,7 +49,27 @@ map("n", "<leader>k", "gt", { desc = "Previous tab" })
 map("", "<space>", "<nop>", { silent = true })
 map("n", "gd", vim.lsp.buf.definition, { desc = "Go to definition" })
 map("n", "<leader>ca", vim.lsp.buf.code_action, { desc = "Code actions" })
-map('n', '<c-p>', ":Pick files tool='fd'<cr>", { desc = "Pick files" })
+
+-- Runs mini.pick using sh execution wrapper without touching your global shell option
+-- This addresses the E79 " cannot expand wildcards" error I started seeing on MacOS.
+vim.keymap.set("n", "<C-p>", function()
+  -- Check if we are on a Unix-like system (macOS or Debian)
+  local is_unix = vim.fn.has("win32") == 0
+  local old_shell = vim.o.shell
+
+  -- Only override the shell on Mac/Linux to fix the Fish E79 issue
+  if is_unix then
+    vim.o.shell = "/bin/sh"
+  end
+
+  -- Force mini.pick to look up files using 'fd' safely
+  require("mini.pick").builtin.files({ tool = "fd" })
+
+  -- Restore the original shell if we changed it
+  if is_unix then
+    vim.o.shell = old_shell
+  end
+end, { desc = "Pick files safely via fd" })
 map('n', '<leader>a', ":Pick grep_live<cr>", { desc = "Grep files" })
 map("n", '<leader>"', 'ciw""<Esc>P', { desc = "Double quote word" })
 
