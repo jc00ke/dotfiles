@@ -11,6 +11,7 @@ vim.g.maplocalleader = "\\"
 vim.opt.completeopt = { 'menuone', 'noselect', 'popup' }
 vim.opt.cursorcolumn = false
 vim.opt.expandtab = true
+vim.o.foldlevelstart = 99
 vim.opt.hlsearch = false
 vim.opt.smartcase = true
 vim.opt.ignorecase = true

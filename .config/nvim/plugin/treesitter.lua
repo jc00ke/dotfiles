@@ -47,10 +47,7 @@ ts.install(
   }
 )
 
-ts.setup({
-  highlight = { enable = true, disable = { "latex" } },
-  indent = { enable = true, disable = { "python" } },
-})
+ts.setup()
 
 vim.api.nvim_create_autocmd('FileType', {
   group = vim.api.nvim_create_augroup('my.treesitter-start', { clear = true }),
@@ -58,7 +55,13 @@ vim.api.nvim_create_autocmd('FileType', {
     if vim.bo[args.buf].filetype == 'latex' then return end
     local ft = vim.bo[args.buf].filetype
     local lang = vim.treesitter.language.get_lang(ft) or ft
-    pcall(vim.treesitter.start, args.buf, lang)
+    if pcall(vim.treesitter.start, args.buf, lang) then
+      vim.wo[0][0].foldmethod = 'expr'
+      vim.wo[0][0].foldexpr = 'v:lua.vim.treesitter.foldexpr()'
+      if ft ~= 'python' then
+        vim.bo[args.buf].indentexpr = "v:lua.require'nvim-treesitter'.indentexpr()"
+      end
+    end
   end,
 })
 
