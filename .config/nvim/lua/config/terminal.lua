@@ -18,13 +18,13 @@ map('t', '', "")
 map('t', '', "")
 
 if os_env == "Windows_NT" then
-  vim.opt.shell = "pwsh"
-  vim.opt.shellcmdflag =
+  vim.o.shell = "pwsh"
+  vim.o.shellcmdflag =
   "-NoLogo -NoProfile ExecutionPolicy RemoteSigned -Command $PSStyle.OutputRendering = 'PlaidText'"
-  vim.opt.shellredir = "2>&1 | Out-File -Encoding UTF8 %s; exit $LastExitCode"
-  vim.opt.shellpipe = "2>&1 | Out-File -Encoding UTF8 %s; exit $LastExitCode"
-  vim.opt.shellquote = ""
-  vim.opt.shellxquote = ""
+  vim.o.shellredir = "2>&1 | Out-File -Encoding UTF8 %s; exit $LastExitCode"
+  vim.o.shellpipe = "2>&1 | Out-File -Encoding UTF8 %s; exit $LastExitCode"
+  vim.o.shellquote = ""
+  vim.o.shellxquote = ""
 
   local function pwsh_term(opener)
     return function()

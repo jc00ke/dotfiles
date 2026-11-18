@@ -8,29 +8,29 @@
 vim.g.mapleader = ","
 vim.g.maplocalleader = "\\"
 
-vim.opt.completeopt = { 'menuone', 'noselect', 'popup' }
-vim.opt.cursorcolumn = false
-vim.opt.expandtab = true
+vim.o.completeopt = 'menuone,noselect,popup'
+vim.o.cursorcolumn = false
+vim.o.expandtab = true
 vim.o.foldlevelstart = 99
-vim.opt.hlsearch = false
-vim.opt.smartcase = true
-vim.opt.ignorecase = true
-vim.opt.incsearch = true
-vim.opt.mouse = "nv"
-vim.opt.number = true
-vim.opt.pumheight = 10
-vim.opt.relativenumber = true
-vim.opt.shiftwidth = 2
-vim.opt.signcolumn = "yes"
-vim.opt.smartindent = true
-vim.opt.splitbelow = true
-vim.opt.splitright = true
-vim.opt.swapfile = false
-vim.opt.tabstop = 2
-vim.opt.termguicolors = true
-vim.opt.undofile = true
-vim.opt.winborder = "rounded"
-vim.opt.wrap = false
+vim.o.hlsearch = false
+vim.o.smartcase = true
+vim.o.ignorecase = true
+vim.o.incsearch = true
+vim.o.mouse = "nv"
+vim.o.number = true
+vim.o.pumheight = 10
+vim.o.relativenumber = true
+vim.o.shiftwidth = 2
+vim.o.signcolumn = "yes"
+vim.o.smartindent = true
+vim.o.splitbelow = true
+vim.o.splitright = true
+vim.o.swapfile = false
+vim.o.tabstop = 2
+vim.o.termguicolors = true
+vim.o.undofile = true
+vim.o.winborder = "rounded"
+vim.o.wrap = false
 
 require("config.autocmd")
 require("config.terminal")
