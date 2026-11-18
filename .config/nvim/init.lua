@@ -31,6 +31,7 @@ vim.o.termguicolors = true
 vim.o.undofile = true
 vim.o.winborder = "rounded"
 vim.o.wrap = false
+vim.opt.sessionoptions:remove('folds')
 
 require("config.autocmd")
 require("config.terminal")
@@ -50,6 +51,7 @@ map("n", "<leader>k", "gt", { desc = "Previous tab" })
 map("", "<space>", "<nop>", { silent = true })
 map("n", "gd", vim.lsp.buf.definition, { desc = "Go to definition" })
 map("n", "<leader>ca", vim.lsp.buf.code_action, { desc = "Code actions" })
+map('n', 'zR', function() vim.wo.foldlevel = 99 end, { desc = 'Open all folds' })
 
 -- Runs mini.pick using sh execution wrapper without touching your global shell option
 -- This addresses the E79 " cannot expand wildcards" error I started seeing on MacOS.
