@@ -20,7 +20,7 @@ map('t', '', "")
 if os_env == "Windows_NT" then
   vim.o.shell = "pwsh"
   vim.o.shellcmdflag =
-  "-NoLogo -NoProfile ExecutionPolicy RemoteSigned -Command $PSStyle.OutputRendering = 'PlaidText'"
+  "-NoLogo -NoProfile -ExecutionPolicy RemoteSigned -Command $PSStyle.OutputRendering = 'PlainText'"
   vim.o.shellredir = "2>&1 | Out-File -Encoding UTF8 %s; exit $LastExitCode"
   vim.o.shellpipe = "2>&1 | Out-File -Encoding UTF8 %s; exit $LastExitCode"
   vim.o.shellquote = ""
